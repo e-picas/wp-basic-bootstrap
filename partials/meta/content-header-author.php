@@ -22,7 +22,12 @@
         $count = count_user_posts(get_the_author_meta('ID'));
         echo esc_html(
             sprintf(
-                _n('%s post written', '%s posts written', $count, 'basicbootstrap'),
+                _n(
+                    __('%s post written'),
+                    __('%s posts written'),
+                    $count,
+                    'basicbootstrap'
+                ),
                 $count
             )
         );
