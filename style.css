@@ -1,0 +1,357 @@
+/*
+Theme Name:     WP Basic Bootstrap
+Theme URI:      http://gitlab.com/e-picas/wp-basic-bootstrap
+Description:    WP Basic Bootstrap is a full "101" Wordpress theme built with the Bootstrap framework and the Font Awesome images font, ready to build a responsive and accessible blog or to be modified to build your own theme.
+Author:         picas (Pierre Cassat)
+Author URI:     http://picas.fr/
+Template:       basicbootstrap
+License:        Private
+License URI:    http://picas.fr/
+Text Domain:    basicbootstrap
+Domain Path:    /languages
+Version:        0.0.1@dev
+Tags:           bootstrap, font-awesome, one-column, two-columns, three-columns, right-sidebar, left-sidebar, fixed-layout, responsive-layout, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, featured-images, microformats, post-formats, sticky-post, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Based on some original works:
+
+-   BlankSlate by TidyThemes (http://tidythemes.com/).
+    BlankSlate WordPress Theme © 2011-2015 TidyThemes
+    BlankSlate is distributed under the terms of the GNU GPL
+
+-   Bootstrap Canvas WP by Schon Garcia
+    Bootstrap Canvas WP is distributed under the terms of the GNU GPL
+
+ * @package WP_Basic_Bootstrap
+ * @since WP_Basic_Bootstrap 1.0
+*/
+
+/* =WordPress Core
+-------------------------------------------------------------- */
+.alignnone {
+    margin: 5px auto 20px 0;
+}
+
+.aligncenter,
+div.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+.alignright {
+    float:right;
+    margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignright {
+    float: right;
+    margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.wp-caption {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    max-width: 96%; /* Image does not overflow the content area */
+    padding: 5px 3px 10px;
+    text-align: center;
+}
+
+.wp-caption.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignright {
+    margin: 5px 0 20px 20px;
+}
+
+.wp-caption img {
+    border: 0 none;
+    height: auto;
+    margin: 0;
+    max-width: 98.5%;
+    padding: 0;
+    width: auto;
+}
+
+.wp-caption p.wp-caption-text,
+.gallery-caption {
+    font-size: 11px;
+    line-height: 17px;
+    margin: 0;
+    padding: 0 4px 5px;
+}
+
+.gallery-item img {
+    border-width: 1px;
+    margin-bottom: 0;
+}
+
+.wp-post-image {
+}
+
+.sticky {
+}
+
+.bypostauthor {
+}
+
+.entry {
+    margin-bottom: 20px;
+}
+
+.widget {
+    text-align: initial;
+}
+
+.widget ul {
+}
+
+#searchsubmit {
+}
+
+.comment-list {
+    padding: 0;
+}
+
+.comment-list,
+.children:nth-child(n+1) {
+    list-style: none;
+}
+
+@media (max-width: 767px) {
+    .comment-list,
+    .children:nth-child(n+1) {
+        padding: 0;
+    }
+}
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+.screen-reader-text:focus {
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    color: #21759b;
+    display: block;
+    font-size: 14px;
+    font-size: 0.875rem;
+    font-weight: bold;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000; /* Above WP toolbar. */
+}
+
+/* Typo */
+.wp-caption-text {
+    font-size: .8em;
+    font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+    text-align: center;
+}
+.blog-post-meta,
+.comment-meta,
+.entry-meta,
+.widget_rss .rss-date,
+.widget_rss cite:last-child {
+    color: #999;
+    font-size: .96em;
+}
+.widget_author_block .details,
+.widget_rss .rssSummary,
+.widget_text .textwidget {
+    font-size: .96em;
+}
+.widget_rss a.rsswidget {
+    display: inline-block;
+    margin-bottom: 4px;
+}
+.widget_rss img.rss-widget-icon {
+    display: none;
+}
+.entry-meta-item {
+    color: #999;
+    padding-right: 2px;
+}
+.widget .entry-meta {
+    font-size: .86em;
+    font-style: italic;
+}
+a.read-more {
+    text-transform: uppercase;
+}
+.sticky-summary .blog-post-header {
+    text-align: center;
+}
+.share-links {
+    display: block;
+    margin: 1em auto;
+}
+
+/* Footer */
+.blog-footer {
+    background-color: #f9f9f9;
+    border-top: 1px solid #e5e5e5;
+}
+.blog-footer a {
+    color: #428bca;
+}
+.blog-footer a:hover,
+.blog-footer a:focus {
+    color: #23527c;
+    text-decoration: underline;
+}
+
+/* Taken "as-is" from TwentyFifteen */
+.gallery {
+    margin-bottom: 1.6em;
+}
+.gallery-item {
+    display: inline-block;
+    padding: 1.79104477%;
+    text-align: center;
+    vertical-align: top;
+    width: 100%;
+}
+.gallery-columns-2 .gallery-item {
+    max-width: 50%;
+}
+.gallery-columns-3 .gallery-item {
+    max-width: 33.33%;
+}
+.gallery-columns-4 .gallery-item {
+    max-width: 25%;
+}
+.gallery-columns-5 .gallery-item {
+    max-width: 20%;
+}
+.gallery-columns-6 .gallery-item {
+    max-width: 16.66%;
+}
+.gallery-columns-7 .gallery-item {
+    max-width: 14.28%;
+}
+.gallery-columns-8 .gallery-item {
+    max-width: 12.5%;
+}
+.gallery-columns-9 .gallery-item {
+    max-width: 11.11%;
+}
+.gallery-icon img {
+    margin: 0 auto;
+}
+.gallery-caption {
+    color: #707070;
+    color: rgba(51, 51, 51, 0.7);
+    display: block;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 12px;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    padding: 0.5em 0;
+}
+.gallery-columns-6 .gallery-caption,
+.gallery-columns-7 .gallery-caption,
+.gallery-columns-8 .gallery-caption,
+.gallery-columns-9 .gallery-caption {
+    display: none;
+}
+
+/*
+ * Calendar widget
+ * see <http://smallenvelop.com/wordpress-calendar-widget-css-you-can-copy-paste-in-your-theme-development/>
+ */
+#wp-calendar {
+    width:100%;
+    font-size:12px;
+    font-weight:300;
+    border-collapse:separate;
+    border-spacing:8px;
+    margin-left:-2px;
+}
+#wp-calendar tbody td {
+    margin-bottom:10px;
+    text-align:center;
+    -webkit-border-radius:2px;
+    -moz-border-radius:2px;
+    -ms-border-radius:2px;
+    -o-border-radius:2px;
+    border-radius:2px;
+    border:1px solid #f4f4f4;
+    padding:6px;
+}
+#wp-calendar tbody td:hover {
+    border-color:#e2e2e2;
+}
+#wp-calendar tbody td.pad {
+    border:0;
+}
+#wp-calendar tbody td#today {
+    color:#47C2DC;
+    border-color:#47C2DC;
+}
+#wp-calendar tfoot td#prev a,
+#wp-calendar tfoot td#next a {
+    color:#888;
+    font-size:12px;
+    font-weight:400;
+    position:relative;
+    text-transform:uppercase;
+    bottom:-9px;
+    margin-bottom:1px;
+}
+#wp-calendar tfoot td#prev {
+    text-align:left;
+}
+#wp-calendar tfoot td#next {
+    text-align:right;
+}
+#wp-calendar thead th {
+    font-size:13px;
+    font-weight:400;
+    color:#888;
+    text-align:center;
+    padding-bottom:10px;
+}
+#wp-calendar tbody td a,
+#wp-calendar tfoot td#prev a:hover,
+#wp-calendar tfoot td#next a:hover {
+    color:#47C2DC;
+}

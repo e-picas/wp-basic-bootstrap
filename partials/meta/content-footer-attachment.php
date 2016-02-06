@@ -1,0 +1,38 @@
+<?php
+/**
+ * @package WP_Basic_Bootstrap
+ * @since WP_Basic_Bootstrap 1.0
+ */
+
+/* @var $post \WP_Post */
+global $post;
+?>
+<?php if (is_single() && is_attachment()) : ?>
+<section class="entry-meta blog-post-meta">
+    <?php if (wp_attachment_is_image($post->ID)) :
+        $att_image = wp_get_attachment_image_src($post->ID, 'large'); ?>
+        <i class="fa fa-photo fa-fw"></i>&nbsp;<span class="entry-meta-item image-mime-links"><?php
+            echo get_post_mime_type($post->ID);
+        ?></span>
+        <i class="fa fa-camera fa-fw"></i>&nbsp;<span class="entry-meta-item image-meta-links"><?php
+            $sizes = wp_get_attachment_image_src( get_the_ID(), 'full');
+            echo '<span itemprop="width">'.$sizes[1] . '</span> x <span itemprop="height">' . $sizes[2] . '</span> px.';
+        ?></span>
+        <i class="fa fa-cloud-download fa-fw"></i>&nbsp;<span class="entry-meta-item image-file-links"><?php
+            echo '<a href="' . $sizes[0] . '">' . __('Original file', 'basicbootstrap') ; '</a>';
+        ?></span>
+    <?php else:
+        $att_file = wp_get_attachment_metadata($post->ID); ?>
+        <i class="fa fa-file fa-fw"></i>&nbsp;<span class="entry-meta-item media-mime-links"><?php
+            echo get_post_mime_type($post->ID);
+        ?></span>
+        <i class="fa fa-wrench fa-fw"></i>&nbsp;<span class="entry-meta-item media-size-links"><?php
+            echo filesize(get_attached_file($post->ID)).' o';
+        ?></span>
+        <i class="fa fa-cloud-download fa-fw"></i>&nbsp;<span class="entry-meta-item media-file-links"><?php
+            echo '<a href="' . wp_get_attachment_url($post->ID) . '">' . __('Original file', 'basicbootstrap') ; '</a>';
+        ?></span>
+        <?php edit_post_link(__('Edit', 'basicbootstrap'), '<i class="fa fa-pencil-square fa-fw"></i>&nbsp;'); ?>
+    <?php endif; ?>
+</section>
+<?php endif; ?>

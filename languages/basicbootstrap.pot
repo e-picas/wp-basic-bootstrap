@@ -1,0 +1,813 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: WP Basic Bootstrap\n"
+"POT-Creation-Date: 2016-02-06 00:56+0100\n"
+"PO-Revision-Date: 2016-02-04 10:43+0100\n"
+"Last-Translator: picas <me@picas.fr>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: en_US\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_x;_n;_ex;_nx;_n_noop;_nx_noop;translate_nooped_plural;esc_html__;esc_html_e;esc_html_x;esc_attr__;esc_attr_e;esc_attr_x;__ngettext;__ngettext_noop;_c;_nc\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: docs\n"
+"X-Poedit-SearchPathExcluded-1: includes/vendor/TGM_Plugin_Activation.php\n"
+
+#: 401.php:29
+msgid "Unauthorized Access"
+msgstr ""
+
+#: 401.php:32 403.php:32 404.php:36
+msgid "This is somewhat embarrassing, isn&rsquo;t it?"
+msgstr ""
+
+#: 401.php:34 403.php:34
+msgid "It seems you don&rsquo;t have the permissions to access what you&rsquo;re looking for. Perhaps searching can help."
+msgstr ""
+
+#: 403.php:29 includes/error-pages.php:188
+msgid "Forbidden Access"
+msgstr ""
+
+#: 404.php:33
+msgid "Not Found"
+msgstr ""
+
+#: 404.php:38
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr ""
+
+#: author.php:43
+#, php-format
+msgid "About %s"
+msgstr ""
+
+#: author.php:59
+#, php-format
+msgid "Posts by %s"
+msgstr ""
+
+#: category.php:39 partials/comments/comment-item-cb.php:44
+#: partials/comments/pingback-item-cb.php:20
+#: partials/meta/content-footer-attachment.php:35
+#: partials/meta/content-footer-page.php:13 partials/meta/content-footer.php:23
+msgid "Edit"
+msgstr ""
+
+#: comments.php:40
+#, php-format
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgstr ""
+
+#: comments.php:48 comments.php:65
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:49 comments.php:66
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:50 comments.php:67
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:73
+msgid "Comments are closed."
+msgstr ""
+
+#: comments.php:83
+msgid "Leave a Reply"
+msgstr ""
+
+#: comments.php:84
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr ""
+
+#: comments.php:85
+msgid "Cancel Reply"
+msgstr ""
+
+#: comments.php:86
+msgid "Post Comment"
+msgstr ""
+
+#: comments.php:90
+msgid "Comment"
+msgstr ""
+
+#: comments.php:97
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr ""
+
+#: comments.php:103
+#, php-format
+msgid "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of this account\">Log out?</a>"
+msgstr ""
+
+#: comments.php:110
+msgid "Your email address will not be published."
+msgstr ""
+
+#: comments.php:115
+#, php-format
+msgid "You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags and attributes: %s"
+msgstr ""
+
+#: comments.php:123
+msgid "Name"
+msgstr ""
+
+#: comments.php:130
+msgid "Email"
+msgstr ""
+
+#: comments.php:137
+msgid "Website"
+msgstr ""
+
+#: footer.php:33
+msgid "Back to main content"
+msgstr ""
+
+#: footer.php:34
+msgid "Back to main navigation"
+msgstr ""
+
+#: footer.php:36
+msgid "Back to page sidebar"
+msgstr ""
+
+#: footer.php:38
+msgid "Back to page header"
+msgstr ""
+
+#: header.php:33
+msgid "Skip to main content"
+msgstr ""
+
+#: header.php:34
+msgid "Skip to main navigation"
+msgstr ""
+
+#: header.php:36
+msgid "Skip to page sidebar"
+msgstr ""
+
+#: header.php:38
+msgid "Skip to page footer"
+msgstr ""
+
+#: includes/basicbootstrap-config.php:100
+msgid "Main Menu"
+msgstr ""
+
+#: includes/basicbootstrap-config.php:101
+msgid "Social Links Menu"
+msgstr ""
+
+#: includes/basicbootstrap-config.php:102
+msgid "Footer Menu"
+msgstr ""
+
+#: includes/basicbootstrap-config.php:109
+msgid "Primary Widget Area"
+msgstr ""
+
+#: includes/basicbootstrap-config.php:111
+msgid "Add widgets here to appear in your sidebar."
+msgstr ""
+
+#: includes/basicbootstrap-config.php:119
+msgid "First Footer Widget Area"
+msgstr ""
+
+#: includes/basicbootstrap-config.php:121
+#: includes/basicbootstrap-config.php:131
+#: includes/basicbootstrap-config.php:141
+msgid "An optional widget area for your site footer."
+msgstr ""
+
+#: includes/basicbootstrap-config.php:129
+msgid "Second Footer Widget Area"
+msgstr ""
+
+#: includes/basicbootstrap-config.php:139
+msgid "Third Footer Widget Area"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:37
+msgid "Copyright text"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:55
+msgid "Text Color"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:60
+msgid "Link Color"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:65
+msgid "Hover Link Color"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:70
+msgid "Headings Color"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:75
+msgid "Primary Menu Color"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:80
+msgid "Primary Link Color"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:85
+msgid "Primary Hover Link Color"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:90
+msgid "Primary Active Link Color"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:95
+msgid "Primary Active Background Color"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:100
+msgid "Dropdown Menu Color"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:105
+msgid "Dropdown Link Color"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:110
+msgid "Dropdown Hover Link Color"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:115
+msgid "Dropdown Hover Background Color"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:121
+msgid "Dropdown Active Link Color"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:126
+msgid "Dropdown Active Background Color"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:131
+msgid "Footer Text Color"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:136
+msgid "Footer Link Color"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:141
+msgid "Footer Hover Link Color"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:146
+msgid "Footer Background Color"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:155
+msgid "Fonts"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:161
+msgid "Body Text Font"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:168
+msgid "Headings Font"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:175
+msgid "Menu Font"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:186
+msgid "Templating Section"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:187
+msgid "You can here show or hide some of the blocks of the default templating construction. You can also define the look of the navigation bar."
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:199
+msgid "Display Header Logo"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:206
+msgid "Display Footer Copyright"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:213
+msgid "Display Header Searchbox"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:220
+msgid "Show Navbar Brand"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:221
+msgid "This will display the site name as first information of the navigation bar."
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:228
+msgid "Visible Breadcrumb (hidden otherwise)"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:235
+msgid "Use Post Excerpts as Intro"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:236
+msgid "This will show the excerpt as the introduction of a post on the post page if it is defined."
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:243
+msgid "Show Read More Buttons"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:244
+msgid "Add a \"read more\" button to posts excerpts in lists."
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:251
+msgid "Pagination Limit"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:252
+msgid "This will set the number of pages to show before AND after current one in numerical pagination."
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:274
+msgid "Layout Section"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:275
+msgid "You can set here the default layouts used for blog pages (any post page) and others (any page that is not a post: home, pages, search ...)."
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:281
+msgid "Blog Pages Default Template"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:282
+msgid "Select here the default template for BLOG PAGES."
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:285
+#: includes/basicbootstrap-customizer-config.php:298
+msgid "Full Width"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:286
+#: includes/basicbootstrap-customizer-config.php:299
+msgid "Left Sidebar"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:287
+#: includes/basicbootstrap-customizer-config.php:300
+msgid "Right Sidebar"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:294
+msgid "Other Pages Default Template"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:295
+msgid "Select here the default template for NON-BLOG PAGES."
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:307
+msgid "Posts Lists Template"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:308
+msgid "Select here the number of columns used for posts lists."
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:311
+msgid "One Column"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:312
+msgid "Two Columns"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:313
+msgid "Three Columns"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:320
+msgid "Navbar Position"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:321
+msgid "You can define here the type of your navbar (for more info, see <a href=\"http://getbootstrap.com/components/#navbar\">getbootstrap.com</a>)."
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:324
+#: includes/basicbootstrap-customizer-config.php:338
+msgid "Default Classic Navbar"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:325
+msgid "Fixed to Top Navbar"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:326
+msgid "Fixed to Bottom Navbar"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:327
+msgid "Static Top Navbar"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:334
+msgid "Navbar Styling"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:335
+msgid "You can define here the style of your navbar (for more info, see <a href=\"http://getbootstrap.com/components/#navbar\">getbootstrap.com</a>)."
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:339
+msgid "Inverted Navbar"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:340
+msgid "Custom Navbar (navbar-custom class)"
+msgstr ""
+
+#: includes/error-pages.php:190
+msgid "Unauthorized"
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Breadcrumb.php:96
+msgid "Home"
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Breadcrumb.php:119
+msgid "401 Unauthorized"
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Breadcrumb.php:122
+msgid "403 Forbidden Access"
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Breadcrumb.php:125
+msgid "404 Not Found"
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Breadcrumb.php:175
+msgid "Tags"
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Breadcrumb.php:180
+#, php-format
+msgid "#%s"
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Breadcrumb.php:189
+msgid "Post Formats"
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Breadcrumb.php:201
+#, php-format
+msgid "Search: \"%s\""
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Breadcrumb.php:246
+msgid "Authors"
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Setup.php:244
+msgid "Link Format Post Options"
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Setup.php:252
+msgid "Link URL"
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Setup.php:263
+msgid "Audio Format Post Options"
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Setup.php:271
+msgid "Audio Host Type"
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Setup.php:275
+#: includes/src/WP_Basic_Bootstrap_Setup.php:315
+msgid "Embed Code"
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Setup.php:276
+#: includes/src/WP_Basic_Bootstrap_Setup.php:316
+msgid "Self Hosted"
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Setup.php:281
+msgid "Audio Embed Code"
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Setup.php:288
+msgid "Upload Audio File"
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Setup.php:292
+msgid "Upload or select your self hosted audio"
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Setup.php:303
+msgid "Video Format Post Options"
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Setup.php:311
+msgid "Video Host Type"
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Setup.php:321
+msgid "Video Embed Code"
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Setup.php:323
+msgid "Paste the embed code here. If you want to use self hosted, you may leave it blank and choose self hosted option above."
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Setup.php:328
+msgid "Upload Video File"
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Setup.php:332
+msgid "Upload or select your self hosted Video. If you want to use embed code. you may leave it blank and choose embed code option above."
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Setup.php:342
+msgid "Quote Format Post Options"
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Setup.php:350
+msgid "Quote Content"
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Setup.php:355
+msgid "Quote Source Name"
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Setup.php:360
+msgid "Quote Source URL"
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Setup.php:370
+msgid "Status Format Post Options"
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Setup.php:378
+msgid "Status Type"
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Setup.php:382
+msgid "Twitter Status"
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Setup.php:383
+msgid "Facebook Status"
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Setup.php:388
+msgid "Status link (URL)"
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Setup.php:398
+msgid "Gallery Format Post Options"
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Setup.php:406
+msgid "Gallery Type"
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Setup.php:410
+msgid "Slider Gallery"
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Setup.php:411
+msgid "Tiled Gallery"
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Setup.php:416
+msgid "Upload or Choose Images"
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Setup.php:418
+msgid "Choose or upload images for this gallery"
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Setup.php:429
+msgid "About attachment single page"
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Setup.php:437
+msgid "This setting lets you disable the attachment page on front-end for this media (will generate a 403 error)."
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Setup.php:441
+msgid "Attachment page visibility"
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Setup.php:445
+msgid "Visible"
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Setup.php:446
+msgid "Not visible"
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Widget_Recent_Comments.php:28
+msgid "Recent Comments"
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Widget_Recent_Comments.php:96
+#: includes/src/WP_Basic_Bootstrap_Widget_Recent_Posts.php:100
+msgid "Title:"
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Widget_Recent_Comments.php:99
+msgid "Number of comments to show:"
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Widget_Recent_Comments.php:103
+msgid "Display comment date?"
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Widget_Recent_Posts.php:30
+msgid "Recent Posts"
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Widget_Recent_Posts.php:103
+msgid "Number of posts to show:"
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Widget_Recent_Posts.php:107
+msgid "Display post date?"
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Widget_Recent_Posts.php:110
+msgid "Display post thumbnail?"
+msgstr ""
+
+#: includes/templates-library.php:201
+#, php-format
+msgid "Read the full article: %s"
+msgstr ""
+
+#: includes/templates-library.php:203
+msgid "read more"
+msgstr ""
+
+#: partials/comments/comment-item-cb.php:19
+msgid "Post author"
+msgstr ""
+
+#: partials/comments/comment-item-cb.php:26
+#: partials/comments/pingback-item-cb.php:16
+msgid "Permalink"
+msgstr ""
+
+#: partials/comments/comment-item-cb.php:34
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: partials/comments/comment-item-cb.php:38
+msgid "Reply"
+msgstr ""
+
+#: partials/comments/comment-item-cb.php:48
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: partials/comments/pingback-item-cb.php:9
+msgid "Pingback:"
+msgstr ""
+
+#: partials/layout/navbar.php:15
+msgid "Toggle navigation"
+msgstr ""
+
+#: partials/loop.php:27
+msgid "Sorry, no posts matched your criteria."
+msgstr ""
+
+#: partials/meta/content-footer-attachment.php:22
+#: partials/meta/content-footer-attachment.php:33
+msgid "Original file"
+msgstr ""
+
+#: partials/meta/content-footer-page.php:10 partials/meta/content-footer.php:21
+#: partials/meta/summary-footer.php:22
+msgid "0 Comments"
+msgstr ""
+
+#: partials/meta/content-footer-page.php:10 partials/meta/content-footer.php:21
+#: partials/meta/summary-footer.php:22
+msgid "1 Comment"
+msgstr ""
+
+#: partials/meta/content-footer-page.php:10 partials/meta/content-footer.php:21
+#: partials/meta/summary-footer.php:22
+msgid "% Comments"
+msgstr ""
+
+#: partials/meta/content-header-author.php:15
+#, php-format
+msgid "See oneline %s"
+msgstr ""
+
+#: partials/meta/content-header-author.php:24
+#, php-format
+msgid "%s posts written"
+msgstr ""
+
+#: partials/pagination/numerical.php:26
+#, php-format
+msgid "See page %s"
+msgstr ""
+
+#: partials/pagination/numerical.php:29
+msgid "See previous page"
+msgstr ""
+
+#: partials/pagination/numerical.php:30
+msgid "See next page"
+msgstr ""
+
+#: partials/pagination/numerical.php:31
+msgid "See first page"
+msgstr ""
+
+#: partials/pagination/numerical.php:32
+msgid "See last page"
+msgstr ""
+
+#: partials/pagination/simple.php:22
+msgid "Older post"
+msgstr ""
+
+#: partials/pagination/simple.php:31
+msgid "Newer post"
+msgstr ""
+
+#: partials/widgets/recent-comments.php:27
+#, php-format
+msgid "%1$s on %2$s"
+msgstr ""
+
+#: post-templates/summary.php:22
+msgid "Featured"
+msgstr ""
+
+#: search.php:33
+#, php-format
+msgid "Search results for \"%s\""
+msgstr ""
+
+#: search.php:42
+msgid "Nothing Found"
+msgstr ""
+
+#: search.php:45
+msgid "Sorry, nothing matched your search. Please try again."
+msgstr ""
+
+#: searchform.php:14
+msgid "Search for:"
+msgstr ""
+
+#: searchform.php:20 searchform.php:27
+msgid "Search"
+msgstr ""
+
+#: searchform.php:22
+msgid "Type your search and press enter"
+msgstr ""
+
+#: searchform.php:29
+msgid "Make your search"
+msgstr ""
