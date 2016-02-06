@@ -4,15 +4,23 @@ WP Basic Bootstrap - A 101 Wordpress theme ready for modern web
 Description
 -----------
 
-WP Basic Bootstrap is a full "101" Wordpress theme built with the Bootstrap framework and the Font Awesome images font, 
-ready to build a responsive and accessible blog or to be modified to build your own theme.
+WP Basic Bootstrap is a full "101" [Wordpress](http://wordpress.org/) theme built with 
+the [Bootstrap framework](http://getbootstrap.com/) and the [Font Awesome images font](http://fontawesome.io/), 
+which implements all features of Wordpress version 4 and is ready to build a responsive 
+and accessible blog or to be modified to build your own theme.
 
-The theme is built using the Wordpress best practices: it supports all theme features, 
-uses internal `filters` and `actions` to plug its rendering options and its code follows the Wordpress 
-and PSR coding standards.
+The theme is built using the Wordpress best practices: it supports all theme features such
+as post formats, header and background customization and sticky posts, uses internal 
+`filters` and `actions` to plug its rendering options, is ready for translations and its code follows the 
+[Wordpress](http://codex.wordpress.org/WordPress_Coding_Standards) and [PSR](http://www.php-fig.org/) 
+coding standards.
 
 Many options are available in the admin panel's customizer, such as layout selection, 
 template options, colors and fonts.
+
+The theme can ba used out of the box but can also be a **robust and well-coded** basis
+to build your own theme (see the license section of this file to learn about commercial
+usage).
 
 
 Installation
@@ -28,43 +36,50 @@ Installation
 Copyright & License
 -------------------
 
-WP Basic Bootstrap, Copyright 2016 Pierre Cassat & contributors
+    WP Basic Bootstrap, Copyright 2016 Pierre Cassat & contributors
 
-WP Basic Bootstrap is distributed under a dual-license:
+The *WP Basic Bootstrap* theme is distributed under a **dual-license**:
 
--   under the terms of the GNU GPL for non-commercial usage
--   under the terms of a commercial license for commercial usage
+-   under the terms of the **GNU GPL for non-commercial usage**
+-   under the terms of a **commercial license for commercial usage**.
 
 Please contact the author for more information about the commercial license.
 
 WP Basic Bootstrap bundles the following third-party resources:
 
-1.  Bootstrap <http://getbootstrap.com/>
-    Licensed under MIT <https://github.com/twbs/bootstrap/blob/master/LICENSE>
+1.  Bootstrap (<http://getbootstrap.com/>), licensed under [MIT](https://github.com/twbs/bootstrap/blob/master/LICENSE)
 
-2.  Font Awesome <http://fontawesome.io/>
-    Licensed under MIT <https://github.com/dimsemenov/Magnific-Popup/blob/master/LICENSE>
-    <http://fontawesome.io/license> (Font: SIL OFL 1.1, CSS: MIT License)
+2.  Font Awesome (<http://fontawesome.io/>), licensed under both [MIT](https://github.com/dimsemenov/Magnific-Popup/blob/master/LICENSE)
+    for the CSS and [SIL OFL 1.1](http://fontawesome.io/license) for the Font
+
+3.  Social Buttons for Bootstrap (<http://github.com/lipis/bootstrap-social>), licensed 
+    under [MIT](https://github.com/lipis/bootstrap-social/blob/gh-pages/LICENSE)
 
 
 Templates construction
 ----------------------
+
+NOTE - A documentation is coming ...
 
 ### Global layout
 
 As largely discussed in the [Wordpress Theme Handbook](http://developer.wordpress.org/themes/basics/), the whole theme
 is built to let any page uses its *header*, *sidebar* and *footer* do their job:
 
+
     ---------------------
-    | header.php        |
-    ---------------------
-    | any           |  sidebar.php
+    | header.php        |               wp_head()
+    ---------------------               body_class()
+    | any           |  sidebar.php      dynamic_sidebar(main)
     | content       |   |
+    |               |   |               get_template_part(content, get_post_format())
+    |               |   |
     |               |   |
     |               |   |
     ---------------------
-    | footer.php        |
+    | footer.php        |               wp_footer()
     ---------------------
+
 
 The global layout follows the HTML5, ARIA and RDFa best practices:
 
@@ -120,13 +135,3 @@ To be compliant with SEO, we try to implement the following [RDFa schemas](http:
 -   [ListItem](http://schema.org/ListItem) for the breadcrumbs
 
 Learn more (in French): <https://openclassrooms.com/courses/creer-un-blog-accessible-avec-html5>.
-
-
-Third-party libraries
----------------------
-
-The **WP Basic Bootstrap** theme uses the following third parties:
-
--   [**jQuery**](http://jquery.com/), which is embedded in Wordpress
--   [**Bootstrap**](http://getbootstrap.org/) to build full responsive HTML5 contents
--   [**Font Awesome**](http://fortawesome.github.io/Font-Awesome/) for all icons
