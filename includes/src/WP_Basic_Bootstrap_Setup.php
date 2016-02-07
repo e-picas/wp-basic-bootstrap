@@ -17,6 +17,7 @@ class WP_Basic_Bootstrap_Setup
      */
     public static function init()
     {
+        basicbootstrap_load_config('defaults');
         basicbootstrap_load_class('TGM_Plugin_Activation');
         add_action('tgmpa_register', array('WP_Basic_Bootstrap_Setup','setupRequirements'));
     }
@@ -244,7 +245,7 @@ class WP_Basic_Bootstrap_Setup
      */
     public static function metaBoxesInit($meta_boxes)
     {
-        basicbootstrap_load_library('basicbootstrap-meta-boxes');
+        basicbootstrap_load_config('meta-boxes');
         global $basicbootstrap_meta_boxes;
         return array_merge($meta_boxes, $basicbootstrap_meta_boxes);
     }

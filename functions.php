@@ -47,7 +47,7 @@ exit();
 /**
  * Include the global config (required)
  */
-require_once BASICBOOTSTRAP_BASEPATH . 'includes/basicbootstrap-config.php';
+require_once BASICBOOTSTRAP_BASEPATH . 'includes/basicbootstrap.php';
 
 /*/
 // the functions for debugging ...

@@ -41,7 +41,7 @@ class WP_Basic_Bootstrap_Customizer extends WP_Basic_Bootstrap_Customizer_Abstra
     {
         $_this = self::getInstance($wp_customizer);
 
-        basicbootstrap_load_library('basicbootstrap-customizer-config');
+        basicbootstrap_load_config('customizer');
         global $basicbootstrap_customizer_config;
         $_this->processData($basicbootstrap_customizer_config, true);
 
