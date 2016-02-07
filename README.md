@@ -51,6 +51,3 @@ WP Basic Bootstrap bundles the following third-party resources:
 
 2.  Font Awesome (<http://fontawesome.io/>), licensed under both [MIT](https://github.com/dimsemenov/Magnific-Popup/blob/master/LICENSE)
     for the CSS and [SIL OFL 1.1](http://fontawesome.io/license) for the Font
-
-3.  Social Buttons for Bootstrap (<http://github.com/lipis/bootstrap-social>), licensed 
-    under [MIT](https://github.com/lipis/bootstrap-social/blob/gh-pages/LICENSE)
