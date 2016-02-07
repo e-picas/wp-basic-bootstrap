@@ -17,6 +17,9 @@
  *
  * No function is defined here, to see the setup content, have a look at `\WP_Basic_Bootstrap_Setup`.
  *
+ * This plugin uses prefix `WP_Basic_Bootsrtap_` for its PHP classes BUT the simpler prefix
+ * `basicbootstrap_` for its PHP functions.
+ *
  * @link https://codex.wordpress.org/Theme_Development
  * @link https://codex.wordpress.org/Child_Themes
  * @package WP_Basic_Bootstrap
