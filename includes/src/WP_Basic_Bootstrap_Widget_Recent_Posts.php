@@ -92,20 +92,9 @@ class WP_Basic_Bootstrap_Widget_Recent_Posts extends WP_Widget_Recent_Posts
      */
     public function form($instance)
     {
-        $title     = isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : '';
-        $number    = isset( $instance['number'] ) ? absint( $instance['number'] ) : 5;
-        $show_date = isset( $instance['show_date'] ) ? (bool) $instance['show_date'] : false;
         $show_thumb = isset( $instance['show_thumb'] ) ? (bool) $instance['show_thumb'] : true;
+        parent::form($instance);
         ?>
-        <p><label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
-            <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" /></p>
-
-        <p><label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of posts to show:' ); ?></label>
-            <input class="tiny-text" id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="number" step="1" min="1" value="<?php echo $number; ?>" size="3" /></p>
-
-        <p><input class="checkbox" type="checkbox"<?php checked( $show_date ); ?> id="<?php echo $this->get_field_id( 'show_date' ); ?>" name="<?php echo $this->get_field_name( 'show_date' ); ?>" />
-            <label for="<?php echo $this->get_field_id( 'show_date' ); ?>"><?php _e( 'Display post date?' ); ?></label></p>
-
         <p><input class="checkbox" type="checkbox"<?php checked( $show_thumb ); ?> id="<?php echo $this->get_field_id( 'show_thumb' ); ?>" name="<?php echo $this->get_field_name( 'show_thumb' ); ?>" />
             <label for="<?php echo $this->get_field_id( 'show_thumb' ); ?>"><?php _e( 'Display post thumbnail?', 'basicbootstrap' ); ?></label></p>
         <?php

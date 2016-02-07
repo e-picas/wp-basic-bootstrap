@@ -101,31 +101,24 @@ class WP_Basic_Bootstrap_Widget_Author_Block
     {
         $title      = !empty($instance['title'])      ? $instance['title'] : '';
         $author_id  = !empty($instance['author_id'])  ? $instance['author_id'] : null;
-        $__         = '__';
-        $esc_attr   = 'esc_attr';
-        $selected   = 'selected';
         $authors_list = get_users(array(
             'orderby'           => 'ID',
         ));
 
-        echo <<<CTT
-<p>
-    <label for="{$this->get_field_id('title')}">{$__('Title:')}</label>
-    <input class="widefat" id="{$this->get_field_id('title')}" name="{$this->get_field_name('title')}" type="text" value="{$esc_attr($title)}">
-</p>
-<p>
-    <select class="widefat" id="{$this->get_field_id('author_id')}" name="{$this->get_field_name('author_id')}" style="width:100%;">
-        <option value="current">{$__('Current user')}</option>
-CTT;
-        foreach ($authors_list as $author) {
-            echo <<<CTT
-        <option {$selected($author_id, $author->ID)} value="{$author->ID}">{$author->display_name}</option>
-CTT;
-        }
-        echo <<<CTT
-    </select>
-</p>
-CTT;
+        ?>
+        <p><label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" /></p>
+
+        <p><label for="<?php echo $this->get_field_id( 'author_id' ); ?>"><?php _e('Author:', 'basicbootstrap'); ?></label>
+            <select class="widefat" id="<?php echo $this->get_field_id('author_id'); ?>" name="<?php echo $this->get_field_name('author_id'); ?>" style="width:100%;">
+                <option value="current"><?php _e('Current user', 'basicbootstrap'); ?></option>
+        <?php foreach ($authors_list as $author) : ?>
+                <option <?php echo selected($author_id, $author->ID); ?> value="<?php echo $author->ID; ?>"><?php echo $author->display_name; ?></option>
+        <?php endforeach; ?>
+            </select>
+            <span class="description"><?php _e('Select "current user" to show post author info on post pages.', 'basicbootstrap'); ?></span>
+        </p>
+        <?php
     }
 
     /**

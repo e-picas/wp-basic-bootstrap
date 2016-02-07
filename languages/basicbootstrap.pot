@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WP Basic Bootstrap\n"
-"POT-Creation-Date: 2016-02-07 13:30+0100\n"
+"POT-Creation-Date: 2016-02-07 13:53+0100\n"
 "PO-Revision-Date: 2016-02-04 10:43+0100\n"
 "Last-Translator: picas <me@picas.fr>\n"
 "Language-Team: \n"
@@ -911,20 +911,27 @@ msgstr ""
 msgid "About <a href=\"%1$s\">%2$s</a>"
 msgstr ""
 
+#: includes/src/WP_Basic_Bootstrap_Widget_Author_Block.php:109
+msgid "Title:"
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Widget_Author_Block.php:112
+msgid "Author:"
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Widget_Author_Block.php:114
+msgid "Current user"
+msgstr ""
+
+#: includes/src/WP_Basic_Bootstrap_Widget_Author_Block.php:119
+msgid "Select \"current user\" to show post author info on post pages."
+msgstr ""
+
 #: includes/src/WP_Basic_Bootstrap_Widget_Recent_Comments.php:28
 msgid "Recent Comments"
 msgstr ""
 
 #: includes/src/WP_Basic_Bootstrap_Widget_Recent_Comments.php:96
-#: includes/src/WP_Basic_Bootstrap_Widget_Recent_Posts.php:100
-msgid "Title:"
-msgstr ""
-
-#: includes/src/WP_Basic_Bootstrap_Widget_Recent_Comments.php:99
-msgid "Number of comments to show:"
-msgstr ""
-
-#: includes/src/WP_Basic_Bootstrap_Widget_Recent_Comments.php:103
 msgid "Display comment date?"
 msgstr ""
 
@@ -932,15 +939,7 @@ msgstr ""
 msgid "Recent Posts"
 msgstr ""
 
-#: includes/src/WP_Basic_Bootstrap_Widget_Recent_Posts.php:103
-msgid "Number of posts to show:"
-msgstr ""
-
-#: includes/src/WP_Basic_Bootstrap_Widget_Recent_Posts.php:107
-msgid "Display post date?"
-msgstr ""
-
-#: includes/src/WP_Basic_Bootstrap_Widget_Recent_Posts.php:110
+#: includes/src/WP_Basic_Bootstrap_Widget_Recent_Posts.php:99
 msgid "Display post thumbnail?"
 msgstr ""
 
