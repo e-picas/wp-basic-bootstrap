@@ -44,6 +44,10 @@ global $post;
         </div>
 
     </section>
-    <?php get_template_part('partials/social-share', 'attachment'); ?>
+
+    <?php if (get_basicbootstrap_mod('show_sharing_links_attachment')) : ?>
+        <?php get_template_part('partials/social-share', 'attachment'); ?>
+    <?php endif; ?>
+
 </article>
 <hr />

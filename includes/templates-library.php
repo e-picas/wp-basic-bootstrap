@@ -40,16 +40,26 @@ function get_posts_list_type()
  */
 function get_template_type()
 {
-    if ( ! is_active_sidebar('primary-widget-area')) {
-        return 'full_width';
+    global $template_type;
+    if (!isset($template_type)) {
+        if ( ! is_active_sidebar('primary-widget-area')) {
+            $template_type = 'full_width';
+        } else {
+            $current = get_page_template_slug();
+            if (!empty($current)) {
+                $template_type = (
+                    $current == 'default' ?
+                        get_basicbootstrap_mod('not_blog_pages_layout') :
+                        str_replace(array('page-templates/', '.php'), '', $current)
+                );
+            } elseif ( ! is_blog_page()) {
+                $template_type = get_basicbootstrap_mod('not_blog_pages_layout');
+            } else {
+                $template_type = get_basicbootstrap_mod('blog_pages_layout');
+            }
+        }
     }
-    $current = get_page_template_slug();
-    if (!empty($current)) {
-        return ($current == 'default' ? get_basicbootstrap_mod('not_blog_pages_layout') : str_replace(array('page-templates/', '.php'), '', $current));
-    } elseif ( ! is_blog_page()) {
-        return get_basicbootstrap_mod('not_blog_pages_layout');
-    }
-    return get_basicbootstrap_mod('blog_pages_layout');
+    return $template_type;
 }
 
 function get_basicbootsrap_image_sizes($type = 'post_thumbnails')

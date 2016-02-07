@@ -44,6 +44,13 @@ global $post;
         <?php the_content(); ?>
         <div class="blog-post-links"><?php get_the_link_pages(); ?></div>
     </section>
-    <?php get_template_part('partials/social-share', get_post_format()); ?>
+
+    <?php if (
+        (is_page() && get_basicbootstrap_mod('show_sharing_links_page')) ||
+        (!is_page() && get_basicbootstrap_mod('show_sharing_links_post'))
+    ) : ?>
+        <?php get_template_part('partials/social-share', get_post_format()); ?>
+    <?php endif; ?>
+
 </article>
 <hr />

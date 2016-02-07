@@ -202,6 +202,7 @@ $basicbootstrap_customizer_config = array(
                 'control_type' => 'select',
                 'choices' => array(
                     'full_width' => __('Full Width', 'basicbootstrap'),
+                    'full_width_offset' => __('Full Width With Offset', 'basicbootstrap'),
                     'left_sidebar' => __('Left Sidebar', 'basicbootstrap'),
                     'right_sidebar' => __('Right Sidebar', 'basicbootstrap'),
                 ),
@@ -215,6 +216,7 @@ $basicbootstrap_customizer_config = array(
                 'control_type' => 'select',
                 'choices' => array(
                     'full_width' => __('Full Width', 'basicbootstrap'),
+                    'full_width_offset' => __('Full Width With Offset', 'basicbootstrap'),
                     'left_sidebar' => __('Left Sidebar', 'basicbootstrap'),
                     'right_sidebar' => __('Right Sidebar', 'basicbootstrap'),
                 ),
@@ -396,6 +398,25 @@ $basicbootstrap_customizer_config = array(
                 'transport' => 'refresh',
             ),
 
+            array(
+                'id' => 'show_sharing_links_page',
+                'label' => __('Show Sharing Links on Pages', 'basicbootstrap'),
+                'control_type' => 'checkbox',
+                'transport' => 'refresh',
+            ),
+            array(
+                'id' => 'show_sharing_links_post',
+                'label' => __('Show Sharing Links on Posts', 'basicbootstrap'),
+                'control_type' => 'checkbox',
+                'transport' => 'refresh',
+            ),
+            array(
+                'id' => 'show_sharing_links_attachment',
+                'label' => __('Show Sharing Links on Attachments', 'basicbootstrap'),
+                'control_type' => 'checkbox',
+                'transport' => 'refresh',
+            ),
+
         ), // end basicbootstrap_templating_body settings
     ), // end basicbootstrap_templating_body section
 
@@ -434,6 +455,88 @@ $basicbootstrap_customizer_config = array(
 
         ), // end basicbootstrap_templating_header_footer settings
     ), // end basicbootstrap_templating_header_footer section
+
+    'basicbootstrap_templating_meta_data' => array(
+        'object' => 'section',
+        'title' => __('Contents Meta-Data', 'basicbootstrap'),
+        'description' => __('You can here show or hide some of your website contents meta-data.', 'basicbootstrap'),
+        'settings' => array(
+
+            array(
+                'id' => 'show_author_meta',
+                'label' => __('Show Author', 'basicbootstrap'),
+                'control_type' => 'checkbox',
+                'transport' => 'refresh',
+            ),
+            array(
+                'id' => 'show_pubdate_meta',
+                'label' => __('Show Publication Date', 'basicbootstrap'),
+                'control_type' => 'checkbox',
+                'transport' => 'refresh',
+            ),
+            array(
+                'id' => 'show_moddate_meta',
+                'label' => __('Show Last Update Date', 'basicbootstrap'),
+                'control_type' => 'checkbox',
+                'transport' => 'refresh',
+            ),
+            array(
+                'id' => 'show_post_format_meta',
+                'label' => __('Show Post Format', 'basicbootstrap'),
+                'control_type' => 'checkbox',
+                'transport' => 'refresh',
+            ),
+            array(
+                'id' => 'show_post_cats',
+                'label' => __('Show Post Categories', 'basicbootstrap'),
+                'control_type' => 'checkbox',
+                'transport' => 'refresh',
+            ),
+            array(
+                'id' => 'show_post_tags',
+                'label' => __('Show Post Tags', 'basicbootstrap'),
+                'control_type' => 'checkbox',
+                'transport' => 'refresh',
+            ),
+            array(
+                'id' => 'show_comments_link',
+                'label' => __('Show Comments Link', 'basicbootstrap'),
+                'control_type' => 'checkbox',
+                'transport' => 'refresh',
+            ),
+            array(
+                'id' => 'show_permalink',
+                'label' => __('Show Permalink', 'basicbootstrap'),
+                'control_type' => 'checkbox',
+                'transport' => 'refresh',
+            ),
+            array(
+                'id' => 'show_edit_links',
+                'label' => __('Show Edit Links', 'basicbootstrap'),
+                'control_type' => 'checkbox',
+                'transport' => 'refresh',
+            ),
+            array(
+                'id' => 'show_attachment_mime_type',
+                'label' => __('Show Attachments MIME Types', 'basicbootstrap'),
+                'control_type' => 'checkbox',
+                'transport' => 'refresh',
+            ),
+            array(
+                'id' => 'show_attachment_sizes',
+                'label' => __('Show Attachment Sizes', 'basicbootstrap'),
+                'control_type' => 'checkbox',
+                'transport' => 'refresh',
+            ),
+            array(
+                'id' => 'show_attachment_link',
+                'label' => __('Show Attachment Link', 'basicbootstrap'),
+                'control_type' => 'checkbox',
+                'transport' => 'refresh',
+            ),
+
+        ), // end basicbootstrap_templating_meta_data settings
+    ), // end basicbootstrap_templating_meta_data section
 
     // the styling panel
     'basicbootstrap_styling' => array(
@@ -474,6 +577,9 @@ $basicbootstrap_customizer_config = array(
             ),
             array(
                 'id' => 'basicbootstrap_templating_body',
+            ),
+            array(
+                'id' => 'basicbootstrap_templating_meta_data',
             ),
 
         ), // end basicbootstrap_templating sections

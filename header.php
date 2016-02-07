@@ -60,6 +60,8 @@ error_log('applied template : '.$template);
                 <?php endif; ?>
             <?php elseif ($template == 'right_sidebar') : ?>
                 <div class="col-sm-9 blog-main-left" itemprop="mainContentOfPage">
+            <?php elseif ($template == 'full_width_offset') : ?>
+                <div class="col-sm-10 col-md-offset-1 blog-main" itemprop="mainContentOfPage">
             <?php else : ?>
                 <div class="col-sm-12 blog-main" itemprop="mainContentOfPage">
             <?php endif; ?>

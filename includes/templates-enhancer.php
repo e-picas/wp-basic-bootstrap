@@ -189,47 +189,51 @@ function sanitize_simple_html_field($val)
  */
 function get_page_type()
 {
-    if (is_front_page() && is_home()) {
-        // default wordpress: auto-generated homepage => front-page.php
-        return 'default_home';
-    } elseif (is_front_page()) {
-        // user defined front page (homepage post) => front-page.php
-        return 'front_page';
-    } elseif (is_home()) {
-        // user defined blog page (post) => home.php
-        return 'home';
-    } elseif (is_search()) {
-        return 'search';
-    } elseif (is_401()) {
-        return '401';
-    } elseif (is_403()) {
-        return '403';
-    } elseif (is_404()) {
-        return '404';
-    } elseif (is_single() && is_attachment()) {
-        return 'attachment';
-    } elseif (is_page()) {
-        return 'page';
-    } elseif (is_single() && is_sticky()) {
-        return 'post_sticky';
-    } elseif (is_single()) {
-        return 'post';
-    } elseif (is_archive() && is_tag()) {
-        return 'tag';
-    } elseif (is_archive() && is_category()) {
-        return 'category';
-    } elseif (is_archive() && is_author()) {
-        return 'author';
-    } elseif (is_archive() && is_post_type_archive()) {
-        return 'post_type_archive';
-    } elseif (is_archive() && is_tax()) {
-        return 'taxonomy';
-    } elseif (is_archive() && (is_date() || is_year() || is_month() || is_day() || is_time())) {
-        return 'date';
-    } elseif (is_archive()) {
-        return 'archive';
+    global $page_type;
+    if (!isset($page_type)) {
+        $page_type = 'index';
+        if (is_front_page() && is_home()) {
+            // default wordpress: auto-generated homepage => front-page.php
+            $page_type = 'default_home';
+        } elseif (is_front_page()) {
+            // user defined front page (homepage post) => front-page.php
+            $page_type = 'front_page';
+        } elseif (is_home()) {
+            // user defined blog page (post) => home.php
+            $page_type = 'home';
+        } elseif (is_search()) {
+            $page_type = 'search';
+        } elseif (is_401()) {
+            $page_type = '401';
+        } elseif (is_403()) {
+            $page_type = '403';
+        } elseif (is_404()) {
+            $page_type = '404';
+        } elseif (is_single() && is_attachment()) {
+            $page_type = 'attachment';
+        } elseif (is_page()) {
+            $page_type = 'page';
+        } elseif (is_single() && is_sticky()) {
+            $page_type = 'post_sticky';
+        } elseif (is_single()) {
+            $page_type = 'post';
+        } elseif (is_archive() && is_tag()) {
+            $page_type = 'tag';
+        } elseif (is_archive() && is_category()) {
+            $page_type = 'category';
+        } elseif (is_archive() && is_author()) {
+            $page_type = 'author';
+        } elseif (is_archive() && is_post_type_archive()) {
+            $page_type = 'post_type_archive';
+        } elseif (is_archive() && is_tax()) {
+            $page_type = 'taxonomy';
+        } elseif (is_archive() && (is_date() || is_year() || is_month() || is_day() || is_time())) {
+            $page_type = 'date';
+        } elseif (is_archive()) {
+            $page_type = 'archive';
+        }
     }
-    return 'index';
+    return $page_type;
 }
 
 /**
@@ -242,14 +246,19 @@ function get_page_type()
  */
 function is_blog_page()
 {
-    return (bool)
-        (is_home() && ! is_front_page()) ||
-        is_tag() ||
-        is_category() ||
-        (is_single() && ! is_page()) ||
-        is_tax() ||
-        is_archive()
-        ;
+    global $blog_page;
+    if (!isset($blog_page)) {
+        $blog_page = (bool)
+            is_home() ||
+    //        (is_home() && ! is_front_page()) ||
+            is_tag() ||
+            is_category() ||
+            (is_single() && ! is_page()) ||
+            is_tax() ||
+            is_archive()
+                ;
+    }
+    return $blog_page;
 }
 
 /**

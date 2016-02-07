@@ -14,7 +14,7 @@ $page_type  = get_page_type();
 ?>
     </div><!-- /.blog-main -->
 
-<?php if ($template != 'full_width') : ?>
+<?php if (strpos($template, 'full_width')===false) : ?>
     <?php if ($template == 'left_sidebar') : ?>
     <aside id="sidebar" role="complementary" class="col-sm-3 blog-sidebar-left">
     <?php elseif ($template == 'right_sidebar') : ?>

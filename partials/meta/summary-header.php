@@ -8,11 +8,17 @@
 global $post;
 ?>
 <section class="blog-post-meta">
-    <time datetime="<?php
+
+    <time class="entry-meta-item post-date entry-date<?php
+        if (! get_basicbootstrap_mod('show_pubdate_meta')) echo ' hidden';
+    ?>" title="<?php
+        esc_attr_e('Publication date', 'basicbootstrap');
+    ?>" datetime="<?php
         the_time('c');
-    ?>" class="entry-meta-item post-date entry-date updated" pubdate="pubdate" itemprop="datePublished"><?php
-        the_time(get_option('date_format'));
+    ?>" pubdate="pubdate" itemprop="datePublished"><?php
+        the_time( get_option('date_format') );
     ?></time>
+
 </section>
 
 
