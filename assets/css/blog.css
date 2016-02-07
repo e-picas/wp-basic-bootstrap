@@ -136,6 +136,10 @@ img.size-post-thumbnail {
     width: auto !important;
     height: auto !important;
 }
+img.size-post-thumbnail {
+    padding: auto;
+    margin: 6px 0 12px;
+}
 cite.vcard {
     font-style: normal;
 }
