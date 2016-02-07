@@ -46,6 +46,11 @@ exit();
  */
 require_once BASICBOOTSTRAP_BASEPATH . 'includes/basicbootstrap-config.php';
 
+/*/
+// the functions for debugging ...
+basicbootstrap_load_library('dev-lib');
+//*/
+
 /**
  * Load the setup class (required)
  */

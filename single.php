@@ -19,22 +19,24 @@
 
 $template = get_template_type();
 $page_type = get_page_type();
+$singular_type = get_singular_type();
 
 /*/
 error_log('from file : '.__FILE__);
 error_log('page type : '.$page_type);
+error_log('singular type : '.$singular_type);
 error_log('applied template : '.$template);
 //*/
 
-get_header(); ?>
+get_header_singular(); ?>
 
 <section id="content" role="main">
 
     <?php get_the_breadcrumb(); ?>
 
-    <?php get_template_part('partials/loop', 'single'); ?>
+    <?php get_template_part_singular('partials/loop'); ?>
 
 </section>
 
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+<?php get_sidebar_singular(); ?>
+<?php get_footer_singular(); ?>

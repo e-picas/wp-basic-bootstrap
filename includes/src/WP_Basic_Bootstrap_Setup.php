@@ -95,8 +95,6 @@ class WP_Basic_Bootstrap_Setup
         // load custom libraries
         basicbootstrap_load_library('templates-enhancer');
         basicbootstrap_load_library('templates-library');
-        // the functions to clean up ...
-        basicbootstrap_load_library('functions-to-cleanup');
 
         // load vendors
         basicbootstrap_load_class('wp_bootstrap_navwalker');
@@ -168,6 +166,11 @@ class WP_Basic_Bootstrap_Setup
             get_template_directory_uri() . '/style_print.css', array('basicbootstrap-base-styles'), BASICBOOTSTRAP_VERSION, 'print');
         wp_enqueue_script('basicbootstrap-scripts',
             get_template_directory_uri() . '/scripts.js', array('jquery', 'bootstrap'), BASICBOOTSTRAP_VERSION, true);
+
+        // WordPress internal script to move the comment box to the right place when replying to a user
+        if (is_singular() && get_option('thread_comments')) {
+            wp_enqueue_script('comment-reply');
+        }
     }
 
     /**

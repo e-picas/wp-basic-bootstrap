@@ -27,14 +27,13 @@
 $template = get_template_type();
 $page_type = get_page_type();
 
-//dynamic_sidebar('primary-widget-area');
 /*/
 error_log('from file : '.__FILE__);
 error_log('page type : '.$page_type);
 error_log('applied template : '.$template);
 //*/
 
-get_header(); ?>
+get_header('front-page'); ?>
 
 <section id="content" role="main">
 
@@ -42,5 +41,5 @@ get_header(); ?>
 
 </section>
 
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+<?php get_sidebar('front-page'); ?>
+<?php get_footer('front-page'); ?>

@@ -4,6 +4,118 @@
  * @since WP_Basic_Bootstrap 1.0
  */
 
+// TEMPLATES CONSTRUCTIONS
+
+/**
+ * Special process of singular page templating
+ *
+ * Fallback stacks:
+ *
+ * -    for a page: `$type-page.php` -> `$type-single.php` -> `$type.php`
+ * -    for an attachment: `$type-attachment.php` -> `$type-single.php` -> `$type.php`
+ * -    for a custom post type: `$type-post_type.php` -> `$type-single.php` -> `$type.php`
+ * -    for a post type: `$type-post_format.php` -> `$type-post.php` -> `$type-single.php` -> `$type.php`
+ *
+ * @param string $slug The type of template to search (header, footer, sidebar ...)
+ * @param null|string $name The name of the template (eventually received from hooks)
+ * @param null|callable $callback The callback function hooked (get_header, get_footer, get_sidebar ...)
+ * @param null|callable $fct_name The calling original function initially called by the hook to remove: add_action($callback, $fct_name)
+ */
+function get_template_part_singular($slug, $name = null, $callback = null, $fct_name = null)
+{
+    if (is_singular() && (is_null($name) || $name == 'single')) {
+        if (is_null($name)) {
+            $name = 'single';
+        }
+        $singular_type = get_singular_type();
+
+        if (locate_template($slug.'-'.$singular_type.'.php', false, false)) {
+            if (!empty($callback) && !empty($fct_name)) {
+                remove_action($callback, $fct_name);
+                call_user_func($callback, $singular_type);
+                return;
+            } else {
+                get_template_part($slug, $singular_type);
+                return;
+            }
+
+        } elseif (
+            is_single() &&
+            get_post_type() == 'post' &&
+            locate_template($slug.'-post.php', false, false)
+        ) {
+            if (!empty($callback) && !empty($fct_name)) {
+                remove_action($callback, $fct_name);
+                call_user_func($callback, 'post');
+                return;
+            } else {
+                get_template_part($slug, 'post');
+                return;
+            }
+        }
+
+    }
+
+    if (!empty($callback) && !empty($fct_name)) {
+        remove_action($callback, $fct_name);
+        call_user_func($callback, $name);
+        return;
+    }
+
+    get_template_part($slug, $name);
+}
+
+/**
+ * Special process of singular page templating header
+ *
+ * To use this feature, write:
+ *
+ *     add_action('get_header', 'get_header_singular');
+ *
+ * The `get_header` action is documented in `wp-includes/general-template.php`.
+ *
+ * @param $name
+ */
+function get_header_singular($name = null)
+{
+    get_template_part_singular('header', $name, 'get_header', __FUNCTION__);
+}
+add_action('get_header', 'get_header_singular');
+
+/**
+ * Special process of singular page templating footer
+ *
+ * To use this feature, write:
+ *
+ *     add_action('get_footer', 'get_footer_singular');
+ *
+ * The `get_footer` action is documented in `wp-includes/general-template.php`.
+ *
+ * @param $name
+ */
+function get_footer_singular($name = null)
+{
+    get_template_part_singular('footer', $name, 'get_footer', __FUNCTION__);
+}
+add_action('get_footer', 'get_footer_singular');
+
+/**
+ * Special process of singular page templating sidebar
+ *
+ * To use this feature, write:
+ *
+ *     add_action('get_sidebar', 'get_sidebar_singular');
+ *
+ * The `get_header` action is documented in `wp-includes/general-template.php`.
+ *
+ * @param $name
+ */
+function get_sidebar_singular($name = null)
+{
+    get_template_part_singular('sidebar', $name, 'get_sidebar', __FUNCTION__);
+}
+add_action('get_sidebar', 'get_sidebar_singular');
+
 // STICKY POSTS LOOPS
 
 /**
@@ -259,6 +371,30 @@ function is_blog_page()
                 ;
     }
     return $blog_page;
+}
+
+/**
+ * Get the type of a singular page in "attachment", "page", <custom_post_type>, <post_format>
+ *
+ * @return false|string
+ */
+function get_singular_type()
+{
+    global $singular_page_type;
+    if (!isset($singular_page_type)) {
+        if (is_attachment()) {
+            $singular_page_type = 'attachment';
+        } elseif (is_page()) {
+            $singular_page_type = 'page';
+        } elseif (is_single() && get_post_type() != 'post') {
+            $singular_page_type = get_post_type();
+        } elseif (is_single() && get_post_type() == 'post') {
+            $singular_page_type = get_post_format();
+        } else {
+            $singular_page_type = 'single';
+        }
+    }
+    return $singular_page_type;
 }
 
 /**

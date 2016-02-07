@@ -20,7 +20,7 @@ error_log('page type : '.$page_type);
 error_log('applied template : '.$template);
 //*/
 
-get_header(); ?>
+get_header('home'); ?>
 
 <section id="content" role="main">
 
@@ -31,5 +31,5 @@ get_header(); ?>
 
 </section>
 
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+<?php get_sidebar('home'); ?>
+<?php get_footer('home'); ?>

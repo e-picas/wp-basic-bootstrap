@@ -22,7 +22,7 @@ error_log('page type : '.$page_type);
 error_log('applied template : '.$template);
 //*/
 
-get_header(); ?>
+get_header('404'); ?>
 
 <section id="content" role="main">
 
@@ -43,5 +43,5 @@ get_header(); ?>
 
 </section>
 
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+<?php get_sidebar('404'); ?>
+<?php get_footer('404'); ?>

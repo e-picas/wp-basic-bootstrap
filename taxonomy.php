@@ -25,7 +25,7 @@ error_log('page type : '.$page_type);
 error_log('applied template : '.$template);
 //*/
 
-get_header(); ?>
+get_header('taxonomy'); ?>
 
 <section id="content" role="main">
 
@@ -58,5 +58,5 @@ get_header(); ?>
 
 </section>
 
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+<?php get_sidebar('taxonomy'); ?>
+<?php get_footer('taxonomy'); ?>

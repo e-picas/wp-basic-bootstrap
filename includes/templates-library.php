@@ -62,6 +62,21 @@ function get_template_type()
     return $template_type;
 }
 
+/**
+ * Retrieve a configuration entry for image sizes
+ *
+ * Returned array is like:
+ *
+ *      array(
+ *          0 => <width>
+ *          width => <width>
+ *          1 => <height>
+ *          height => <height>
+ *      )
+ *
+ * @param string $type
+ * @return array
+ */
 function get_basicbootsrap_image_sizes($type = 'post_thumbnails')
 {
     $config = basicbootstrap_get_config('image_sizes');

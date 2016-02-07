@@ -57,7 +57,7 @@ get_header(); ?>
     <?php if ( ! is_front_page()) : ?>
         <?php get_the_breadcrumb(); ?>
     <?php endif; ?>
-    <?php get_template_part('partials/loop', 'index'); ?>
+    <?php get_template_part('partials/loop'); ?>
 
 </section>
 

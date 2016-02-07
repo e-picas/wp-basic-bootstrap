@@ -9,7 +9,7 @@ if (is_singular() && have_posts()) :
 
     while (have_posts()) {
         the_post();
-        get_template_part('post-templates/content', is_attachment() ? 'attachment' : get_post_format());
+        get_template_part_singular('post-templates/content');
         get_the_pagination();
         if (!is_attachment()) {
             comments_template();
