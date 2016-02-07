@@ -4,7 +4,7 @@
  *
  * Custom taxonomies use the following template file path:
  *
- *      1.  taxonomy-{taxonomy}-{term}.php – If the taxonomy is sometax, and taxonomy’s term is someterm, WordPress will look for taxonomy-sometax-someterm.php. In the case of post formats, the taxonomy is ‘post_format’ and the terms are ‘post-format-{format}. i.e. taxonomy-post_format-post-format-link.php for the link post format.
+ *      1.  taxonomy-{taxonomy}-{term}.php – If the taxonomy is sometax, and taxonomy's term is someterm, WordPress will look for taxonomy-sometax-someterm.php. In the case of post formats, the taxonomy is ‘post_format' and the terms are ‘post-format-{format}. i.e. taxonomy-post_format-post-format-link.php for the link post format.
  *      2.  taxonomy-{taxonomy}.php – If the taxonomy were sometax, WordPress would look for taxonomy-sometax.php.
  *      3.  taxonomy.php
  *      4.  archive.php

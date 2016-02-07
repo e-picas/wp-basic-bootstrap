@@ -4,8 +4,8 @@
  *
  * To display a tag archive index page, WordPress uses the following path:
  *
- *      1.  tag-{slug}.php – If the tag’s slug is sometag, WordPress will look for tag-sometag.php.
- *      2.  tag-{id}.php – If the tag’s ID is 6, WordPress will look for tag-6.php.
+ *      1.  tag-{slug}.php – If the tag's slug is sometag, WordPress will look for tag-sometag.php.
+ *      2.  tag-{id}.php – If the tag's ID is 6, WordPress will look for tag-6.php.
  *      3.  tag.php
  *      4.  archive.php
  *      5.  index.php

@@ -4,8 +4,8 @@
  *
  * Rendering category archive index pages uses the following path in WordPress:
  *
- *      1.  category-{slug}.php – If the category’s slug is news, WordPress will look for category-news.php.
- *      2.  category-{id}.php – If the category’s ID is 6, WordPress will look for category-6.php.
+ *      1.  category-{slug}.php – If the category's slug is news, WordPress will look for category-news.php.
+ *      2.  category-{id}.php – If the category's ID is 6, WordPress will look for category-6.php.
  *      3.  category.php
  *      4.  archive.php
  *      5.  index.php

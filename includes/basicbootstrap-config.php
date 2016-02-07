@@ -243,6 +243,7 @@ function basicbootstrap_get_config($item = null)
      *
      * @param mixed $value The item value to return
      * @param null|string $name The requested entry if so
+     * @return mixed Must return the config item value
      */
     $value = apply_filters('basicbootstrap_config_items', $value, $item);
 

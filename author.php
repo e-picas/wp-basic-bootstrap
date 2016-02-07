@@ -4,8 +4,8 @@
  *
  * Rendering author archive index pages is fairly explanatory:
  *
- *      1.  author-{nicename}.php – If the author’s nice name is matt, WordPress will look for author-matt.php.
- *      2.  author-{id}.php – If the author’s ID were 6, WordPress will look for author-6.php.
+ *      1.  author-{nicename}.php – If the author's nice name is matt, WordPress will look for author-matt.php.
+ *      2.  author-{id}.php – If the author's ID were 6, WordPress will look for author-6.php.
  *      3.  author.php
  *      4.  archive.php
  *      5.  index.php

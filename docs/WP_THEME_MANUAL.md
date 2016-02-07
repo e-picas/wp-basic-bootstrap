@@ -7,11 +7,11 @@ See <https://developer.wordpress.org/themes/basics/>.
 
 ### Default Post Types
 
--   Post (Post Type: ‘post’)
--   Page (Post Type: ‘page’)
--   Attachment (Post Type: ‘attachment’)
--   Revision (Post Type: ‘revision’)
--   Navigation menu (Post Type: ‘nav_menu_item’)
+-   Post (Post Type: ‘post')
+-   Page (Post Type: ‘page')
+-   Attachment (Post Type: ‘attachment')
+-   Revision (Post Type: ‘revision')
+-   Navigation menu (Post Type: ‘nav_menu_item')
 
 ### Default posts formats
 
@@ -25,7 +25,7 @@ gallery
 :   A gallery of images. Post will likely contain a gallery shortcode and will have image attachments.
 
 link
-:   A link to another site. Themes may wish to use the first <a href=””> tag in the post content as the external link 
+:   A link to another site. Themes may wish to use the first <a href=""> tag in the post content as the external link 
     for that post. An alternative approach could be if the post consists only of a URL, then that will be the URL and 
     the title (post_title) will be the name attached to the anchor for it.
 
@@ -133,7 +133,7 @@ Learn more at <https://codex.wordpress.org/Conditional_Tags>.
 ### Template partials
 
 header.php
-:   for generating the site’s header
+:   for generating the site's header
 
 footer.php
 :   for generating the footer
@@ -330,10 +330,10 @@ Each theme can inform Wordpress about its features support, in:
 
 WP defaults are:
 
--   ‘thumb’ / ‘thumbnail’ (150px x 150px)
--   ‘medium’ (300px x 300px)
--   ‘large’ (640px x 640px)
--   ‘post-thumbnail’ (defined by theme)
+-   ‘thumb' / ‘thumbnail' (150px x 150px)
+-   ‘medium' (300px x 300px)
+-   ‘large' (640px x 640px)
+-   ‘post-thumbnail' (defined by theme)
 -   'full' (unmodified)
 
 To define the sizes of thumbnails, use:
