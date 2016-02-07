@@ -292,6 +292,9 @@ function is_sticky_view()
  */
 function edit_link_if_so($type, $id = null, $text = 'Edit', $before = '<i class="fa fa-pencil-square fa-fw"></i>&nbsp;', $after = '')
 {
+    if (!get_basicbootstrap_mod('show_edit_links')) {
+        return;
+    }
     $text = __($text, 'basicbootstrap');
     ob_start();
     if ($type == 'tag') {

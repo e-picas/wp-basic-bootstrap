@@ -6,6 +6,7 @@
  */
 ?>
 <section class="entry-meta blog-post-meta">
+
 <?php if (get_the_author_meta('user_url')) : ?>
     <i class="fa fa-link fa-fw"></i>&nbsp;<span class="entry-meta-item author-link"><a href="<?php
         echo get_the_author_meta('user_url');
@@ -18,6 +19,8 @@
         );
     ?>"><?php echo get_the_author_meta('user_firstname').' '.get_the_author_meta('user_lastname'); ?></a></span>
 <?php endif; ?>
+
+<?php if (get_basicbootstrap_mod('show_author_posts_number')) : ?>
     <i class="fa fa-book fa-fw"></i>&nbsp;<span class="entry-meta-item author-link"><?php
         $count = count_user_posts(get_the_author_meta('ID'));
         echo esc_html(
@@ -32,4 +35,6 @@
             )
         );
     ?></span>
+<?php endif; ?>
+
 </section>

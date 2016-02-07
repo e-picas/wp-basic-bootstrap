@@ -37,6 +37,7 @@ get_header(); ?>
         </h1>
 <?php // marchpô
 /*
+        <?php if (get_basicbootstrap_mod('show_edit_links')) : ?>
         <section class="entry-meta blog-post-meta">
             <?php
             edit_term_link(
@@ -47,6 +48,7 @@ get_header(); ?>
             );
             ?>
         </section>
+        <?php endif; ?>
 */
 ?>
         <?php the_archive_description('<div class="taxonomy-description lead">', '</div>'); ?>

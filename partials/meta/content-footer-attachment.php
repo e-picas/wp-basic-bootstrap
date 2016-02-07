@@ -33,7 +33,7 @@ global $post;
 
         <?php if (get_basicbootstrap_mod('show_attachment_link')) : ?>
         <i class="fa fa-cloud-download fa-fw"></i>&nbsp;<span class="entry-meta-item image-file-links"><?php
-            echo '<a href="' . $sizes[0] . '">' . __('Original file', 'basicbootstrap') ; '</a>';
+            echo '<a href="' . $sizes[0] . '">' . __('Original file', 'basicbootstrap') . '</a>';
         ?></span>
         <?php endif; ?>
 
@@ -54,7 +54,7 @@ global $post;
 
         <?php if (get_basicbootstrap_mod('show_attachment_link')) : ?>
         <i class="fa fa-cloud-download fa-fw"></i>&nbsp;<span class="entry-meta-item media-file-links"><?php
-            echo '<a href="' . wp_get_attachment_url($post->ID) . '">' . __('Original file', 'basicbootstrap') ; '</a>';
+            echo '<a href="' . wp_get_attachment_url($post->ID) . '">' . __('Original file', 'basicbootstrap') . '</a>';
         ?></span>
         <?php endif; ?>
 

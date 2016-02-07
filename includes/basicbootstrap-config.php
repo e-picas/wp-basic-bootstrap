@@ -73,12 +73,14 @@ $basicbootstrap_config = array(
         'show_comments_link'    => true,
         'show_permalink'        => true,
         'show_edit_links'       => true,
+        'show_edit_comment_links' => true,
         'show_attachment_mime_type' => true,
         'show_attachment_sizes' => true,
         'show_attachment_link' => true,
         'show_sharing_links_page' => false,
         'show_sharing_links_post' => true,
         'show_sharing_links_attachment' => true,
+        'show_author_posts_number' => true,
     ),
 
     // custom header settings

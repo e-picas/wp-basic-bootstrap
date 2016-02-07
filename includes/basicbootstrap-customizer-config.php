@@ -517,6 +517,12 @@ $basicbootstrap_customizer_config = array(
                 'transport' => 'refresh',
             ),
             array(
+                'id' => 'show_edit_comment_links',
+                'label' => __('Show Edit Comment Links', 'basicbootstrap'),
+                'control_type' => 'checkbox',
+                'transport' => 'refresh',
+            ),
+            array(
                 'id' => 'show_attachment_mime_type',
                 'label' => __('Show Attachments MIME Types', 'basicbootstrap'),
                 'control_type' => 'checkbox',
@@ -531,6 +537,12 @@ $basicbootstrap_customizer_config = array(
             array(
                 'id' => 'show_attachment_link',
                 'label' => __('Show Attachment Link', 'basicbootstrap'),
+                'control_type' => 'checkbox',
+                'transport' => 'refresh',
+            ),
+            array(
+                'id' => 'show_author_posts_number',
+                'label' => __('Show Author Posts Number', 'basicbootstrap'),
                 'control_type' => 'checkbox',
                 'transport' => 'refresh',
             ),

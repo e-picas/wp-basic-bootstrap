@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WP Basic Bootstrap\n"
-"POT-Creation-Date: 2016-02-06 21:33+0100\n"
+"POT-Creation-Date: 2016-02-07 13:30+0100\n"
 "PO-Revision-Date: 2016-02-04 10:43+0100\n"
 "Last-Translator: picas <me@picas.fr>\n"
 "Language-Team: \n"
@@ -53,10 +53,10 @@ msgstr ""
 msgid "Posts by %s"
 msgstr ""
 
-#: category.php:39 partials/comments/comment-item-cb.php:44
-#: partials/comments/pingback-item-cb.php:20
-#: partials/meta/content-footer-attachment.php:35
-#: partials/meta/content-footer-page.php:13 partials/meta/content-footer.php:33
+#: category.php:40 partials/comments/comment-item-cb.php:46
+#: partials/comments/pingback-item-cb.php:22
+#: partials/meta/content-footer-attachment.php:64
+#: partials/meta/content-footer-page.php:16 partials/meta/content-footer.php:62
 msgid "Edit"
 msgstr ""
 
@@ -170,41 +170,41 @@ msgstr ""
 msgid "Skip to page footer"
 msgstr ""
 
-#: includes/basicbootstrap-config.php:104
+#: includes/basicbootstrap-config.php:121
 msgid "Main Menu"
 msgstr ""
 
-#: includes/basicbootstrap-config.php:105
+#: includes/basicbootstrap-config.php:122
 msgid "Social Links Menu"
 msgstr ""
 
-#: includes/basicbootstrap-config.php:106
+#: includes/basicbootstrap-config.php:123
 msgid "Footer Menu"
 msgstr ""
 
-#: includes/basicbootstrap-config.php:113
+#: includes/basicbootstrap-config.php:130
 msgid "Primary Widget Area"
 msgstr ""
 
-#: includes/basicbootstrap-config.php:115
+#: includes/basicbootstrap-config.php:132
 msgid "Add widgets here to appear in your sidebar."
 msgstr ""
 
-#: includes/basicbootstrap-config.php:123
+#: includes/basicbootstrap-config.php:140
 msgid "First Footer Widget Area"
 msgstr ""
 
-#: includes/basicbootstrap-config.php:125
-#: includes/basicbootstrap-config.php:135
-#: includes/basicbootstrap-config.php:145
+#: includes/basicbootstrap-config.php:142
+#: includes/basicbootstrap-config.php:152
+#: includes/basicbootstrap-config.php:162
 msgid "An optional widget area for your site footer."
 msgstr ""
 
-#: includes/basicbootstrap-config.php:133
+#: includes/basicbootstrap-config.php:150
 msgid "Second Footer Widget Area"
 msgstr ""
 
-#: includes/basicbootstrap-config.php:143
+#: includes/basicbootstrap-config.php:160
 msgid "Third Footer Widget Area"
 msgstr ""
 
@@ -321,310 +321,391 @@ msgid "Select here the default template for BLOG PAGES."
 msgstr ""
 
 #: includes/basicbootstrap-customizer-config.php:204
-#: includes/basicbootstrap-customizer-config.php:217
+#: includes/basicbootstrap-customizer-config.php:218
 msgid "Full Width"
 msgstr ""
 
 #: includes/basicbootstrap-customizer-config.php:205
-#: includes/basicbootstrap-customizer-config.php:218
-msgid "Left Sidebar"
+#: includes/basicbootstrap-customizer-config.php:219
+msgid "Full Width With Offset"
 msgstr ""
 
 #: includes/basicbootstrap-customizer-config.php:206
-#: includes/basicbootstrap-customizer-config.php:219
+#: includes/basicbootstrap-customizer-config.php:220
+msgid "Left Sidebar"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:207
+#: includes/basicbootstrap-customizer-config.php:221
 msgid "Right Sidebar"
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:213
+#: includes/basicbootstrap-customizer-config.php:214
 msgid "Other Pages Default Template"
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:214
+#: includes/basicbootstrap-customizer-config.php:215
 msgid "Select here the default template for NON-BLOG PAGES."
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:226
+#: includes/basicbootstrap-customizer-config.php:228
 msgid "Posts Lists Template"
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:227
+#: includes/basicbootstrap-customizer-config.php:229
 msgid "Select here the number of columns used for posts lists."
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:230
+#: includes/basicbootstrap-customizer-config.php:232
 msgid "One Column"
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:231
+#: includes/basicbootstrap-customizer-config.php:233
 msgid "Two Columns"
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:232
+#: includes/basicbootstrap-customizer-config.php:234
 msgid "Three Columns"
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:243
+#: includes/basicbootstrap-customizer-config.php:245
 msgid "Navbar Layout"
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:244
+#: includes/basicbootstrap-customizer-config.php:246
 msgid "You can set here the default layouts your website main navigation bar."
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:250
+#: includes/basicbootstrap-customizer-config.php:252
 msgid "Navbar Position"
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:251
+#: includes/basicbootstrap-customizer-config.php:253
 msgid "You can define here the type of your navbar (for more info, see <a href=\"http://getbootstrap.com/components/#navbar\">getbootstrap.com</a>)."
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:254
-#: includes/basicbootstrap-customizer-config.php:268
+#: includes/basicbootstrap-customizer-config.php:256
+#: includes/basicbootstrap-customizer-config.php:270
 msgid "Default Classic Navbar"
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:255
+#: includes/basicbootstrap-customizer-config.php:257
 msgid "Fixed to Top Navbar"
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:256
+#: includes/basicbootstrap-customizer-config.php:258
 msgid "Fixed to Bottom Navbar"
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:257
+#: includes/basicbootstrap-customizer-config.php:259
 msgid "Static Top Navbar"
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:264
+#: includes/basicbootstrap-customizer-config.php:266
 msgid "Navbar Styling"
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:265
+#: includes/basicbootstrap-customizer-config.php:267
 msgid "You can define here the style of your navbar (for more info, see <a href=\"http://getbootstrap.com/components/#navbar\">getbootstrap.com</a>)."
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:269
+#: includes/basicbootstrap-customizer-config.php:271
 msgid "Inverted Navbar"
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:270
+#: includes/basicbootstrap-customizer-config.php:272
 msgid "Custom Navbar (navbar-custom class)"
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:277
+#: includes/basicbootstrap-customizer-config.php:279
 msgid "Show Navbar Brand"
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:278
+#: includes/basicbootstrap-customizer-config.php:280
 msgid "This will display the site name as first information of the navigation bar."
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:289
+#: includes/basicbootstrap-customizer-config.php:291
 msgid "Content Templating"
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:290
+#: includes/basicbootstrap-customizer-config.php:292
 msgid "You can here define the look of your pages main contents."
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:295
+#: includes/basicbootstrap-customizer-config.php:297
 msgid "Visible Breadcrumb (hidden otherwise)"
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:302
+#: includes/basicbootstrap-customizer-config.php:304
 msgid "Use Post Excerpts as Intro"
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:303
+#: includes/basicbootstrap-customizer-config.php:305
 msgid "This will show the excerpt as the introduction of a post on the post page if it is defined."
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:310
+#: includes/basicbootstrap-customizer-config.php:312
 msgid "Excerpt Length"
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:311
+#: includes/basicbootstrap-customizer-config.php:313
 msgid "This will set the number of words extracted from a post content to generate its excerpt in posts list."
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:328
+#: includes/basicbootstrap-customizer-config.php:330
 msgid "Read More Text"
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:334
+#: includes/basicbootstrap-customizer-config.php:336
 msgid "Show Read More Buttons"
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:335
+#: includes/basicbootstrap-customizer-config.php:337
 msgid "Add a \"read more\" button to posts excerpts in lists."
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:342
+#: includes/basicbootstrap-customizer-config.php:344
 msgid "Sticky Posts To Show"
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:343
+#: includes/basicbootstrap-customizer-config.php:345
 msgid "This will set the number of sticky posts shown as featured (0 will disable this feature)."
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:363
+#: includes/basicbootstrap-customizer-config.php:365
 msgid "Sticky Excerpt Length"
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:364
+#: includes/basicbootstrap-customizer-config.php:366
 msgid "This will set the number of words extracted from a sticky post content to generate its excerpt on the sticky post view."
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:381
+#: includes/basicbootstrap-customizer-config.php:383
 msgid "Pagination Limit"
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:382
+#: includes/basicbootstrap-customizer-config.php:384
 msgid "This will set the number of pages to show before AND after current one in numerical pagination."
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:404
+#: includes/basicbootstrap-customizer-config.php:403
+msgid "Show Sharing Links on Pages"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:409
+msgid "Show Sharing Links on Posts"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:415
+msgid "Show Sharing Links on Attachments"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:425
 msgid "Header & Footer Templating"
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:405
+#: includes/basicbootstrap-customizer-config.php:426
 msgid "You can here show or hide some of the blocks of the default header and footer templating construction."
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:416
+#: includes/basicbootstrap-customizer-config.php:437
 msgid "Display Header Logo"
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:423
+#: includes/basicbootstrap-customizer-config.php:444
 msgid "Display Footer Copyright"
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:430
+#: includes/basicbootstrap-customizer-config.php:451
 msgid "Display Header Searchbox"
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:441
-msgid "Theme Styling"
+#: includes/basicbootstrap-customizer-config.php:461
+msgid "Contents Meta-Data"
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:442
-msgid "You can here define some style options of your theme."
+#: includes/basicbootstrap-customizer-config.php:462
+msgid "You can here show or hide some of your website contents meta-data."
 msgstr ""
 
 #: includes/basicbootstrap-customizer-config.php:467
-msgid "Theme Templating"
+msgid "Show Author"
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:468
-msgid "You can here show or hide some of the blocks of the default templating construction. You can also define the look of the navigation bar."
+#: includes/basicbootstrap-customizer-config.php:473
+msgid "Show Publication Date"
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:484
-msgid "Theme Layout"
+#: includes/basicbootstrap-customizer-config.php:479
+msgid "Show Last Update Date"
 msgstr ""
 
 #: includes/basicbootstrap-customizer-config.php:485
-msgid "You can set here various settings to customize your website global rendering."
+msgid "Show Post Format"
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:504
-msgid "Social Links"
+#: includes/basicbootstrap-customizer-config.php:491
+msgid "Show Post Categories"
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:505
-msgid "Settings for the social icons navbar menu. If you want to hide an icon then leave it blank."
+#: includes/basicbootstrap-customizer-config.php:497
+msgid "Show Post Tags"
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:510
-msgid "Display Automatic Social Icons"
+#: includes/basicbootstrap-customizer-config.php:503
+msgid "Show Comments Link"
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:511
-msgid "Disable this to use a custom user menu instead."
+#: includes/basicbootstrap-customizer-config.php:509
+msgid "Show Permalink"
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:517
-msgid "Facebook URL"
+#: includes/basicbootstrap-customizer-config.php:515
+msgid "Show Edit Links"
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:522
-msgid "Twitter URL"
+#: includes/basicbootstrap-customizer-config.php:521
+msgid "Show Edit Comment Links"
 msgstr ""
 
 #: includes/basicbootstrap-customizer-config.php:527
-msgid "Google+ URL"
+msgid "Show Attachments MIME Types"
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:532
-msgid "LinkedIn URL"
+#: includes/basicbootstrap-customizer-config.php:533
+msgid "Show Attachment Sizes"
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:537
-msgid "Skype URL"
+#: includes/basicbootstrap-customizer-config.php:539
+msgid "Show Attachment Link"
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:542
-msgid "Pinterest URL"
+#: includes/basicbootstrap-customizer-config.php:545
+msgid "Show Author Posts Number"
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:547
-msgid "YouTube URL"
-msgstr ""
-
-#: includes/basicbootstrap-customizer-config.php:552
-msgid "Vimeo URL"
+#: includes/basicbootstrap-customizer-config.php:556
+msgid "Theme Styling"
 msgstr ""
 
 #: includes/basicbootstrap-customizer-config.php:557
-msgid "Dribbble URL"
-msgstr ""
-
-#: includes/basicbootstrap-customizer-config.php:562
-msgid "Flickr URL"
-msgstr ""
-
-#: includes/basicbootstrap-customizer-config.php:567
-msgid "Tumblr URL"
-msgstr ""
-
-#: includes/basicbootstrap-customizer-config.php:572
-msgid "Github URL"
-msgstr ""
-
-#: includes/basicbootstrap-customizer-config.php:577
-msgid "Instagram URL"
+msgid "You can here define some style options of your theme."
 msgstr ""
 
 #: includes/basicbootstrap-customizer-config.php:582
+msgid "Theme Templating"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:583
+msgid "You can here show or hide some of the blocks of the default templating construction. You can also define the look of the navigation bar."
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:602
+msgid "Theme Layout"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:603
+msgid "You can set here various settings to customize your website global rendering."
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:622
+msgid "Social Links"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:623
+msgid "Settings for the social icons navbar menu. If you want to hide an icon then leave it blank."
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:628
+msgid "Display Automatic Social Icons"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:629
+msgid "Disable this to use a custom user menu instead."
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:635
+msgid "Facebook URL"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:640
+msgid "Twitter URL"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:645
+msgid "Google+ URL"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:650
+msgid "LinkedIn URL"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:655
+msgid "Skype URL"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:660
+msgid "Pinterest URL"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:665
+msgid "YouTube URL"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:670
+msgid "Vimeo URL"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:675
+msgid "Dribbble URL"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:680
+msgid "Flickr URL"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:685
+msgid "Tumblr URL"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:690
+msgid "Github URL"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:695
+msgid "Instagram URL"
+msgstr ""
+
+#: includes/basicbootstrap-customizer-config.php:700
 msgid "Stack Overflow URL"
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:587
+#: includes/basicbootstrap-customizer-config.php:705
 msgid "Stack Exchange URL"
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:592
+#: includes/basicbootstrap-customizer-config.php:710
 msgid "Diaspora URL"
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:597
+#: includes/basicbootstrap-customizer-config.php:715
 msgid "RSS URL"
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:599
+#: includes/basicbootstrap-customizer-config.php:717
 msgid "By default it should be <code>/feed/</code>"
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:609
+#: includes/basicbootstrap-customizer-config.php:727
 msgid "Custom Code"
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:610
+#: includes/basicbootstrap-customizer-config.php:728
 msgid "Use this section to enter your custom CSS code. It will be included in the head section of the site."
 msgstr ""
 
-#: includes/basicbootstrap-customizer-config.php:617
+#: includes/basicbootstrap-customizer-config.php:735
 msgid "Custom CSS"
 msgstr ""
 
@@ -670,145 +751,145 @@ msgstr ""
 msgid "Authors"
 msgstr ""
 
-#: includes/src/WP_Basic_Bootstrap_Setup.php:250
+#: includes/src/WP_Basic_Bootstrap_Setup.php:248
 msgid "Link Format Post Options"
 msgstr ""
 
-#: includes/src/WP_Basic_Bootstrap_Setup.php:258
+#: includes/src/WP_Basic_Bootstrap_Setup.php:256
 msgid "Link URL"
 msgstr ""
 
-#: includes/src/WP_Basic_Bootstrap_Setup.php:269
+#: includes/src/WP_Basic_Bootstrap_Setup.php:267
 msgid "Audio Format Post Options"
 msgstr ""
 
-#: includes/src/WP_Basic_Bootstrap_Setup.php:277
+#: includes/src/WP_Basic_Bootstrap_Setup.php:275
 msgid "Audio Host Type"
 msgstr ""
 
-#: includes/src/WP_Basic_Bootstrap_Setup.php:281
-#: includes/src/WP_Basic_Bootstrap_Setup.php:321
+#: includes/src/WP_Basic_Bootstrap_Setup.php:279
+#: includes/src/WP_Basic_Bootstrap_Setup.php:319
 msgid "Embed Code"
 msgstr ""
 
-#: includes/src/WP_Basic_Bootstrap_Setup.php:282
-#: includes/src/WP_Basic_Bootstrap_Setup.php:322
+#: includes/src/WP_Basic_Bootstrap_Setup.php:280
+#: includes/src/WP_Basic_Bootstrap_Setup.php:320
 msgid "Self Hosted"
 msgstr ""
 
-#: includes/src/WP_Basic_Bootstrap_Setup.php:287
+#: includes/src/WP_Basic_Bootstrap_Setup.php:285
 msgid "Audio Embed Code"
 msgstr ""
 
-#: includes/src/WP_Basic_Bootstrap_Setup.php:294
+#: includes/src/WP_Basic_Bootstrap_Setup.php:292
 msgid "Upload Audio File"
 msgstr ""
 
-#: includes/src/WP_Basic_Bootstrap_Setup.php:298
+#: includes/src/WP_Basic_Bootstrap_Setup.php:296
 msgid "Upload or select your self hosted audio"
 msgstr ""
 
-#: includes/src/WP_Basic_Bootstrap_Setup.php:309
+#: includes/src/WP_Basic_Bootstrap_Setup.php:307
 msgid "Video Format Post Options"
 msgstr ""
 
-#: includes/src/WP_Basic_Bootstrap_Setup.php:317
+#: includes/src/WP_Basic_Bootstrap_Setup.php:315
 msgid "Video Host Type"
 msgstr ""
 
-#: includes/src/WP_Basic_Bootstrap_Setup.php:327
+#: includes/src/WP_Basic_Bootstrap_Setup.php:325
 msgid "Video Embed Code"
 msgstr ""
 
-#: includes/src/WP_Basic_Bootstrap_Setup.php:329
+#: includes/src/WP_Basic_Bootstrap_Setup.php:327
 msgid "Paste the embed code here. If you want to use self hosted, you may leave it blank and choose self hosted option above."
 msgstr ""
 
-#: includes/src/WP_Basic_Bootstrap_Setup.php:334
+#: includes/src/WP_Basic_Bootstrap_Setup.php:332
 msgid "Upload Video File"
 msgstr ""
 
-#: includes/src/WP_Basic_Bootstrap_Setup.php:338
+#: includes/src/WP_Basic_Bootstrap_Setup.php:336
 msgid "Upload or select your self hosted Video. If you want to use embed code. you may leave it blank and choose embed code option above."
 msgstr ""
 
-#: includes/src/WP_Basic_Bootstrap_Setup.php:348
+#: includes/src/WP_Basic_Bootstrap_Setup.php:346
 msgid "Quote Format Post Options"
 msgstr ""
 
-#: includes/src/WP_Basic_Bootstrap_Setup.php:356
+#: includes/src/WP_Basic_Bootstrap_Setup.php:354
 msgid "Quote Content"
 msgstr ""
 
-#: includes/src/WP_Basic_Bootstrap_Setup.php:361
+#: includes/src/WP_Basic_Bootstrap_Setup.php:359
 msgid "Quote Source Name"
 msgstr ""
 
-#: includes/src/WP_Basic_Bootstrap_Setup.php:366
+#: includes/src/WP_Basic_Bootstrap_Setup.php:364
 msgid "Quote Source URL"
 msgstr ""
 
-#: includes/src/WP_Basic_Bootstrap_Setup.php:376
+#: includes/src/WP_Basic_Bootstrap_Setup.php:374
 msgid "Status Format Post Options"
 msgstr ""
 
-#: includes/src/WP_Basic_Bootstrap_Setup.php:384
+#: includes/src/WP_Basic_Bootstrap_Setup.php:382
 msgid "Status Type"
 msgstr ""
 
-#: includes/src/WP_Basic_Bootstrap_Setup.php:388
+#: includes/src/WP_Basic_Bootstrap_Setup.php:386
 msgid "Twitter Status"
 msgstr ""
 
-#: includes/src/WP_Basic_Bootstrap_Setup.php:389
+#: includes/src/WP_Basic_Bootstrap_Setup.php:387
 msgid "Facebook Status"
 msgstr ""
 
-#: includes/src/WP_Basic_Bootstrap_Setup.php:394
+#: includes/src/WP_Basic_Bootstrap_Setup.php:392
 msgid "Status link (URL)"
 msgstr ""
 
-#: includes/src/WP_Basic_Bootstrap_Setup.php:404
+#: includes/src/WP_Basic_Bootstrap_Setup.php:402
 msgid "Gallery Format Post Options"
 msgstr ""
 
-#: includes/src/WP_Basic_Bootstrap_Setup.php:412
+#: includes/src/WP_Basic_Bootstrap_Setup.php:410
 msgid "Gallery Type"
 msgstr ""
 
-#: includes/src/WP_Basic_Bootstrap_Setup.php:416
+#: includes/src/WP_Basic_Bootstrap_Setup.php:414
 msgid "Slider Gallery"
 msgstr ""
 
-#: includes/src/WP_Basic_Bootstrap_Setup.php:417
+#: includes/src/WP_Basic_Bootstrap_Setup.php:415
 msgid "Tiled Gallery"
 msgstr ""
 
-#: includes/src/WP_Basic_Bootstrap_Setup.php:422
+#: includes/src/WP_Basic_Bootstrap_Setup.php:420
 msgid "Upload or Choose Images"
 msgstr ""
 
-#: includes/src/WP_Basic_Bootstrap_Setup.php:424
+#: includes/src/WP_Basic_Bootstrap_Setup.php:422
 msgid "Choose or upload images for this gallery"
 msgstr ""
 
-#: includes/src/WP_Basic_Bootstrap_Setup.php:435
+#: includes/src/WP_Basic_Bootstrap_Setup.php:433
 msgid "About attachment single page"
 msgstr ""
 
-#: includes/src/WP_Basic_Bootstrap_Setup.php:443
+#: includes/src/WP_Basic_Bootstrap_Setup.php:441
 msgid "This setting lets you disable the attachment page on front-end for this media (will generate a 403 error)."
 msgstr ""
 
-#: includes/src/WP_Basic_Bootstrap_Setup.php:447
+#: includes/src/WP_Basic_Bootstrap_Setup.php:445
 msgid "Attachment page visibility"
 msgstr ""
 
-#: includes/src/WP_Basic_Bootstrap_Setup.php:451
+#: includes/src/WP_Basic_Bootstrap_Setup.php:449
 msgid "Visible"
 msgstr ""
 
-#: includes/src/WP_Basic_Bootstrap_Setup.php:452
+#: includes/src/WP_Basic_Bootstrap_Setup.php:450
 msgid "Not visible"
 msgstr ""
 
@@ -863,12 +944,12 @@ msgstr ""
 msgid "Display post thumbnail?"
 msgstr ""
 
-#: includes/templates-library.php:226
+#: includes/templates-library.php:236
 #, php-format
 msgid "Read the full article: %s"
 msgstr ""
 
-#: includes/templates-library.php:228
+#: includes/templates-library.php:238
 msgid "read more"
 msgstr ""
 
@@ -890,7 +971,7 @@ msgstr ""
 msgid "Reply"
 msgstr ""
 
-#: partials/comments/comment-item-cb.php:48
+#: partials/comments/comment-item-cb.php:52
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
@@ -906,46 +987,46 @@ msgstr ""
 msgid "Sorry, no posts matched your criteria."
 msgstr ""
 
-#: partials/meta/content-footer-attachment.php:22
-#: partials/meta/content-footer-attachment.php:33
+#: partials/meta/content-footer-attachment.php:36
+#: partials/meta/content-footer-attachment.php:57
 msgid "Original file"
 msgstr ""
 
-#: partials/meta/content-footer-page.php:10 partials/meta/content-footer.php:22
-#: partials/meta/summary-footer.php:22
+#: partials/meta/content-footer-page.php:11 partials/meta/content-footer.php:43
+#: partials/meta/summary-footer.php:43
 msgid "0 Comments"
 msgstr ""
 
-#: partials/meta/content-footer-page.php:10 partials/meta/content-footer.php:22
-#: partials/meta/summary-footer.php:22
+#: partials/meta/content-footer-page.php:11 partials/meta/content-footer.php:43
+#: partials/meta/summary-footer.php:43
 msgid "1 Comment"
 msgstr ""
 
-#: partials/meta/content-footer-page.php:10 partials/meta/content-footer.php:22
-#: partials/meta/summary-footer.php:22
+#: partials/meta/content-footer-page.php:11 partials/meta/content-footer.php:43
+#: partials/meta/summary-footer.php:43
 msgid "% Comments"
 msgstr ""
 
-#: partials/meta/content-footer.php:29
+#: partials/meta/content-footer.php:56
 #, php-format
 msgid "Permalink of this content: %s"
 msgstr ""
 
-#: partials/meta/content-footer.php:31
+#: partials/meta/content-footer.php:58
 msgid "Permanent link"
 msgstr ""
 
-#: partials/meta/content-header-author.php:15
+#: partials/meta/content-header-author.php:16
 #, php-format
 msgid "See oneline %s"
 msgstr ""
 
-#: partials/meta/content-header-author.php:26
+#: partials/meta/content-header-author.php:29
 #, php-format
 msgid "%s post written"
 msgstr ""
 
-#: partials/meta/content-header-author.php:27
+#: partials/meta/content-header-author.php:30
 #, php-format
 msgid "%s posts written"
 msgstr ""
@@ -960,11 +1041,11 @@ msgstr ""
 msgid ", last updated at %1$s"
 msgstr ""
 
-#: partials/meta/content-header.php:12
+#: partials/meta/content-header.php:27 partials/meta/summary-header.php:15
 msgid "Publication date"
 msgstr ""
 
-#: partials/meta/content-header.php:22
+#: partials/meta/content-header.php:43
 msgid "Last modification date"
 msgstr ""
 

@@ -15,7 +15,7 @@ $template   = get_template_type();
 $page_type  = get_page_type();
 
 ?>
-<?php if ($template == 'full_width') : ?>
+<?php if (strpos($template, 'full_width')!==false) : ?>
                 </div><!-- /.blog-main -->
 <?php endif; ?>
 
