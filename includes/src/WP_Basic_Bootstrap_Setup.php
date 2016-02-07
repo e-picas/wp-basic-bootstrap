@@ -156,12 +156,10 @@ class WP_Basic_Bootstrap_Setup
         // required assets for FontAwesome
         wp_enqueue_style('fontawesome',
             get_template_directory_uri() . '/assets/css/font-awesome.min.css', array(), '4.5.0');
-        wp_enqueue_style('bootstrtap-social',
-            get_template_directory_uri() . '/assets/css/bootstrap-social.css', array('bootstrap', 'fontawesome'), BASICBOOTSTRAP_VERSION);
 
         // theme deps
         wp_enqueue_style('basicbootstrap-base-styles',
-            get_template_directory_uri() . '/assets/css/blog.css', array('bootstrap', 'fontawesome','bootstrtap-social'), BASICBOOTSTRAP_VERSION);
+            get_template_directory_uri() . '/assets/css/blog.css', array('bootstrap', 'fontawesome'), BASICBOOTSTRAP_VERSION);
 
         // direct customization
         wp_enqueue_style('basicbootstrap-style',
