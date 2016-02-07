@@ -6,7 +6,7 @@
 
 if (have_posts() && ! is_singular()) :
 
-    $list_layout = get_posts_list_type();
+    $list_layout = get_posts_list_layout();
     $count = 0;
 
     if (is_sticky_view()) :

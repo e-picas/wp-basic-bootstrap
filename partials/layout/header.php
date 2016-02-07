@@ -29,7 +29,7 @@ endif; ?>>
             <?php if (is_front_page() || (get_option('show_on_front') != 'page' && is_home()) || display_header_text()) : ?>
                 <?php $header_text_color = get_header_textcolor(); ?>
                 <h1 class="header-entry" style="color: #<?php echo $header_text_color ?>;">
-                    <?php if (has_site_icon() && display_header_logo()) : ?>
+                    <?php if (has_site_icon() && get_basicbootstrap_mod('display_header_logo')) : ?>
                         <a class="header-entry blog-logo" href="<?php echo esc_url(home_url()); ?>" style="color: #<?php echo $header_text_color ?>;">
                             <img src="<?php echo esc_url(get_site_icon_url(get_basicbootstrap_mod('site_icon_size'))); ?>" alt="<?php bloginfo('name'); ?>" />
                         </a>
@@ -47,7 +47,7 @@ endif; ?>>
             </hgroup>
             <!-- end logo/sitename -->
         </div>
-        <?php if (display_header_searchbox()) : ?>
+        <?php if (get_basicbootstrap_mod('display_header_searchbox')) : ?>
             <div class="pull-right blog-searchbox">
                 <?php get_search_form(); ?>
             </div>

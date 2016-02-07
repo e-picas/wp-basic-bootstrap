@@ -19,7 +19,7 @@ if (is_singular() && have_posts()) :
 // objects list
 elseif (have_posts()) :
 
-    get_template_part('partials/layout/posts-list', get_posts_list_type());
+    get_template_part('partials/layout/posts-list', get_posts_list_layout());
     get_the_pagination();
 
 // no list to show

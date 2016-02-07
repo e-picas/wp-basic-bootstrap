@@ -27,13 +27,25 @@ function get_basicbootstrap_mod($name)
  *
  * @return false|string
  */
-function get_posts_list_type()
+function get_posts_list_layout()
 {
-    return get_basicbootstrap_mod('posts_lists_layout');
+    $layout = get_basicbootstrap_mod('posts_lists_layout');
+
+    /**
+     * Filter the posts lists layout
+     *
+     * @since WP_Basic_Bootstrap 1.0
+     *
+     * @param mixed $layout The given layout
+     * @return mixed Must return the layout to use
+     */
+    $layout = apply_filters('posts_list_layout', $layout);
+
+    return $layout;
 }
 
 /**
- * Get the template type to apply for current page
+ * Get the template type to apply for current page in: `full_width`, `full_width_offest`, `right_sidebar`, `left_sidebar`
  *
  * @uses is_active_sidebar()
  * @return false|string
@@ -60,6 +72,18 @@ function get_template_type()
         }
     }
     return $template_type;
+}
+
+/**
+ * Get a Font Awesome icon for each post format
+ *
+ * @param $format
+ * @return null|string
+ */
+function get_post_format_icon($format)
+{
+    $icons = basicbootstrap_get_config('post_format_icon');
+    return isset($icons[$format]) ? $icons[$format] : null;
 }
 
 /**
@@ -99,62 +123,6 @@ function get_basicbootsrap_image_sizes($type = 'post_thumbnails')
     return $data;
 }
 
-/**
- * Whether to display the header logo.
- *
- * @return bool
- */
-function display_header_logo()
-{
-    // not really relevant but I think we can't hack the theme_support features, so ...
-    if ( ! current_theme_supports('custom-header', 'header-text'))
-        return false;
-
-    return (bool) get_basicbootstrap_mod('display_header_logo');
-}
-
-/**
- * Whether to display the header searchbox.
- *
- * @return bool
- */
-function display_header_searchbox()
-{
-    // not really relevant but I think we can't hack the theme_support features, so ...
-    if ( ! current_theme_supports('custom-header', 'header-text'))
-        return false;
-
-    return (bool) get_basicbootstrap_mod('display_header_searchbox');
-}
-
-/**
- * Whether to display the footer copyright info.
- *
- * @return bool
- */
-function display_footer_copyright()
-{
-    // not really relevant but I think we can't hack the theme_support features, so ...
-    if ( ! current_theme_supports('custom-header', 'header-text'))
-        return false;
-
-    return (bool) get_basicbootstrap_mod('display_footer_copyright');
-}
-
-/**
- * Whether to hide breadcrumb or not
- *
- * @return bool
- */
-function is_visible_breadcrumb()
-{
-    // not really relevant but I think we can't hack the theme_support features, so ...
-    if ( ! current_theme_supports('custom-header', 'header-text'))
-        return false;
-
-    return (bool) get_basicbootstrap_mod('visible_breadcrumb');
-}
-
 // THEME SPECIFIC FCTS
 
 /**
@@ -186,7 +154,6 @@ function basicbootstrap_template_redirect()
  *
  * The `excerpt_length` filter is documented in `wp-includes/formatting.php`.
  *
- * @param $default
  * @return string
  */
 function basicbootstrap_excerpt_length()
@@ -334,18 +301,6 @@ function basicbootstrap_comment($comment, $args, $depth)
             ));
             break;
     endswitch; // end comment_type check
-}
-
-/**
- * Get a Font Awesome icon for each post format
- *
- * @param $format
- * @return null|string
- */
-function get_post_format_icon($format)
-{
-    $icons = basicbootstrap_get_config('post_format_icon');
-    return isset($icons[$format]) ? $icons[$format] : null;
 }
 
 /**

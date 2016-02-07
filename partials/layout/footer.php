@@ -13,7 +13,7 @@
     ?>
 
     <?php $copyright_text = get_basicbootstrap_mod('copyright_text'); ?>
-    <?php if ($copyright_text !== '' && display_footer_copyright()) : ?>
+    <?php if ($copyright_text !== '' && get_basicbootstrap_mod('display_footer_copyright')) : ?>
         <p class="text-muted copyright"><?php echo $copyright_text; ?></p>
     <?php endif; ?>
 
