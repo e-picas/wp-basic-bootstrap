@@ -146,7 +146,7 @@ class WP_Basic_Bootstrap_Setup
         wp_enqueue_script('bootstrap',
             get_template_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery'), '3.3.5', true);
         wp_enqueue_script('html5shiv-js',
-            get_template_directory_uri() . '/assets/js/html5shiv.js', array('jquery'), '3.7.2');
+            get_template_directory_uri() . '/assets/js/html5shiv.min.js', array('jquery'), '3.7.2');
         wp_enqueue_script('ie-10-viewport-bug-workaround-js',
             get_template_directory_uri() . '/assets/js/ie10-viewport-bug-workaround.js', array('jquery'), '3.3.5', true);
         wp_enqueue_script('respond-js',
