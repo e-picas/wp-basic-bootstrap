@@ -1,7 +1,7 @@
 WordPress theming
 ================
 
-See <https://developer.wordpress.org/themes/basics/>.
+This document is a summary (more or less) of the [Wordpress Theme Handbook](https://developer.wordpress.org/themes/basics/).
 
 ## Wordpress defaults
 
@@ -95,6 +95,7 @@ Globals:
 Aliases:
 
 -   if is_single, is_page and is_attachment: `is_singular()`
+-   if a single post or page has pagination and we are in: `is_paged()`
 
 About posts:
 
@@ -141,7 +142,7 @@ footer.php
 sidebar.php
 :   for generating the sidebar
 
-### Template common files
+### Template common files & hierarchy
 
 style.css
 :   The main stylesheet. This must be included with your Theme, and it must contain the information header for your Theme. 

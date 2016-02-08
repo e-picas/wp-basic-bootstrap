@@ -1,5 +1,5 @@
-WP Basic Bootstrap - User & developers manual
-=============================================
+WP Basic Bootstrap - User manual
+================================
 
 This manual is a documentation of how to use the *WP Basic Bootstrap* theme in your work for designers: how it is built, how
 to use its features and how to customize it.
