@@ -105,10 +105,10 @@ class WP_Basic_Bootstrap_Widget_Author_Block
         ));
 
         ?>
-        <p><label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
-            <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" /></p>
+        <p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:'); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></p>
 
-        <p><label for="<?php echo $this->get_field_id( 'author_id' ); ?>"><?php _e('Author:', 'basicbootstrap'); ?></label>
+        <p><label for="<?php echo $this->get_field_id('author_id'); ?>"><?php _e('Author:', 'basicbootstrap'); ?></label>
             <select class="widefat" id="<?php echo $this->get_field_id('author_id'); ?>" name="<?php echo $this->get_field_name('author_id'); ?>" style="width:100%;">
                 <option value="current"><?php _e('Current user', 'basicbootstrap'); ?></option>
         <?php foreach ($authors_list as $author) : ?>

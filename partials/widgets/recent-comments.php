@@ -16,7 +16,7 @@ if (
 ?>
 
     <?php echo $before_widget; ?>
-    <?php if ( $title ) echo $before_title . $title . $after_title; ?>
+    <?php if ($title) echo $before_title . $title . $after_title; ?>
     <ul class="feature-comments-list" id="recentcomments">
 
     <?php foreach ($comments as $comment) : ?>

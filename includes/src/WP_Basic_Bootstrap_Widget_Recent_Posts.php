@@ -96,8 +96,8 @@ class WP_Basic_Bootstrap_Widget_Recent_Posts extends WP_Widget_Recent_Posts
         $show_thumb = isset($instance['show_thumb']) ? (bool) $instance['show_thumb'] : true;
         parent::form($instance);
         ?>
-        <p><input class="checkbox" type="checkbox"<?php checked( $show_thumb ); ?> id="<?php echo $this->get_field_id( 'show_thumb' ); ?>" name="<?php echo $this->get_field_name( 'show_thumb' ); ?>" />
-            <label for="<?php echo $this->get_field_id( 'show_thumb' ); ?>"><?php _e( 'Display post thumbnail?', 'basicbootstrap' ); ?></label></p>
+        <p><input class="checkbox" type="checkbox"<?php checked($show_thumb); ?> id="<?php echo $this->get_field_id('show_thumb'); ?>" name="<?php echo $this->get_field_name('show_thumb'); ?>" />
+            <label for="<?php echo $this->get_field_id('show_thumb'); ?>"><?php _e('Display post thumbnail?', 'basicbootstrap'); ?></label></p>
         <?php
 
     }

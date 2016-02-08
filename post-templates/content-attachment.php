@@ -30,12 +30,12 @@ global $post;
                             class="attachment-medium"
                             alt="<?php $post->post_excerpt; ?>" />
                     </a>
-                    <div class="entry-caption"><?php if ( !empty( $post->post_excerpt ) ) the_excerpt(); ?></div>
+                    <div class="entry-caption"><?php if (! empty($post->post_excerpt)) the_excerpt(); ?></div>
                 </div>
             <?php else : ?>
-                <a href="<?php echo wp_get_attachment_url( $post->ID ); ?>" title="<?php echo esc_html( get_the_title( $post->ID ), 1 ); ?>" rel="attachment">
-                    <?php echo basename( $post->guid ); ?>
-                    <span class="entry-legend"><?php if ( !empty( $post->post_excerpt ) ) the_excerpt(); ?></span>
+                <a href="<?php echo wp_get_attachment_url($post->ID); ?>" title="<?php echo esc_attr(get_the_title($post->ID), 1); ?>" rel="attachment">
+                    <?php echo basename($post->guid); ?>
+                    <span class="entry-legend"><?php if (! empty($post->post_excerpt)) the_excerpt(); ?></span>
                 </a>
             <?php endif; ?>
         </div>

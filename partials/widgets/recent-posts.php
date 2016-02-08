@@ -17,7 +17,7 @@ if (
 ?>
 
     <?php echo $before_widget; ?>
-    <?php if ( $title ) echo $before_title . $title . $after_title; ?>
+    <?php if ($title) echo $before_title . $title . $after_title; ?>
     <ul class="feature-posts-list">
     <?php while ($loop->have_posts()) : $loop->the_post(); ?>
         <li class="media">

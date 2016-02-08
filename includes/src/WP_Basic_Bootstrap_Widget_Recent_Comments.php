@@ -94,8 +94,8 @@ class WP_Basic_Bootstrap_Widget_Recent_Comments extends WP_Widget_Recent_Comment
         $show_date = isset($instance['show_date']) ? (bool) $instance['show_date'] : false;
         parent::form($instance);
         ?>
-        <p><input class="checkbox" type="checkbox"<?php checked( $show_date ); ?> id="<?php echo $this->get_field_id( 'show_date' ); ?>" name="<?php echo $this->get_field_name( 'show_date' ); ?>" />
-            <label for="<?php echo $this->get_field_id( 'show_date' ); ?>"><?php _e( 'Display comment date?', 'basicbootstrap' ); ?></label></p>
+        <p><input class="checkbox" type="checkbox"<?php checked($show_date); ?> id="<?php echo $this->get_field_id('show_date'); ?>" name="<?php echo $this->get_field_name('show_date'); ?>" />
+            <label for="<?php echo $this->get_field_id('show_date'); ?>"><?php _e('Display comment date?', 'basicbootstrap'); ?></label></p>
         <?php
 
     }
