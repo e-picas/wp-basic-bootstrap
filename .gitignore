@@ -1,4 +1,4 @@
 dev/
-docs/backups/
 tmp/
-
+vendor/
+composer.lock
