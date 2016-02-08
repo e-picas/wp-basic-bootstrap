@@ -9,5 +9,3 @@ if (is_singular() && !is_attachment()) {
 } elseif (is_attachment()) {
     get_template_part('partials/socials/content', 'attachment');
 }
-
-?>

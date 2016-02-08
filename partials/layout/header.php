@@ -4,9 +4,9 @@ $page_type = get_page_type();
 $header_image = get_header_image();
 
 ?><header class="blog-header" id="header" role="banner"<?php
-if ( get_header_image() ) :
+if (get_header_image()) :
     echo ' style="' .
-        'background-image: url(\'' . esc_url( $header_image ) . '\');' .
+        'background-image: url(\'' . esc_url($header_image) . '\');' .
         'background-size: cover;' .
         'background-repeat: no-repeat;' .
         'background-position: top left;' .
@@ -17,7 +17,7 @@ if ( get_header_image() ) :
         'position: relative;"';
 endif; ?>>
     <div class="container clearfix"<?php
-    if ( get_header_image() ) :
+    if (get_header_image()) :
         echo ' style="' .
             'height: auto;' .
             'min-height: ' . HEADER_IMAGE_HEIGHT . 'px;' .

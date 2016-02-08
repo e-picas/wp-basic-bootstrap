@@ -21,9 +21,9 @@
 <?php
 $previous_i = $paged-1;
 $next_i     = $paged+1;
-$page_link_title = function($i) {
+$page_link_title = function ($i) {
     return esc_html(
-        sprintf( __('See page %s', 'basicbootstrap'), $i)
+        sprintf(__('See page %s', 'basicbootstrap'), $i)
     );
 };
 $previous_link_title = esc_html__('See previous page', 'basicbootstrap');

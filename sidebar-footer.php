@@ -11,7 +11,7 @@ $second = is_active_sidebar('second-footer-widget-area');
 $third  = is_active_sidebar('third-footer-widget-area');
 ?>
 
-<?php if ( $first || $second || $third) : ?>
+<?php if ($first || $second || $third) : ?>
     <div class="container">
 
         <div class="row">

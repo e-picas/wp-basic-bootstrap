@@ -54,7 +54,7 @@ get_header(); ?>
 
 <section id="content" role="main">
 
-    <?php if ( ! is_front_page()) : ?>
+    <?php if (! is_front_page()) : ?>
         <?php get_the_breadcrumb(); ?>
     <?php endif; ?>
     <?php get_template_part('partials/loop'); ?>

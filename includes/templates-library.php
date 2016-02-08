@@ -54,7 +54,7 @@ function get_template_type()
 {
     global $template_type;
     if (!isset($template_type)) {
-        if ( ! is_active_sidebar('primary-widget-area')) {
+        if (! is_active_sidebar('primary-widget-area')) {
             $template_type = 'full_width';
         } else {
             $current = get_page_template_slug();
@@ -64,7 +64,7 @@ function get_template_type()
                         get_basicbootstrap_mod('not_blog_pages_layout') :
                         str_replace(array('page-templates/', '.php'), '', $current)
                 );
-            } elseif ( ! is_blog_page()) {
+            } elseif (! is_blog_page()) {
                 $template_type = get_basicbootstrap_mod('not_blog_pages_layout');
             } else {
                 $template_type = get_basicbootstrap_mod('blog_pages_layout');
@@ -215,7 +215,7 @@ function basicbootstrap_read_more_link($more = null)
         $output .= '<p class="read-more-wrapper"><a class="btn btn-default btn-sm read-more" href="'.
             get_permalink($post->ID) .
             '" title="' .
-            esc_attr(sprintf(__('Read the full article: %s', 'basicbootstrap'), the_title('','',false))) .
+            esc_attr(sprintf(__('Read the full article: %s', 'basicbootstrap'), the_title('', '', false))) .
             '">' .
             __('read more', 'basicbootstrap') .
             '</a></p>';
@@ -284,7 +284,7 @@ function get_the_link_pages()
 function basicbootstrap_comment($comment, $args, $depth)
 {
     $GLOBALS['comment'] = $comment;
-    switch ( $comment->comment_type ) :
+    switch ($comment->comment_type) :
         case 'pingback' :
         case 'trackback' :
             get_template_part_with_arguments('partials/comments/pingback-item-cb', '', array(
@@ -292,14 +292,14 @@ function basicbootstrap_comment($comment, $args, $depth)
                 'args' => $args,
                 'depth' => $depth,
             ));
-            break;
-        default :
+    break;
+    default :
             get_template_part_with_arguments('partials/comments/comment-item-cb', '', array(
                 'comment' => $comment,
                 'args' => $args,
                 'depth' => $depth,
             ));
-            break;
+    break;
     endswitch; // end comment_type check
 }
 

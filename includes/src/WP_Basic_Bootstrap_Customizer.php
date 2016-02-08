@@ -152,21 +152,20 @@ EOT;
      * @return string Returns a single line of CSS with selectors and a property.
      * @since WP_Basic_Bootstrap 1.0
      */
-    public static function generateCss( $selector, $style, $mod_name, $prefix='', $postfix='', $echo=true )
+    public static function generateCss($selector, $style, $mod_name, $prefix='', $postfix='', $echo=true)
     {
         $return = '';
         $mod = get_basicbootstrap_mod($mod_name);
-        if ( ! empty( $mod ) ) {
+        if (! empty($mod)) {
             $return = sprintf('%s { %s:%s; }',
                 $selector,
                 $style,
                 $prefix.$mod.$postfix
             );
-            if ( $echo ) {
+            if ($echo) {
                 echo $return . PHP_EOL;
             }
         }
         return $return;
     }
-
 }

@@ -10,7 +10,7 @@
         if ($audio['title'] != '') : ?>
             <h4><?php echo $audio['title'] ?></h4>
         <?php endif; ?>
-        <?php echo do_shortcode( '[audio src="'. $audio['url'] .'"][/audio]' ); ?>
+        <?php echo do_shortcode('[audio src="'. $audio['url'] .'"][/audio]'); ?>
         <meta itemprop="contentUrl" content="<?php echo esc_url($audio['url']); ?>">
     <?php endforeach ?>
 </div>

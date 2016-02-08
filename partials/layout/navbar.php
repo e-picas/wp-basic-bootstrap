@@ -16,7 +16,7 @@ $navbar_type    = get_basicbootstrap_mod('navbar_type');
                 <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
             </button>
         <?php if (get_theme_mod('show_navbar_brand', true)) : ?>
-            <a class="navbar-brand" href="<?php echo esc_url( home_url('/') ); ?>"><?php bloginfo('name'); ?></a>
+            <a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
         <?php endif; ?>
         </div>
         <div id="navbar" class="navbar-collapse collapse">

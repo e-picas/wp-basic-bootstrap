@@ -32,7 +32,7 @@ class WP_Basic_Bootstrap_Breadcrumb
 
         } elseif (is_category()) {
             $this->addBlogPage();
-            $cat_id = get_cat_id(single_cat_title('',false));
+            $cat_id = get_cat_id(single_cat_title('', false));
             $this->addCategory($cat_id);
 
         } elseif (is_author()) {
@@ -177,7 +177,7 @@ class WP_Basic_Bootstrap_Breadcrumb
         );
         $this->entries[]    = array(
             /* translators: #tag-name */
-            'title' => sprintf( __('#%s', 'basicbootstrap'), $terms[0]->name),
+            'title' => sprintf(__('#%s', 'basicbootstrap'), $terms[0]->name),
             'url'   => get_tag_link($id),
         );
     }
@@ -198,7 +198,7 @@ class WP_Basic_Bootstrap_Breadcrumb
     public function addSearch($query)
     {
         $this->entries[] = array(
-            'title' => sprintf( __('Search: "%s"', 'basicbootstrap'), $query),
+            'title' => sprintf(__('Search: "%s"', 'basicbootstrap'), $query),
             'url'   => get_search_link($query),
         );
     }

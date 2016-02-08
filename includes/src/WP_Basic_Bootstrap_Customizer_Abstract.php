@@ -451,7 +451,7 @@ abstract class WP_Basic_Bootstrap_Customizer_Abstract
 
             $cls = isset($data['control_class']) ? $data['control_class'] : null;
             if (is_null($cls)) {
-                switch($data['control_type']) {
+                switch ($data['control_type']) {
                     case 'select':
                         $cls = 'WP_Customize_Control';
                         foreach ($data['choices'] as $var=>$val) {
@@ -489,5 +489,4 @@ abstract class WP_Basic_Bootstrap_Customizer_Abstract
             );
         }
     }
-
 }

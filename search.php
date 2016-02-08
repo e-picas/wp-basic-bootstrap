@@ -30,11 +30,11 @@ get_header('search'); ?>
 
     <header class="header">
         <h1 class="entry-title">
-            <?php printf( __('Search results for "%s"', 'basicbootstrap'), '<span>' . get_search_query() . '</span>'); ?>
+            <?php printf(__('Search results for "%s"', 'basicbootstrap'), '<span>' . get_search_query() . '</span>'); ?>
         </h1>
     </header>
     <hr />
-    <?php if ( have_posts() ) : ?>
+    <?php if (have_posts()) : ?>
         <?php get_template_part('partials/loop', 'search'); ?>
     <?php else: ?>
         <article id="post-0" class="post no-results not-found">

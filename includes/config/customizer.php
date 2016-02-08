@@ -51,7 +51,7 @@ $basicbootstrap_customizer_config = array(
     // fonts settings
     'basicbootstrap_fonts' => array(
         'object' => 'section',
-        'title' => __( 'Fonts', 'basicbootstrap' ),
+        'title' => __('Fonts', 'basicbootstrap'),
         'settings' => array(
 
             array(

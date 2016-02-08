@@ -12,7 +12,7 @@
     <div class="comment-meta">
         <?php
         printf('<i class="fa fa-hashtag fa-fw"></i>&nbsp;<a href="%1$s" title="%2$s">%3$s</a>',
-            esc_url( get_comment_link( $comment->comment_ID ) ),
+            esc_url(get_comment_link($comment->comment_ID)),
             __('Permalink', 'basicbootstrap'),
             $comment->comment_ID
         );

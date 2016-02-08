@@ -21,12 +21,12 @@ global $post;
 
         <?php if (get_basicbootstrap_mod('show_attachment_sizes')) : ?>
         <i class="fa fa-camera fa-fw"></i>&nbsp;<span class="entry-meta-item image-meta-links"><?php
-            $sizes = wp_get_attachment_image_src( get_the_ID(), 'full');
+            $sizes = wp_get_attachment_image_src(get_the_ID(), 'full');
             echo '<span itemprop="width">'.$sizes[1] . '</span> x <span itemprop="height">' . $sizes[2] . '</span> px.';
         ?></span>
         <?php else: ?>
         <?php
-        $sizes = wp_get_attachment_image_src( get_the_ID(), 'full');
+        $sizes = wp_get_attachment_image_src(get_the_ID(), 'full');
         echo '<span class="hidden" itemprop="width">'.$sizes[1] . '</span> <span class="hidden" itemprop="height">' . $sizes[2] . '</span>';
         ?>
         <?php endif; ?>

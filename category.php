@@ -37,7 +37,7 @@ get_header('category'); ?>
         </h1>
         <?php if (get_basicbootstrap_mod('show_edit_links')) : ?>
         <section class="entry-meta blog-post-meta">
-            <?php edit_category_link(__('Edit', 'basicbootstrap'), '<i class="fa fa-pencil-square fa-fw"></i>&nbsp;', '', get_cat_id(single_cat_title('',false))); ?>
+            <?php edit_category_link(__('Edit', 'basicbootstrap'), '<i class="fa fa-pencil-square fa-fw"></i>&nbsp;', '', get_cat_id(single_cat_title('', false))); ?>
         </section>
         <?php endif; ?>
         <?php the_archive_description('<div class="category-description lead">', '</div>'); ?>

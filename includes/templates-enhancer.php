@@ -264,7 +264,7 @@ function sanitize_font_selection($input)
  */
 function sanitize_select_generator(array $values, $default = null)
 {
-    $f = function($val) use ($values, $default) {
+    $f = function ($val) use ($values, $default) {
         if (array_key_exists($val, $values)) {
             return $val;
         }
@@ -463,7 +463,7 @@ function edit_category_link($link = '', $before = '', $after = '', $id = null, $
 {
     if (current_user_can('manage_categories')) {
         if (is_null($id)) {
-            $id = get_cat_id(single_cat_title('',false));
+            $id = get_cat_id(single_cat_title('', false));
         }
         if ($id) {
             $category = get_term($id, 'category');
@@ -542,16 +542,18 @@ function get_template_part_with_arguments($slug, $name = null, $args = array())
 
     $templates = array();
     $name = (string) $name;
-    if ( '' !== $name )
+    if ('' !== $name) {
         $templates[] = "{$slug}-{$name}.php";
+    }
 
     $templates[] = "{$slug}.php";
 
     $tpl = locate_template($templates);
 
     if ($tpl) {
-        if (!empty($args))
+        if (!empty($args)) {
             extract($args);
+        }
         require $tpl;
     }
 }

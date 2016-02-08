@@ -8,7 +8,7 @@
  * @since WP_Basic_Bootstrap 1.0
  */
 ?>
- <form role="search" method="get" id="searchform" class="searchform" action="<?php echo esc_url( home_url('/') ); ?>">
+ <form role="search" method="get" id="searchform" class="searchform" action="<?php echo esc_url(home_url('/')); ?>">
 	<div class="form-group">
         <div class="input-group">
             <label class="sr-only" for="s"><?php _x('Search for:', 'label', 'basicbootstrap'); ?></label>

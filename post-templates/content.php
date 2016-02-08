@@ -10,15 +10,15 @@ global $post;
 <article id="post-<?php the_ID(); ?>" <?php post_class('blog-post'); ?> role="article" itemscope itemtype="http://schema.org/Article">
     <header>
         <h1 class="blog-post-title" itemprop="name">
-            <?php if ( ! is_single() && ! is_page()) : ?>
+            <?php if (! is_single() && ! is_page()) : ?>
             <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark">
             <?php endif; ?>
                 <?php the_title(); ?>
-            <?php if ( ! is_single() && ! is_page()) : ?>
+            <?php if (! is_single() && ! is_page()) : ?>
             </a>
             <?php endif; ?>
         </h1>
-        <?php if ( ! is_page()) : ?>
+        <?php if (! is_page()) : ?>
             <?php get_template_part('partials/meta/content-header', get_post_format()); ?>
             <?php /*
                 // for a textual info like 'by <author> on <date>' use the following:
@@ -27,7 +27,7 @@ global $post;
         <?php endif; ?>
     </header>
     <footer>
-        <?php if ( ! is_page()) : ?>
+        <?php if (! is_page()) : ?>
             <?php get_template_part('partials/meta/content-footer', get_post_format()); ?>
         <?php else : ?>
             <?php get_template_part('partials/meta/content-footer', 'page'); ?>

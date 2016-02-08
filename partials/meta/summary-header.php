@@ -16,7 +16,7 @@ global $post;
     ?>" datetime="<?php
         the_time('c');
     ?>" pubdate="pubdate" itemprop="datePublished"><?php
-        the_time( get_option('date_format') );
+        the_time(get_option('date_format'));
     ?></time>
 
 </section>

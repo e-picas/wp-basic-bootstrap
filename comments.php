@@ -16,7 +16,7 @@
  * If the current post is protected by a password and the visitor has not yet
  * entered the password we will return early without loading the comments.
  */
-if ( post_password_required() ) {
+if (post_password_required()) {
     return;
 }
 
@@ -28,11 +28,11 @@ if ('comments.php' == basename($_SERVER['SCRIPT_FILENAME'])) {
 }
 
 ?>
-<?php if ( comments_open() ) : ?>
+<?php if (comments_open()) : ?>
     <hr />
     <section id="comments" class="comments-area">
 
-        <?php if ( have_comments() ) : ?>
+        <?php if (have_comments()) : ?>
             <meta itemprop="interactionCount" content="<?php echo get_comments_number(); ?> Usercomments">
 
             <h3 class="comments-title" role="sectionhead">
@@ -72,17 +72,17 @@ if ('comments.php' == basename($_SERVER['SCRIPT_FILENAME'])) {
                 )); ?>
             </ul><!-- .comment-list -->
 
-            <?php if ( get_comment_pages_count() > 1 && get_option('page_comments') ) : ?>
+            <?php if (get_comment_pages_count() > 1 && get_option('page_comments')) : ?>
                 <nav id="comment-nav-below">
                     <ul class="pager">
                         <h1 class="sr-only"><?php _e('Comment navigation', 'basicbootstrap'); ?></h1>
-                        <li><?php previous_comments_link( __('&larr; Older Comments', 'basicbootstrap') ); ?></li>
-                        <li><?php next_comments_link( __('Newer Comments &rarr;', 'basicbootstrap') ); ?></li>
+                        <li><?php previous_comments_link(__('&larr; Older Comments', 'basicbootstrap')); ?></li>
+                        <li><?php next_comments_link(__('Newer Comments &rarr;', 'basicbootstrap')); ?></li>
                     </ul>
                 </nav><!-- #comment-nav-below -->
             <?php endif; // Check for comment navigation. ?>
 
-            <?php if ( ! comments_open() ) : ?>
+            <?php if (! comments_open()) : ?>
                 <p class="no-comments"><?php _e('Comments are closed.', 'basicbootstrap'); ?></p>
             <?php endif; ?>
 
@@ -133,23 +133,23 @@ if ('comments.php' == basename($_SERVER['SCRIPT_FILENAME'])) {
                 'author' =>
                     '<div class="form-group comment-form-name">' .
                         '<label for="author" class="control-label">' .
-                            __('Name', 'basicbootstrap') . ( $req ? '&nbsp;<span class="required">*</span>' : '') .
+                            __('Name', 'basicbootstrap') . ($req ? '&nbsp;<span class="required">*</span>' : '') .
                         '</label> ' .
-                        '<input class="form-control" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" placeholder="John Doe" />' .
+                        '<input class="form-control" id="author" name="author" type="text" value="' . esc_attr($commenter['comment_author']) . '" placeholder="John Doe" />' .
                     '</div>',
                 'email' =>
                     '<div class="form-group comment-form-email">' .
                         '<label for="email" class="control-label">' .
-                            __('Email', 'basicbootstrap') . ( $req ? '&nbsp;<span class="required">*</span>' : '') .
+                            __('Email', 'basicbootstrap') . ($req ? '&nbsp;<span class="required">*</span>' : '') .
                         '</label> ' .
-                        '<input class="form-control" id="email" name="email" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" placeholder="name@provider.dom" />' .
+                        '<input class="form-control" id="email" name="email" type="text" value="' . esc_attr($commenter['comment_author']) . '" placeholder="name@provider.dom" />' .
                     '</div>',
                 'url' =>
                     '<div class="form-group comment-form-url">' .
                         '<label for="url" class="control-label">' .
                             __('Website', 'basicbootstrap') .
                         '</label> ' .
-                        '<input class="form-control" id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" placeholder="http://domain.ext/page" />' .
+                        '<input class="form-control" id="url" name="url" type="text" value="' . esc_attr($commenter['comment_author']) . '" placeholder="http://domain.ext/page" />' .
                     '</div>',
             )),
         );

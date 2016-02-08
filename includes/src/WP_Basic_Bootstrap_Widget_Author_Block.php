@@ -52,9 +52,8 @@ class WP_Basic_Bootstrap_Widget_Author_Block
         if (isset($instance['author_id'])) {
             $author = get_userdata($instance['author_id']);
             if (!empty($author)) {
-
                 $html_filtered = has_filter('widget_title', 'esc_html');
-                if ($html_filtered){
+                if ($html_filtered) {
                     remove_filter('widget_title', 'esc_html');
                 }
                 if (!empty($instance['title'])) {
@@ -119,6 +118,7 @@ class WP_Basic_Bootstrap_Widget_Author_Block
             <span class="description"><?php _e('Select "current user" to show post author info on post pages.', 'basicbootstrap'); ?></span>
         </p>
         <?php
+
     }
 
     /**

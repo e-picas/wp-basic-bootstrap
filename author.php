@@ -33,7 +33,7 @@ get_header('author'); ?>
 
     <header class="header">
         <div class="author-avatar pull-left">
-            <?php echo get_avatar( get_the_author_meta('email'), '160', '', esc_attr( get_the_author() ), array(
+            <?php echo get_avatar(get_the_author_meta('email'), '160', '', esc_attr(get_the_author()), array(
                 'class' => 'thumbnail'
             ));  ?>
         </div>
@@ -41,13 +41,13 @@ get_header('author'); ?>
             <h1 class="entry-title author">
                 <?php printf(
                     __('About %s', 'basicbootstrap'),
-                    '<span class="vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( "ID" ) ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>'
+                    '<span class="vcard"><a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta("ID"))) . '" title="' . esc_attr(get_the_author()) . '" rel="me">' . get_the_author() . '</a></span>'
                 ); ?>
             </h1>
         </h1>
-        <?php if ('' != get_the_author_meta('user_description') ) : ?>
+        <?php if ('' != get_the_author_meta('user_description')) : ?>
         <div class="author-description">
-            <?php echo apply_filters('archive_meta', get_the_author_meta('user_description') ); ?>
+            <?php echo apply_filters('archive_meta', get_the_author_meta('user_description')); ?>
         </div>
         <?php endif; ?>
         <?php get_template_part('partials/meta/content-header', 'author'); ?>

@@ -20,20 +20,22 @@ class WP_Basic_Bootstrap_Widget_Recent_Comments extends WP_Widget_Recent_Comment
      */
     public function widget($args, $instance)
     {
-        if ( ! isset( $args['widget_id'] ) )
+        if (! isset($args['widget_id'])) {
             $args['widget_id'] = $this->id;
+        }
 
         $output = '';
 
-        $title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : __( 'Recent Comments' );
+        $title = (! empty($instance['title'])) ? $instance['title'] : __('Recent Comments');
 
         /** This filter is documented in wp-includes/widgets/class-wp-widget-pages.php */
-        $title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
+        $title = apply_filters('widget_title', $title, $instance, $this->id_base);
 
-        $number = ( ! empty( $instance['number'] ) ) ? absint( $instance['number'] ) : 5;
-        if ( ! $number )
+        $number = (! empty($instance['number'])) ? absint($instance['number']) : 5;
+        if (! $number) {
             $number = 5;
-        $show_date = isset( $instance['show_date'] ) ? $instance['show_date'] : false;
+        }
+        $show_date = isset($instance['show_date']) ? $instance['show_date'] : false;
 
         /**
          * Filter the arguments for the Recent Comments widget.
@@ -44,16 +46,16 @@ class WP_Basic_Bootstrap_Widget_Recent_Comments extends WP_Widget_Recent_Comment
          *
          * @param array $comment_args An array of arguments used to retrieve the recent comments.
          */
-        $comments = get_comments( apply_filters( 'widget_comments_args', array(
+        $comments = get_comments(apply_filters('widget_comments_args', array(
             'number'      => $number,
             'status'      => 'approve',
             'post_status' => 'publish'
-        ) ) );
+        )));
 
         if (is_array($comments) && $comments) {
             // Prime cache for associated posts. (Prime post term cache if we need it for permalinks.)
-            $post_ids = array_unique( wp_list_pluck( $comments, 'comment_post_ID' ) );
-            _prime_post_caches( $post_ids, strpos( get_option( 'permalink_structure' ), '%category%' ), false );
+            $post_ids = array_unique(wp_list_pluck($comments, 'comment_post_ID'));
+            _prime_post_caches($post_ids, strpos(get_option('permalink_structure'), '%category%'), false);
 
             $args['title']      = $title;
             $args['comments']   = $comments;
@@ -76,9 +78,9 @@ class WP_Basic_Bootstrap_Widget_Recent_Comments extends WP_Widget_Recent_Comment
     public function update($new_instance, $old_instance)
     {
         $instance = $old_instance;
-        $instance['title'] = sanitize_text_field( $new_instance['title'] );
-        $instance['number'] = absint( $new_instance['number'] );
-        $instance['show_date'] = isset( $new_instance['show_date'] ) ? (bool) $new_instance['show_date'] : false;
+        $instance['title'] = sanitize_text_field($new_instance['title']);
+        $instance['number'] = absint($new_instance['number']);
+        $instance['show_date'] = isset($new_instance['show_date']) ? (bool) $new_instance['show_date'] : false;
         return $instance;
     }
 
@@ -89,11 +91,12 @@ class WP_Basic_Bootstrap_Widget_Recent_Comments extends WP_Widget_Recent_Comment
      */
     public function form($instance)
     {
-        $show_date = isset( $instance['show_date'] ) ? (bool) $instance['show_date'] : false;
+        $show_date = isset($instance['show_date']) ? (bool) $instance['show_date'] : false;
         parent::form($instance);
         ?>
         <p><input class="checkbox" type="checkbox"<?php checked( $show_date ); ?> id="<?php echo $this->get_field_id( 'show_date' ); ?>" name="<?php echo $this->get_field_name( 'show_date' ); ?>" />
             <label for="<?php echo $this->get_field_id( 'show_date' ); ?>"><?php _e( 'Display comment date?', 'basicbootstrap' ); ?></label></p>
         <?php
+
     }
 }

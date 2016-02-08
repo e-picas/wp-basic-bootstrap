@@ -71,7 +71,7 @@ WP_Basic_Bootstrap_Setup::init();
  * @uses WP_Basic_Bootstrap_Setup::setupBackend()
  * @uses WP_Basic_Bootstrap_Setup::setupFrontend()
  */
-add_action('after_setup_theme', function() {
+add_action('after_setup_theme', function () {
     WP_Basic_Bootstrap_Setup::setupCommon();
     if (is_admin()) {
         WP_Basic_Bootstrap_Setup::setupBackend();
@@ -85,21 +85,21 @@ add_action('after_setup_theme', function() {
  *
  * @uses WP_Basic_Bootstrap_Setup::enqueueScriptsFrontend()
  */
-add_action('wp_enqueue_scripts', array('WP_Basic_Bootstrap_Setup','enqueueScriptsFrontend'));
+add_action('wp_enqueue_scripts', array('WP_Basic_Bootstrap_Setup', 'enqueueScriptsFrontend'));
 
 /**
  * Enqueue scripts and styles for back-end.
  *
  * @uses WP_Basic_Bootstrap_Setup::enqueueScriptsBackend()
  */
-add_action('admin_enqueue_scripts', array('WP_Basic_Bootstrap_Setup','enqueueScriptsBackend'));
+add_action('admin_enqueue_scripts', array('WP_Basic_Bootstrap_Setup', 'enqueueScriptsBackend'));
 
 /**
  * Register widgetized areas, including main sidebar and three widget-ready columns in the footer.
  *
  * @uses WP_Basic_Bootstrap_Setup::widgetsInit()
  */
-add_action('widgets_init', array('WP_Basic_Bootstrap_Setup','widgetsInit'));
+add_action('widgets_init', array('WP_Basic_Bootstrap_Setup', 'widgetsInit'));
 
 /**
  * Register theme customizer
@@ -111,7 +111,7 @@ add_action('widgets_init', array('WP_Basic_Bootstrap_Setup','widgetsInit'));
 basicbootstrap_load_class('WP_Basic_Bootstrap_Customizer');
 add_action('customize_register', array('WP_Basic_Bootstrap_Customizer', 'register'));
 add_action('customize_preview_init', array('WP_Basic_Bootstrap_Customizer', 'livePreview'));
-add_action('wp_head' , array('WP_Basic_Bootstrap_Customizer', 'headerOutput'));
+add_action('wp_head', array('WP_Basic_Bootstrap_Customizer', 'headerOutput'));
 
 /**
  * New 403 & 401 error pages micro-plugin

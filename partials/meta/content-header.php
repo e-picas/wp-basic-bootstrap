@@ -28,7 +28,7 @@ global $post;
     ?>" datetime="<?php
         the_time('c');
     ?>" pubdate="pubdate" itemprop="datePublished"><?php
-        the_time( get_option('date_format') );
+        the_time(get_option('date_format'));
     ?></time>
 
     <?php
@@ -44,7 +44,7 @@ global $post;
         ?>"datetime="<?php
             the_modified_date('c');
         ?>" pubdate="pubdate" itemprop="dateModified"><?php
-            the_modified_date( get_option('date_format') );
+            the_modified_date(get_option('date_format'));
         ?></time>
     <?php endif; ?>
 

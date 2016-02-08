@@ -27,4 +27,3 @@ function dbg_get_current_template()
     return isset($current_theme_template) ? $current_theme_template : null;
 }
 add_filter('template_include', 'dbg_var_template_include', 1000);
-

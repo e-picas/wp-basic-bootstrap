@@ -19,7 +19,7 @@ class WP_Basic_Bootstrap_Setup
     {
         basicbootstrap_load_config('defaults');
         basicbootstrap_load_class('TGM_Plugin_Activation');
-        add_action('tgmpa_register', array('WP_Basic_Bootstrap_Setup','setupRequirements'));
+        add_action('tgmpa_register', array('WP_Basic_Bootstrap_Setup', 'setupRequirements'));
     }
 
     /**
@@ -106,7 +106,6 @@ class WP_Basic_Bootstrap_Setup
      */
     public static function setupFrontend()
     {
-
     }
 
     /**
@@ -217,21 +216,20 @@ class WP_Basic_Bootstrap_Setup
         register_widget('WP_Basic_Bootstrap_Widget_Author_Block');
 
         // adapt dropdowns
-        add_filter('widget_categories_dropdown_args', function($args) {
+        add_filter('widget_categories_dropdown_args', function ($args) {
             if (!isset($args['class'])) {
                 $args['class'] = '';
             }
             $args['class'] .= ' form-control';
             return $args;
         });
-        add_filter('widget_archives_dropdown_args', function($args) {
+        add_filter('widget_archives_dropdown_args', function ($args) {
             if (!isset($args['class'])) {
                 $args['class'] = '';
             }
             $args['class'] .= ' form-control';
             return $args;
         });
-
     }
 
     /**

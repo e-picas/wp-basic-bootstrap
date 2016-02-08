@@ -14,4 +14,3 @@ if (have_posts() && ! is_singular()) {
         get_template_part('post-templates/summary', get_post_format());
     }
 }
-?>

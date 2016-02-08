@@ -185,9 +185,9 @@ function basicbootstrap_error_pages()
 function basicbootstrap_error_title($title = '', $sep = '')
 {
     if (is_403()) {
-        return sprintf(__('Forbidden Access', 'basicbootstrap') . ' %s %s', $sep, get_bloginfo( 'name' ));
+        return sprintf(__('Forbidden Access', 'basicbootstrap') . ' %s %s', $sep, get_bloginfo('name'));
     } elseif (is_401()) {
-        return sprintf(__('Unauthorized', 'basicbootstrap') . ' %s %s', $sep, get_bloginfo( 'name' ));
+        return sprintf(__('Unauthorized', 'basicbootstrap') . ' %s %s', $sep, get_bloginfo('name'));
     }
 }
 

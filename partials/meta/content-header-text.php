@@ -12,7 +12,7 @@
         __('by %1$s on %2$s'),
         '<cite class="entry-meta-item author vcard" itemprop="author">' . get_the_author_posts_link() . '</cite>',
         '<time datetime="' . get_the_time('c') . '" class="entry-meta-item post-date entry-date updated" pubdate="pubdate" itemprop="datePublished">' .
-        get_the_time( get_option('date_format') ) . '</time>'
+        get_the_time(get_option('date_format')) . '</time>'
     );
 
     $post = get_post();
@@ -21,7 +21,7 @@
             /* translators: <pubdate>, last updated at <date> */
             __(', last updated at %1$s'),
             '<time datetime="' . get_the_modified_date('c') . '" class="entry-meta-item post-date entry-date updated" pubdate="pubdate" itemprop="dateModified">' .
-            get_the_modified_date( get_option('date_format') ) . '</time>'
+            get_the_modified_date(get_option('date_format')) . '</time>'
         );
     endif;
 
