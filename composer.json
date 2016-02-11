@@ -1,9 +1,9 @@
 {
-  "name": "piwi/wp-basic-bootstrap",
+  "name": "picas/wp-basic-bootstrap",
   "description": "WP Basic Bootstrap is a full 101 Wordpress theme built with the Bootstrap framework and the Font Awesome images font",
   "type": "wordpress-theme",
   "keywords": [ "wordpress", "bootstrap", "fontawesome", "theme" ],
-  "homepage": "https://gitlab.com/e_picas/wp-basic-bootstrap",
+  "homepage": "https://gitlab.com/e-picas/wp-basic-bootstrap",
   "license": [ "GPL-3.0+", "proprietary" ],
   "authors": [{
     "name": "Pierre Cassat",
