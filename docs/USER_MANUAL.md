@@ -46,6 +46,26 @@ This theme uses the following third-parties on front-end (loaded at each run exc
 Templates construction
 ----------------------
 
+### Pages list
+
+-   internals:
+    -   front page
+    -   blog
+    -   search
+    -   401 / 403 / 404
+-   archives:
+    -   category
+    -   tag
+    -   taxonomy
+    -   post_format
+    -   post_type
+    -   archive
+-   singular:
+    -   post
+    -   page
+    -   attachment
+    -   author
+
 ### Global layout
 
 As largely discussed in the [Wordpress Theme Handbook](http://developer.wordpress.org/themes/basics/), the whole theme
