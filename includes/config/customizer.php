@@ -428,6 +428,13 @@ $basicbootstrap_customizer_config = array(
 
             array(
                 'id' => 'display_header_text',
+                'delete' => true,
+            ),
+
+            array(
+                'id' => 'display_header',
+                'label' => __('Display Header Identity Block', 'basicbootstrap'),
+                'control_type' => 'checkbox',
                 'transport' => 'refresh',
             ),
 
@@ -440,15 +447,15 @@ $basicbootstrap_customizer_config = array(
             ),
 
             array(
-                'id' => 'display_footer_copyright',
-                'label' => __('Display Footer Copyright', 'basicbootstrap'),
+                'id' => 'display_header_searchbox',
+                'label' => __('Display Header Searchbox', 'basicbootstrap'),
                 'control_type' => 'checkbox',
                 'transport' => 'refresh',
             ),
 
             array(
-                'id' => 'display_header_searchbox',
-                'label' => __('Display Header Searchbox', 'basicbootstrap'),
+                'id' => 'display_footer_copyright',
+                'label' => __('Display Footer Copyright', 'basicbootstrap'),
                 'control_type' => 'checkbox',
                 'transport' => 'refresh',
             ),

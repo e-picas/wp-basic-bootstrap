@@ -61,7 +61,7 @@ class WP_Basic_Bootstrap_Widget_Recent_Posts extends WP_Widget_Recent_Posts
             $args['show_date']  = $show_date;
             $args['show_thumb'] = $show_thumb;
 
-            get_template_part_with_arguments('partials/widgets/recent-posts', '', $args);
+            get_template_part_hierarchical_fetch('partials/widgets/recent-posts', '', $args);
 
             wp_reset_postdata();
         }

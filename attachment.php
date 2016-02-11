@@ -29,15 +29,15 @@ error_log('page type : '.$page_type);
 error_log('applied template : '.$template);
 //*/
 
-get_header('attachment'); ?>
+get_header_hierarchical('attachment'); ?>
 
 <section id="content" role="main">
 
     <?php get_the_breadcrumb(); ?>
 
-    <?php get_template_part('partials/loop', 'attachment'); ?>
+    <?php get_template_part_hierarchical('partials/loop'); ?>
 
 </section>
 
-<?php get_sidebar('attachment'); ?>
-<?php get_footer('attachment'); ?>
+<?php get_sidebar_hierarchical('attachment'); ?>
+<?php get_footer_hierarchical('attachment'); ?>

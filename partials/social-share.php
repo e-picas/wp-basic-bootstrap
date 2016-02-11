@@ -5,7 +5,7 @@
  */
 
 if (is_singular() && !is_attachment()) {
-    get_template_part('partials/socials/content', get_post_format());
+    get_template_part_hierarchical('partials/socials/content', get_post_format());
 } elseif (is_attachment()) {
-    get_template_part('partials/socials/content', 'attachment');
+    get_template_part_hierarchical('partials/socials/content', 'attachment');
 }

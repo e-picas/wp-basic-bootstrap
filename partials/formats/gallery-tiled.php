@@ -21,7 +21,7 @@
                 ?>" <?php endif; ?> title="<?php
                     esc_attr_e($image['title']);
                 ?>">
-                    <?php echo wp_get_attachment_image($image['ID'], 'basicbootstrap_small_tile'); ?>
+                    <?php echo wp_get_attachment_image($image['ID'], 'small_tile'); ?>
                 </a>
             </li>
         <?php endforeach; ?>

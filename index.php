@@ -50,16 +50,16 @@ error_log('page type : '.$page_type);
 error_log('applied template : '.$template);
 //*/
 
-get_header(); ?>
+get_header_hierarchical(); ?>
 
 <section id="content" role="main">
 
     <?php if (! is_front_page()) : ?>
         <?php get_the_breadcrumb(); ?>
     <?php endif; ?>
-    <?php get_template_part('partials/loop'); ?>
+    <?php get_template_part_hierarchical('partials/loop'); ?>
 
 </section>
 
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+<?php get_sidebar_hierarchical(); ?>
+<?php get_footer_hierarchical(); ?>

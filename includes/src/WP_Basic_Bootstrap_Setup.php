@@ -17,6 +17,12 @@ class WP_Basic_Bootstrap_Setup
      */
     public static function init()
     {
+        // load custom libraries
+        basicbootstrap_load_library('template-loader');
+        basicbootstrap_load_library('template-enhancer');
+        basicbootstrap_load_library('template-library');
+
+        // required plugins
         basicbootstrap_load_config('defaults');
         basicbootstrap_load_class('TGM_Plugin_Activation');
         add_action('tgmpa_register', array('WP_Basic_Bootstrap_Setup', 'setupRequirements'));
@@ -93,10 +99,6 @@ class WP_Basic_Bootstrap_Setup
         }
         register_nav_menus($menus);
 
-        // load custom libraries
-        basicbootstrap_load_library('templates-enhancer');
-        basicbootstrap_load_library('templates-library');
-
         // load vendors
         basicbootstrap_load_class('wp_bootstrap_navwalker');
     }
@@ -140,32 +142,84 @@ class WP_Basic_Bootstrap_Setup
     public static function enqueueScriptsFrontend()
     {
         // required assets for Bootstrap
-        wp_enqueue_style('bootstrap',
-            get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(), '3.3.5');
-        wp_enqueue_script('bootstrap',
-            get_template_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery'), '3.3.5', true);
-        wp_enqueue_script('html5shiv-js',
-            get_template_directory_uri() . '/assets/js/html5shiv.min.js', array('jquery'), '3.7.2');
-        wp_enqueue_script('ie-10-viewport-bug-workaround-js',
-            get_template_directory_uri() . '/assets/js/ie10-viewport-bug-workaround.js', array('jquery'), '3.3.5', true);
-        wp_enqueue_script('respond-js',
-            get_template_directory_uri() . '/assets/js/respond.js', array('jquery'), '1.4.2');
+        wp_enqueue_style(
+            'bootstrap',
+            get_asset_uri('assets/css/bootstrap.min.css'),
+            array(),
+            '3.3.5'
+        );
+/*
+        wp_enqueue_style(
+            'bootstrap-theme',
+            get_asset_uri('assets/css/bootstrap-theme.min.css'),
+            array(),
+            '3.3.5'
+        );
+*/
+        wp_enqueue_script(
+            'bootstrap',
+            get_asset_uri('assets/js/bootstrap.min.js'),
+            array('jquery'),
+            '3.3.5',
+            true
+        );
+        wp_enqueue_script(
+            'html5shiv-js',
+            get_asset_uri('assets/js/html5shiv.min.js'),
+            array('jquery'),
+            '3.7.2'
+        );
+        wp_enqueue_script(
+            'ie-10-viewport-bug-workaround-js',
+            get_asset_uri('assets/js/ie10-viewport-bug-workaround.js'),
+            array('jquery'),
+            '3.3.5',
+            true
+        );
+        wp_enqueue_script(
+            'respond-js',
+            get_asset_uri('assets/js/respond.js'),
+            array('jquery'),
+            '1.4.2'
+        );
 
         // required assets for FontAwesome
-        wp_enqueue_style('fontawesome',
-            get_template_directory_uri() . '/assets/css/font-awesome.min.css', array(), '4.5.0');
+        wp_enqueue_style(
+            'fontawesome',
+            get_asset_uri('assets/css/font-awesome.min.css'),
+            array(),
+            '4.5.0'
+        );
 
         // theme deps
-        wp_enqueue_style('basicbootstrap-base-styles',
-            get_template_directory_uri() . '/assets/css/blog.css', array('bootstrap', 'fontawesome'), BASICBOOTSTRAP_VERSION);
+        wp_enqueue_style(
+            'basicbootstrap-base-styles',
+            get_asset_uri('assets/css/blog.css'),
+            array('bootstrap', 'fontawesome'),
+            BASICBOOTSTRAP_VERSION
+        );
 
         // direct customization
-        wp_enqueue_style('basicbootstrap-style',
-            get_stylesheet_uri(), array('basicbootstrap-base-styles'), BASICBOOTSTRAP_VERSION);
-        wp_enqueue_style('basicbootstrap-style-print',
-            get_template_directory_uri() . '/style_print.css', array('basicbootstrap-base-styles'), BASICBOOTSTRAP_VERSION, 'print');
-        wp_enqueue_script('basicbootstrap-scripts',
-            get_template_directory_uri() . '/scripts.js', array('jquery', 'bootstrap'), BASICBOOTSTRAP_VERSION, true);
+        wp_enqueue_style(
+            'basicbootstrap-style',
+            get_stylesheet_uri(),
+            array('basicbootstrap-base-styles'),
+            BASICBOOTSTRAP_VERSION
+        );
+        wp_enqueue_style(
+            'basicbootstrap-style-print',
+            get_asset_uri('style_print.css'),
+            array('basicbootstrap-base-styles'),
+            BASICBOOTSTRAP_VERSION,
+            'print'
+        );
+        wp_enqueue_script(
+            'basicbootstrap-scripts',
+            get_asset_uri('scripts.js'),
+            array('jquery', 'bootstrap'),
+            BASICBOOTSTRAP_VERSION,
+            true
+        );
 
         // WordPress internal script to move the comment box to the right place when replying to a user
         if (is_singular() && get_option('thread_comments')) {

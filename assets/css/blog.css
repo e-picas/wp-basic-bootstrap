@@ -129,6 +129,7 @@ footer.blog-footer {
 .widget_author_block .author-avatar.pull-left {
     margin: 6px;
 }
+/*
 .blog-post-content img,
 img.size-post-thumbnail {
     max-width: 100% !important;
@@ -136,6 +137,7 @@ img.size-post-thumbnail {
     width: auto !important;
     height: auto !important;
 }
+*/
 img.size-post-thumbnail {
     padding: auto;
     margin: 6px 0 12px;
@@ -146,4 +148,20 @@ cite.vcard {
 .read-more-wrapper {
     display: block;
     text-align: center;
+}
+
+/* pagination */
+.pager li > a,
+.pager li > span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 300px;
+}
+
+@media screen and (max-width: 767px) {
+    .pager li > a,
+    .pager li > span {
+        max-width: 200px;
+    }
 }

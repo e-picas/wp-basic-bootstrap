@@ -64,7 +64,7 @@ function set_error_403($redirect = true, $display = false)
         wp_redirect(site_url('?error=403'));
     } elseif ($display) {
         status_header(403);
-        $tpl = get_query_template('403');
+        $tpl = get_403_template();
         if (!empty($tpl)) {
             include $tpl;
         } else {
@@ -88,6 +88,20 @@ function is_403()
 }
 
 /**
+ * Retrieve path of 403 template in current or parent template.
+ *
+ * The template path is filterable via the dynamic {@see '$type_template'} hook,
+ * e.g. '403_template'.
+ *
+ * @see get_query_template()
+ * @return string Full path to 404 template file.
+ */
+function get_403_template()
+{
+    return get_query_template('403');
+}
+
+/**
  * Load the 401 Unauthorized error page and display it (optional)
  *
  * @param bool $redirect Redirect browser to the page?
@@ -106,7 +120,7 @@ function set_error_401($redirect = true, $display = false)
         wp_redirect(site_url('?error=401'));
     } elseif ($display) {
         status_header(401);
-        $tpl = get_query_template('401');
+        $tpl = get_401_template();
         if (!empty($tpl)) {
             include $tpl;
         } else {
@@ -127,6 +141,20 @@ function is_401()
     /* @var $wp_query \WP_Query */
     global $wp_query;
     return (bool) isset($wp_query->is_401) ? $wp_query->is_401 : false;
+}
+
+/**
+ * Retrieve path of 401 template in current or parent template.
+ *
+ * The template path is filterable via the dynamic {@see '$type_template'} hook,
+ * e.g. '401_template'.
+ *
+ * @see get_query_template()
+ * @return string Full path to 404 template file.
+ */
+function get_401_template()
+{
+    return get_query_template('401');
 }
 
 /**

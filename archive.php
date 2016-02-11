@@ -37,7 +37,7 @@ error_log('page type : '.$page_type);
 error_log('applied template : '.$template);
 //*/
 
-get_header('archive'); ?>
+get_header_hierarchical('archive'); ?>
 
 <section id="content" role="main">
 
@@ -50,9 +50,9 @@ get_header('archive'); ?>
         <?php the_archive_description('<div class="archive-description lead">', '</div>'); ?>
     </header>
     <hr />
-    <?php get_template_part('partials/loop', 'archive'); ?>
+    <?php get_template_part_hierarchical('partials/loop'); ?>
 
 </section>
 
-<?php get_sidebar('archive'); ?>
-<?php get_footer('archive'); ?>
+<?php get_sidebar_hierarchical('archive'); ?>
+<?php get_footer_hierarchical('archive'); ?>

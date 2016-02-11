@@ -16,7 +16,7 @@ if (have_posts() && ! is_singular()) :
 ?>
 
     <div class="sticky-wrapper">
-        <?php get_template_part('post-templates/summary-sticky', get_post_format()); ?>
+        <?php get_template_part_hierarchical('post-templates/summary-sticky', get_post_format()); ?>
     </div>
     <hr />
 
@@ -34,7 +34,7 @@ if (have_posts() && ! is_singular()) :
     <?php endif; ?>
 
         <div class="col-md-6">
-            <?php get_template_part('post-templates/summary', get_post_format()); ?>
+            <?php get_template_part_hierarchical('post-templates/summary', get_post_format()); ?>
         </div>
 
     <?php if ($count%2!=0): ?>

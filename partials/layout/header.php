@@ -26,7 +26,7 @@ endif; ?>>
         <div class="pull-left">
             <!-- start logo/sitename -->
             <hgroup>
-            <?php if (is_front_page() || (get_option('show_on_front') != 'page' && is_home()) || display_header_text()) : ?>
+            <?php if (get_basicbootstrap_mod('display_header')) : ?>
                 <?php $header_text_color = get_header_textcolor(); ?>
                 <h1 class="header-entry" style="color: #<?php echo $header_text_color ?>;">
                     <?php if (has_site_icon() && get_basicbootstrap_mod('display_header_logo')) : ?>
@@ -49,7 +49,7 @@ endif; ?>>
         </div>
         <?php if (get_basicbootstrap_mod('display_header_searchbox')) : ?>
             <div class="pull-right blog-searchbox">
-                <?php get_search_form(); ?>
+                <?php get_search_form_hierarchical(); ?>
             </div>
         <?php endif; ?>
     </div>

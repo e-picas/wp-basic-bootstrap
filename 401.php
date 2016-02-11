@@ -18,7 +18,7 @@ error_log('page type : '.$page_type);
 error_log('applied template : '.$template);
 //*/
 
-get_header('401'); ?>
+get_header_hierarchical('401'); ?>
 
 <section id="content" role="main">
 
@@ -34,10 +34,10 @@ get_header('401'); ?>
                 <?php _e('It seems you don&rsquo;t have the permissions to access what you&rsquo;re looking for. Perhaps searching can help.', 'basicbootstrap'); ?>
             </p>
         </section>
-        <?php get_search_form(); ?>
+        <?php get_search_form_hierarchical(); ?>
     </article>
 
 </section>
 
-<?php get_sidebar('401'); ?>
-<?php get_footer('401'); ?>
+<?php get_sidebar_hierarchical('401'); ?>
+<?php get_footer_hierarchical('401'); ?>

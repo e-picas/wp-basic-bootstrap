@@ -94,78 +94,56 @@ class WP_Basic_Bootstrap_Customizer extends WP_Basic_Bootstrap_Customizer_Abstra
      */
     public static function headerOutput()
     {
-        echo <<<EOT
-        <!--Customizer CSS-->
-        <style type="text/css">
-EOT;
-
-        self::generateCss('.blog-title, .blog-description', 'color', 'header_textcolor', '#');
-        self::generateCss('body', 'background-color', 'background_color', '#');
-        self::generateCss('.blog-nav .active', 'color', 'background_color', '#');
-        self::generateCss('body', 'font-family', 'body_fontfamily');
-        self::generateCss('body', 'color', 'body_textcolor');
-        self::generateCss('a', 'color', 'link_textcolor');
-        self::generateCss('a:hover, a:focus', 'color', 'hover_textcolor');
-        self::generateCss('h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6', 'font-family', 'headings_fontfamily');
-        self::generateCss('h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6', 'color', 'headings_textcolor');
-        self::generateCss('.navbar', 'font-family', 'menu_fontfamily');
-        self::generateCss('.navbar-custom', 'background-color', 'primary_menucolor');
-        self::generateCss('.navbar-custom .navbar-brand, .navbar-custom .navbar-nav > li > a', 'color', 'primary_linkcolor');
-        self::generateCss('.navbar-custom .navbar-nav > li > a:hover, .navbar-custom .navbar-nav > li > a:focus', 'color', 'primary_hovercolor');
-        self::generateCss('.navbar-custom .navbar-nav > .active > a, .navbar-custom .navbar-nav > .active > a:hover, .navbar-custom .navbar-nav > .active > a:focus', 'color', 'primary_activecolor');
-        self::generateCss('.navbar-custom .navbar-nav > .active > a, .navbar-custom .navbar-nav > .active > a:hover, .navbar-custom .navbar-nav > .active > a:focus, .navbar-custom .navbar-nav > .open > a, .navbar-custom .navbar-nav > .open > a:hover, .navbar-custom .navbar-nav > .open > a:focus', 'background-color', 'primary_activebackground');
-        self::generateCss('.dropdown-menu', 'background-color', 'dropdown_menucolor');
-        self::generateCss('.dropdown-menu > li > a, .navbar-custom .navbar-nav .open .dropdown-menu > li > a', 'color', 'dropdown_linkcolor');
-        self::generateCss('.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .navbar-custom .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-custom .navbar-nav .open .dropdown-menu > li > a:focus', 'color', 'dropdown_hovercolor');
-        self::generateCss('.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .navbar-custom .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-custom .navbar-nav .open .dropdown-menu > li > a:focus', 'background-color', 'dropdown_hoverbackground');
-        self::generateCss('.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus, .navbar-custom .navbar-nav .open .dropdown-menu > .active > a, .navbar-custom .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-custom .navbar-nav .open .dropdown-menu > .active > a:focus', 'color', 'dropdown_activecolor');
-        self::generateCss('.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus, .navbar-custom .navbar-nav .open .dropdown-menu > .active > a, .navbar-custom .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-custom .navbar-nav .open .dropdown-menu > .active > a:focus', 'background-color', 'dropdown_activebackground');
-        self::generateCss('.blog-footer', 'color', 'footer_textcolor');
-        self::generateCss('.blog-footer a', 'color', 'footer_linkcolor');
-        self::generateCss('.blog-footer a:hover, .blog-footer a:focus', 'color', 'footer_hovercolor');
-        self::generateCss('.blog-footer', 'background-color', 'footer_backgroundcolor');
+        $output = '';
+        $output .= self::generateCss('.blog-title, .blog-description', 'color', 'header_textcolor', '#');
+        $output .= self::generateCss('body', 'background-color', 'background_color', '#');
+        $output .= self::generateCss('.blog-nav .active', 'color', 'background_color', '#');
+        $output .= self::generateCss('body', 'font-family', 'body_fontfamily');
+        $output .= self::generateCss('body', 'color', 'body_textcolor');
+        $output .= self::generateCss('a', 'color', 'link_textcolor');
+        $output .= self::generateCss('a:hover, a:focus', 'color', 'hover_textcolor');
+        $output .= self::generateCss('h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6', 'font-family', 'headings_fontfamily');
+        $output .= self::generateCss('h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6', 'color', 'headings_textcolor');
+        $output .= self::generateCss('.navbar', 'font-family', 'menu_fontfamily');
+        $output .= self::generateCss('.navbar-custom', 'background-color', 'primary_menucolor');
+        $output .= self::generateCss('.navbar-custom .navbar-brand, .navbar-custom .navbar-nav > li > a', 'color', 'primary_linkcolor');
+        $output .= self::generateCss('.navbar-custom .navbar-nav > li > a:hover, .navbar-custom .navbar-nav > li > a:focus', 'color', 'primary_hovercolor');
+        $output .= self::generateCss('.navbar-custom .navbar-nav > .active > a, .navbar-custom .navbar-nav > .active > a:hover, .navbar-custom .navbar-nav > .active > a:focus', 'color', 'primary_activecolor');
+        $output .= self::generateCss('.navbar-custom .navbar-nav > .active > a, .navbar-custom .navbar-nav > .active > a:hover, .navbar-custom .navbar-nav > .active > a:focus, .navbar-custom .navbar-nav > .open > a, .navbar-custom .navbar-nav > .open > a:hover, .navbar-custom .navbar-nav > .open > a:focus', 'background-color', 'primary_activebackground');
+        $output .= self::generateCss('.dropdown-menu', 'background-color', 'dropdown_menucolor');
+        $output .= self::generateCss('.dropdown-menu > li > a, .navbar-custom .navbar-nav .open .dropdown-menu > li > a', 'color', 'dropdown_linkcolor');
+        $output .= self::generateCss('.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .navbar-custom .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-custom .navbar-nav .open .dropdown-menu > li > a:focus', 'color', 'dropdown_hovercolor');
+        $output .= self::generateCss('.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .navbar-custom .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-custom .navbar-nav .open .dropdown-menu > li > a:focus', 'background-color', 'dropdown_hoverbackground');
+        $output .= self::generateCss('.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus, .navbar-custom .navbar-nav .open .dropdown-menu > .active > a, .navbar-custom .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-custom .navbar-nav .open .dropdown-menu > .active > a:focus', 'color', 'dropdown_activecolor');
+        $output .= self::generateCss('.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus, .navbar-custom .navbar-nav .open .dropdown-menu > .active > a, .navbar-custom .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-custom .navbar-nav .open .dropdown-menu > .active > a:focus', 'background-color', 'dropdown_activebackground');
+        $output .= self::generateCss('.blog-footer', 'color', 'footer_textcolor');
+        $output .= self::generateCss('.blog-footer a', 'color', 'footer_linkcolor');
+        $output .= self::generateCss('.blog-footer a:hover, .blog-footer a:focus', 'color', 'footer_hovercolor');
+        $output .= self::generateCss('.blog-footer', 'background-color', 'footer_backgroundcolor');
 
         $navbar_type = get_basicbootstrap_mod('navbar_type');
         if ($navbar_type == 'fixed_top') {
-            echo "body { padding-top: 70px; }";
+            $output .= "#wrapper { padding-top: 70px; }";
         } elseif ($navbar_type == 'fixed_bottom') {
-            echo "body { padding-bottom: 70px; }";
+            $output .= "#wrapper { padding-bottom: 70px; }";
         }
+
+        /**
+         * Filter the customizer's CSS rules output for frontend
+         *
+         * @since WP_Basic_Bootstrap 1.0
+         *
+         * @param string $output The generated CSS output
+         * @return string Must return the CSS output
+         */
+        $output = apply_filters('basicbootstrap_customizer_header_output', $output);
 
         echo <<<EOT
-        </style>
-        <!--/Customizer CSS-->
+<!-- Customizer CSS -->
+<style type="text/css">
+{$output}
+</style>
+<!-- // Customizer CSS -->
 EOT;
-    }
-
-    /**
-     * This will generate a line of CSS for use in header output. If the setting
-     * ($mod_name) has no defined value, the CSS will not be output.
-     *
-     * @uses get_theme_mod()
-     * @param string $selector CSS selector
-     * @param string $style The name of the CSS *property* to modify
-     * @param string $mod_name The name of the 'theme_mod' option to fetch
-     * @param string $prefix Optional. Anything that needs to be output before the CSS property
-     * @param string $postfix Optional. Anything that needs to be output after the CSS property
-     * @param bool $echo Optional. Whether to print directly to the page (default: true).
-     * @return string Returns a single line of CSS with selectors and a property.
-     * @since WP_Basic_Bootstrap 1.0
-     */
-    public static function generateCss($selector, $style, $mod_name, $prefix='', $postfix='', $echo=true)
-    {
-        $return = '';
-        $mod = get_basicbootstrap_mod($mod_name);
-        if (! empty($mod)) {
-            $return = sprintf('%s { %s:%s; }',
-                $selector,
-                $style,
-                $prefix.$mod.$postfix
-            );
-            if ($echo) {
-                echo $return . PHP_EOL;
-            }
-        }
-        return $return;
     }
 }

@@ -12,22 +12,22 @@ global $post;
         <h1 class="blog-post-title" itemprop="name">
             <?php the_title(); ?>
         </h1>
-        <?php get_template_part('partials/meta/content-header', 'attachment'); ?>
+        <?php get_template_part_hierarchical('partials/meta/content-header', 'attachment'); ?>
     </header>
     <footer>
-        <?php get_template_part('partials/meta/content-footer', 'attachment'); ?>
+        <?php get_template_part_hierarchical('partials/meta/content-footer', 'attachment'); ?>
     </footer>
 
     <section class="blog-post-content" itemprop="articleBody">
         <div class="entry-attachment">
             <?php if (wp_attachment_is_image($post->ID)) : $att_image = wp_get_attachment_image_src($post->ID, 'large'); ?>
-                <div class="attachment">
+                <div class="attachment center-block">
                     <a href="<?php echo wp_get_attachment_url($post->ID); ?>" title="<?php $post->post_excerpt; ?>" rel="attachment">
                         <img
                             src="<?php echo $att_image[0]; ?>"
                             width="<?php echo $att_image[1]; ?>"
                             height="<?php echo $att_image[2]; ?>"
-                            class="attachment-medium"
+                            class="img-responsive attachment-medium"
                             alt="<?php $post->post_excerpt; ?>" />
                     </a>
                     <div class="entry-caption"><?php if (! empty($post->post_excerpt)) the_excerpt(); ?></div>
@@ -46,8 +46,7 @@ global $post;
     </section>
 
     <?php if (get_basicbootstrap_mod('show_sharing_links_attachment')) : ?>
-        <?php get_template_part('partials/social-share', 'attachment'); ?>
+        <?php get_template_part_hierarchical('partials/social-share', 'attachment'); ?>
     <?php endif; ?>
 
 </article>
-<hr />

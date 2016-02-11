@@ -28,15 +28,18 @@ error_log('singular type : '.$singular_type);
 error_log('applied template : '.$template);
 //*/
 
-get_header_singular(); ?>
+get_header_hierarchical('single'); ?>
 
 <section id="content" role="main">
 
     <?php get_the_breadcrumb(); ?>
 
-    <?php get_template_part_singular('partials/loop'); ?>
+    <?php
+    get_template_part_hierarchical('partials/loop');
+    //get_template_part_singular('partials/loop');
+    ?>
 
 </section>
 
-<?php get_sidebar_singular(); ?>
-<?php get_footer_singular(); ?>
+<?php get_sidebar_hierarchical('single'); ?>
+<?php get_footer_hierarchical('single'); ?>

@@ -14,12 +14,15 @@
  */
 ?>
 <?php if (!empty($previous) || !empty($next)) : ?>
+<hr />
 <nav id="nav-below" class="navigation clearfix" role="navigation">
     <ul class="pager">
 
     <?php if (!empty($previous)) : ?>
         <li class="previous nav-previous">
-            <a rel="prev" href="<?php echo get_permalink($previous); ?>" title="<?php _e('Older post', 'basicbootstrap'); ?>">
+            <a rel="prev" href="<?php echo get_permalink($previous); ?>" title="<?php
+                printf(__('Older post: %s', 'basicbootstrap'), esc_attr($previous->post_title));
+            ?>">
                 <i class="fa fa-angle-double-left fa-fw"></i>
                 <?php echo $previous->post_title; ?>
             </a>
@@ -28,7 +31,9 @@
 
     <?php if (!empty($next)) : ?>
         <li class="next nav-next">
-            <a rel="next" href="<?php echo get_permalink($next); ?>" title="<?php _e('Newer post', 'basicbootstrap'); ?>">
+            <a rel="next" href="<?php echo get_permalink($next); ?>" title="<?php
+                printf(__('Newer post: %s', 'basicbootstrap'), esc_attr($next->post_title));
+            ?>">
                 <?php echo $next->post_title; ?>
                 <i class="fa fa-angle-double-right fa-fw"></i>
             </a>

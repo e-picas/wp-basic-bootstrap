@@ -37,31 +37,34 @@ error_log('applied template : '.$template);
 <?php endif; ?>
 <a href="#footer" class="sr-only sr-only-focusable"><?php _e('Skip to page footer', 'basicbootstrap'); ?></a>
 
+<?php if (strpos($navbar_type, 'fixed') !== false) : ?>
+    <?php get_template_part_hierarchical('partials/layout/navbar'); ?>
+<?php endif; ?>
+
 <div id="wrapper" class="hfeed">
 
-<?php if ($navbar_type != 'default') : ?>
-    <?php get_template_part('partials/layout/navbar'); ?>
+<?php if (strpos($navbar_type, 'static') !== false) : ?>
+    <?php get_template_part_hierarchical('partials/layout/navbar'); ?>
 <?php endif; ?>
 
     <div class="container">
 
-        <?php get_template_part('partials/layout/header'); ?>
+        <?php get_template_part_hierarchical('partials/layout/header'); ?>
         <?php if ($navbar_type == 'default') : ?>
-            <?php get_template_part('partials/layout/navbar'); ?>
+            <?php get_template_part_hierarchical('partials/layout/navbar'); ?>
         <?php endif; ?>
-
         <div class="row">
 
             <?php if ($template == 'left_sidebar') : ?>
                 <?php if (is_rtl()) : ?>
-                <div class="col-sm-9 blog-main-left" itemprop="mainContentOfPage">
+                <div class="col-xs-12 col-sm-9 blog-main-left" itemprop="mainContentOfPage">
                 <?php else : ?>
-                <div class="col-sm-9 blog-main-right" itemprop="mainContentOfPage">
+                <div class="col-xs-12 col-sm-9 blog-main-right" itemprop="mainContentOfPage">
                 <?php endif; ?>
             <?php elseif ($template == 'right_sidebar') : ?>
-                <div class="col-sm-9 blog-main-left" itemprop="mainContentOfPage">
+                <div class="col-xs-12 col-sm-9 blog-main-left" itemprop="mainContentOfPage">
             <?php elseif ($template == 'full_width_offset') : ?>
-                <div class="col-sm-10 col-md-offset-1 blog-main" itemprop="mainContentOfPage">
+                <div class="col-xs-12 col-sm-10 col-md-offset-1 blog-main" itemprop="mainContentOfPage">
             <?php else : ?>
-                <div class="col-sm-12 blog-main" itemprop="mainContentOfPage">
+                <div class="col-xs-12 blog-main" itemprop="mainContentOfPage">
             <?php endif; ?>

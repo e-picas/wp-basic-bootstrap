@@ -25,7 +25,7 @@ error_log('page type : '.$page_type);
 error_log('applied template : '.$template);
 //*/
 
-get_header('author'); ?>
+get_header_hierarchical('author'); ?>
 
 <section id="content" role="main">
 
@@ -50,7 +50,7 @@ get_header('author'); ?>
             <?php echo apply_filters('archive_meta', get_the_author_meta('user_description')); ?>
         </div>
         <?php endif; ?>
-        <?php get_template_part('partials/meta/content-header', 'author'); ?>
+        <?php get_template_part_hierarchical('partials/meta/content-header'); ?>
     </header>
     <div class="clearfix"></div>
     <hr />
@@ -60,9 +60,9 @@ get_header('author'); ?>
             get_the_author()
         ); ?>
     </h2>
-    <?php get_template_part('partials/loop', 'author'); ?>
+    <?php get_template_part_hierarchical('partials/loop'); ?>
 
 </section>
 
-<?php get_sidebar('author'); ?>
-<?php get_footer('author'); ?>
+<?php get_sidebar_hierarchical('author'); ?>
+<?php get_footer_hierarchical('author'); ?>

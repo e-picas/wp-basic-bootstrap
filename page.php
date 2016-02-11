@@ -31,15 +31,15 @@ error_log('page type : '.$page_type);
 error_log('applied template : '.$template);
 //*/
 
-get_header('page'); ?>
+get_header_hierarchical('page'); ?>
 
 <section id="content" role="main">
 
     <?php get_the_breadcrumb(); ?>
 
-    <?php get_template_part('partials/loop', 'page'); ?>
+    <?php get_template_part_hierarchical('partials/loop'); ?>
 
 </section>
 
-<?php get_sidebar('page'); ?>
-<?php get_footer('page'); ?>
+<?php get_sidebar_hierarchical('page'); ?>
+<?php get_footer_hierarchical('page'); ?>

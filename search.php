@@ -22,7 +22,7 @@ error_log('page type : '.$page_type);
 error_log('applied template : '.$template);
 //*/
 
-get_header('search'); ?>
+get_header_hierarchical('search'); ?>
 
 <section id="content" role="main">
 
@@ -35,7 +35,7 @@ get_header('search'); ?>
     </header>
     <hr />
     <?php if (have_posts()) : ?>
-        <?php get_template_part('partials/loop', 'search'); ?>
+        <?php get_template_part_hierarchical('partials/loop'); ?>
     <?php else: ?>
         <article id="post-0" class="post no-results not-found">
             <header class="header">
@@ -43,12 +43,12 @@ get_header('search'); ?>
             </header>
             <section class="entry-content">
                 <p><?php _e('Sorry, nothing matched your search. Please try again.', 'basicbootstrap'); ?></p>
-                <?php get_search_form(); ?>
+                <?php get_search_form_hierarchical(); ?>
             </section>
         </article>
     <?php endif; ?>
 
 </section>
 
-<?php get_sidebar('search'); ?>
-<?php get_footer('search'); ?>
+<?php get_sidebar_hierarchical('search'); ?>
+<?php get_footer_hierarchical('search'); ?>

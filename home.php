@@ -20,16 +20,16 @@ error_log('page type : '.$page_type);
 error_log('applied template : '.$template);
 //*/
 
-get_header('home'); ?>
+get_header_hierarchical('home'); ?>
 
 <section id="content" role="main">
 
     <?php if ($show_on_front == 'page') : ?>
         <?php get_the_breadcrumb(); ?>
     <?php endif; ?>
-    <?php get_template_part('partials/loop', 'home'); ?>
+    <?php get_template_part_hierarchical('partials/loop'); ?>
 
 </section>
 
-<?php get_sidebar('home'); ?>
-<?php get_footer('home'); ?>
+<?php get_sidebar_hierarchical('home'); ?>
+<?php get_footer_hierarchical('home'); ?>

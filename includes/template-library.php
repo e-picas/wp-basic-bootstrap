@@ -16,10 +16,14 @@
 function get_basicbootstrap_mod($name)
 {
     $defaults = basicbootstrap_get_config('defaults');
-    return get_theme_mod(
+    $mod = get_theme_mod(
         $name,
         isset($defaults[$name]) ? $defaults[$name] : false
     );
+    if (!empty($mod) && is_string($mod) && $mod == 'blank') {
+        $mod = false;
+    }
+    return $mod;
 }
 
 /**
@@ -54,21 +58,20 @@ function get_template_type()
 {
     global $template_type;
     if (!isset($template_type)) {
-        if (! is_active_sidebar('primary-widget-area')) {
-            $template_type = 'full_width';
+        $current = get_page_template_slug();
+        if (!empty($current)) {
+            $template_type = (
+                $current == 'default' ?
+                    get_basicbootstrap_mod('not_blog_pages_layout') :
+                    str_replace(array('page-templates/', '.php'), '', $current)
+            );
+        } elseif (! is_blog_page()) {
+            $template_type = get_basicbootstrap_mod('not_blog_pages_layout');
         } else {
-            $current = get_page_template_slug();
-            if (!empty($current)) {
-                $template_type = (
-                    $current == 'default' ?
-                        get_basicbootstrap_mod('not_blog_pages_layout') :
-                        str_replace(array('page-templates/', '.php'), '', $current)
-                );
-            } elseif (! is_blog_page()) {
-                $template_type = get_basicbootstrap_mod('not_blog_pages_layout');
-            } else {
-                $template_type = get_basicbootstrap_mod('blog_pages_layout');
-            }
+            $template_type = get_basicbootstrap_mod('blog_pages_layout');
+        }
+        if (strpos($template_type, 'sidebar') !== false && ! is_active_sidebar('primary-widget-area')) {
+            $template_type = 'full_width';
         }
     }
     return $template_type;
@@ -241,7 +244,7 @@ function get_the_breadcrumb()
         $params = array(
             'entries' => $entries,
         );
-        get_template_part_with_arguments('partials/layout/breadcrumb', '', $params);
+        get_template_part_hierarchical_fetch('partials/layout/breadcrumb', '', $params);
     }
 }
 
@@ -254,7 +257,7 @@ function get_the_pagination()
     $paginator = new WP_Basic_Bootstrap_Pagination();
     $entries = $paginator->render();
     if (count($entries)) {
-        get_template_part_with_arguments('partials/pagination/'.$paginator->type, '', $entries);
+        get_template_part_hierarchical_fetch('partials/pagination/'.$paginator->type, '', $entries);
     }
 }
 
@@ -269,7 +272,7 @@ function get_the_link_pages()
     $paginator = new WP_Basic_Bootstrap_Pagination();
     $entries = $paginator->renderPostPages();
     if (count($entries)) {
-        get_template_part_with_arguments('partials/pagination/'.$paginator->type, '', $entries);
+        get_template_part_hierarchical_fetch('partials/pagination/'.$paginator->type, '', $entries);
     }
 }
 
@@ -287,14 +290,14 @@ function basicbootstrap_comment($comment, $args, $depth)
     switch ($comment->comment_type) :
         case 'pingback' :
         case 'trackback' :
-            get_template_part_with_arguments('partials/comments/pingback-item-cb', '', array(
+        get_template_part_hierarchical_fetch('partials/comments/pingback-item-cb', '', array(
                 'comment' => $comment,
                 'args' => $args,
                 'depth' => $depth,
             ));
     break;
     default :
-            get_template_part_with_arguments('partials/comments/comment-item-cb', '', array(
+        get_template_part_hierarchical_fetch('partials/comments/comment-item-cb', '', array(
                 'comment' => $comment,
                 'args' => $args,
                 'depth' => $depth,

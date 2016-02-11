@@ -61,7 +61,7 @@ class WP_Basic_Bootstrap_Widget_Recent_Comments extends WP_Widget_Recent_Comment
             $args['comments']   = $comments;
             $args['show_date']  = true;//$show_date;
 
-            get_template_part_with_arguments('partials/widgets/recent-comments', '', $args);
+            get_template_part_hierarchical_fetch('partials/widgets/recent-comments', '', $args);
 
             wp_reset_postdata();
         }

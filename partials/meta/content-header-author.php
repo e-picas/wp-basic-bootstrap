@@ -7,17 +7,20 @@
 ?>
 <section class="entry-meta blog-post-meta">
 
-<?php if (get_the_author_meta('user_url')) : ?>
+<?php
+$_url = get_the_author_meta('user_url');
+$_name = get_the_author_meta('user_firstname').' '.get_the_author_meta('user_lastname');
+if ($_url) : ?>
     <i class="fa fa-link fa-fw"></i>&nbsp;<span class="entry-meta-item author-link"><a href="<?php
-        echo get_the_author_meta('user_url');
+        echo $_url;
     ?>" itemprop="url" title="<?php
         echo esc_attr(
             sprintf(
                 __('See oneline %s', 'basicbootstrap'),
-                get_the_author_meta('user_url')
+                $_url
             )
         );
-    ?>"><?php echo get_the_author_meta('user_firstname').' '.get_the_author_meta('user_lastname'); ?></a></span>
+    ?>"><?php echo (!empty(trim($_name)) ? $_name : $_url); ?></a></span>
 <?php endif; ?>
 
 <?php if (get_basicbootstrap_mod('show_author_posts_number')) : ?>

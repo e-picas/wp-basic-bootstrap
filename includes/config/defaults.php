@@ -25,6 +25,7 @@ $basicbootstrap_config = array(
         'body_fontfamily'       => 'arial, helvetica, sans-serif',
         'headings_fontfamily'   => 'arial, helvetica, sans-serif',
         'menu_fontfamily'       => 'verdana, geneva, sans-serif',
+        'display_header'        => true,
         'display_header_logo'   => true,
         'display_header_searchbox' => true,
         'display_footer_copyright' => true,

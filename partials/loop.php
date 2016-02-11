@@ -9,17 +9,17 @@ if (is_singular() && have_posts()) :
 
     while (have_posts()) {
         the_post();
-        get_template_part_singular('post-templates/content');
+        get_template_part_hierarchical('post-templates/content', get_post_format());
         get_the_pagination();
         if (!is_attachment()) {
-            comments_template();
+            comments_template_hierarchical();
         }
     }
 
 // objects list
 elseif (have_posts()) :
 
-    get_template_part('partials/layout/posts-list', get_posts_list_layout());
+    get_template_part_hierarchical('partials/layout/posts-list', get_posts_list_layout());
     get_the_pagination();
 
 // no list to show

@@ -86,7 +86,7 @@ class WP_Basic_Bootstrap_Widget_Author_Block
 
                 $args['title']  = $title;
                 $args['author'] = $author;
-                get_template_part_with_arguments('partials/widgets/author-block', '', $args);
+                get_template_part_hierarchical_fetch('partials/widgets/author-block', '', $args);
             }
         }
     }

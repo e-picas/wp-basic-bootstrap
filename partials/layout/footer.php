@@ -1,6 +1,6 @@
 <div class="container">
 
-    <?php get_sidebar('footer'); ?>
+    <?php get_sidebar_hierarchical('footer'); ?>
 
     <?php
     wp_nav_menu(array(

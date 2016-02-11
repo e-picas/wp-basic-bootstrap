@@ -33,7 +33,7 @@ $navbar_type    = get_basicbootstrap_mod('navbar_type');
             ));
 
             if (get_basicbootstrap_mod('display_social_icons')) {
-                get_template_part('partials/socials/navbar-links');
+                get_template_part_hierarchical('partials/socials/navbar-links');
 
             } else {
                 wp_nav_menu(array(

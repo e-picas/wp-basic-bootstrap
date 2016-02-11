@@ -29,7 +29,7 @@ error_log('applied template : '.$template);
     </div><!-- /.container -->
 
     <footer id="footer" role="contentinfo" class="blog-footer">
-        <?php get_template_part('partials/layout/footer'); ?>
+        <?php get_template_part_hierarchical('partials/layout/footer'); ?>
     </footer>
 
 </div><!-- /#wrapper -->

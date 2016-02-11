@@ -21,7 +21,7 @@ if (
 <?php if ($title) {
     echo $before_title . $title . $after_title;
 } ?>
-<div class="about-author<?php
+<div class="about-author clearfix<?php
     if (isset($is_current) && $is_current) echo ' post-author';
 ?>">
 

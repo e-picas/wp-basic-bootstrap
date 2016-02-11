@@ -25,7 +25,7 @@ error_log('page type : '.$page_type);
 error_log('applied template : '.$template);
 //*/
 
-get_header('taxonomy'); ?>
+get_header_hierarchical('taxonomy'); ?>
 
 <section id="content" role="main">
 
@@ -54,9 +54,9 @@ get_header('taxonomy'); ?>
         <?php the_archive_description('<div class="taxonomy-description lead">', '</div>'); ?>
     </header>
     <hr />
-    <?php get_template_part('partials/loop', 'taxonomy'); ?>
+    <?php get_template_part_hierarchical('partials/loop'); ?>
 
 </section>
 
-<?php get_sidebar('taxonomy'); ?>
-<?php get_footer('taxonomy'); ?>
+<?php get_sidebar_hierarchical('taxonomy'); ?>
+<?php get_footer_hierarchical('taxonomy'); ?>

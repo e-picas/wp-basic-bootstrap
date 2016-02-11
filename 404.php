@@ -22,7 +22,7 @@ error_log('page type : '.$page_type);
 error_log('applied template : '.$template);
 //*/
 
-get_header('404'); ?>
+get_header_hierarchical('404'); ?>
 
 <section id="content" role="main">
 
@@ -33,15 +33,15 @@ get_header('404'); ?>
             <h1 class="entry-title"><?php _e('Not Found', 'basicbootstrap'); ?></h1>
         </header>
         <section class="entry-content">
-            <h2 class="center"><?php _e('This is somewhat embarrassing, isn&rsquo;t it?', 'basicbootstrap'); ?></h2>
+            <h2 class="center"><?php esc_html_e('This is somewhat embarrassing, isn&rsquo;t it?', 'basicbootstrap'); ?></h2>
             <p class="center">
-                <?php _e('It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'basicbootstrap'); ?>
+                <?php esc_html_e('It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'basicbootstrap'); ?>
             </p>
         </section>
-        <?php get_search_form(); ?>
+        <?php get_search_form_hierarchical(); ?>
     </article>
 
 </section>
 
-<?php get_sidebar('404'); ?>
-<?php get_footer('404'); ?>
+<?php get_sidebar_hierarchical('404'); ?>
+<?php get_footer_hierarchical('404'); ?>

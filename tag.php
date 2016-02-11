@@ -25,7 +25,7 @@ error_log('page type : '.$page_type);
 error_log('applied template : '.$template);
 //*/
 
-get_header('tag'); ?>
+get_header_hierarchical('tag'); ?>
 
 <section id="content" role="main">
 
@@ -41,9 +41,9 @@ get_header('tag'); ?>
         <?php the_archive_description('<div class="tag-description lead">', '</div>'); ?>
     </header>
     <hr />
-    <?php get_template_part('partials/loop', 'tag'); ?>
+    <?php get_template_part_hierarchical('partials/loop'); ?>
 
 </section>
 
-<?php get_sidebar('tag'); ?>
-<?php get_footer('tag'); ?>
+<?php get_sidebar_hierarchical('tag'); ?>
+<?php get_footer_hierarchical('tag'); ?>

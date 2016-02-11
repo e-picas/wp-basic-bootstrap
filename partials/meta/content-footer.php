@@ -46,7 +46,7 @@ global $post;
 
     <?php $permalink = site_url('?p=' . get_the_ID()); ?>
     <?php if (get_basicbootstrap_mod('show_permalink')) : ?>
-    <i class="fa fa-code fa-fw"></i>&nbsp;<span class="entry-meta-item entry-permalink"
+    <i class="fa fa-globe fa-fw"></i>&nbsp;<span class="entry-meta-item entry-permalink"
     <?php else: ?>
     <span class="entry-meta-item entry-permalink hidden"
     <?php endif; ?>

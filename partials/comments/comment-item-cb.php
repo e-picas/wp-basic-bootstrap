@@ -21,14 +21,14 @@ global $post;
                 ?>
             </div><!-- .comment-meta -->
             <?php
-            printf('<i class="fa fa-hashtag fa-fw"></i>&nbsp;<a href="%1$s" title="%2$s">%3$s</a>',
+            printf('<i class="fa fa-hashtag fa-fw"></i>&nbsp;<a class="entry-meta-item" href="%1$s" title="%2$s">%3$s</a>',
                 esc_url(get_comment_link($comment->comment_ID)),
                 __('Permalink', 'basicbootstrap'),
                 $comment->comment_ID
             );
             ?>
             <?php
-            printf('<i class="fa fa-calendar fa-fw"></i>&nbsp;<time datetime="%1$s">%2$s</time>',
+            printf('<i class="fa fa-calendar fa-fw"></i>&nbsp;<time class="entry-meta-item" datetime="%1$s">%2$s</time>',
                 get_comment_time('c'),
                 /* translators: 1: date, 2: time */
                 sprintf(__('%1$s at %2$s', 'basicbootstrap'), get_comment_date(), get_comment_time())

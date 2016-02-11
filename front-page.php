@@ -33,13 +33,13 @@ error_log('page type : '.$page_type);
 error_log('applied template : '.$template);
 //*/
 
-get_header('front-page'); ?>
+get_header_hierarchical('front-page'); ?>
 
 <section id="content" role="main">
 
-    <?php get_template_part('partials/loop', 'front-page'); ?>
+    <?php get_template_part_hierarchical('partials/loop'); ?>
 
 </section>
 
-<?php get_sidebar('front-page'); ?>
-<?php get_footer('front-page'); ?>
+<?php get_sidebar_hierarchical('front-page'); ?>
+<?php get_footer_hierarchical('front-page'); ?>

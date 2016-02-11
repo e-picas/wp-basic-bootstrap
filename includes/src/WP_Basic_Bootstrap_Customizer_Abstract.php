@@ -19,13 +19,11 @@ abstract class WP_Basic_Bootstrap_Customizer_Abstract
 
     /**
      * @var self Singleton instance
-     * @since WP_Basic_Bootstrap 1.0
      */
     protected static $_instance = null;
 
     /**
      * @var \WP_Customize_Manager
-     * @since WP_Basic_Bootstrap 1.0
      */
     protected $customizer;
 
@@ -35,7 +33,6 @@ abstract class WP_Basic_Bootstrap_Customizer_Abstract
      * WP_Basic_Bootstrap_Customizer constructor
      *
      * @param \WP_Customize_Manager $wp_customizer
-     * @since WP_Basic_Bootstrap 1.0
      */
     protected function __construct(\WP_Customize_Manager $wp_customizer)
     {
@@ -46,7 +43,6 @@ abstract class WP_Basic_Bootstrap_Customizer_Abstract
      * Get the singleton instance
      *
      * @param \WP_Customize_Manager $wp_customizer
-     * @since WP_Basic_Bootstrap 1.0
      */
     public static function getInstance(\WP_Customize_Manager $wp_customizer)
     {
@@ -63,7 +59,6 @@ abstract class WP_Basic_Bootstrap_Customizer_Abstract
      * @param $val
      * @param string $default
      * @return string
-     * @since WP_Basic_Bootstrap 1.0
      */
     abstract public function getDefault($val, $default = '');
 
@@ -240,6 +235,9 @@ abstract class WP_Basic_Bootstrap_Customizer_Abstract
                 }
             }
 
+            if (isset($data['delete']) && $data['delete']===true) {
+                $this->customizer->remove_panel($id);
+            }
         } else {
             $this->customizer->add_panel(
                 new WP_Customize_Panel(
@@ -304,6 +302,9 @@ abstract class WP_Basic_Bootstrap_Customizer_Abstract
                 }
             }
 
+            if (isset($data['delete']) && $data['delete']===true) {
+                $this->customizer->remove_section($id);
+            }
         } else {
             $this->customizer->add_section(
                 new WP_Customize_Section(
@@ -377,6 +378,9 @@ abstract class WP_Basic_Bootstrap_Customizer_Abstract
                 }
             }
 
+            if (isset($data['delete']) && $data['delete']===true) {
+                $this->customizer->remove_setting($id);
+            }
         } else {
             $control_item = $this->customizer->get_control($id);
             if (empty($control_item)) {
@@ -444,6 +448,9 @@ abstract class WP_Basic_Bootstrap_Customizer_Abstract
                 $item->section = $section_id;
             }
 
+            if (isset($data['delete']) && $data['delete']===true) {
+                $this->customizer->remove_control($id);
+            }
         } else {
             if (!isset($data['control_type'])) {
                 $data['control_type'] = 'text';
@@ -488,5 +495,35 @@ abstract class WP_Basic_Bootstrap_Customizer_Abstract
                 )
             );
         }
+    }
+
+    /**
+     * This will generate a line of CSS for use in header output. If the setting
+     * ($mod_name) has no defined and no default value, the CSS will not be output.
+     *
+     * @uses get_basicbootstrap_mod()
+     * @param string $selector CSS selector
+     * @param string $style The name of the CSS *property* to modify
+     * @param string $mod_name The name of the 'theme_mod' option to fetch
+     * @param string $prefix Optional. Anything that needs to be output before the CSS property
+     * @param string $postfix Optional. Anything that needs to be output after the CSS property
+     * @param bool $echo Optional. Whether to print directly to the page (default: true).
+     * @return string Returns a single line of CSS with selectors and a property.
+     */
+    public static function generateCss($selector, $style, $mod_name, $prefix = '', $postfix = '', $echo = false)
+    {
+        $return = '';
+        $mod = get_basicbootstrap_mod($mod_name);
+        if (! empty($mod)) {
+            $return = sprintf('%s { %s:%s; }',
+                $selector,
+                $style,
+                $prefix.$mod.$postfix
+            );
+            if ($echo) {
+                echo $return . PHP_EOL;
+            }
+        }
+        return $return;
     }
 }

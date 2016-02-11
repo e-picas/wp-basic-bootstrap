@@ -26,6 +26,7 @@ error_log('applied template : '.$template);
     <aside id="sidebar" role="complementary" class="col-sm-3 blog-sidebar-right">
     <?php endif; ?>
 
+        <hr class="visible-xs" />
         <?php dynamic_sidebar('primary-widget-area'); ?>
 
     </aside><!-- /.blog-sidebar -->
