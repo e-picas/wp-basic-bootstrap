@@ -30,8 +30,8 @@ The theme can be used out of the box for a personal blog, but can also be a **ro
 basis to build your own themes (see the license section of this file to learn about commercial
 usage).
 
-Installation
-------------
+Installation as a theme
+-----------------------
 
 1. In your admin panel, go to "Appearance > Themes" and click the "Add New" button.
 2. Type in "Basic Bootstrap" in the search form and press the "Enter" key on your keyboard.
@@ -40,6 +40,43 @@ Installation
 
 NOTE - For those who are [Composer](http://getcomposer.org/) users, the package is registered
 as `picas/wp-basic-bootstrap`.
+
+Installation with a child theme
+-------------------------------
+
+To use this theme as a parent of a child theme, you can begin your child theme with the following `style.css` file:
+
+    /*
+    Theme Name:     My Child Theme
+    Template:       wp-basic-bootstrap
+    */
+
+The parent theme (this original theme) must be installed.
+
+Installation as a basis to build your own theme
+-----------------------------------------------
+
+If you want to use this theme as a basis to modify, you may register the original repository URL as a GIT remote.
+
+In the example below, let's say your own theme is hosted at `http://github.com/user/my-theme`:
+
+    mkdir my-theme && cd $_
+    git init .
+    git remote add origin https://github.com/user/my-theme.git
+    git remote add upstream https://gitlab.com/e-picas/wp-basic-bootstrap.git
+
+This way, you will be able to make your commits to your own theme and push them to your own repository:
+
+    touch readme.txt
+    commit -a -m "this is a fake commit"
+    git push --set-upstream origin master
+
+And you will be able to update your basis with its last commits (eventually):
+
+    git fetch upstream
+    git merge --no-ff --no-commit upstream/master
+    git status
+    git commit
 
 Usage
 -----
