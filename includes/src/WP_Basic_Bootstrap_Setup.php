@@ -18,7 +18,7 @@ class WP_Basic_Bootstrap_Setup
     public static function init()
     {
         // load custom libraries
-        basicbootstrap_load_library('template-loader');
+        basicbootstrap_load_class('wp-template-hierarchy-everywhere');
         basicbootstrap_load_library('template-enhancer');
         basicbootstrap_load_library('template-library');
 
