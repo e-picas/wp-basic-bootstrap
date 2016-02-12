@@ -24,13 +24,13 @@ get_header_hierarchical('401'); ?>
 
     <?php get_the_breadcrumb(); ?>
 
-    <article id="post-0" class="post not-found">
+    <article id="post-0" class="post not-found jumbotron">
         <header class="header">
             <h1 class="entry-title"><?php _e('Unauthorized Access', 'basicbootstrap'); ?></h1>
         </header>
         <section class="entry-content">
-            <h2 class="center"><?php _e('This is somewhat embarrassing, isn&rsquo;t it?', 'basicbootstrap'); ?></h2>
-            <p class="center">
+            <h2 class="text-center"><?php _e('This is somewhat embarrassing, isn&rsquo;t it?', 'basicbootstrap'); ?></h2>
+            <p class="text-center">
                 <?php _e('It seems you don&rsquo;t have the permissions to access what you&rsquo;re looking for. Perhaps searching can help.', 'basicbootstrap'); ?>
             </p>
         </section>
