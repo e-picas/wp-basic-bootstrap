@@ -17,7 +17,7 @@ $basicbootstrap_config = array(
 
     // defaults theme mods
     'defaults'              => array(
-        'copyright_text'        => '<a href="http://wordpress.org/">Wordpress</a> <a href="http://gitlab.com/e-picas/wp-basic-bootstrap">Basic Bootstrap</a> theme built with love by <a href="https://github.com/piwi">@picas</a>.',
+        'copyright_text'        => '<a href="http://wordpress.org/">Wordpress</a> <a href="http://github.com/e-picas/wp-basic-bootstrap">Basic Bootstrap</a> theme built with love by <a href="https://picas.fr/">@picas</a>.',
         'content_width'         => 850,
         'site_icon_size'        => 96,
         'excerpt_max_length'    => 55,

@@ -63,7 +63,7 @@ In the example below, let's say your own theme is hosted at `http://github.com/u
     mkdir my-theme && cd $_
     git init .
     git remote add origin https://github.com/user/my-theme.git
-    git remote add upstream https://gitlab.com/e-picas/wp-basic-bootstrap.git
+    git remote add upstream https://github.com/e-picas/wp-basic-bootstrap.git
 
 This way, you will be able to make your commits to your own theme and push them to your own repository:
 
@@ -104,3 +104,12 @@ WP Basic Bootstrap bundles the following third-party resources:
 2.  Font Awesome (<http://fontawesome.io/>), licensed under both 
     [MIT](https://github.com/dimsemenov/Magnific-Popup/blob/master/LICENSE)for the CSS and 
     [SIL OFL 1.1](http://fontawesome.io/license) for the Font
+
+3.  TGM Plugin Activation (<http://tgmpluginactivation.com/>), licensed under 
+    [GPL](https://github.com/TGMPA/TGM-Plugin-Activation/blob/develop/LICENSE.md)
+
+4.  wp_bootstrap_navwalker (<https://github.com/twittem/wp-bootstrap-navwalker>), licensed under 
+    [GPL](https://github.com/twittem/wp-bootstrap-navwalker/blob/master/LICENSE.txt)
+
+5.  WP Template Hierarchy Everywhere (<https://github.com/e-picas/wp-template-hierarchy-everywhere>), licensed under 
+    [GPL](http://www.gnu.org/licenses/gpl-3.0.html)

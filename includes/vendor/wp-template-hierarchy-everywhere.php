@@ -87,7 +87,7 @@
  *
  * ## Support
  *
- * Is you find a bug, please use the [support panel](https://gitlab.com/e-picas/wp-template-hierarchy-everywhere/issues)
+ * If you find a bug, please use the [support panel](https://github.com/e-picas/wp-template-hierarchy-everywhere/issues)
  * of the repository. You may first search in existing issues to check if the bug you figured has not been
  * reported yet.
  *
@@ -112,14 +112,14 @@
  *
  * @package   WP_Template_Hierarchy_Everywhere
  * @version   1.0.0-beta
- * @link      http://gitlab.com/e-picas/wp-template-hierarchy-everywhere
+ * @link      http://github.com/e-picas/wp-template-hierarchy-everywhere
  * @author    picas (Pierre Cassat) & contributors
  * @copyright Copyright (c) 2016, Pierre Cassat
  * @license   GPL-3.0+
  *
  * @wordpress-plugin
  * Plugin Name: WP Template Hierarchy Everywhere
- * Plugin URI:  http://gitlab.com/e-picas/wp-template-hierarchy-everywhere
+ * Plugin URI:  http://github.com/e-picas/wp-template-hierarchy-everywhere
  * Description: The template hierarchy concept applied everywhere.
  * Version:     1.0.0-beta
  * Author:      picas
