@@ -24,8 +24,6 @@ class WP_Basic_Bootstrap_Widget_Recent_Comments extends WP_Widget_Recent_Comment
             $args['widget_id'] = $this->id;
         }
 
-        $output = '';
-
         $title = (! empty($instance['title'])) ? $instance['title'] : __('Recent Comments');
 
         /** This filter is documented in wp-includes/widgets/class-wp-widget-pages.php */
