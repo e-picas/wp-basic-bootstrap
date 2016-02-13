@@ -342,3 +342,19 @@ function basicbootstrap_get_the_password_form()
     return $output;
 }
 
+/**
+ * Strip the default 'protected: %s' protected posts title
+ *
+ * To use this feature, write:
+ *
+ *      add_filter('protected_title_format', 'basicbootstrap_get_default_password_post_title', 10, 2);
+ *
+ * The `protected_title_format` filter is documented in `wp-includes/post-template.php`.
+ *
+ * @param $title
+ * @return string
+ */
+function basicbootstrap_get_default_password_post_title($title, $post = null)
+{
+    return '%s';
+}
