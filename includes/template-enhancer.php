@@ -152,6 +152,24 @@ function get_singular_type()
 }
 
 /**
+ * This will force the $page_type global to be set correctly while WP prepares its query
+ *
+ * The 'template_include' filter is documented in `wp-includes/template-load.php`.
+ */
+add_filter('template_include', function($tpl){
+    global $page_type, $singular_page_type, $blog_page;
+    unset($page_type);
+    unset($singular_page_type);
+    unset($blog_page);
+    get_page_type();
+    is_blog_page();
+    get_singular_type();
+    return $tpl;
+}, 1000);
+
+// STICKY POSTS LOOPS
+
+/**
  * Check if current post is sticky and if it should be treated specially
  *
  * This returns `true` if the post is sticky for the following pages:
@@ -170,24 +188,6 @@ function is_sticky_view()
     }
     return $sticky_view;
 }
-
-/**
- * This will force the $page_type global to be set correctly while WP prepares its query
- *
- * The 'template_include' filter is documented in `wp-includes/template-load.php`.
- */
-add_filter('template_include', function($tpl){
-    global $page_type, $singular_page_type, $blog_page;
-    unset($page_type);
-    unset($singular_page_type);
-    unset($blog_page);
-    get_page_type();
-    is_blog_page();
-    get_singular_type();
-    return $tpl;
-}, 1000);
-
-// STICKY POSTS LOOPS
 
 /**
  * Get the Nth first sticky posts IDs (in ID desc order: newest to older)
@@ -236,11 +236,13 @@ function get_sticky_query($num = null)
     // check if there are any
     if (!empty($sticky)) {
         // get the original query and store/restore it
-        global $wp_query, $tmp_query;
+        /* @var $wp_query \WP_Query */
+        /* @var $tmp_sticky_query \WP_Query */
+        global $wp_query, $tmp_sticky_query;
         if (empty($tmp_query)) {
-            $tmp_query = clone $wp_query;
+            $tmp_sticky_query = clone $wp_query;
         } else {
-            $wp_query = clone $tmp_query;
+            $wp_query = clone $tmp_sticky_query;
         }
 
         // override the query
@@ -250,6 +252,13 @@ function get_sticky_query($num = null)
                 'post__in'  => $sticky,
             )
         );
+        // set the post type to query if it is not defined
+        if ((is_home() /*&& $wp_query->is_main_query()*/) || is_feed()) {
+            $post_types = $wp_query->get('post_type');
+            if (empty($args['post_type']) && empty($post_types)) {
+                $args['post_type'] = array('post');
+            }
+        }
 
         // process the new query
         query_posts($args);
@@ -276,11 +285,13 @@ function get_not_sticky_query($num = null)
     // check if there are any
     if (!empty($sticky)) {
         // get the original query and store/restore it
-        global $wp_query, $tmp_query;
-        if (empty($tmp_query)) {
-            $tmp_query = clone $wp_query;
+        /* @var $wp_query \WP_Query */
+        /* @var $tmp_sticky_query \WP_Query */
+        global $wp_query, $tmp_sticky_query;
+        if (empty($tmp_sticky_query)) {
+            $tmp_sticky_query = clone $wp_query;
         } else {
-            $wp_query = clone $tmp_query;
+            $wp_query = clone $tmp_sticky_query;
         }
 
         // override the query
@@ -291,6 +302,13 @@ function get_not_sticky_query($num = null)
                 'ignore_sticky_posts'   => true
             )
         );
+        // set the post type to query if it is not defined
+        if ((is_home() /*&& $wp_query->is_main_query()*/) || is_feed()) {
+            $post_types = $wp_query->get('post_type');
+            if (empty($args['post_type']) && empty($post_types)) {
+                $args['post_type'] = array('post');
+            }
+        }
 
         // process the new query
         query_posts($args);
