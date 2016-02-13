@@ -180,3 +180,8 @@ add_filter('the_excerpt', 'do_shortcode');
  * Include the custom user CSS in header if so
  */
 add_action('wp_head', 'basicbootstrap_include_custom_css_code');
+
+/**
+ * Use a customized password form for protected posts
+ */
+add_filter('the_password_form', 'basicbootstrap_get_the_password_form');

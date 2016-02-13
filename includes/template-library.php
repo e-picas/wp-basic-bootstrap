@@ -316,3 +316,29 @@ function basicbootstrap_include_custom_css_code()
         echo '<style type="text/css">' . $css_code . '</style>';
     }
 }
+
+/**
+ * Retrieve protected post password form content.
+ *
+ * To use this method, write:
+ *
+ *      add_filter('the_password_form', 'basicbootstrap_get_the_password_form');
+ *
+ * The `the_password_form` filter is documented in `wp-includes/post-template.php`.
+ *
+ * @return string HTML content for password form for password protected post.
+ */
+function basicbootstrap_get_the_password_form()
+{
+    $post = get_post();
+    $label = 'pwbox-' . (empty($post->ID) ? rand() : $post->ID);
+    ob_start();
+    get_template_part_hierarchical_fetch('partials/password-form', '', array(
+        'post' => $post,
+        'label' => $label,
+    ));
+    $output = ob_get_contents();
+    ob_end_clean();
+    return $output;
+}
+
