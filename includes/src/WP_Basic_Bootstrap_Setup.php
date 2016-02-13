@@ -269,6 +269,11 @@ class WP_Basic_Bootstrap_Setup
         basicbootstrap_load_class('WP_Basic_Bootstrap_Widget_Recent_Comments');
         register_widget('WP_Basic_Bootstrap_Widget_Recent_Comments');
 
+        // replace the archives widget
+        unregister_widget('WP_Widget_Archives');
+        basicbootstrap_load_class('WP_Basic_Bootstrap_Widget_Archives');
+        register_widget('WP_Basic_Bootstrap_Widget_Archives');
+
         // new author block widget
         basicbootstrap_load_class('WP_Basic_Bootstrap_Widget_Author_Block');
         register_widget('WP_Basic_Bootstrap_Widget_Author_Block');
