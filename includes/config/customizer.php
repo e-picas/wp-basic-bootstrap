@@ -293,6 +293,13 @@ $basicbootstrap_customizer_config = array(
         'settings' => array(
 
             array(
+                'id' => 'show_protected_posts',
+                'label' => __('Show Protected Posts in Lists', 'basicbootstrap'),
+                'control_type' => 'checkbox',
+                'transport' => 'refresh',
+            ),
+
+            array(
                 'id' => 'visible_breadcrumb',
                 'label' => __('Visible Breadcrumb (hidden otherwise)', 'basicbootstrap'),
                 'control_type' => 'checkbox',

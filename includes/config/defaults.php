@@ -79,6 +79,7 @@ $basicbootstrap_config = array(
         'show_sharing_links_post' => true,
         'show_sharing_links_attachment' => true,
         'show_author_posts_number' => true,
+        'show_protected_posts'  => false,
     ),
 
     // custom header settings

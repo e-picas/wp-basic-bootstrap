@@ -108,6 +108,10 @@ class WP_Basic_Bootstrap_Setup
      */
     public static function setupFrontend()
     {
+        // exclude password proceted posts from lists if so
+        if (false === (bool) get_basicbootstrap_mod('show_protected_posts')) {
+            add_action('pre_get_posts', 'exclude_protected_posts_action');
+        }
     }
 
     /**

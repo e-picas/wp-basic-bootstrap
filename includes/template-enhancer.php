@@ -300,6 +300,32 @@ function get_not_sticky_query($num = null)
     return false;
 }
 
+// SECURITY
+
+/**
+ * Filter to hide protected posts
+ *
+ * @param $where
+ * @return string
+ */
+function exclude_protected_posts($where)
+{
+    global $wpdb;
+    return ($where .= " AND {$wpdb->posts}.post_password = '' ");
+}
+
+/**
+ * Decide where to display them
+ *
+ * @param $query
+ */
+function exclude_protected_posts_action($query)
+{
+    if (!is_singular() && !is_admin()) {
+        add_filter('posts_where', 'exclude_protected_posts');
+    }
+}
+
 // CUSTOM VALIDATORS / SANITIZERS
 
 /**
