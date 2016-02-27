@@ -32,7 +32,7 @@ error_log('applied template : '.$template);
 
 <a href="#content" class="sr-only sr-only-focusable"><?php _e('Skip to main content', 'basicbootstrap'); ?></a>
 <a href="#navigation" class="sr-only sr-only-focusable"><?php _e('Skip to main navigation', 'basicbootstrap'); ?></a>
-<?php if ($template != 'full_width') : ?>
+<?php if (strpos($template, 'full_width')===false) : ?>
 <a href="#sidebar" class="sr-only sr-only-focusable"><?php _e('Skip to page sidebar', 'basicbootstrap'); ?></a>
 <?php endif; ?>
 <a href="#footer" class="sr-only sr-only-focusable"><?php _e('Skip to page footer', 'basicbootstrap'); ?></a>

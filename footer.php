@@ -38,7 +38,7 @@ error_log('applied template : '.$template);
 
 <a href="#content" class="sr-only sr-only-focusable"><?php _e('Back to main content', 'basicbootstrap'); ?></a>
 <a href="#navigation" class="sr-only sr-only-focusable"><?php _e('Back to main navigation', 'basicbootstrap'); ?></a>
-<?php if ($template == 'full_width') : ?>
+<?php if (strpos($template, 'full_width')===false) : ?>
 <a href="#sidebar" class="sr-only sr-only-focusable"><?php _e('Back to page sidebar', 'basicbootstrap'); ?></a>
 <?php endif; ?>
 <a href="#header" class="sr-only sr-only-focusable"><?php _e('Back to page header', 'basicbootstrap'); ?></a>
