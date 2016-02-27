@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WP Basic Bootstrap\n"
-"POT-Creation-Date: 2016-02-10 17:59+0100\n"
-"PO-Revision-Date: 2016-02-10 17:59+0100\n"
+"POT-Creation-Date: 2016-02-27 18:13+0100\n"
+"PO-Revision-Date: 2016-02-27 18:13+0100\n"
 "Last-Translator: picas <me@picas.fr>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -50,12 +50,12 @@ msgstr ""
 "Il semble que nous ne pouvions pas trouver ce que vous cherchez. Peut-être "
 "qu&rsquo;une recherche pourrait aider."
 
-#: author.php:43
+#: author.php:42
 #, php-format
 msgid "About %s"
 msgstr "À propos de %s"
 
-#: author.php:59
+#: author.php:57
 #, php-format
 msgid "Posts by %s"
 msgstr "Articles de %s"
@@ -108,7 +108,7 @@ msgstr "Annuler le commentaire"
 
 #: comments.php:99
 msgid "Post Comment"
-msgstr "Commentaire de l’article"
+msgstr "Commenter l’article"
 
 #: comments.php:103
 msgid "Comment"
@@ -428,14 +428,18 @@ msgid "You can here define the look of your pages main contents."
 msgstr "Vous pouvez ici définir le rendu du contenu principal du site."
 
 #: includes/config/customizer.php:297
+msgid "Show Protected Posts in Lists"
+msgstr "Montrer les articles protégés dans les listes"
+
+#: includes/config/customizer.php:304
 msgid "Visible Breadcrumb (hidden otherwise)"
 msgstr "Montrer le fil d’ariane (caché autrement)"
 
-#: includes/config/customizer.php:304
+#: includes/config/customizer.php:311
 msgid "Use Post Excerpts as Intro"
 msgstr "Utiliser les extraits d’articles comme intro"
 
-#: includes/config/customizer.php:305
+#: includes/config/customizer.php:312
 msgid ""
 "This will show the excerpt as the introduction of a post on the post page if "
 "it is defined."
@@ -443,11 +447,11 @@ msgstr ""
 "Ceci affichera les extraits comme introduction des articles s’ils sont "
 "définis."
 
-#: includes/config/customizer.php:312
+#: includes/config/customizer.php:319
 msgid "Excerpt Length"
 msgstr "Longueur des extraits"
 
-#: includes/config/customizer.php:313
+#: includes/config/customizer.php:320
 msgid ""
 "This will set the number of words extracted from a post content to generate "
 "its excerpt in posts list."
@@ -455,24 +459,24 @@ msgstr ""
 "Ceci va définir le nombre de mots maximum des extraits générés depuis les "
 "contenus des articles."
 
-#: includes/config/customizer.php:330
+#: includes/config/customizer.php:337
 msgid "Read More Text"
 msgstr "Texte \"en lire plus\""
 
-#: includes/config/customizer.php:336
+#: includes/config/customizer.php:343
 msgid "Show Read More Buttons"
 msgstr "Montrer les boutons \"Lire plus\""
 
-#: includes/config/customizer.php:337
+#: includes/config/customizer.php:344
 msgid "Add a \"read more\" button to posts excerpts in lists."
 msgstr ""
 "Ajoute un bouton \"Lire plus\" aux extraits d’articles dans les listes."
 
-#: includes/config/customizer.php:344
+#: includes/config/customizer.php:351
 msgid "Sticky Posts To Show"
 msgstr "Articles en avant à montrer"
 
-#: includes/config/customizer.php:345
+#: includes/config/customizer.php:352
 msgid ""
 "This will set the number of sticky posts shown as featured (0 will disable "
 "this feature)."
@@ -480,11 +484,11 @@ msgstr ""
 "Ceci va définir le nombre d’articles mis en avant à afficher en premier (la "
 "valeur 0 désactive cette fonctionnalité)."
 
-#: includes/config/customizer.php:365
+#: includes/config/customizer.php:372
 msgid "Sticky Excerpt Length"
 msgstr "Longueur des extraits mis en avant"
 
-#: includes/config/customizer.php:366
+#: includes/config/customizer.php:373
 msgid ""
 "This will set the number of words extracted from a sticky post content to "
 "generate its excerpt on the sticky post view."
@@ -492,11 +496,11 @@ msgstr ""
 "Ceci va définir le nombre de mots maximum des extraits générés depuis les "
 "contenus des articles mis en avant."
 
-#: includes/config/customizer.php:383
+#: includes/config/customizer.php:390
 msgid "Pagination Limit"
 msgstr "Limite de pagination"
 
-#: includes/config/customizer.php:384
+#: includes/config/customizer.php:391
 msgid ""
 "This will set the number of pages to show before AND after current one in "
 "numerical pagination."
@@ -504,23 +508,23 @@ msgstr ""
 "Ceci va définir le nombre de pages à afficher avant ET après la page "
 "courante dans les paginations numériques."
 
-#: includes/config/customizer.php:403
+#: includes/config/customizer.php:410
 msgid "Show Sharing Links on Pages"
 msgstr "Montrer les liens de partage sur les pages"
 
-#: includes/config/customizer.php:409
+#: includes/config/customizer.php:416
 msgid "Show Sharing Links on Posts"
 msgstr "Montrer les liens de partage sur les articles"
 
-#: includes/config/customizer.php:415
+#: includes/config/customizer.php:422
 msgid "Show Sharing Links on Attachments"
 msgstr "Montrer les liens de partage sur les médias"
 
-#: includes/config/customizer.php:425
+#: includes/config/customizer.php:432
 msgid "Header & Footer Templating"
 msgstr "Construction des header & footer"
 
-#: includes/config/customizer.php:426
+#: includes/config/customizer.php:433
 msgid ""
 "You can here show or hide some of the blocks of the default header and "
 "footer templating construction."
@@ -528,101 +532,101 @@ msgstr ""
 "Vous pouvez ici montrer ou cacher certains blocs par défaut des header et "
 "footer."
 
-#: includes/config/customizer.php:436
+#: includes/config/customizer.php:443
 msgid "Display Header Identity Block"
-msgstr ""
+msgstr "Montrer le bloc d’identité du site du header"
 
-#: includes/config/customizer.php:444
+#: includes/config/customizer.php:451
 msgid "Display Header Logo"
 msgstr "Montrer le logo du header"
 
-#: includes/config/customizer.php:451
+#: includes/config/customizer.php:458
 msgid "Display Header Searchbox"
 msgstr "Montrer le formulaire de recherche du header"
 
-#: includes/config/customizer.php:458
+#: includes/config/customizer.php:465
 msgid "Display Footer Copyright"
 msgstr "Montrer le texte de copyright du footer"
 
-#: includes/config/customizer.php:468
+#: includes/config/customizer.php:475
 msgid "Contents Meta-Data"
 msgstr "Meta-données des contenus"
 
-#: includes/config/customizer.php:469
+#: includes/config/customizer.php:476
 msgid "You can here show or hide some of your website contents meta-data."
 msgstr ""
 "Vous pouvez ici montrer ou cacher certaines des méta-données des contenus du "
 "site."
 
-#: includes/config/customizer.php:474
+#: includes/config/customizer.php:481
 msgid "Show Author"
 msgstr "Montrer l’auteur"
 
-#: includes/config/customizer.php:480
+#: includes/config/customizer.php:487
 msgid "Show Publication Date"
 msgstr "Montrer la date de publication"
 
-#: includes/config/customizer.php:486
+#: includes/config/customizer.php:493
 msgid "Show Last Update Date"
 msgstr "Montrer la date de dernière modification"
 
-#: includes/config/customizer.php:492
+#: includes/config/customizer.php:499
 msgid "Show Post Format"
 msgstr "Montrer le format des articles"
 
-#: includes/config/customizer.php:498
+#: includes/config/customizer.php:505
 msgid "Show Post Categories"
 msgstr "Montrer les catégories des articles"
 
-#: includes/config/customizer.php:504
+#: includes/config/customizer.php:511
 msgid "Show Post Tags"
 msgstr "Montrer les étiquettes des articles"
 
-#: includes/config/customizer.php:510
+#: includes/config/customizer.php:517
 msgid "Show Comments Link"
 msgstr "Montrer le lien vers les commentaires"
 
-#: includes/config/customizer.php:516
+#: includes/config/customizer.php:523
 msgid "Show Permalink"
 msgstr "Montrer le permalien"
 
-#: includes/config/customizer.php:522
+#: includes/config/customizer.php:529
 msgid "Show Edit Links"
 msgstr "Montrer les boutons \"éditer\""
 
-#: includes/config/customizer.php:528
+#: includes/config/customizer.php:535
 msgid "Show Edit Comment Links"
 msgstr "Montrer les boutons \"éditer\" pour les commentaires"
 
-#: includes/config/customizer.php:534
+#: includes/config/customizer.php:541
 msgid "Show Attachments MIME Types"
 msgstr "Montrer le type MIME des médias"
 
-#: includes/config/customizer.php:540
+#: includes/config/customizer.php:547
 msgid "Show Attachment Sizes"
 msgstr "Montrer la taille des médias"
 
-#: includes/config/customizer.php:546
+#: includes/config/customizer.php:553
 msgid "Show Attachment Link"
 msgstr "Montrer le lien des médias"
 
-#: includes/config/customizer.php:552
+#: includes/config/customizer.php:559
 msgid "Show Author Posts Number"
 msgstr "Montrer le nombre d’articles des auteurs"
 
-#: includes/config/customizer.php:563
+#: includes/config/customizer.php:570
 msgid "Theme Styling"
 msgstr "Styles du thème"
 
-#: includes/config/customizer.php:564
+#: includes/config/customizer.php:571
 msgid "You can here define some style options of your theme."
 msgstr "Vous pouvez ici définir certains styles de votre thème."
 
-#: includes/config/customizer.php:589
+#: includes/config/customizer.php:596
 msgid "Theme Templating"
 msgstr "Construction du thème"
 
-#: includes/config/customizer.php:590
+#: includes/config/customizer.php:597
 msgid ""
 "You can here show or hide some of the blocks of the default templating "
 "construction. You can also define the look of the navigation bar."
@@ -630,22 +634,22 @@ msgstr ""
 "Vous pouvez ici montrer ou cacher certains blocs du templating construit par "
 "défaut. Vous pouvez également définir le rendu de la barre de navigation."
 
-#: includes/config/customizer.php:609
+#: includes/config/customizer.php:616
 msgid "Theme Layout"
 msgstr "Modèles du thème"
 
-#: includes/config/customizer.php:610
+#: includes/config/customizer.php:617
 msgid ""
 "You can set here various settings to customize your website global rendering."
 msgstr ""
 "Vous pouvez ici définir diverses options pour adapter le rendu global du "
 "site."
 
-#: includes/config/customizer.php:629
+#: includes/config/customizer.php:636
 msgid "Social Links"
 msgstr "Liens sociaux"
 
-#: includes/config/customizer.php:630
+#: includes/config/customizer.php:637
 msgid ""
 "Settings for the social icons navbar menu. If you want to hide an icon then "
 "leave it blank."
@@ -653,91 +657,91 @@ msgstr ""
 "Options pour le menu d’icônes sociales de la barre de navigation. Une valeur "
 "vide annule l’icône relative."
 
-#: includes/config/customizer.php:635
+#: includes/config/customizer.php:642
 msgid "Display Automatic Social Icons"
 msgstr "Afficher les icônes sociales automatiques"
 
-#: includes/config/customizer.php:636
+#: includes/config/customizer.php:643
 msgid "Disable this to use a custom user menu instead."
 msgstr "Décocher cette case pour utiliser un menu Wordpress à la place."
 
-#: includes/config/customizer.php:642
+#: includes/config/customizer.php:649
 msgid "Facebook URL"
 msgstr "URL Facebook"
 
-#: includes/config/customizer.php:647
+#: includes/config/customizer.php:654
 msgid "Twitter URL"
 msgstr "URL Twitter"
 
-#: includes/config/customizer.php:652
+#: includes/config/customizer.php:659
 msgid "Google+ URL"
 msgstr "URL Google Plus"
 
-#: includes/config/customizer.php:657
+#: includes/config/customizer.php:664
 msgid "LinkedIn URL"
 msgstr "URL Linkedin"
 
-#: includes/config/customizer.php:662
+#: includes/config/customizer.php:669
 msgid "Skype URL"
 msgstr "URL Skype"
 
-#: includes/config/customizer.php:667
+#: includes/config/customizer.php:674
 msgid "Pinterest URL"
 msgstr "URL Pinterest"
 
-#: includes/config/customizer.php:672
+#: includes/config/customizer.php:679
 msgid "YouTube URL"
 msgstr "URL Youtube"
 
-#: includes/config/customizer.php:677
+#: includes/config/customizer.php:684
 msgid "Vimeo URL"
 msgstr "URL Vimeo"
 
-#: includes/config/customizer.php:682
+#: includes/config/customizer.php:689
 msgid "Dribbble URL"
 msgstr "URL Dribbble"
 
-#: includes/config/customizer.php:687
+#: includes/config/customizer.php:694
 msgid "Flickr URL"
 msgstr "URL Flickr"
 
-#: includes/config/customizer.php:692
+#: includes/config/customizer.php:699
 msgid "Tumblr URL"
 msgstr "URL Tumblr"
 
-#: includes/config/customizer.php:697
+#: includes/config/customizer.php:704
 msgid "Github URL"
 msgstr "Url Github"
 
-#: includes/config/customizer.php:702
+#: includes/config/customizer.php:709
 msgid "Instagram URL"
 msgstr "URL Instagram"
 
-#: includes/config/customizer.php:707
+#: includes/config/customizer.php:714
 msgid "Stack Overflow URL"
 msgstr "URL Stack Overflow"
 
-#: includes/config/customizer.php:712
+#: includes/config/customizer.php:719
 msgid "Stack Exchange URL"
 msgstr "URL Stack Exchange"
 
-#: includes/config/customizer.php:717
+#: includes/config/customizer.php:724
 msgid "Diaspora URL"
 msgstr "Url Diaspora"
 
-#: includes/config/customizer.php:722
+#: includes/config/customizer.php:729
 msgid "RSS URL"
 msgstr "URL RSS"
 
-#: includes/config/customizer.php:724
+#: includes/config/customizer.php:731
 msgid "By default it should be <code>/feed/</code>"
 msgstr "Par défaut, cela devrait être <code>/feed/</code>"
 
-#: includes/config/customizer.php:734
+#: includes/config/customizer.php:741
 msgid "Custom Code"
 msgstr "Personnalisation CSS"
 
-#: includes/config/customizer.php:735
+#: includes/config/customizer.php:742
 msgid ""
 "Use this section to enter your custom CSS code. It will be included in the "
 "head section of the site."
@@ -745,44 +749,44 @@ msgstr ""
 "Entrez vos propres codes CSS. Ils seront inclus dans l’en-tête de votre site "
 "(section ‘head’)."
 
-#: includes/config/customizer.php:742
+#: includes/config/customizer.php:749
 msgid "Custom CSS"
 msgstr "Personnalisations CSS"
 
-#: includes/config/defaults.php:119
+#: includes/config/defaults.php:120
 msgid "Main Menu"
 msgstr "Menu principal"
 
-#: includes/config/defaults.php:120
+#: includes/config/defaults.php:121
 msgid "Social Links Menu"
 msgstr "Menu de liens sociaux"
 
-#: includes/config/defaults.php:121
+#: includes/config/defaults.php:122
 msgid "Footer Menu"
 msgstr "Menu du footer"
 
-#: includes/config/defaults.php:128
+#: includes/config/defaults.php:129
 msgid "Primary Widget Area"
 msgstr "Zone de widgets primaire"
 
-#: includes/config/defaults.php:130
+#: includes/config/defaults.php:131
 msgid "Add widgets here to appear in your sidebar."
 msgstr "Ajoutez des widgets ici pour les voir apparaître dans la sidebar."
 
-#: includes/config/defaults.php:138
+#: includes/config/defaults.php:139
 msgid "First Footer Widget Area"
 msgstr "Première zone de widgets du footer"
 
-#: includes/config/defaults.php:140 includes/config/defaults.php:150
-#: includes/config/defaults.php:160
+#: includes/config/defaults.php:141 includes/config/defaults.php:151
+#: includes/config/defaults.php:161
 msgid "An optional widget area for your site footer."
 msgstr "Une zone de widgets optionnelle pour votre footer."
 
-#: includes/config/defaults.php:148
+#: includes/config/defaults.php:149
 msgid "Second Footer Widget Area"
 msgstr "Seconde zone de widgets du footer"
 
-#: includes/config/defaults.php:158
+#: includes/config/defaults.php:159
 msgid "Third Footer Widget Area"
 msgstr "Troisième zone de widgets du footer"
 
@@ -982,6 +986,30 @@ msgstr "Recherche: \"%s\""
 msgid "Authors"
 msgstr "Auteurs"
 
+#: includes/src/WP_Basic_Bootstrap_Widget_Archives.php:31
+msgid "Archives"
+msgstr "Archives"
+
+#: includes/src/WP_Basic_Bootstrap_Widget_Archives.php:56
+msgid "Select Year"
+msgstr "Sélectionner une année"
+
+#: includes/src/WP_Basic_Bootstrap_Widget_Archives.php:59
+msgid "Select Month"
+msgstr "Sélectionner un mois"
+
+#: includes/src/WP_Basic_Bootstrap_Widget_Archives.php:62
+msgid "Select Day"
+msgstr "Sélectionner un jour"
+
+#: includes/src/WP_Basic_Bootstrap_Widget_Archives.php:65
+msgid "Select Week"
+msgstr "Sélectionner une semaine"
+
+#: includes/src/WP_Basic_Bootstrap_Widget_Archives.php:68
+msgid "Select Post"
+msgstr "Sélectionner un article"
+
 #: includes/src/WP_Basic_Bootstrap_Widget_Author_Block.php:19
 msgid "Author block widget with name and description."
 msgstr "Widget d’un auteur porposant son nom et sa bio."
@@ -1018,11 +1046,11 @@ msgstr ""
 "Sélectionner \"utilisateur actuel\" pour afficher les informations de "
 "l’auteur de l’article en cours."
 
-#: includes/src/WP_Basic_Bootstrap_Widget_Recent_Comments.php:29
+#: includes/src/WP_Basic_Bootstrap_Widget_Recent_Comments.php:27
 msgid "Recent Comments"
 msgstr "Commentaires récents"
 
-#: includes/src/WP_Basic_Bootstrap_Widget_Recent_Comments.php:98
+#: includes/src/WP_Basic_Bootstrap_Widget_Recent_Comments.php:96
 msgid "Display comment date?"
 msgstr "Afficher la date du commentaire?"
 
@@ -1042,6 +1070,22 @@ msgstr "Lire l’article complet: %s"
 #: includes/template-library.php:223
 msgid "read more"
 msgstr "lire plus"
+
+#: includes/vendor/wp-template-hierarchy-everywhere.php:414
+#: includes/vendor/wp-template-hierarchy-everywhere.php:415
+#: includes/vendor/wp-template-hierarchy-everywhere.php:422 searchform.php:14
+msgid "Search for:"
+msgstr "Recherche de:"
+
+#: includes/vendor/wp-template-hierarchy-everywhere.php:415
+msgid "Search &hellip;"
+msgstr "Recherche &hellip;"
+
+#: includes/vendor/wp-template-hierarchy-everywhere.php:417
+#: includes/vendor/wp-template-hierarchy-everywhere.php:424 searchform.php:20
+#: searchform.php:27
+msgid "Search"
+msgstr "Recherche"
 
 #: partials/comments/comment-item-cb.php:19
 msgid "Post author"
@@ -1073,7 +1117,7 @@ msgstr "Pingback:"
 msgid "Toggle navigation"
 msgstr "Basculer la navigation"
 
-#: partials/loop.php:28
+#: partials/loop.php:27
 msgid "Sorry, no posts matched your criteria."
 msgstr "Désolé, aucun article ne correspond à vos critères."
 
@@ -1083,17 +1127,17 @@ msgid "Original file"
 msgstr "Fichier original"
 
 #: partials/meta/content-footer-page.php:11 partials/meta/content-footer.php:43
-#: partials/meta/summary-footer.php:43
+#: partials/meta/summary-footer.php:50
 msgid "0 Comments"
 msgstr "0 Commentaire"
 
 #: partials/meta/content-footer-page.php:11 partials/meta/content-footer.php:43
-#: partials/meta/summary-footer.php:43
+#: partials/meta/summary-footer.php:51
 msgid "1 Comment"
 msgstr "1 Commentaire"
 
 #: partials/meta/content-footer-page.php:11 partials/meta/content-footer.php:43
-#: partials/meta/summary-footer.php:43
+#: partials/meta/summary-footer.php:52
 msgid "% Comments"
 msgstr "% Commentaires"
 
@@ -1106,17 +1150,17 @@ msgstr "Permalien de ce contenu: %s"
 msgid "Permanent link"
 msgstr "Lien permanent"
 
-#: partials/meta/content-header-author.php:16
+#: partials/meta/content-header-author.php:19
 #, php-format
 msgid "See oneline %s"
 msgstr "Voir en ligne %s"
 
-#: partials/meta/content-header-author.php:29
+#: partials/meta/content-header-author.php:32
 #, php-format
 msgid "%s post written"
 msgstr "%s article rédigé"
 
-#: partials/meta/content-header-author.php:30
+#: partials/meta/content-header-author.php:33
 #, php-format
 msgid "%s posts written"
 msgstr "%s articles rédigés"
@@ -1131,11 +1175,19 @@ msgstr "par %1$s le %2$s"
 msgid ", last updated at %1$s"
 msgstr ", dernière mise à jour le %1$s"
 
-#: partials/meta/content-header.php:27 partials/meta/summary-header.php:15
+#: partials/meta/content-header.php:13 partials/meta/summary-footer.php:13
+msgid "Private"
+msgstr "Privé"
+
+#: partials/meta/content-header.php:15 partials/meta/summary-footer.php:15
+msgid "Protected"
+msgstr "Protégé"
+
+#: partials/meta/content-header.php:33 partials/meta/summary-header.php:15
 msgid "Publication date"
 msgstr "Date de publication"
 
-#: partials/meta/content-header.php:43
+#: partials/meta/content-header.php:49
 msgid "Last modification date"
 msgstr "Date de dernière modification"
 
@@ -1160,13 +1212,29 @@ msgstr "Voir la première page"
 msgid "See last page"
 msgstr "Voir la dernière page"
 
-#: partials/pagination/simple.php:23
-msgid "Older post"
-msgstr "Article précédent"
+#: partials/pagination/simple.php:24
+#, php-format
+msgid "Older post: %s"
+msgstr "Article précédent: %s"
 
-#: partials/pagination/simple.php:32
-msgid "Newer post"
-msgstr "Article suivant"
+#: partials/pagination/simple.php:35
+#, php-format
+msgid "Newer post: %s"
+msgstr "Article suivant: %s"
+
+#: partials/password-form.php:9
+msgid ""
+"This content is password protected. To view it please enter your password "
+"below:"
+msgstr ""
+
+#: partials/password-form.php:10
+msgid "Password:"
+msgstr ""
+
+#: partials/password-form.php:13
+msgid "Submit"
+msgstr ""
 
 #: partials/socials/content.php:7 partials/socials/content.php:15
 #: partials/socials/content.php:23 partials/socials/content.php:31
@@ -1266,14 +1334,6 @@ msgid "Sorry, nothing matched your search. Please try again."
 msgstr ""
 "Désolé, rien ne semble correspondre à votre recherche. Veuillez réessayer."
 
-#: searchform.php:14
-msgid "Search for:"
-msgstr "Recherche de:"
-
-#: searchform.php:20 searchform.php:27
-msgid "Search"
-msgstr "Recherche"
-
 #: searchform.php:22
 msgid "Type your search and press enter"
 msgstr "Tapez votre recherche et pressez Entrée"
@@ -1281,6 +1341,12 @@ msgstr "Tapez votre recherche et pressez Entrée"
 #: searchform.php:29
 msgid "Make your search"
 msgstr "Lancer la recherche"
+
+#~ msgid "Older post"
+#~ msgstr "Article précédent"
+
+#~ msgid "Newer post"
+#~ msgstr "Article suivant"
 
 #~ msgid "Templating Section"
 #~ msgstr "Section Templating"

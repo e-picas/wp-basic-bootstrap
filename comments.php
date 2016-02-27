@@ -40,8 +40,8 @@ if ('comments.php' == basename($_SERVER['SCRIPT_FILENAME'])) {
                 /* translation: <x> thought(s) about <article> */
                 printf(
                     _n(
-                        __('One thought on &ldquo;%2$s&rdquo;'),
-                        __('%1$s thoughts on &ldquo;%2$s&rdquo;'),
+                        __('One thought on &ldquo;%2$s&rdquo;', 'basicbootstrap'),
+                        __('%1$s thoughts on &ldquo;%2$s&rdquo;', 'basicbootstrap'),
                         get_comments_number(),
                         'basicbootstrap'
                     ),

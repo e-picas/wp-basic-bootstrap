@@ -40,7 +40,11 @@ global $post;
 
     <?php if (get_basicbootstrap_mod('show_comments_link') && comments_open()) : ?>
         <i class="fa fa-comments fa-fw"></i>&nbsp;<span class="entry-meta-item comments-link"><?php
-            comments_popup_link(__('0 Comments', 'basicbootstrap'), __('1 Comment', 'basicbootstrap'), __('% Comments', 'basicbootstrap'));
+            comments_popup_link(
+                __('0 Comments', 'basicbootstrap'),
+                __('1 Comment', 'basicbootstrap'),
+                __('% Comments', 'basicbootstrap')
+            );
             ?></span>
     <?php endif; ?>
 
