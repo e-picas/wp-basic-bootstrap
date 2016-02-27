@@ -20,7 +20,7 @@ error_log('applied template : '.$template);
 
 get_header_hierarchical('401'); ?>
 
-<section id="content" role="main">
+<div id="content" role="main">
 
     <?php get_the_breadcrumb(); ?>
 
@@ -37,7 +37,7 @@ get_header_hierarchical('401'); ?>
         <?php get_search_form_hierarchical(); ?>
     </article>
 
-</section>
+</div>
 
 <?php get_sidebar_hierarchical('401'); ?>
 <?php get_footer_hierarchical('401'); ?>

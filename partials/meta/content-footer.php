@@ -8,7 +8,7 @@
 global $post;
 ?>
 <?php if (is_single() && !is_attachment()) : ?>
-<section class="entry-meta blog-post-meta">
+<div class="entry-meta blog-post-meta">
 
     <?php
         $icon = get_post_format_icon(get_post_format());
@@ -62,5 +62,5 @@ global $post;
         <?php edit_post_link(__('Edit', 'basicbootstrap'), '<i class="fa fa-pencil-square fa-fw"></i>&nbsp;'); ?>
     <?php endif; ?>
 
-</section>
+</div>
 <?php endif; ?>

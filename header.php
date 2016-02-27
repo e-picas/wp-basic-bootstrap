@@ -28,7 +28,7 @@ error_log('applied template : '.$template);
     <meta name="viewport" content="width=device-width" />
     <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?> role="document" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+<body <?php body_class(); ?> itemscope="itemscope" itemtype="http://schema.org/WebPage">
 
 <a href="#content" class="sr-only sr-only-focusable"><?php _e('Skip to main content', 'basicbootstrap'); ?></a>
 <a href="#navigation" class="sr-only sr-only-focusable"><?php _e('Skip to main navigation', 'basicbootstrap'); ?></a>

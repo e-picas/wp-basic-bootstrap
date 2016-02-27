@@ -31,13 +31,13 @@ error_log('applied template : '.$template);
 
 get_header_hierarchical('attachment'); ?>
 
-<section id="content" role="main">
+<div id="content" role="main">
 
     <?php get_the_breadcrumb(); ?>
 
     <?php get_template_part_hierarchical('partials/loop'); ?>
 
-</section>
+</div>
 
 <?php get_sidebar_hierarchical('attachment'); ?>
 <?php get_footer_hierarchical('attachment'); ?>

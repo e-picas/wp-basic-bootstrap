@@ -35,7 +35,7 @@ if ('comments.php' == basename($_SERVER['SCRIPT_FILENAME'])) {
         <?php if (have_comments()) : ?>
             <meta itemprop="interactionCount" content="<?php echo get_comments_number(); ?> Usercomments">
 
-            <h3 class="comments-title" role="sectionhead">
+            <h3 class="comments-title">
                 <?php
                 /* translation: <x> thought(s) about <article> */
                 printf(

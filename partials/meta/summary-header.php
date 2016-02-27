@@ -7,7 +7,7 @@
 /* @var $post \WP_Post */
 global $post;
 ?>
-<section class="blog-post-meta">
+<aside class="blog-post-meta">
 
     <time class="entry-meta-item post-date entry-date<?php
         if (! get_basicbootstrap_mod('show_pubdate_meta')) echo ' hidden';
@@ -15,11 +15,11 @@ global $post;
         esc_attr_e('Publication date', 'basicbootstrap');
     ?>" datetime="<?php
         the_time('c');
-    ?>" pubdate="pubdate" itemprop="datePublished"><?php
+    ?>" itemprop="datePublished"><?php
         the_time(get_option('date_format'));
     ?></time>
 
-</section>
+</aside>
 
 
 

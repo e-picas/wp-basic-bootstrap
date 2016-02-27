@@ -3,7 +3,7 @@
 $page_type = get_page_type();
 $header_image = get_header_image();
 
-?><header class="blog-header" id="header" role="banner"<?php
+?><header class="blog-header" id="header"<?php
 if (get_header_image()) :
     echo ' style="' .
         'background-image: url(\'' . esc_url($header_image) . '\');' .
@@ -25,7 +25,6 @@ endif; ?>>
     endif; ?>>
         <div class="pull-left">
             <!-- start logo/sitename -->
-            <hgroup>
             <?php if (get_basicbootstrap_mod('display_header')) : ?>
                 <?php $header_text_color = get_header_textcolor(); ?>
                 <h1 class="header-entry" style="color: #<?php echo $header_text_color ?>;">
@@ -44,7 +43,6 @@ endif; ?>>
                 <h1 class="hidden"><?php bloginfo('name'); ?></h1>
                 <p class="hidden"><?php bloginfo('description'); ?></p>
             <?php endif; ?>
-            </hgroup>
             <!-- end logo/sitename -->
         </div>
         <?php if (get_basicbootstrap_mod('display_header_searchbox')) : ?>

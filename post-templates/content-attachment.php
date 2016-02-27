@@ -7,7 +7,7 @@
 /* @var $post \WP_Post */
 global $post;
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class('blog-post'); ?> role="article" itemscope="itemscope" itemtype="http://schema.org/Article">
+<article id="post-<?php the_ID(); ?>" <?php post_class('blog-post'); ?> itemscope="itemscope" itemtype="http://schema.org/Article">
     <header class="header">
         <h1 class="blog-post-title" itemprop="name">
             <?php the_title(); ?>
@@ -18,7 +18,7 @@ global $post;
         <?php get_template_part_hierarchical('partials/meta/content-footer', 'attachment'); ?>
     </footer>
 
-    <section class="blog-post-content" itemprop="articleBody">
+    <div class="blog-post-content" itemprop="articleBody">
         <div class="entry-attachment">
             <?php if (wp_attachment_is_image($post->ID)) : $att_image = wp_get_attachment_image_src($post->ID, 'large'); ?>
                 <div class="attachment center-block">
@@ -43,7 +43,7 @@ global $post;
             <?php the_content(); ?>
         </div>
 
-    </section>
+    </div>
 
     <?php if (get_basicbootstrap_mod('show_sharing_links_attachment')) : ?>
         <?php get_template_part_hierarchical('partials/social-share', 'attachment'); ?>

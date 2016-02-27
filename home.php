@@ -22,14 +22,14 @@ error_log('applied template : '.$template);
 
 get_header_hierarchical('home'); ?>
 
-<section id="content" role="main">
+<div id="content" role="main">
 
     <?php if ($show_on_front == 'page') : ?>
         <?php get_the_breadcrumb(); ?>
     <?php endif; ?>
     <?php get_template_part_hierarchical('partials/loop'); ?>
 
-</section>
+</div>
 
 <?php get_sidebar_hierarchical('home'); ?>
 <?php get_footer_hierarchical('home'); ?>

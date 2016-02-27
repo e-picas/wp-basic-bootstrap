@@ -4,7 +4,7 @@
  * @since WP_Basic_Bootstrap 1.0
  */
 ?>
-<section class="entry-meta blog-post-meta">
+<div class="entry-meta blog-post-meta">
 
     <?php if (get_basicbootstrap_mod('show_comments_link') && comments_open()) : ?>
         <i class="fa fa-comments fa-fw"></i>&nbsp;<span class="entry-meta-item comments-link"><?php
@@ -16,4 +16,4 @@
         <?php edit_post_link(__('Edit', 'basicbootstrap'), '<i class="fa fa-pencil-square fa-fw"></i>&nbsp;'); ?>
     <?php endif; ?>
 
-</section>
+</div>

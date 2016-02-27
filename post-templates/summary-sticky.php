@@ -28,14 +28,14 @@ global $post;
             </h2>
         </header>
 
-        <section class="blog-post-excerpt" itemprop="description">
+        <div class="blog-post-excerpt" itemprop="description">
             <?php the_excerpt(); ?>
-        </section>
+        </div>
 
         <?php if (get_post_type() != 'page') : ?>
-            <footer class="blog-post-footer">
-                <?php get_template_part_hierarchical('partials/meta/summary-footer', get_post_format()); ?>
-            </footer>
+        <footer class="blog-post-footer">
+            <?php get_template_part_hierarchical('partials/meta/summary-footer', get_post_format()); ?>
+        </footer>
         <?php endif; ?>
 
     </div>

@@ -35,11 +35,11 @@ error_log('applied template : '.$template);
 
 get_header_hierarchical('front-page'); ?>
 
-<section id="content" role="main">
+<div id="content" role="main">
 
     <?php get_template_part_hierarchical('partials/loop'); ?>
 
-</section>
+</div>
 
 <?php get_sidebar_hierarchical('front-page'); ?>
 <?php get_footer_hierarchical('front-page'); ?>

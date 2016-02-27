@@ -8,7 +8,7 @@
 global $post;
 ?>
 <?php if (is_single() && is_attachment()) : ?>
-<section class="entry-meta blog-post-meta">
+<div class="entry-meta blog-post-meta">
 
     <?php if (wp_attachment_is_image($post->ID)) :
         $att_image = wp_get_attachment_image_src($post->ID, 'large'); ?>
@@ -64,5 +64,5 @@ global $post;
         <?php edit_post_link(__('Edit', 'basicbootstrap'), '<i class="fa fa-pencil-square fa-fw"></i>&nbsp;'); ?>
     <?php endif; ?>
 
-</section>
+</div>
 <?php endif; ?>

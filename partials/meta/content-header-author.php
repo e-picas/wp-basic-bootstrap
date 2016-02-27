@@ -5,7 +5,7 @@
  * @since WP_Basic_Bootstrap 1.0
  */
 ?>
-<section class="entry-meta blog-post-meta">
+<div class="entry-meta blog-post-meta">
 
 <?php
 $_url = get_the_author_meta('user_url');
@@ -40,4 +40,4 @@ if ($_url) : ?>
     ?></span>
 <?php endif; ?>
 
-</section>
+</div>

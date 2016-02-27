@@ -190,3 +190,8 @@ add_filter('the_password_form', 'basicbootstrap_get_the_password_form');
  * Do not add 'protected: ' behind post title when thay are protected
  */
 add_filter('protected_title_format', 'basicbootstrap_get_default_password_post_title', 10, 2);
+
+/**
+ * Filter the comments popup link attributes for display.
+ */
+add_filter('comments_popup_link_attributes', 'basicbootstrap_comments_popup_link_attributes');

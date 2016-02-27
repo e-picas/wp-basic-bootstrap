@@ -7,7 +7,7 @@
 /* @var $post \WP_Post */
 global $post;
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class('blog-post'); ?> role="article" itemscope itemtype="http://schema.org/Article">
+<article id="post-<?php the_ID(); ?>" <?php post_class('blog-post'); ?> itemscope itemtype="http://schema.org/Article">
     <header>
         <h1 class="blog-post-title" itemprop="name">
             <?php if (! is_single() && ! is_page()) : ?>
@@ -33,7 +33,7 @@ global $post;
             <?php get_template_part_hierarchical('partials/meta/content-footer', 'page'); ?>
         <?php endif; ?>
     </footer>
-    <section class="blog-post-content" itemprop="articleBody">
+    <div class="blog-post-content" itemprop="articleBody">
 
         <?php $post = get_post();
         if (isset($post->post_excerpt) && !empty($post->post_excerpt) && get_basicbootstrap_mod('show_post_excerpt')) : ?>
@@ -53,7 +53,7 @@ global $post;
         <?php the_content(); ?>
 
         <div class="blog-post-links"><?php get_the_link_pages(); ?></div>
-    </section>
+    </div>
 
     <?php if (
         (is_page() && get_basicbootstrap_mod('show_sharing_links_page')) ||

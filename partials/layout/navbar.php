@@ -8,7 +8,7 @@ $navbar_type    = get_basicbootstrap_mod('navbar_type');
     if ($navbar_type == 'static_top')       echo ' navbar-static-top';
     elseif ($navbar_type == 'fixed_top')    echo ' navbar-fixed-top';
     elseif ($navbar_type == 'fixed_bottom') echo ' navbar-fixed-bottom';
-?>" id="navigation" role="navigation">
+?>" id="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-controls="navbar">

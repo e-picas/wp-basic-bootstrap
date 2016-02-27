@@ -7,7 +7,7 @@
 /* @var $post \WP_Post */
 global $post;
 ?>
-<section class="entry-meta blog-post-meta">
+<div class="entry-meta blog-post-meta">
 
     <?php if (get_basicbootstrap_mod('show_author_meta')) : ?>
         <i class="fa fa-user fa-fw"></i>&nbsp;<cite class="entry-meta-item author vcard"
@@ -44,4 +44,4 @@ global $post;
             ?></span>
     <?php endif; ?>
 
-</section>
+</div>

@@ -52,14 +52,14 @@ error_log('applied template : '.$template);
 
 get_header_hierarchical(); ?>
 
-<section id="content" role="main">
+<div id="content" role="main">
 
     <?php if (! is_front_page()) : ?>
         <?php get_the_breadcrumb(); ?>
     <?php endif; ?>
     <?php get_template_part_hierarchical('partials/loop'); ?>
 
-</section>
+</div>
 
 <?php get_sidebar_hierarchical(); ?>
 <?php get_footer_hierarchical(); ?>

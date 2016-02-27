@@ -7,7 +7,7 @@
 /* @var $post \WP_Post */
 global $post;
 ?>
-<section class="entry-meta blog-post-meta">
+<div class="entry-meta blog-post-meta">
 
 <?php if (get_basicbootstrap_mod('show_author_meta')) : ?>
     <i class="fa fa-user fa-fw"></i>&nbsp;<cite class="entry-meta-item author vcard"
@@ -27,7 +27,7 @@ global $post;
         esc_attr_e('Publication date', 'basicbootstrap');
     ?>" datetime="<?php
         the_time('c');
-    ?>" pubdate="pubdate" itemprop="datePublished"><?php
+    ?>" itemprop="datePublished"><?php
         the_time(get_option('date_format'));
     ?></time>
 
@@ -41,11 +41,11 @@ global $post;
 <?php endif; ?>
         title="<?php
             esc_attr_e('Last modification date', 'basicbootstrap');
-        ?>"datetime="<?php
+        ?>" datetime="<?php
             the_modified_date('c');
-        ?>" pubdate="pubdate" itemprop="dateModified"><?php
+        ?>" itemprop="dateModified"><?php
             the_modified_date(get_option('date_format'));
         ?></time>
     <?php endif; ?>
 
-</section>
+</div>

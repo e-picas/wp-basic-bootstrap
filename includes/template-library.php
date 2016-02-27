@@ -277,6 +277,23 @@ function get_the_link_pages()
 }
 
 /**
+ * Add the "discussionUrl" item property to the comments link
+ *
+ * To use this method, write:
+ *
+ *      add_filter('comments_popup_link_attributes', 'basicbootstrap_comments_popup_link_attributes');
+ *
+ * The `comments_popup_link_attributes` filter is documented in `wp-includes/comment-template.php`.
+ *
+ * @return string The method must return its custom attributes contents
+ */
+function basicbootstrap_comments_popup_link_attributes($attributes)
+{
+    $attributes .= ' itemprop="discussionUrl"';
+    return $attributes;
+}
+
+/**
  * Template for comments and pingbacks.
  *
  * To override this walker in a child theme without modifying the comments template

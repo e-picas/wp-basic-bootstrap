@@ -18,7 +18,7 @@
 $previous_i = $paged-1;
 $next_i     = $paged+1;
 ?>
-<nav id="nav-below" class="pagenav clearfix text-center" role="navigation">
+<nav id="nav-below" class="pagenav clearfix text-center">
     <ul class="pagination pagination-sm">
 
         <?php if ($previous_i > 0) : ?>

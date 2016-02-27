@@ -30,7 +30,7 @@ error_log('applied template : '.$template);
 
 get_header_hierarchical('single'); ?>
 
-<section id="content" role="main">
+<div id="content" role="main">
 
     <?php get_the_breadcrumb(); ?>
 
@@ -39,7 +39,7 @@ get_header_hierarchical('single'); ?>
     //get_template_part_singular('partials/loop');
     ?>
 
-</section>
+</div>
 
 <?php get_sidebar_hierarchical('single'); ?>
 <?php get_footer_hierarchical('single'); ?>

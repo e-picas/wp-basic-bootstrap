@@ -26,4 +26,4 @@
     endif;
 
     ?>
-</section>
+</div>
