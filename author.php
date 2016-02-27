@@ -37,13 +37,11 @@ get_header_hierarchical('author'); ?>
                 'class' => 'thumbnail'
             ));  ?>
         </div>
-        <h1 class="entry-title">
-            <h1 class="entry-title author">
-                <?php printf(
-                    __('About %s', 'basicbootstrap'),
-                    '<span class="vcard"><a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta("ID"))) . '" title="' . esc_attr(get_the_author()) . '" rel="me">' . get_the_author() . '</a></span>'
-                ); ?>
-            </h1>
+        <h1 class="entry-title author">
+            <?php printf(
+                __('About %s', 'basicbootstrap'),
+                '<span class="vcard"><a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta("ID"))) . '" title="' . esc_attr(get_the_author()) . '" rel="me">' . get_the_author() . '</a></span>'
+            ); ?>
         </h1>
         <?php if ('' != get_the_author_meta('user_description')) : ?>
         <div class="author-description">
