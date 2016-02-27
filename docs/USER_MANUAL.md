@@ -74,22 +74,24 @@ is built to let any page uses its *header*, *sidebar* and *footer* do their job:
 
     ---------------------
     | header.php        |               wp_head()
+    |                   |                   // which includes the main menu
     ---------------------               body_class()
     | any           |  sidebar.php      dynamic_sidebar(main)
     | content       |   |
     |               |   |               get_template_part(content, get_post_format())
+    |               |   |                   // the content can include a pagination and a list of comments
     |               |   |
     |               |   |
     |               |   |
     ---------------------
     | footer.php        |               wp_footer()
+    |                   |                   // which includes the footer menu
     ---------------------
 
 
 The global layout follows the HTML5, ARIA and RDFa best practices:
 
     body
-    => role=document
 
     div#wrapper
 
@@ -99,10 +101,10 @@ The global layout follows the HTML5, ARIA and RDFa best practices:
         div.container
 
             nav#navigation.navbar
-            => .blog-navigation / role=navigation
+            => .blog-navigation
 
             header#header
-            => .blog-header / role=banner
+            => .blog-header
     
             div.row
 
@@ -111,26 +113,56 @@ The global layout follows the HTML5, ARIA and RDFa best practices:
                     => content goes here
 
                 aside#sidebar.col-sm-3
-                => .blog-sidebar(-right/-left) / role=complementary
+                => .blog-sidebar(-right/-left)
 
                 // full width
                 div.col-sm-12
                     => content goes here
 
         footer#footer
-        => .blog-footer / role=contentinfo
+        => .blog-footer
 
 If you need to create a new template, your content should only contain the followings:
 
-    section#content with role=main
+    div#content with role=main
+
+### Blocks disposition
 
 Please note that the main content is always written first in the generated HTML (even if it is displayed right).
 
 Some settings can let you customize the global layout and choose between the following *page templates*:
 
 -   **full width**: no sidebar at all
+-   **full width with offset**: no sidebar at all, a content with a one row offset on each side
 -   **right sidebar**: content on the left and sidebar on the right (this is the "classic" usage)
 -   **left sidebar**: sidebar first, on the left, and content on the right 
+
+### HTML5 elements implementation
+
+The draft of the HTML5 official specifications about sections is available at <http://w3c.github.io/html/sections.html#sections>.
+
+The theme implements these sections as follows:
+
+    <article>
+
+        <header>
+            <h1 class=blog-post-title>article title</h1>
+            <div class=entry-meta blog-post-meta>
+                ... some "header" meta-data: author, dates
+            </div>
+        </header>
+        
+        <div class="blog-post-content">
+            ... the article content
+        </div>
+
+        <footer>
+            <div class=entry-meta blog-post-meta>
+                ... some "footer" meta-data: categories, tags, links
+            </div>
+        </footer>
+
+    </article>
 
 ### Microdata
 

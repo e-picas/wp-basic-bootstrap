@@ -35,6 +35,7 @@ The theme embeds the following PHP third-parties:
 
 -   [TGM_Plugin_Activation](http://tgmpluginactivation.com/)
 -   [wp_bootstrap_navwalker](http://github.com/twittem/wp-bootstrap-navwalker)
+-   [wp-template-hierarchy-everywhere](http://github.com/e-picas/wp-template-hierarchy-everywhere)
 
 
 Theme options, defaults & configuration
@@ -100,12 +101,13 @@ It basically embeds the following methods:
     instead of current page, with related status headers.
 
 
-Internal Wordpress templating system improvements
--------------------------------------------------
+Internal Wordpress templating system improvements: "wp template hierarchy everywhere"
+-------------------------------------------------------------------------------------
 
-The theme embeds some functions to improve the internal core Wordpress functions used to build the templates. This
-library is in the `includes/templates-enhancer.php` file ; you should have a look in that file for your version of
-the theme for an updated information.
+The theme embeds the [wp-template-hierarchy-everywhere](http://github.com/e-picas/wp-template-hierarchy-everywhere) 
+external library to improve the internal core Wordpress functions used to build the templates. This library is 
+in the `includes/vendor/wp-template-hierarchy-everywhere.php` file ; you should have a look in that file for your 
+version of the theme for an updated information.
 
 The library basically embeds two new features:
 

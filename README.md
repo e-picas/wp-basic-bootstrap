@@ -68,7 +68,8 @@ In the example below, let's say your own theme is hosted at `http://github.com/u
 This way, you will be able to make your commits to your own theme and push them to your own repository:
 
     touch readme.txt
-    commit -a -m "this is a fake commit"
+    git add readme.txt
+    git commit -m "this is a fake commit"
     git push --set-upstream origin master
 
 And you will be able to update your basis with its last commits (eventually):
@@ -102,14 +103,14 @@ WP Basic Bootstrap bundles the following third-party resources:
     [MIT](https://github.com/twbs/bootstrap/blob/master/LICENSE)
 
 2.  Font Awesome (<http://fontawesome.io/>), licensed under both 
-    [MIT](https://github.com/dimsemenov/Magnific-Popup/blob/master/LICENSE)for the CSS and 
+    [MIT](https://github.com/dimsemenov/Magnific-Popup/blob/master/LICENSE) for the CSS and 
     [SIL OFL 1.1](http://fontawesome.io/license) for the Font
 
 3.  TGM Plugin Activation (<http://tgmpluginactivation.com/>), licensed under 
     [GPL](https://github.com/TGMPA/TGM-Plugin-Activation/blob/develop/LICENSE.md)
 
-4.  wp_bootstrap_navwalker (<https://github.com/twittem/wp-bootstrap-navwalker>), licensed under 
+4.  wp_bootstrap_navwalker (<http://github.com/twittem/wp-bootstrap-navwalker>), licensed under 
     [GPL](https://github.com/twittem/wp-bootstrap-navwalker/blob/master/LICENSE.txt)
 
-5.  WP Template Hierarchy Everywhere (<https://github.com/e-picas/wp-template-hierarchy-everywhere>), licensed under 
+5.  WP Template Hierarchy Everywhere (<http://github.com/e-picas/wp-template-hierarchy-everywhere>), licensed under 
     [GPL](http://www.gnu.org/licenses/gpl-3.0.html)
