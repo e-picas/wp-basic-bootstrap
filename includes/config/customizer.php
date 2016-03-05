@@ -124,6 +124,11 @@ $basicbootstrap_customizer_config = array(
             'control_type' => 'color',
         ),
         array(
+            'id' => 'primary_hoverbackground',
+            'label' => __('Primary Hover Background Color', 'basicbootstrap'),
+            'control_type' => 'color',
+        ),
+        array(
             'id' => 'primary_activecolor',
             'label' => __('Primary Active Link Color', 'basicbootstrap'),
             'control_type' => 'color',

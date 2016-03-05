@@ -108,6 +108,7 @@ class WP_Basic_Bootstrap_Customizer extends WP_Basic_Bootstrap_Customizer_Abstra
         $output .= self::generateCss('.navbar-custom', 'background-color', 'primary_menucolor');
         $output .= self::generateCss('.navbar-custom .navbar-brand, .navbar-custom .navbar-nav > li > a', 'color', 'primary_linkcolor');
         $output .= self::generateCss('.navbar-custom .navbar-nav > li > a:hover, .navbar-custom .navbar-nav > li > a:focus', 'color', 'primary_hovercolor');
+        $output .= self::generateCss('.navbar-custom .navbar-nav > li > a:hover, .navbar-custom .navbar-nav > li > a:focus', 'background-color', 'primary_hoverbackground');
         $output .= self::generateCss('.navbar-custom .navbar-nav > .active > a, .navbar-custom .navbar-nav > .active > a:hover, .navbar-custom .navbar-nav > .active > a:focus', 'color', 'primary_activecolor');
         $output .= self::generateCss('.navbar-custom .navbar-nav > .active > a, .navbar-custom .navbar-nav > .active > a:hover, .navbar-custom .navbar-nav > .active > a:focus, .navbar-custom .navbar-nav > .open > a, .navbar-custom .navbar-nav > .open > a:hover, .navbar-custom .navbar-nav > .open > a:focus', 'background-color', 'primary_activebackground');
         $output .= self::generateCss('.dropdown-menu', 'background-color', 'dropdown_menucolor');
