@@ -202,6 +202,13 @@ class WP_Basic_Bootstrap_Setup
             array('bootstrap', 'fontawesome'),
             BASICBOOTSTRAP_VERSION
         );
+        wp_enqueue_script(
+            'basicbootstrap-base-scripts',
+            get_asset_uri('assets/js/blog.js'),
+            array('jquery', 'bootstrap'),
+            BASICBOOTSTRAP_VERSION,
+            true
+        );
 
         // direct customization
         wp_enqueue_style(
