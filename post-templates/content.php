@@ -33,6 +33,7 @@ global $post;
             <?php get_template_part_hierarchical('partials/meta/content-footer', 'page'); ?>
         <?php endif; ?>
     </footer>
+    <div class="visible-print print-separator"></div>
     <div class="blog-post-content" itemprop="articleBody">
 
         <?php $post = get_post();
@@ -55,11 +56,13 @@ global $post;
         <div class="blog-post-links"><?php get_the_link_pages(); ?></div>
     </div>
 
-    <?php if (
-        (is_page() && get_basicbootstrap_mod('show_sharing_links_page')) ||
-        (!is_page() && get_basicbootstrap_mod('show_sharing_links_post'))
-    ) : ?>
-        <?php get_template_part_hierarchical('partials/social-share', get_post_format()); ?>
-    <?php endif; ?>
+    <div class="hidden-print">
+        <?php if (
+            (is_page() && get_basicbootstrap_mod('show_sharing_links_page')) ||
+            (!is_page() && get_basicbootstrap_mod('show_sharing_links_post'))
+        ) : ?>
+            <?php get_template_part_hierarchical('partials/social-share', get_post_format()); ?>
+        <?php endif; ?>
+    </div>
 
 </article>

@@ -3,7 +3,7 @@
 $page_type = get_page_type();
 $header_image = get_header_image();
 
-?><header class="blog-header" id="header"<?php
+?><header class="blog-header hidden-print" id="header"<?php
 if (get_header_image()) :
     echo ' style="' .
         'background-image: url(\'' . esc_url($header_image) . '\');' .

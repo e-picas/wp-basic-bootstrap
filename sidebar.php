@@ -21,9 +21,9 @@ error_log('applied template : '.$template);
     </div><!-- /.blog-main -->
 
     <?php if ($template == 'left_sidebar') : ?>
-    <aside id="sidebar" class="col-sm-3 blog-sidebar-left">
+    <aside id="sidebar" class="col-sm-3 blog-sidebar-left hidden-print">
     <?php elseif ($template == 'right_sidebar') : ?>
-    <aside id="sidebar" class="col-sm-3 blog-sidebar-right">
+    <aside id="sidebar" class="col-sm-3 blog-sidebar-right hidden-print">
     <?php endif; ?>
 
         <hr class="visible-xs" />

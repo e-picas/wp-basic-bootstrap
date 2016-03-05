@@ -88,6 +88,7 @@ if ('comments.php' == basename($_SERVER['SCRIPT_FILENAME'])) {
 
         <?php endif; // have_comments() ?>
 
+        <div class="hidden-print">
         <?php
         $args = array(
             'id_form'           => 'commentform',
@@ -155,6 +156,7 @@ if ('comments.php' == basename($_SERVER['SCRIPT_FILENAME'])) {
         );
         comment_form($args);
         ?>
+        </div>
 
     </section><!-- #comments -->
 <?php endif; ?>

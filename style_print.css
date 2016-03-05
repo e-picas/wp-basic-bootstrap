@@ -2,3 +2,40 @@
  * @package WP_Basic_Bootstrap
  * @since WP_Basic_Bootstrap 1.0
  */
+
+a {
+    text-decoration: dashed;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-decoration: none;
+    page-break-before: auto;
+}
+
+.blog-main,
+.blog-main-left,
+.blog-main-right {
+    width:100%;
+    float:left;
+}
+
+.page-break {
+    page-break-before: always;
+    page-break-inside: avoid;
+}
+
+.print-separator {
+    height: 12px;
+    display: block;
+}
+
+.post-edit-link,
+.comment-edit-link,
+.comment-reply-link {
+    display: none;
+}

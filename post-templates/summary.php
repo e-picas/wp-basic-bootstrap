@@ -31,6 +31,7 @@ global $post;
         </footer>
         <?php endif; ?>
 
+        <div class="visible-print print-separator"></div>
         <div class="blog-post-excerpt" itemprop="description">
             <?php the_excerpt(); ?>
         </div>
@@ -38,7 +39,4 @@ global $post;
     </div>
 
 </article>
-
-
-
-
+<hr class="visible-print" />

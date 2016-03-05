@@ -18,6 +18,7 @@ global $post;
         <?php get_template_part_hierarchical('partials/meta/content-footer', 'attachment'); ?>
     </footer>
 
+    <div class="visible-print print-separator"></div>
     <div class="blog-post-content" itemprop="articleBody">
         <div class="entry-attachment">
             <?php if (wp_attachment_is_image($post->ID)) : $att_image = wp_get_attachment_image_src($post->ID, 'large'); ?>
@@ -45,8 +46,10 @@ global $post;
 
     </div>
 
-    <?php if (get_basicbootstrap_mod('show_sharing_links_attachment')) : ?>
-        <?php get_template_part_hierarchical('partials/social-share', 'attachment'); ?>
-    <?php endif; ?>
+    <div class="hidden-print">
+        <?php if (get_basicbootstrap_mod('show_sharing_links_attachment')) : ?>
+            <?php get_template_part_hierarchical('partials/social-share', 'attachment'); ?>
+        <?php endif; ?>
+    </div>
 
 </article>

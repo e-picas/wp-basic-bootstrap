@@ -15,7 +15,7 @@
 ?>
 <?php if (!empty($previous) || !empty($next)) : ?>
 <hr />
-<nav id="nav-below" class="navigation clearfix">
+<nav id="nav-below" class="navigation hidden-print clearfix">
     <ul class="pager">
 
     <?php if (!empty($previous)) : ?>

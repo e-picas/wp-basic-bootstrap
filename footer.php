@@ -28,7 +28,7 @@ error_log('applied template : '.$template);
             </div><!-- /.row -->
     </div><!-- /.container -->
 
-    <footer id="footer" class="blog-footer">
+    <footer id="footer" class="blog-footer hidden-print">
         <?php get_template_part_hierarchical('partials/layout/footer'); ?>
     </footer>
 

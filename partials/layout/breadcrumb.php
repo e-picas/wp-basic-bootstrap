@@ -5,7 +5,7 @@
  */
 ?>
 <?php if (isset($entries) && is_array($entries)) : ?>
-<ol class="breadcrumb clearfix <?php
+<ol class="breadcrumb clearfix hidden-print <?php
     if (! get_basicbootstrap_mod('visible_breadcrumb')) echo "hidden";
 ?>" itemscope itemtype="http://schema.org/BreadcrumbList">
 

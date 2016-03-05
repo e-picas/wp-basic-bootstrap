@@ -1,3 +1,8 @@
+<?php
+
+$copyright_text = get_basicbootstrap_mod('copyright_text');
+
+?>
 <div class="container">
 
     <?php get_sidebar_hierarchical('footer'); ?>

@@ -31,7 +31,7 @@ $next_link_title = esc_html__('See next page', 'basicbootstrap');
 $fist_link_title = esc_html__('See first page', 'basicbootstrap');
 $last_link_title = esc_html__('See last page', 'basicbootstrap');
 ?>
-<nav id="nav-below" class="pagenav clearfix">
+<nav id="nav-below" class="pagenav hidden-print clearfix">
     <ul class="pagination">
 
     <?php if ($previous_i > 0) : ?>

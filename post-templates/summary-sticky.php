@@ -28,11 +28,13 @@ global $post;
             </h2>
         </header>
 
+        <div class="visible-print print-separator"></div>
         <div class="blog-post-excerpt" itemprop="description">
             <?php the_excerpt(); ?>
         </div>
 
         <?php if (get_post_type() != 'page') : ?>
+        <div class="visible-print print-separator"></div>
         <footer class="blog-post-footer">
             <?php get_template_part_hierarchical('partials/meta/summary-footer', get_post_format()); ?>
         </footer>
@@ -41,7 +43,4 @@ global $post;
     </div>
 
 </article>
-
-
-
-
+<hr class="visible-print" />
