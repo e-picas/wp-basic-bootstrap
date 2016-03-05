@@ -16,7 +16,7 @@ if (get_header_image()) :
         'min-height: ' . HEADER_IMAGE_HEIGHT . 'px;' .
         'position: relative;"';
 endif; ?>>
-    <div class="container clearfix"<?php
+    <div class="clearfix"<?php
     if (get_header_image()) :
         echo ' style="' .
             'height: auto;' .
