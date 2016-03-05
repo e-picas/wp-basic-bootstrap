@@ -143,7 +143,7 @@ a img.aligncenter {
     list-style: none;
 }
 
-@media (max-width: 767px) {
+@media screen and (max-width: 767px) {
     .comment-list,
     .children:nth-child(n+1) {
         padding: 0;
@@ -236,6 +236,9 @@ a.read-more {
 .blog-footer a:focus {
     color: #23527c;
     text-decoration: underline;
+}
+.copyright {
+    font-size: 0.86em;
 }
 
 /*

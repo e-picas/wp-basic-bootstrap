@@ -12,43 +12,39 @@ $third  = is_active_sidebar('third-footer-widget-area');
 ?>
 
 <?php if ($first || $second || $third) : ?>
-    <div class="container">
+<div class="row">
 
-        <div class="row">
-
-        <?php if ($first) : ?>
-            <?php if ($second) : ?>
-            <div class="col-sm-4">
-            <?php else: ?>
-            <div class="col-sm-8">
-            <?php endif; ?>
-                <div class="footer-module">
-                    <?php dynamic_sidebar('first-footer-widget-area'); ?>
-                </div>
-            </div>
-        <?php endif; ?>
-
+    <?php if ($first) : ?>
         <?php if ($second) : ?>
-            <?php if ($third) : ?>
-                <div class="col-sm-4">
-            <?php else: ?>
-                <div class="col-sm-8">
-            <?php endif; ?>
-                <div class="footer-module">
-                    <?php dynamic_sidebar('second-footer-widget-area'); ?>
-                </div>
-            </div>
+        <div class="col-sm-4">
+        <?php else: ?>
+        <div class="col-sm-8">
         <?php endif; ?>
+            <div class="footer-module">
+                <?php dynamic_sidebar('first-footer-widget-area'); ?>
+            </div>
+        </div>
+    <?php endif; ?>
 
+    <?php if ($second) : ?>
         <?php if ($third) : ?>
             <div class="col-sm-4">
-                <div class="footer-module">
-                    <?php dynamic_sidebar('third-footer-widget-area'); ?>
-                </div>
-            </div>
+        <?php else: ?>
+            <div class="col-sm-8">
         <?php endif; ?>
+            <div class="footer-module">
+                <?php dynamic_sidebar('second-footer-widget-area'); ?>
+            </div>
+        </div>
+    <?php endif; ?>
 
-        </div><!-- /.row -->
+    <?php if ($third) : ?>
+        <div class="col-sm-4">
+            <div class="footer-module">
+                <?php dynamic_sidebar('third-footer-widget-area'); ?>
+            </div>
+        </div>
+    <?php endif; ?>
 
-    </div><!-- /.container -->
+</div><!-- /.row -->
 <?php endif ; ?>
