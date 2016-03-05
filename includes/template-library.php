@@ -7,6 +7,14 @@
 // THEME MODS
 
 /**
+ * Reset all theme settings to defaults
+ */
+function clear_basicbootstrap_mods()
+{
+    remove_theme_mods();
+}
+
+/**
  * Get a theme modification setting with fallback to its default value
  *
  * @uses get_theme_mod()
