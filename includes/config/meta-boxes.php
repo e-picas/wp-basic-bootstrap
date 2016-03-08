@@ -24,12 +24,18 @@ $basicbootstrap_meta_boxes[] = array(
     'priority' => 'high',
     'autosave' => true,
     'fields' => array(
-        // Link text box
+
         array(
             'name' => __('Link URL', 'basicbootstrap'),
             'id' => 'post-format-link-url',
             'type' => 'text',
-        )
+        ),
+        array(
+            'name' => __('Link Title', 'basicbootstrap'),
+            'id' => 'post-format-link-title',
+            'type' => 'text',
+        ),
+
     )
 );
 

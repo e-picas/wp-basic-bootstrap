@@ -6,6 +6,7 @@
 ?>
 <?php if (!empty($link)) : ?>
 <div class="well well-sm lead text-center entry-featured feature-link">
-    <a href="<?php echo $link; ?>"><?php echo $link; ?></a>
+    <?php _e('See online: ', 'basicbootstrap'); ?>
+    <a href="<?php echo $link; ?>"><?php echo !empty($title) ? $title : $link; ?></a>
 </div>
 <?php endif; ?>
