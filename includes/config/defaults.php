@@ -189,6 +189,21 @@ $basicbootstrap_config = array(
             'force_activation'   => true,
             'force_deactivation' => false,
         ),
+        array(
+            'name'               => 'Bootstrap 3 Shortcodes',
+            'slug'               => 'bootstrap-3-shortcodes',
+            'required'           => false,
+        ),
+        array(
+            'name'               => 'Font Awesome Shortcodes',
+            'slug'               => 'font-awesome-shortcodes',
+            'required'           => false,
+        ),
+        array(
+            'name'               => 'Multiple Favicons',
+            'slug'               => 'multicons',
+            'required'           => false,
+        ),
     ),
 
     'available_fonts' => array(

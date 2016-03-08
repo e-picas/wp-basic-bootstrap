@@ -114,3 +114,19 @@ WP Basic Bootstrap bundles the following third-party resources:
 
 5.  WP Template Hierarchy Everywhere (<http://github.com/e-picas/wp-template-hierarchy-everywhere>), licensed under 
     [GPL](http://www.gnu.org/licenses/gpl-3.0.html)
+
+The following external WordPress plugins are required or recommended with this theme:
+
+1.  [Meta Box](http://wordpress.org/plugins/meta-box/) to add some specific fields in the admin panel
+    of WordPress for each post formats - *required*
+
+2.  [Bootstrap 3 Shortcodes](http://wordpress.org/plugins/bootstrap-3-shortcodes/) to take advantage
+    of all Bootstrap's features in posts contents - *recommended*
+
+3.  [Font Awesome Shortcodes](http://wordpress.org/plugins/font-awesome-shortcodes/) to take advantage
+    of the icons font in posts contents - *recommended*
+
+4.  [Multiple Favicons](http://wordpress.org/plugins/multicons/) to handle all devices icons for your
+    website - *recommended*
+
+All of these are free plugins and will be handled automatically when enabling the theme in the admin panel.
