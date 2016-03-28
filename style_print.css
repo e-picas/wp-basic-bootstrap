@@ -3,6 +3,16 @@
  * @since WP_Basic_Bootstrap 1.0
  */
 
+body {
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    font-style: normal;
+    font-variant: normal;
+    color: #444;
+    line-height: 20px;
+}
+
 a {
     text-decoration: dashed;
 }
@@ -13,6 +23,7 @@ h3,
 h4,
 h5,
 h6 {
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
     text-decoration: none;
     page-break-before: auto;
 }
@@ -38,4 +49,9 @@ h6 {
 .comment-edit-link,
 .comment-reply-link {
     display: none;
+}
+
+.blog-main .blog-post header {
+    margin-bottom: 12px;
+    padding-bottom: 12px;
 }

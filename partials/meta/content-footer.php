@@ -59,7 +59,9 @@ global $post;
     ?></a></span>
 
     <?php if (get_basicbootstrap_mod('show_edit_links')) : ?>
+    <span class="hidden-print">
         <?php edit_post_link(__('Edit', 'basicbootstrap'), '<i class="fa fa-pencil-square fa-fw"></i>&nbsp;'); ?>
+    </span>
     <?php endif; ?>
 
 </div>

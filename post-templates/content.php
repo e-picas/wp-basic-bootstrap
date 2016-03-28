@@ -19,11 +19,14 @@ global $post;
             <?php endif; ?>
         </h1>
         <?php if (! is_page()) : ?>
-            <?php get_template_part_hierarchical('partials/meta/content-header', get_post_format()); ?>
-            <?php /*
+            <?php
+                // default meta info:
+                get_template_part_hierarchical('partials/meta/content-header', get_post_format());
                 // for a textual info like 'by <author> on <date>' use the following:
+            /*
                 get_template_part_hierarchical('partials/meta/content-header-text', get_post_format());
-            */ ?>
+            */
+            ?>
         <?php endif; ?>
     </header>
     <footer>
