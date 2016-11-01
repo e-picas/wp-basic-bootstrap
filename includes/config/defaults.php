@@ -222,4 +222,68 @@ $basicbootstrap_config = array(
         'verdana, geneva, sans-serif'                      => 'Verdana',
     ),
 
+    'css' => array(
+        'bootstrap' => array(
+            'uri'           => get_asset_uri('assets/css/bootstrap.min.css'),
+            'version'       => '3.3.5'
+        ),
+        'bootstrap-theme' => array(
+            'uri'           => get_asset_uri('assets/css/bootstrap-theme.min.css'),
+            'version'       => '3.3.5'
+        ),
+        'fontawesome' => array(
+            'uri'           => get_asset_uri('assets/css/font-awesome.min.css'),
+            'version'       => '4.5.0'
+        ),
+        'basicbootstrap-base-styles' => array(
+            'uri'           => get_asset_uri('assets/css/blog.css'),
+            'version'       => BASICBOOTSTRAP_VERSION,
+            'dependencies'  => array('bootstrap', 'fontawesome')
+        ),
+        'basicbootstrap-styles' => array(
+            'uri'           => get_stylesheet_uri(),
+            'version'       => BASICBOOTSTRAP_VERSION,
+            'dependencies'  => array('basicbootstrap-base-styles')
+        ),
+        'basicbootstrap-styles-print' => array(
+            'uri'           => get_asset_uri('style_print.css'),
+            'version'       => BASICBOOTSTRAP_VERSION,
+            'dependencies'  => array('basicbootstrap-base-styles'),
+            'media'         => 'print'
+        ),
+    ),
+
+    'js' => array(
+        'bootstrap' => array(
+            'uri'           => get_asset_uri('assets/js/bootstrap.min.js'),
+            'version'       => '3.3.5',
+            'dependencies'  => array('jquery')
+        ),
+        'html5shiv' => array(
+            'uri'           => get_asset_uri('assets/js/html5shiv.min.js'),
+            'version'       => '3.7.2',
+            'in_footer'     => false,
+        ),
+        'ie-10-viewport-bug-workaround-js' => array(
+            'uri'           => get_asset_uri('assets/js/ie-10-viewport-bug-workaround.js'),
+            'version'       => '3.3.5',
+            'dependencies'  => array('jquery'),
+        ),
+        'respond-js' => array(
+            'uri'           => get_asset_uri('assets/js/respond.js'),
+            'version'       => '1.4.2',
+            'dependencies'  => array('jquery'),
+        ),
+        'basicbootstrap-base-scripts' => array(
+            'uri'           => get_asset_uri('assets/js/blog.js'),
+            'version'       => BASICBOOTSTRAP_VERSION,
+            'dependencies'  => array('jquery', 'bootstrap')
+        ),
+        'basicbootstrap-scripts' => array(
+            'uri'           => get_asset_uri('scripts.js'),
+            'version'       => BASICBOOTSTRAP_VERSION,
+            'dependencies'  => array('jquery', 'bootstrap')
+        ),
+    ),
+
 );
