@@ -61,6 +61,9 @@
  * | get_search_form()    | get_search_form_hierarchical()   |
  * |----------------------|----------------------------------|
  *
+ * Have a look at the [manual](https://github.com/e-picas/wp-template-hierarchy-everywhere/blob/master/MANUAL.md)
+ * for a development of some of these features.
+ *
  *
  * ## Installation
  *
@@ -111,7 +114,7 @@
  *
  *
  * @package   WP_Template_Hierarchy_Everywhere
- * @version   1.0.0-beta
+ * @version   1.0.0-beta-2
  * @link      http://github.com/e-picas/wp-template-hierarchy-everywhere
  * @author    picas (Pierre Cassat) & contributors
  * @copyright Copyright (c) 2016, Pierre Cassat
@@ -121,7 +124,7 @@
  * Plugin Name: WP Template Hierarchy Everywhere
  * Plugin URI:  http://github.com/e-picas/wp-template-hierarchy-everywhere
  * Description: The template hierarchy concept applied everywhere.
- * Version:     1.0.0-beta
+ * Version:     1.0.0-beta-2
  * Author:      picas
  * Author URI:  http://picas.fr/
  * Copyright:   2016, Pierre Cassat
@@ -247,7 +250,6 @@ if (!function_exists('get_template_part_hierarchical')) :
         elseif (is_author()         && $template = get_author_template_part($slug, $name)) :
         elseif (is_date()           && $template = get_date_template_part($slug, $name)) :
         elseif (is_archive()        && $template = get_archive_template_part($slug, $name)) :
-        elseif (is_comments_popup() && $template = get_comments_popup_template_part($slug, $name)) :
         elseif (is_paged()          && $template = get_paged_template_part($slug, $name)) :
         else :
             $template = get_index_template_part($slug, $name);
