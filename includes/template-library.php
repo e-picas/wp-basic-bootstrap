@@ -31,6 +31,18 @@ function get_basicbootstrap_mod($name)
     if (!empty($mod) && is_string($mod) && $mod == 'blank') {
         $mod = false;
     }
+
+    /**
+     * Filter the theme_mod values
+     *
+     * @since WP_Basic_Bootstrap 1.0
+     *
+     * @param mixed $mod The theme_mod value
+     * @param string $name The theme_mod name
+     * @return mixed Must return the theme_mod value
+     */
+    $mod = apply_filters('basicbootstrap_theme_mod', $mod, $name);
+
     return $mod;
 }
 

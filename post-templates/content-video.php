@@ -4,6 +4,10 @@
  * @since WP_Basic_Bootstrap 1.0
  */
 
+if (BASICBOOTSTRAP_TPLDBG) {
+    error_log('loaded file : '.__FILE__);
+}
+
 /* @var $post \WP_Post */
 global $post;
 $video_host_type    = get_post_meta(get_the_ID(), 'post-format-video-host-type', true);

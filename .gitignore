@@ -1,4 +1,14 @@
+# dev dependencies
+vendor/
+!includes/vendor/*
 dev/
 tmp/
-vendor/
 composer.lock
+
+# bower dependencies
+assets/bootstrap/
+assets/font-awesome/
+assets/html5shiv/
+assets/ie10-viewport-bug-workaround/
+assets/jquery/
+assets/respond/

@@ -222,6 +222,7 @@ if (!function_exists('get_template_part_hierarchical')) :
      */
     function get_template_part_hierarchical($slug, $name = null, $include = true)
     {
+        global $wp_version;
         /**
          * Fires before the specified template part file is loaded.
          *
@@ -250,6 +251,8 @@ if (!function_exists('get_template_part_hierarchical')) :
         elseif (is_author()         && $template = get_author_template_part($slug, $name)) :
         elseif (is_date()           && $template = get_date_template_part($slug, $name)) :
         elseif (is_archive()        && $template = get_archive_template_part($slug, $name)) :
+        elseif (version_compare($wp_version, '4.5.0', '<') &&
+                is_comments_popup() && $template = get_comments_popup_template_part($slug, $name)) :
         elseif (is_paged()          && $template = get_paged_template_part($slug, $name)) :
         else :
             $template = get_index_template_part($slug, $name);

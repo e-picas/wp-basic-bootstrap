@@ -1,8 +1,8 @@
 === WordPress Basic Bootstrap ===
 Contributors: picas
-Donate link: http://picas.fr/about/
+Donate link: http://blog.picas.fr/about/
 Requires at least: 4.0.0
-Tested up to: 4.4.2
+Tested up to: 4.7.0
 Stable tag: trunk
 License: GPLv3 / proprietary
 

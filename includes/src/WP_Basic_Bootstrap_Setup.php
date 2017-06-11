@@ -10,6 +10,19 @@
 class WP_Basic_Bootstrap_Setup
 {
 
+    static $theme_supports = array(
+        'post-thumbnails',
+        'post-formats',
+        'custom-header',
+        'custom-background',
+        'menus',
+        'automatic-feed-links',
+        'editor-style',
+        'widgets',
+        'html5',
+        'title-tag'
+    );
+
     /**
      * Register required plugins
      *
@@ -54,33 +67,24 @@ class WP_Basic_Bootstrap_Setup
 
         // blog defaults
         $basicbootstrap_config = basicbootstrap_get_config('defaults');
+
+        // WP content width feature
         global $content_width;
         if (!isset($content_width)) {
             $content_width = $basicbootstrap_config['content_width'];
         }
 
-        // custom headers support
-        $custom_header_opts = basicbootstrap_get_config('custom_header');
-        add_theme_support('custom-header', $custom_header_opts);
-
-        // custom background support
-        $custom_background_opts = basicbootstrap_get_config('custom_background');
-        add_theme_support('custom-background', $custom_background_opts);
-
-        // post formats support
-        add_theme_support('post-formats', array('aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat'));
-
-        // HTML5 markup allowed
-        add_theme_support('html5', array('comment-list', 'comment-form', 'search-form', 'gallery', 'caption'));
-
-        // add default posts and comments RSS feed links to head
-        add_theme_support('automatic-feed-links');
-
-        // this theme does not hard-code document title tag to HTML <head>
-        add_theme_support('title-tag');
-
-        // this theme uses post thumbnails
-        add_theme_support('post-thumbnails');
+        // add theme supports from configuration
+        foreach (self::$theme_supports as $theme_mod) {
+            $opt = basicbootstrap_get_config($theme_mod);
+            if (!empty($opt)) {
+                if ($opt===true) {
+                    add_theme_support($theme_mod);
+                } else {
+                    add_theme_support($theme_mod, $opt);
+                }
+            }
+        }
 
         // custom image sizes
         $images_opts = basicbootstrap_get_config('image_sizes');
@@ -101,6 +105,19 @@ class WP_Basic_Bootstrap_Setup
 
         // load vendors
         basicbootstrap_load_class('wp_bootstrap_navwalker');
+
+        /**
+         * DEBUG FLAG : disabled by default
+         */
+        if (!defined('BASICBOOTSTRAP_TPLDBG')) {
+            define('BASICBOOTSTRAP_TPLDBG', false);
+        }
+
+        // the functions for debugging ...
+        if (BASICBOOTSTRAP_TPLDBG) {
+            basicbootstrap_load_library('dev-lib');
+        }
+
     }
 
     /**
@@ -258,6 +275,18 @@ class WP_Basic_Bootstrap_Setup
     {
         basicbootstrap_load_config('meta-boxes');
         global $basicbootstrap_meta_boxes;
-        return array_merge($meta_boxes, $basicbootstrap_meta_boxes);
+
+        /**
+         * Filter the theme's config items
+         *
+         * @since WP_Basic_Bootstrap 1.0
+         *
+         * @param mixed $value The item value to return
+         * @param null|string $name The requested entry if so
+         * @return mixed Must return the config item value
+         */
+        $value = apply_filters('basicbootstrap_config_items', $basicbootstrap_meta_boxes, 'meta-boxes');
+
+        return array_merge($meta_boxes, $value);
     }
 }

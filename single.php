@@ -21,12 +21,12 @@ $template = get_template_type();
 $page_type = get_page_type();
 $singular_type = get_singular_type();
 
-/*/
-error_log('from file : '.__FILE__);
-error_log('page type : '.$page_type);
-error_log('singular type : '.$singular_type);
-error_log('applied template : '.$template);
-//*/
+if (BASICBOOTSTRAP_TPLDBG) {
+    error_log('loaded file : '.__FILE__);
+    error_log('page type : '.$page_type);
+    error_log('singular type : '.$singular_type);
+    error_log('applied template : '.$template);
+}
 
 get_header_hierarchical('single'); ?>
 

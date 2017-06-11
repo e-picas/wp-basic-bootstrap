@@ -41,7 +41,7 @@ The theme embeds the following PHP third-parties:
 Theme options, defaults & configuration
 ---------------------------------------
 
-The various configurations of the theme are embeded in the `includes/config/` sub-directory. You can load one of them using
+The various configurations of the theme are embedded in the `includes/config/` sub-directory. You can load one of them using
 the `basicbootstrap_load_config( file_name )` function. You can access one of the `defaults` configuration entry (which is
 an array most of the time) with the `basicbootstrap_get_config( item_name )` function.
 
@@ -50,8 +50,8 @@ They are all stored with their default values in the `basicbootstrap_get_config(
 actual values, eventually modified by the customizer, use the `get_basicbootstrap_mod( name )` function.
 
 
-Theme hooks
------------
+Theme hooks & filters
+---------------------
 
     /**
      * Filter the theme's config items
@@ -65,14 +65,15 @@ Theme hooks
     $value = apply_filters('basicbootstrap_config_items', $value, $item);
 
     /**
-     * Filter the posts lists layout
+     * Filter the theme_mod values
      *
      * @since WP_Basic_Bootstrap 1.0
      *
-     * @param mixed $layout The given layout
-     * @return mixed Must return the layout to use
+     * @param mixed $mod The theme_mod value
+     * @param string $name The theme_mod name
+     * @return mixed Must return the theme_mod value
      */
-    $layout = apply_filters('posts_list_layout', $layout);
+    $mod = apply_filters('basicbootstrap_theme_mod', $mod, $name);
 
     /**
      * Filter the customizer's CSS rules output for frontend
@@ -83,6 +84,16 @@ Theme hooks
      * @return string Must return the CSS output
      */
     $output = apply_filters('basicbootstrap_customizer_header_output', $output);
+
+    /**
+     * Filter the posts lists layout
+     *
+     * @since WP_Basic_Bootstrap 1.0
+     *
+     * @param mixed $layout The given layout
+     * @return mixed Must return the layout to use
+     */
+    $layout = apply_filters('posts_list_layout', $layout);
 
 
 Introducing the new pages

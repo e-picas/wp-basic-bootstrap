@@ -84,7 +84,7 @@ $basicbootstrap_config = array(
     ),
 
     // custom header settings
-    'custom_header'         => array(
+    'custom-header'         => array(
         'width'                  => 980,
         'height'                 => 170,
         'flex-height'            => true,
@@ -93,9 +93,24 @@ $basicbootstrap_config = array(
     ),
 
     // custom background settings
-    'custom_background'      => array(
+    'custom-background'      => array(
         'default-color'          => 'fff',
     ),
+
+    // post formats supported
+    'post-formats'          => array('aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat'),
+
+    // HTML5 supported features
+    'html5'                 => array('comment-list', 'comment-form', 'search-form', 'gallery', 'caption'),
+
+    // add default posts and comments RSS feed links to head
+    'automatic-feed-links'  => true,
+
+    // this theme does not hard-code document title tag to HTML <head>
+    'title-tag'             => true,
+
+    // this theme uses post thumbnails
+    'post-thumbnails'       => true,
 
     // theme image sizes
     'image_sizes'           => array(
@@ -224,16 +239,33 @@ $basicbootstrap_config = array(
 
     'css' => array(
         'bootstrap' => array(
-            'uri'           => get_asset_uri('assets/css/bootstrap.min.css'),
-            'version'       => '3.3.5'
+            'uri'           =>
+                BASICBOOTSTRAP_ASSETS_MODE=='bower' ?
+                    get_asset_uri('assets/bootstrap/dist/css/bootstrap.min.css')
+                        : get_asset_uri('assets/css/bootstrap.min.css'),
+            'version'       => '3.3.7'
         ),
         'bootstrap-theme' => array(
-            'uri'           => get_asset_uri('assets/css/bootstrap-theme.min.css'),
-            'version'       => '3.3.5'
+            'uri'           =>
+                BASICBOOTSTRAP_ASSETS_MODE=='bower' ?
+                    get_asset_uri('assets/bootstrap/dist/css/bootstrap-theme.min.css')
+                        : get_asset_uri('assets/css/bootstrap-theme.min.css'),
+            'version'       => '3.3.7'
         ),
         'fontawesome' => array(
-            'uri'           => get_asset_uri('assets/css/font-awesome.min.css'),
-            'version'       => '4.5.0'
+            'uri'           =>
+                BASICBOOTSTRAP_ASSETS_MODE=='bower' ?
+                    get_asset_uri('assets/font-awesome/css/font-awesome.min.css')
+                        : get_asset_uri('assets/css/font-awesome.min.css'),
+            'version'       => '4.7.0'
+        ),
+        'ie-10-viewport-bug-workaround-css' => array(
+            'uri'           =>
+                BASICBOOTSTRAP_ASSETS_MODE=='bower' ?
+                    get_asset_uri('assets/ie10-viewport-bug-workaround/dist/ie-10-viewport-bug-workaround.min.css')
+                        : get_asset_uri('assets/css/ie-10-viewport-bug-workaround.min.css'),
+            'version'       => '1.0.3',
+            'dependencies'  => array('bootstrap'),
         ),
         'basicbootstrap-base-styles' => array(
             'uri'           => get_asset_uri('assets/css/blog.css'),
@@ -255,23 +287,37 @@ $basicbootstrap_config = array(
 
     'js' => array(
         'bootstrap' => array(
-            'uri'           => get_asset_uri('assets/js/bootstrap.min.js'),
-            'version'       => '3.3.5',
+            'uri'           =>
+                BASICBOOTSTRAP_ASSETS_MODE=='bower' ?
+                    get_asset_uri('assets/bootstrap/dist/js/bootstrap.min.js')
+                        : get_asset_uri('assets/js/bootstrap.min.js'),
+            'version'       => '3.3.7',
             'dependencies'  => array('jquery')
         ),
         'html5shiv' => array(
-            'uri'           => get_asset_uri('assets/js/html5shiv.min.js'),
-            'version'       => '3.7.2',
+            'uri'           =>
+                BASICBOOTSTRAP_ASSETS_MODE=='bower' ?
+                    get_asset_uri('assets/html5shiv/dist/html5shiv.min.js')
+                        : get_asset_uri('assets/js/html5shiv.min.js'),
+            'version'       => '3.7.3',
             'in_footer'     => false,
+            'dependencies'  => array('bootstrap'),
         ),
         'ie-10-viewport-bug-workaround-js' => array(
-            'uri'           => get_asset_uri('assets/js/ie-10-viewport-bug-workaround.js'),
-            'version'       => '3.3.5',
-            'dependencies'  => array('jquery'),
+            'uri'           =>
+                BASICBOOTSTRAP_ASSETS_MODE=='bower' ?
+                    get_asset_uri('assets/ie10-viewport-bug-workaround/dist/ie-10-viewport-bug-workaround.min.js')
+                        : get_asset_uri('assets/js/ie-10-viewport-bug-workaround.min.js'),
+            'version'       => '1.0.3',
+            'dependencies'  => array('bootstrap'),
         ),
         'respond-js' => array(
-            'uri'           => get_asset_uri('assets/js/respond.js'),
+            'uri'           =>
+                BASICBOOTSTRAP_ASSETS_MODE=='bower' ?
+                    get_asset_uri('assets/respond/src/respond.min.js')
+                        : get_asset_uri('assets/js/respond.min.js'),
             'version'       => '1.4.2',
+            'in_footer'     => false,
             'dependencies'  => array('jquery'),
         ),
         'basicbootstrap-base-scripts' => array(

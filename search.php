@@ -16,11 +16,11 @@
 $template = get_template_type();
 $page_type = get_page_type();
 
-/*/
-error_log('from file : '.__FILE__);
-error_log('page type : '.$page_type);
-error_log('applied template : '.$template);
-//*/
+if (BASICBOOTSTRAP_TPLDBG) {
+    error_log('loaded file : '.__FILE__);
+    error_log('page type : '.$page_type);
+    error_log('applied template : '.$template);
+}
 
 get_header_hierarchical('search'); ?>
 

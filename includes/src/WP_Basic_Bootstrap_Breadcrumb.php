@@ -106,7 +106,7 @@ class WP_Basic_Bootstrap_Breadcrumb
         if ($show_on_front == 'page') {
             $posts_page     = get_post($blog_page);
             $this->entries[] = array(
-                'title' => !is_null($default_title) ? $default_title : $posts_page->post_title,
+                'title' => !is_null($default_title) ? $default_title : (!empty($posts_page) ? $posts_page->post_title : ''),
                 'url'   => get_home_url() . '/' . get_page_uri($blog_page),
             );
         }

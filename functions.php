@@ -34,12 +34,32 @@ if (!defined('ABSPATH')) {
 /**
  * Current plugin version
  */
-define('BASICBOOTSTRAP_VERSION', '0.0.1@dev');
+define('BASICBOOTSTRAP_VERSION', '1.1.0@dev');
 
 /**
  * Current local plugin root path
  */
 define('BASICBOOTSTRAP_BASEPATH', dirname(__FILE__) . DIRECTORY_SEPARATOR);
+
+/**
+ * DEBUG FLAG : enable this to log all loaded templates of the theme
+ *
+ * This will make an `error_log(__FILE__)` at the top of any template of this theme
+ * to trace final rendering stack.
+ */
+/*/
+define('BASICBOOTSTRAP_TPLDBG', true);
+//*/
+
+/**
+ * ASSETS FLAG : set this to 'bower' to use the distributed Bower versions of assets
+ *
+ * Flag values:
+ *
+ *      -   'internal' : this will select assets files of dependencies in common theme's directories
+ *      -   'bower' : this will select assets files of dependencies directly in the directories created by Bower
+ */
+define('BASICBOOTSTRAP_ASSETS_MODE', 'internal');
 
 /*/
 // HARD DEBUG OF THEME MODS
