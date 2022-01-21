@@ -1,0 +1,247 @@
+/**
+ * @package WP_Basic_Bootstrap
+ * @since WP_Basic_Bootstrap 1.0
+ */
+
+/* Globals */
+body {
+    word-wrap: break-word;
+    font-size:  14px;
+}
+
+@media (min-width: 576px) {
+  .container, .container-sm {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container, .container-sm, .container-md {
+    max-width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container, .container-sm, .container-md, .container-lg {
+    max-width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container, .container-sm, .container-md, .container-lg, .container-xl {
+    max-width: 1170px;
+  }
+}
+
+.media-left, .media > .pull-left {
+    padding-right: 10px;
+}
+.media-right, .media > .pull-right {
+    padding-left: 10px;
+}
+
+/* Main column and sidebar layout */
+.blog-main {
+    padding-right: 25px;
+    padding-left: 25px;
+}
+.blog-sidebar {
+    padding: 0 30px;
+}
+.blog-sidebar,
+.blog-main-right,
+.blog-sidebar-right {
+    float: right !important;
+    padding-right: 25px;
+}
+.blog-main-left,
+.blog-sidebar-left {
+    float: left !important;
+    padding-left: 25px;
+}
+@media screen and (max-width: 767px) {
+    .blog-sidebar-left,
+    .blog-sidebar,
+    .blog-sidebar-right {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: 100%;
+    }
+}
+
+/* Sidebar modules */
+.sidebar-module {
+    margin: 0 0 15px;
+}
+
+/* Blog posts */
+.blog-post {
+}
+.blog-post-title {
+    margin-bottom: 5px;
+}
+.blog-post-meta {
+
+}
+.blog-post-content {
+    margin-top: 20px;
+}
+.comment-meta {
+    margin-bottom: 20px;
+}
+.blog-post-summary {
+    margin-bottom: 20px;
+}
+.blog-post-summary .blog-post-meta:first-child {
+    margin-bottom: 0;
+}
+.blog-post-summary .blog-post-title {
+    margin-top: 5px;
+}
+.blog-post-summary .thumbnail {
+    margin-right: 12px;
+}
+.comments-area .avatar {
+    float: left;
+    margin-right: 6px;
+}
+
+/* Header */
+.blog-searchbox {
+    margin: 20px;
+}
+
+/* Navbar  */
+.navbar {
+    margin-bottom: 20px;
+}
+
+/* Footer */
+footer.blog-footer {
+    padding: 40px 0;
+}
+
+/* Footer modules for boxing content */
+.footer-module {
+    margin: 0 0 15px;
+}
+@media screen and (min-width: 768px) {
+    .copyright {
+        padding-top: 10px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .footer-module {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: 100%;
+    }
+    .footer-nav,
+    .copyright {
+        text-align: center;
+    }
+}
+
+/* widgets */
+.widget ul {
+    line-height: 140%;
+    margin: 1em 0 1.4em 0;
+    padding: 0;
+}
+.widget li {
+    line-height: 140%;
+    border-top: 1px solid #ddd;
+    clear: both;
+    list-style: outside none none;
+    margin: 0;
+    padding: 6px 0;
+}
+.widget li > ul {
+    margin: 6px 0 0 18px;
+}
+.widget li > ul li:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+/* specifics */
+.author-avatar.pull-left {
+    margin: 0 20px 20px 20px;
+}
+.widget_author_block .author-avatar.pull-left {
+    margin: 6px;
+}
+/*
+.blog-post-content img,
+img.size-post-thumbnail {
+    max-width: 100% !important;
+    max-height: 100% !important;
+    width: auto !important;
+    height: auto !important;
+}
+*/
+img.size-post-thumbnail {
+    padding: auto;
+    margin: 6px 0 12px;
+}
+cite.vcard {
+    font-style: normal;
+}
+.read-more-wrapper {
+    display: block;
+    text-align: center;
+}
+
+/* pagination */
+.pager {
+  padding-left: 0;
+  margin: 20px 0;
+  text-align: center;
+  list-style: none;
+}
+.pager li {
+  display: inline;
+}
+.pager li > a,
+.pager li > span {
+  display: inline-block;
+  padding: 5px 14px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+}
+.pager li > a:hover,
+.pager li > a:focus {
+  text-decoration: none;
+  background-color: #eee;
+}
+.pager .next > a,
+.pager .next > span {
+  float: right;
+}
+.pager .previous > a,
+.pager .previous > span {
+  float: left;
+}
+.pager .disabled > a,
+.pager .disabled > a:hover,
+.pager .disabled > a:focus,
+.pager .disabled > span {
+  color: #777;
+  cursor: not-allowed;
+  background-color: #fff;
+}
+.pager li > a,
+.pager li > span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 300px;
+}
+
+@media screen and (max-width: 767px) {
+    .pager li > a,
+    .pager li > span {
+        max-width: 200px;
+    }
+}
