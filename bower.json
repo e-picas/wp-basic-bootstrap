@@ -1,0 +1,32 @@
+{
+  "name": "wp-basic-bootstrap",
+  "homepage": "https://github.com/e-picas/wp-basic-bootstrap",
+  "authors": [
+    "Pierre Cassat <http://picas.fr>"
+  ],
+  "description": "WP Basic Bootstrap is a full 101 Wordpress theme built with the Bootstrap framework and the Font Awesome images font",
+  "main": "",
+  "keywords": [
+    "wordpress",
+    "bootstrap",
+    "font-awesome",
+    "template",
+    "theme"
+  ],
+  "license": "GPL-3.0+",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0",
+    "html5shiv": "^3.7.3",
+    "respond": "^1.4.2",
+    "ie10-viewport-bug-workaround": "^1.0.3"
+  }
+}
