@@ -14,10 +14,10 @@ global $post;
 <article id="post-<?php the_ID(); ?>" <?php post_class('blog-post-summary sticky-summary'); ?> itemscope itemtype="http://schema.org/Article">
 
     <?php if (has_post_thumbnail()): ?>
-    <div class="featured-media sticky-media center-block clearfix">
+    <div class="featured-media sticky-media mx-auto clearfix">
         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="thumbnail">
             <?php the_post_thumbnail('post-thumbnail', array(
-                'class'=>'img-responsive size-post-thumbnail'
+                'class'=>'img-fluid size-post-thumbnail'
             )); ?>
         </a>
     </div>
@@ -32,13 +32,13 @@ global $post;
             </h2>
         </header>
 
-        <div class="visible-print print-separator"></div>
+        <div class="d-none d-print-block print-separator"></div>
         <div class="blog-post-excerpt" itemprop="description">
             <?php the_excerpt(); ?>
         </div>
 
         <?php if (get_post_type() != 'page') : ?>
-        <div class="visible-print print-separator"></div>
+        <div class="d-none d-print-block print-separator"></div>
         <footer class="blog-post-footer">
             <?php get_template_part_hierarchical('partials/meta/summary-footer', get_post_format()); ?>
         </footer>
@@ -47,4 +47,4 @@ global $post;
     </div>
 
 </article>
-<hr class="visible-print" />
+<hr class="d-none d-print-block" />

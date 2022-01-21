@@ -5,15 +5,15 @@
  */
 ?>
 <?php if (isset($entries) && is_array($entries)) : ?>
-<ol class="breadcrumb clearfix hidden-print <?php
-    if (! get_basicbootstrap_mod('visible_breadcrumb')) echo "hidden";
-?>" itemscope itemtype="http://schema.org/BreadcrumbList">
+<ol class="breadcrumb clearfix d-print-none" <?php
+    if (! get_basicbootstrap_mod('visible_breadcrumb')) echo ' style="display: none;"';
+?> itemscope itemtype="http://schema.org/BreadcrumbList">
 
 <?php foreach ($entries as $i=>$entry) : ?>
 
-    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"<?php
-        if ($i==count($entries)-1) echo ' class="active"';
-    ?>>
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item <?php
+        if ($i==count($entries)-1) echo 'active';
+    ?>">
 
     <?php if ($i!=count($entries)-1 && isset($entry['url'])) : ?>
         <a href="<?php echo $entry['url']; ?>" itemprop="item" typeof="WebPage">

@@ -8,7 +8,7 @@ License:        GPL-3.0+ / Proprietary
 License URI:    http://github.com/e-picas/wp-basic-bootstrap/LICENSE
 Text Domain:    basicbootstrap
 Domain Path:    /languages
-Version:        1.1.0@dev
+Version:        1.2.0
 Tags:           bootstrap, font-awesome, one-column, two-columns, three-columns, right-sidebar, left-sidebar, fixed-layout, responsive-layout, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, featured-images, microformats, post-formats, sticky-post, threaded-comments, translation-ready
 
 Based on some original works:
@@ -65,6 +65,27 @@ a img.aligncenter {
     display: block;
     margin-left: auto;
     margin-right: auto
+}
+
+h1.header-entry {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 2.2rem;
+}
+.small, small {
+    font-size: 65%;
+}
+
+.h4, h4 {
+    font-size: 1.3rem;
+}
+
+.input-group-text, .form-control {
+    font-size:  14px;
+}
+
+.searchform .form-control {
+    padding: .375rem .25rem;
 }
 
 .wp-caption {

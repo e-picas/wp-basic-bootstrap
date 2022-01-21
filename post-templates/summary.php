@@ -35,7 +35,7 @@ global $post;
         </footer>
         <?php endif; ?>
 
-        <div class="visible-print print-separator"></div>
+        <div class="d-none d-print-block print-separator"></div>
         <div class="blog-post-excerpt" itemprop="description">
             <?php the_excerpt(); ?>
         </div>

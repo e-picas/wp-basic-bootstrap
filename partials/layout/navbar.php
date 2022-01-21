@@ -1,24 +1,31 @@
 <?php
 
-$base_class     = get_basicbootstrap_mod('navbar_style');
+$base_class_setting = get_basicbootstrap_mod('navbar_style');
+switch($base_class_setting) {
+    case 'inverse':
+        $base_class = 'navbar-dark bg-dark';
+        break;
+    default:
+    case 'default':
+        $base_class = 'navbar-light bg-light';
+        break;
+}
 $navbar_type    = get_basicbootstrap_mod('navbar_type');
 
 ?>
-<nav class="blog-navigation navbar navbar-<?php echo $base_class; ?><?php
+<nav class="blog-navigation navbar navbar-expand-sm <?php echo $base_class; ?><?php
     if ($navbar_type == 'static_top')       echo ' navbar-static-top';
-    elseif ($navbar_type == 'fixed_top')    echo ' navbar-fixed-top';
-    elseif ($navbar_type == 'fixed_bottom') echo ' navbar-fixed-bottom';
+    elseif ($navbar_type == 'fixed_top')    echo ' fixed-top navbar-fixed-top';
+    elseif ($navbar_type == 'fixed_bottom') echo ' fixed-bottom navbar-fixed-bottom';
 ?>" id="navigation">
     <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only"><?php _e('Toggle navigation', 'basicbootstrap'); ?></span>
-                <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-            </button>
         <?php if (get_theme_mod('show_navbar_brand', true)) : ?>
-            <a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
+        <a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
         <?php endif; ?>
-        </div>
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only"><?php _e('Toggle navigation', 'basicbootstrap'); ?></span>
+            <span class="navbar-toggler-icon"></span>
+        </button>
         <div id="navbar" class="navbar-collapse collapse">
             <?php
 
@@ -27,7 +34,7 @@ $navbar_type    = get_basicbootstrap_mod('navbar_type');
                 'theme_location'    => 'main-menu',
                 'depth'             => 0,
                 'container'         => null,
-                'menu_class'        => 'nav navbar-nav',
+                'menu_class'        => 'navbar-nav mr-auto',
                 'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
                 'walker'            => new WP_Bootstrap_Navwalker()
             ));

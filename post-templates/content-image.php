@@ -14,10 +14,10 @@ global $post;
 <article id="post-<?php the_ID(); ?>" <?php post_class('blog-post'); ?> itemscope itemtype="http://schema.org/ImageObject">
 
     <?php if (has_post_thumbnail()) : ?>
-        <div class="center-block">
+        <div class="mx-auto">
             <?php the_post_thumbnail('post-thumbnail', array(
                 'itemprop'=>"contentUrl",
-                'class'=>'img-responsive size-post-thumbnail'
+                'class'=>'img-fluid size-post-thumbnail'
             )); ?>
         </div>
     <?php endif; ?>
@@ -41,7 +41,7 @@ global $post;
             <?php get_template_part_hierarchical('partials/meta/content-footer', get_post_format()); ?>
         <?php endif; ?>
     </footer>
-    <div class="visible-print print-separator"></div>
+    <div class="d-none d-print-block print-separator"></div>
     <div class="blog-post-content" itemprop="description">
         <?php $post = get_post(); if (isset($post->post_excerpt) && !empty($post->post_excerpt)) : ?>
         <div class="lead clearfix">
@@ -52,7 +52,7 @@ global $post;
         <div class="blog-post-links"><?php get_the_link_pages(); ?></div>
     </div>
 
-    <div class="hidden-print">
+    <div class="d-print-none">
         <?php if (
             (is_page() && get_basicbootstrap_mod('show_sharing_links_page')) ||
             (!is_page() && get_basicbootstrap_mod('show_sharing_links_post'))

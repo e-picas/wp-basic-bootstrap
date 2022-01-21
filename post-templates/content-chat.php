@@ -13,7 +13,7 @@ global $post;
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('blog-post'); ?> itemscope itemtype="http://schema.org/Article">
     <header>
-        <h1 class="blog-post-title hidden" itemprop="name">
+        <h1 class="blog-post-title" style="display: none;" itemprop="name">
             <?php the_title(); ?>
         </h1>
         <?php if (! is_page()) : ?>
@@ -25,20 +25,20 @@ global $post;
             <?php get_template_part_hierarchical('partials/meta/content-footer', get_post_format()); ?>
         <?php endif; ?>
     </footer>
-    <div class="visible-print print-separator"></div>
+    <div class="d-none d-print-block print-separator"></div>
     <div class="blog-post-content" itemprop="articleBody">
 
         <?php if (has_post_thumbnail()) : ?>
-            <div class="center-block">
+            <div class="mx-auto">
                 <?php the_post_thumbnail('post-thumbnail', array(
-                    'class'=>'img-responsive size-post-thumbnail'
+                    'class'=>'img-fluid size-post-thumbnail'
                 )); ?>
             </div>
         <?php endif; ?>
 
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="blog-post-title panel-title">
+        <div class="card">
+            <div class="card-heading">
+                <h3 class="blog-post-title card-title">
                     <?php if (! is_single() && ! is_page()) : ?>
                     <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark">
                         <?php endif; ?>
@@ -48,14 +48,14 @@ global $post;
                 <?php endif; ?>
                 </h3>
             </div>
-            <div class="panel-body">
+            <div class="card-body">
                 <?php the_content(); ?>
             </div>
         </div>
         <div class="blog-post-links"><?php get_the_link_pages(); ?></div>
     </div>
 
-    <div class="hidden-print">
+    <div class="d-print-none">
         <?php if (
             (is_page() && get_basicbootstrap_mod('show_sharing_links_page')) ||
             (!is_page() && get_basicbootstrap_mod('show_sharing_links_post'))

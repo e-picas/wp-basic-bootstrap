@@ -18,7 +18,7 @@ global $post;
     <?php if (get_basicbootstrap_mod('show_author_meta')) : ?>
         <i class="fa fa-user fa-fw"></i>&nbsp;<cite class="entry-meta-item author vcard"
     <?php else: ?>
-    <cite class="entry-meta-item author vcard hidden"
+    <cite class="entry-meta-item author vcard" style="display: none;"
     <?php endif; ?>
         itemprop="author"><?php
         the_author_posts_link();
@@ -30,7 +30,7 @@ global $post;
         <?php if (get_basicbootstrap_mod('show_post_cats')) : ?>
             <i class="fa fa-folder fa-fw"></i>&nbsp;<span class="entry-meta-item cat-links"
         <?php else: ?>
-            <span class="entry-meta-item cat-links hidden"
+            <span class="entry-meta-item cat-links" style="display: none;"
         <?php endif; ?>
         itemprop="isPartOf"><?php the_category(', '); ?></span>
     <?php endif; ?>
@@ -39,7 +39,7 @@ global $post;
         <?php if (get_basicbootstrap_mod('show_post_tags')) : ?>
             <i class="fa fa-tags fa-fw"></i>&nbsp;<span class="entry-meta-item tag-links"
         <?php else: ?>
-            <span class="entry-meta-item tag-links hidden"
+            <span class="entry-meta-item tag-links" style="display: none;"
         <?php endif; ?>
         itemprop="about"><?php the_tags('', ' ', ''); ?></span>
     <?php endif; ?>

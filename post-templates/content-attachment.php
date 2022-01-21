@@ -22,17 +22,17 @@ global $post;
         <?php get_template_part_hierarchical('partials/meta/content-footer', 'attachment'); ?>
     </footer>
 
-    <div class="visible-print print-separator"></div>
+    <div class="d-none d-print-block print-separator"></div>
     <div class="blog-post-content" itemprop="articleBody">
         <div class="entry-attachment">
             <?php if (wp_attachment_is_image($post->ID)) : $att_image = wp_get_attachment_image_src($post->ID, 'large'); ?>
-                <div class="attachment center-block">
+                <div class="attachment mx-auto">
                     <a href="<?php echo wp_get_attachment_url($post->ID); ?>" title="<?php $post->post_excerpt; ?>" rel="attachment">
                         <img
                             src="<?php echo $att_image[0]; ?>"
                             width="<?php echo $att_image[1]; ?>"
                             height="<?php echo $att_image[2]; ?>"
-                            class="img-responsive attachment-medium"
+                            class="img-fluid attachment-medium"
                             alt="<?php $post->post_excerpt; ?>" />
                     </a>
                     <div class="entry-caption"><?php if (! empty($post->post_excerpt)) the_excerpt(); ?></div>
@@ -50,7 +50,7 @@ global $post;
 
     </div>
 
-    <div class="hidden-print">
+    <div class="d-print-none">
         <?php if (get_basicbootstrap_mod('show_sharing_links_attachment')) : ?>
             <?php get_template_part_hierarchical('partials/social-share', 'attachment'); ?>
         <?php endif; ?>

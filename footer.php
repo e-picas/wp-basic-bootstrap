@@ -28,7 +28,7 @@ if (BASICBOOTSTRAP_TPLDBG) {
             </div><!-- /.row -->
     </div><!-- /.container -->
 
-    <footer id="footer" class="blog-footer hidden-print">
+    <footer id="footer" class="blog-footer d-print-none">
         <?php get_template_part_hierarchical('partials/layout/footer'); ?>
     </footer>
 

@@ -18,15 +18,15 @@
 $previous_i = $paged-1;
 $next_i     = $paged+1;
 ?>
-<nav id="nav-below" class="pagenav hidden-print clearfix text-center">
-    <ul class="pagination pagination-sm">
+<nav id="nav-inner" class="pagenav d-print-none clearfixtext-center">
+    <ul class="pagination">
 
         <?php if ($previous_i > 0) : ?>
-        <li>
-            <?php echo _wp_link_page($previous_i); ?>
+        <li class="page-item">
+            <?php echo bbs_wp_link_page_pager_item($previous_i); ?>
         <?php else: ?>
-        <li class="disabled">
-            <a href="#" aria-label="Previous">
+        <li class="page-item disabled">
+            <a href="#" aria-label="Previous" class="page-link">
         <?php endif; ?>
                 <span aria-hidden="true">&laquo;</span>
             </a>
@@ -34,18 +34,18 @@ $next_i     = $paged+1;
 
         <?php for ($i = 1; $i < ($max_page + 1); $i = $i + 1) : ?>
             <?php if ($i == $paged) : ?>
-                <li class="active"><span class="number current"><?php echo $i; ?> <span class="sr-only">(current)</span></span></li>
+                <li class="page-item active"><span class="number current page-link"><?php echo $i; ?> <span class="sr-only">(current)</span></span></li>
             <?php else : ?>
-                <li><?php echo _wp_link_page($i); ?><?php echo $i; ?></a></li>
+                <li class="page-item"><?php echo bbs_wp_link_page_pager_item($i); ?><?php echo $i; ?></a></li>
             <?php endif; ?>
         <?php endfor; ?>
 
         <?php if ($next_i < ($max_page + 1)) : ?>
-        <li>
-            <?php echo _wp_link_page($next_i); ?>
+        <li class="page-item">
+            <?php echo bbs_wp_link_page_pager_item($next_i); ?>
         <?php else: ?>
-        <li class="disabled">
-            <a href="#" aria-label="Next">
+        <li class="page-item disabled">
+            <a href="#" aria-label="Next" class="page-link">
         <?php endif; ?>
                 <span aria-hidden="true">&raquo;</span>
             </a>

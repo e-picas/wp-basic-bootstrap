@@ -6,7 +6,7 @@
 ?>
 <?php if (!empty($quote_content)) : ?>
 <div class="jumbotron entry-featured feature-quote">
-    <blockquote>
+    <blockquote class="blockquote">
         <p><i class="fa fa-quote-right fa-fw fa-pull-left fa-2x"></i>&nbsp;<?php echo $quote_content; ?></p>
         <?php if (!empty($quote_source_name)) : ?>
             <?php if (!empty($quote_source_link)) : ?>

@@ -38,7 +38,7 @@ get_header_hierarchical('taxonomy'); ?>
 <?php // marchpô
 /*
         <?php if (get_basicbootstrap_mod('show_edit_links')) : ?>
-        <section class="entry-meta blog-post-meta hidden-print">
+        <section class="entry-meta blog-post-meta d-print-none">
             <?php
             edit_term_link(
                 __('Edit', 'basicbootstrap'),

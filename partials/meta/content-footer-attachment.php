@@ -27,7 +27,7 @@ global $post;
         <?php else: ?>
         <?php
         $sizes = wp_get_attachment_image_src(get_the_ID(), 'full');
-        echo '<span class="hidden" itemprop="width">'.$sizes[1] . '</span> <span class="hidden" itemprop="height">' . $sizes[2] . '</span>';
+        echo '<span style="display: none;" itemprop="width">'.$sizes[1] . '</span> <span style="display: none;" itemprop="height">' . $sizes[2] . '</span>';
         ?>
         <?php endif; ?>
 
@@ -61,7 +61,7 @@ global $post;
     <?php endif; ?>
 
     <?php if (get_basicbootstrap_mod('show_edit_links')) : ?>
-    <span class="hidden-print">
+    <span class="d-print-none">
         <?php edit_post_link(__('Edit', 'basicbootstrap'), '<i class="fa fa-pencil-square fa-fw"></i>&nbsp;'); ?>
     </span>
     <?php endif; ?>

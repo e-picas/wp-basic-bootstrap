@@ -9,9 +9,9 @@ global $post;
 ?>
 <aside class="blog-post-meta">
 
-    <time class="entry-meta-item post-date entry-date<?php
-        if (! get_basicbootstrap_mod('show_pubdate_meta')) echo ' hidden';
-    ?>" title="<?php
+    <time class="entry-meta-item post-date entry-date"<?php
+        if (! get_basicbootstrap_mod('show_pubdate_meta')) echo ' style="display: none;"';
+    ?> title="<?php
         esc_attr_e('Publication date', 'basicbootstrap');
     ?>" datetime="<?php
         the_time('c');

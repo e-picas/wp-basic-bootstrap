@@ -235,7 +235,7 @@ function basicbootstrap_read_more_link($more = null)
     if (get_basicbootstrap_mod('show_read_more_buttons')) {
         /* @var $post \WP_Post */
         global $post;
-        $output .= '<p class="read-more-wrapper"><a class="btn btn-default btn-sm read-more" href="'.
+        $output .= '<p class="read-more-wrapper"><a class="btn btn-secondary btn-sm read-more" href="'.
             get_permalink($post->ID) .
             '" title="' .
             esc_attr(sprintf(__('Read the full article: %s', 'basicbootstrap'), the_title('', '', false))) .

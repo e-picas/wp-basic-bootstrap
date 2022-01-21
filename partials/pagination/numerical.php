@@ -31,23 +31,23 @@ $next_link_title = esc_html__('See next page', 'basicbootstrap');
 $fist_link_title = esc_html__('See first page', 'basicbootstrap');
 $last_link_title = esc_html__('See last page', 'basicbootstrap');
 ?>
-<nav id="nav-below" class="pagenav hidden-print clearfix">
+<nav id="nav-below" class="pagenav d-print-none clearfix">
     <ul class="pagination">
 
     <?php if ($previous_i > 0) : ?>
-        <li>
-            <a href="<?php echo get_pagenum_link($previous_i, true); ?>" aria-label="Previous" title="<?php echo $previous_link_title; ?>">
+        <li class="page-item">
+            <a href="<?php echo get_pagenum_link($previous_i, true); ?>" aria-label="Previous" class="page-link" title="<?php echo $previous_link_title; ?>">
     <?php else: ?>
-        <li class="disabled">
-            <a href="#" aria-label="Previous">
+        <li class="page-item disabled">
+            <a href="#" aria-label="Previous" class="page-link">
     <?php endif; ?>
                 <span aria-hidden="true">&laquo;</span>
             </a>
         </li>
 
     <?php if ($start_page > 1) : $i = 1; ?>
-        <li>
-            <a href="<?php echo get_pagenum_link($i); ?>" class="number" title="<?php echo $fist_link_title; ?>">
+        <li class="page-item">
+            <a href="<?php echo get_pagenum_link($i); ?>" class="page-link number" title="<?php echo $fist_link_title; ?>">
                 <?php echo $i; ?>
             </a>
         </li>
@@ -55,12 +55,14 @@ $last_link_title = esc_html__('See last page', 'basicbootstrap');
 
     <?php for ($i = $start_page; $i  <= $end_page; $i++) : ?>
         <?php if ($i == $paged) : ?>
-        <li class="active">
-            <span class="number current"><?php echo $i; ?> <span class="sr-only">(current)</span></span>
+        <li class="page-item active">
+            <a href="#" class="page-link number current" title="<?php echo $fist_link_title; ?>">
+                <?php echo $i; ?> <span class="sr-only">(current)</span>
+            </a>
         </li>
         <?php else : ?>
         <li>
-            <a href="<?php echo get_pagenum_link($i); ?>" class="number" title="<?php echo $page_link_title($i); ?>">
+            <a href="<?php echo get_pagenum_link($i); ?>" class="page-link number" title="<?php echo $page_link_title($i); ?>">
         <?php if (
             ($i == $start_page && ($start_page-1) > 1) ||
             ($i == $end_page && ($end_page+1) < $max_page)
@@ -75,19 +77,19 @@ $last_link_title = esc_html__('See last page', 'basicbootstrap');
     <?php endfor; ?>
 
     <?php if ($end_page < $max_page) : $i = $max_page; ?>
-        <li>
-            <a href="<?php echo get_pagenum_link($i); ?>" class="number" title="<?php echo $last_link_title; ?>">
+        <li class="page-item">
+            <a href="<?php echo get_pagenum_link($i); ?>" class="page-link number" title="<?php echo $last_link_title; ?>">
                 <?php echo $i; ?>
             </a>
         </li>
     <?php endif; ?>
 
     <?php if ($next_i < ($max_page + 1)) : ?>
-        <li>
-            <a href="<?php echo get_pagenum_link($next_i, true); ?>" aria-label="Next" title="<?php echo $next_link_title; ?>">
+        <li class="page-item">
+            <a href="<?php echo get_pagenum_link($next_i, true); ?>" aria-label="Next" class="page-link" title="<?php echo $next_link_title; ?>">
     <?php else: ?>
-        <li class="disabled">
-            <a href="#" aria-label="Next">
+        <li class="page-item disabled">
+            <a href="#" aria-label="Next" class="page-link">
     <?php endif; ?>
                 <span aria-hidden="true">&raquo;</span>
             </a>

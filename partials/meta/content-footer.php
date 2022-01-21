@@ -24,7 +24,7 @@ global $post;
         <?php if (get_basicbootstrap_mod('show_post_cats')) : ?>
         <i class="fa fa-folder fa-fw"></i>&nbsp;<span class="entry-meta-item cat-links"
         <?php else: ?>
-        <span class="entry-meta-item cat-links hidden"
+        <span class="entry-meta-item cat-links" style="display: none;"
         <?php endif; ?>
         itemprop="isPartOf"><?php the_category(', '); ?></span>
     <?php endif; ?>
@@ -33,7 +33,7 @@ global $post;
         <?php if (get_basicbootstrap_mod('show_post_tags')) : ?>
         <i class="fa fa-tags fa-fw"></i>&nbsp;<span class="entry-meta-item tag-links"
         <?php else: ?>
-        <span class="entry-meta-item tag-links hidden"
+        <span class="entry-meta-item tag-links" style="display: none;"
         <?php endif; ?>
         itemprop="about"><?php the_tags('', ' ', ''); ?></span>
     <?php endif; ?>
@@ -48,7 +48,7 @@ global $post;
     <?php if (get_basicbootstrap_mod('show_permalink')) : ?>
     <i class="fa fa-globe fa-fw"></i>&nbsp;<span class="entry-meta-item entry-permalink"
     <?php else: ?>
-    <span class="entry-meta-item entry-permalink hidden"
+    <span class="entry-meta-item entry-permalink" style="display: none;"
     <?php endif; ?>
     itemprop="url"><a href="<?php
         echo $permalink;
@@ -59,7 +59,7 @@ global $post;
     ?></a></span>
 
     <?php if (get_basicbootstrap_mod('show_edit_links')) : ?>
-    <span class="hidden-print">
+    <span class="d-print-none">
         <?php edit_post_link(__('Edit', 'basicbootstrap'), '<i class="fa fa-pencil-square fa-fw"></i>&nbsp;'); ?>
     </span>
     <?php endif; ?>

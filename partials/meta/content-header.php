@@ -18,7 +18,7 @@ global $post;
 <?php if (get_basicbootstrap_mod('show_author_meta')) : ?>
     <i class="fa fa-user fa-fw"></i>&nbsp;<cite class="entry-meta-item author vcard"
 <?php else: ?>
-    <cite class="entry-meta-item author vcard hidden"
+    <cite class="entry-meta-item author vcard" style="display: none;"
 <?php endif; ?>
         itemprop="author"><?php
         the_author_posts_link();
@@ -27,7 +27,7 @@ global $post;
 <?php if (get_basicbootstrap_mod('show_pubdate_meta')) : ?>
     <i class="fa fa-calendar fa-fw"></i>&nbsp;<time class="entry-meta-item post-date entry-date"
 <?php else: ?>
-    <time class="entry-meta-item post-date entry-date hidden"
+    <time class="entry-meta-item post-date entry-date" style="display: none;"
 <?php endif; ?>
         title="<?php
         esc_attr_e('Publication date', 'basicbootstrap');
@@ -43,7 +43,7 @@ global $post;
 <?php if (get_basicbootstrap_mod('show_moddate_meta')) : ?>
         <i class="fa fa-calendar-check-o fa-fw"></i>&nbsp;<time class="entry-meta-item post-date entry-date updated"
 <?php else: ?>
-        <time class="entry-meta-item post-date entry-date updated hidden"
+        <time class="entry-meta-item post-date entry-date updated" style="display: none;"
 <?php endif; ?>
         title="<?php
             esc_attr_e('Last modification date', 'basicbootstrap');

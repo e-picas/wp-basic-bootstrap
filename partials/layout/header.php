@@ -3,7 +3,7 @@
 $page_type = get_page_type();
 $header_image = get_header_image();
 
-?><header class="blog-header hidden-print" id="header"<?php
+?><header class="blog-header d-print-none" id="header"<?php
 if (get_header_image()) :
     echo ' style="' .
         'background-image: url(\'' . esc_url($header_image) . '\');' .
@@ -23,7 +23,7 @@ endif; ?>>
             'min-height: ' . HEADER_IMAGE_HEIGHT . 'px;' .
             'position: relative;"';
     endif; ?>>
-        <div class="pull-left">
+        <div class="float-left">
             <!-- start logo/sitename -->
             <?php if (get_basicbootstrap_mod('display_header')) : ?>
                 <?php $header_text_color = get_header_textcolor(); ?>
@@ -40,13 +40,13 @@ endif; ?>>
                     <small class="header-entry blog-description" style="color: #<?php echo $header_text_color ?>;"><?php bloginfo('description'); ?></small>
                 </h1>
             <?php else : ?>
-                <h1 class="hidden"><?php bloginfo('name'); ?></h1>
-                <p class="hidden"><?php bloginfo('description'); ?></p>
+                <h1 style="display: none;"><?php bloginfo('name'); ?></h1>
+                <p style="display: none;"><?php bloginfo('description'); ?></p>
             <?php endif; ?>
             <!-- end logo/sitename -->
         </div>
         <?php if (get_basicbootstrap_mod('display_header_searchbox')) : ?>
-            <div class="pull-right blog-searchbox">
+            <div class="float-right blog-searchbox">
                 <?php get_search_form_hierarchical(); ?>
             </div>
         <?php endif; ?>

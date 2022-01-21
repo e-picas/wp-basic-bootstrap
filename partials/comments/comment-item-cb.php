@@ -34,7 +34,7 @@ global $post;
                 sprintf(__('%1$s at %2$s', 'basicbootstrap'), get_comment_date(), get_comment_time())
             );
             ?>
-            <span class="hidden-print">
+            <span class="d-print-none">
             <?php comment_reply_link(array_merge($args, array(
                 'reply_text' => __('Reply', 'basicbootstrap'),
                 'before' => '<i class="fa fa-reply fa-fw"></i>&nbsp;',
@@ -45,7 +45,7 @@ global $post;
             </span>
 
             <?php if (get_basicbootstrap_mod('show_edit_comment_links')) : ?>
-            <span class="hidden-print">
+            <span class="d-print-none">
                 <?php edit_comment_link(__('Edit', 'basicbootstrap'), '<i class="fa fa-pencil-square fa-fw"></i>&nbsp;'); ?>
             </span>
             <?php endif; ?>

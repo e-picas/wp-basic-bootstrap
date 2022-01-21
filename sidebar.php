@@ -21,12 +21,12 @@ if (BASICBOOTSTRAP_TPLDBG) {
     </div><!-- /.blog-main -->
 
     <?php if ($template == 'left_sidebar') : ?>
-    <aside id="sidebar" class="col-sm-3 blog-sidebar-left hidden-print">
+    <aside id="sidebar" class="col-sm-3 blog-sidebar-left d-print-none">
     <?php elseif ($template == 'right_sidebar') : ?>
-    <aside id="sidebar" class="col-sm-3 blog-sidebar-right hidden-print">
+    <aside id="sidebar" class="col-sm-3 blog-sidebar-right d-print-none">
     <?php endif; ?>
 
-        <hr class="visible-xs" />
+        <hr class="d-sm-none" />
         <?php dynamic_sidebar('primary-widget-area'); ?>
 
     </aside><!-- /.blog-sidebar -->

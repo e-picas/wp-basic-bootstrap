@@ -286,36 +286,28 @@ $basicbootstrap_config = array(
     ),
 
     'js' => array(
+        'popper' => array(
+            'uri'           => get_asset_uri('assets/js/popper-1.12.9.min.js'),
+            'version'       => '1.12.9',
+        ),
         'bootstrap' => array(
-            'uri'           =>
-                BASICBOOTSTRAP_ASSETS_MODE=='bower' ?
-                    get_asset_uri('assets/bootstrap/dist/js/bootstrap.min.js')
-                        : get_asset_uri('assets/js/bootstrap.min.js'),
+            'uri'           => get_asset_uri('assets/js/bootstrap.min.js'),
             'version'       => '3.3.7',
-            'dependencies'  => array('jquery')
+            'dependencies'  => array('jquery','popper')
         ),
         'html5shiv' => array(
-            'uri'           =>
-                BASICBOOTSTRAP_ASSETS_MODE=='bower' ?
-                    get_asset_uri('assets/html5shiv/dist/html5shiv.min.js')
-                        : get_asset_uri('assets/js/html5shiv.min.js'),
+            'uri'           => get_asset_uri('assets/js/html5shiv.min.js'),
             'version'       => '3.7.3',
             'in_footer'     => false,
             'dependencies'  => array('bootstrap'),
         ),
         'ie-10-viewport-bug-workaround-js' => array(
-            'uri'           =>
-                BASICBOOTSTRAP_ASSETS_MODE=='bower' ?
-                    get_asset_uri('assets/ie10-viewport-bug-workaround/dist/ie-10-viewport-bug-workaround.min.js')
-                        : get_asset_uri('assets/js/ie-10-viewport-bug-workaround.min.js'),
+            'uri'           => get_asset_uri('assets/js/ie-10-viewport-bug-workaround.min.js'),
             'version'       => '1.0.3',
             'dependencies'  => array('bootstrap'),
         ),
         'respond-js' => array(
-            'uri'           =>
-                BASICBOOTSTRAP_ASSETS_MODE=='bower' ?
-                    get_asset_uri('assets/respond/src/respond.min.js')
-                        : get_asset_uri('assets/js/respond.min.js'),
+            'uri'           => get_asset_uri('assets/js/respond.min.js'),
             'version'       => '1.4.2',
             'in_footer'     => false,
             'dependencies'  => array('jquery'),

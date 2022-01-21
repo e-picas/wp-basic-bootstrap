@@ -88,19 +88,19 @@ if ('comments.php' == basename($_SERVER['SCRIPT_FILENAME'])) {
 
         <?php endif; // have_comments() ?>
 
-        <div class="hidden-print">
+        <div class="d-print-none">
         <?php
         $args = array(
             'id_form'           => 'commentform',
             'id_submit'         => 'submit',
-            'class_submit'      => 'btn btn-default',
+            'class_submit'      => 'btn btn-secondary',
             'title_reply'       => __('Leave a Reply', 'basicbootstrap'),
             'title_reply_to'    => __('Leave a Reply to %s', 'basicbootstrap'),
             'cancel_reply_link' => __('Cancel Reply', 'basicbootstrap'),
             'label_submit'      => __('Post Comment', 'basicbootstrap'),
 
             'comment_field' =>  '<div class="form-group comment-form-comment">' .
-                '<label for="comment" class="control-label">' .
+                '<label for="comment" class="col-form-label">' .
                     _x('Comment', 'noun', 'basicbootstrap') .
                 '</label>' .
                 '<textarea class="form-control" id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>' .
@@ -133,21 +133,21 @@ if ('comments.php' == basename($_SERVER['SCRIPT_FILENAME'])) {
             'fields' => apply_filters('comment_form_default_fields', array(
                 'author' =>
                     '<div class="form-group comment-form-name">' .
-                        '<label for="author" class="control-label">' .
+                        '<label for="author" class="col-form-label">' .
                             __('Name', 'basicbootstrap') . ($req ? '&nbsp;<span class="required">*</span>' : '') .
                         '</label> ' .
                         '<input class="form-control" id="author" name="author" type="text" value="' . esc_attr($commenter['comment_author']) . '" placeholder="John Doe" />' .
                     '</div>',
                 'email' =>
                     '<div class="form-group comment-form-email">' .
-                        '<label for="email" class="control-label">' .
+                        '<label for="email" class="col-form-label">' .
                             __('Email', 'basicbootstrap') . ($req ? '&nbsp;<span class="required">*</span>' : '') .
                         '</label> ' .
                         '<input class="form-control" id="email" name="email" type="text" value="' . esc_attr($commenter['comment_author']) . '" placeholder="name@provider.dom" />' .
                     '</div>',
                 'url' =>
                     '<div class="form-group comment-form-url">' .
-                        '<label for="url" class="control-label">' .
+                        '<label for="url" class="col-form-label">' .
                             __('Website', 'basicbootstrap') .
                         '</label> ' .
                         '<input class="form-control" id="url" name="url" type="text" value="' . esc_attr($commenter['comment_author']) . '" placeholder="http://domain.ext/page" />' .

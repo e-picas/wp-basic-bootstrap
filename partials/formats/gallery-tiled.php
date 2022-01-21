@@ -9,7 +9,7 @@
     <div class="gallery-tiled magnific-popup-gallery">
         <ul class="list-inline">
         <?php foreach ($gallery_images as $image): ?>
-            <li>
+            <li class="list-inline-item">
                 <?php
                 $attachment = get_post($image['ID']);
                 $image_caption = $attachment->post_excerpt;

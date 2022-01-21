@@ -18,7 +18,7 @@ if (have_posts() && ! is_singular()) :
     <div class="sticky-wrapper">
         <?php get_template_part_hierarchical('post-templates/summary-sticky', get_post_format()); ?>
     </div>
-    <hr class="hidden-print" />
+    <hr class="d-print-none" />
 
         <?php endwhile; ?>
         <?php get_not_sticky_query(); ?>

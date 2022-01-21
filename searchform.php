@@ -22,8 +22,8 @@
                     esc_attr_e('Type your search and press enter', 'basicbootstrap');
                 ?>" name="s" id="s" />
             </div>
-          <span class="input-group-btn">
-            <input class="btn btn-default" type="submit" id="searchsubmit" value="<?php
+          <span class="input-group-append">
+            <input class="input-group-text btn btn-secondary" type="submit" id="searchsubmit" value="<?php
                 echo esc_attr_x('Search', 'submit button', 'basicbootstrap');
             ?>" title="<?php
                 esc_attr_e('Make your search', 'basicbootstrap');
