@@ -240,32 +240,17 @@ $basicbootstrap_config = array(
     'css' => array(
         'bootstrap' => array(
             'uri'           =>
-                BASICBOOTSTRAP_ASSETS_MODE=='bower' ?
-                    get_asset_uri('assets/bootstrap/dist/css/bootstrap.min.css')
-                        : get_asset_uri('assets/css/bootstrap.min.css'),
-            'version'       => '3.3.7'
-        ),
-        'bootstrap-theme' => array(
-            'uri'           =>
-                BASICBOOTSTRAP_ASSETS_MODE=='bower' ?
-                    get_asset_uri('assets/bootstrap/dist/css/bootstrap-theme.min.css')
-                        : get_asset_uri('assets/css/bootstrap-theme.min.css'),
-            'version'       => '3.3.7'
+                BASICBOOTSTRAP_USE_CDN == true ?
+                    'https://cdn.jsdelivr.net/npm/bootstrap@'.BASICBOOTSTRAP_BOOTSTRAP_VERSION.'/dist/css/bootstrap.min.css'
+                    : get_asset_uri('assets/css/bootstrap.min.css'),
+            'version'       => BASICBOOTSTRAP_BOOTSTRAP_VERSION
         ),
         'fontawesome' => array(
             'uri'           =>
-                BASICBOOTSTRAP_ASSETS_MODE=='bower' ?
-                    get_asset_uri('assets/font-awesome/css/font-awesome.min.css')
-                        : get_asset_uri('assets/css/font-awesome.min.css'),
-            'version'       => '4.7.0'
-        ),
-        'ie-10-viewport-bug-workaround-css' => array(
-            'uri'           =>
-                BASICBOOTSTRAP_ASSETS_MODE=='bower' ?
-                    get_asset_uri('assets/ie10-viewport-bug-workaround/dist/ie-10-viewport-bug-workaround.min.css')
-                        : get_asset_uri('assets/css/ie-10-viewport-bug-workaround.min.css'),
-            'version'       => '1.0.3',
-            'dependencies'  => array('bootstrap'),
+                BASICBOOTSTRAP_USE_CDN == true ?
+                    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/'.BASICBOOTSTRAP_FONTAWESOME_VERSION.'/css/all.min.css'
+                    : get_asset_uri('assets/css/fontawesome-all.min.css'),
+            'version'       => BASICBOOTSTRAP_FONTAWESOME_VERSION
         ),
         'basicbootstrap-base-styles' => array(
             'uri'           => get_asset_uri('assets/css/blog.css'),
@@ -287,24 +272,19 @@ $basicbootstrap_config = array(
 
     'js' => array(
         'popper' => array(
-            'uri'           => get_asset_uri('assets/js/popper-1.12.9.min.js'),
-            'version'       => '1.12.9',
+            'uri'           =>
+                BASICBOOTSTRAP_USE_CDN == true ?
+                    'https://cdn.jsdelivr.net/npm/popper.js@'.BASICBOOTSTRAP_POPPER_VERSION.'/dist/umd/popper.min.js'
+                    : get_asset_uri('assets/js/popper.min.js'),
+            'version'       => BASICBOOTSTRAP_POPPER_VERSION,
         ),
         'bootstrap' => array(
-            'uri'           => get_asset_uri('assets/js/bootstrap.min.js'),
-            'version'       => '3.3.7',
+            'uri'           =>
+                BASICBOOTSTRAP_USE_CDN == true ?
+                    'https://cdn.jsdelivr.net/npm/bootstrap@'.BASICBOOTSTRAP_BOOTSTRAP_VERSION.'/dist/js/bootstrap.min.js'
+                    : get_asset_uri('assets/js/bootstrap.min.js'),
+            'version'       => BASICBOOTSTRAP_BOOTSTRAP_VERSION,
             'dependencies'  => array('jquery','popper')
-        ),
-        'html5shiv' => array(
-            'uri'           => get_asset_uri('assets/js/html5shiv.min.js'),
-            'version'       => '3.7.3',
-            'in_footer'     => false,
-            'dependencies'  => array('bootstrap'),
-        ),
-        'ie-10-viewport-bug-workaround-js' => array(
-            'uri'           => get_asset_uri('assets/js/ie-10-viewport-bug-workaround.min.js'),
-            'version'       => '1.0.3',
-            'dependencies'  => array('bootstrap'),
         ),
         'respond-js' => array(
             'uri'           => get_asset_uri('assets/js/respond.min.js'),

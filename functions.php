@@ -10,7 +10,7 @@
  *
  * This file embeds the three dependencies any time:
  *
- * -    `includes/basicbootstrap-config.php` : the global theme's config and core functions
+ * -    `includes/basicbootstrap/config/defaults.php` : the global theme's config and core functions
  * -    `includes/templates-enhancer.php` : a library of "missing" Wordpress functions to use
  *      in templates
  * -    `includes/templates-library.php` : the library of theme's features
@@ -34,7 +34,34 @@ if (!defined('ABSPATH')) {
 /**
  * Current plugin version
  */
-define('BASICBOOTSTRAP_VERSION', '1.1.0@dev');
+define('BASICBOOTSTRAP_VERSION', '2.0.0@dev');
+
+/**
+ * Bootstrap version
+ * @see https://getbootstrap.com/
+ */
+define('BASICBOOTSTRAP_BOOTSTRAP_VERSION', '4.6.1');
+
+/**
+ * FontAwesome version
+ * @see https://fontawesome.com/
+ */
+define('BASICBOOTSTRAP_FONTAWESOME_VERSION', '5.15.4');
+
+/**
+ * PopperJS version
+ * @see https://popper.js.org/
+ */
+define('BASICBOOTSTRAP_POPPER_VERSION', '1.16.1');
+
+/**
+ * Use the CDN loading of assets or not
+ *
+ * To use local assets, define this constant before loading the
+ * theme and set it to "false"
+ */
+if (!defined('BASICBOOTSTRAP_USE_CDN'))
+    define('BASICBOOTSTRAP_USE_CDN', true);
 
 /**
  * Current local plugin root path
@@ -50,16 +77,6 @@ define('BASICBOOTSTRAP_BASEPATH', dirname(__FILE__) . DIRECTORY_SEPARATOR);
 /*/
 define('BASICBOOTSTRAP_TPLDBG', true);
 //*/
-
-/**
- * ASSETS FLAG : set this to 'bower' to use the distributed Bower versions of assets
- *
- * Flag values:
- *
- *      -   'internal' : this will select assets files of dependencies in common theme's directories
- *      -   'bower' : this will select assets files of dependencies directly in the directories created by Bower
- */
-define('BASICBOOTSTRAP_ASSETS_MODE', 'internal');
 
 /*/
 // HARD DEBUG OF THEME MODS
