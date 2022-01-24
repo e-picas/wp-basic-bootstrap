@@ -31,7 +31,7 @@ class WP_Basic_Bootstrap_Setup
     public static function init()
     {
         // load custom libraries
-        basicbootstrap_load_class('wp-template-hierarchy-everywhere');
+        basicbootstrap_load_class('WP_Template_Hierarchy_Everywhere');
         basicbootstrap_load_library('template-enhancer');
         basicbootstrap_load_library('template-library');
 
@@ -104,7 +104,7 @@ class WP_Basic_Bootstrap_Setup
         register_nav_menus($menus);
 
         // load vendors
-        basicbootstrap_load_class('wp_bootstrap_navwalker');
+        basicbootstrap_load_class('WP_Bootstrap_Navwalker');
 
         /**
          * DEBUG FLAG : disabled by default

@@ -985,18 +985,18 @@ msgstr ""
 msgid "read more"
 msgstr ""
 
-#: includes/vendor/wp-template-hierarchy-everywhere.php:414
-#: includes/vendor/wp-template-hierarchy-everywhere.php:415
-#: includes/vendor/wp-template-hierarchy-everywhere.php:422 searchform.php:14
+#: includes/vendor/WP_Template_Hierarchy_Everywhere.php:414
+#: includes/vendor/WP_Template_Hierarchy_Everywhere.php:415
+#: includes/vendor/WP_Template_Hierarchy_Everywhere.php:422 searchform.php:14
 msgid "Search for:"
 msgstr ""
 
-#: includes/vendor/wp-template-hierarchy-everywhere.php:415
+#: includes/vendor/WP_Template_Hierarchy_Everywhere.php:415
 msgid "Search &hellip;"
 msgstr ""
 
-#: includes/vendor/wp-template-hierarchy-everywhere.php:417
-#: includes/vendor/wp-template-hierarchy-everywhere.php:424 searchform.php:20
+#: includes/vendor/WP_Template_Hierarchy_Everywhere.php:417
+#: includes/vendor/WP_Template_Hierarchy_Everywhere.php:424 searchform.php:20
 #: searchform.php:27
 msgid "Search"
 msgstr ""

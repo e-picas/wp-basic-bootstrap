@@ -117,7 +117,7 @@ Internal Wordpress templating system improvements: "wp template hierarchy everyw
 
 The theme embeds the [wp-template-hierarchy-everywhere](http://github.com/e-picas/wp-template-hierarchy-everywhere) 
 external library to improve the internal core Wordpress functions used to build the templates. This library is 
-in the `includes/vendor/wp-template-hierarchy-everywhere.php` file ; you should have a look in that file for your 
+in the `includes/vendor/WP_Template_Hierarchy_Everywhere.php` file ; you should have a look in that file for your 
 version of the theme for an updated information.
 
 The library basically embeds two new features:
