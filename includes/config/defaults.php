@@ -242,7 +242,8 @@ $basicbootstrap_config = array(
             'uri'           =>
                 BASICBOOTSTRAP_USE_CDN == true ?
                     'https://cdn.jsdelivr.net/npm/bootstrap@'.BASICBOOTSTRAP_BOOTSTRAP_VERSION.'/dist/css/bootstrap.min.css'
-                    : get_asset_uri('assets/css/bootstrap.min.css'),
+                    : get_asset_uri('assets/css/bootstrap-custom.css'),
+//                    : get_asset_uri('assets/css/bootstrap.min.css'),
             'version'       => BASICBOOTSTRAP_BOOTSTRAP_VERSION
         ),
         'fontawesome' => array(

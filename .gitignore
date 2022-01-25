@@ -4,6 +4,7 @@ vendor/
 dev/
 tmp/
 composer.lock
+node_modules/*
 
 # bower dependencies
 assets/bootstrap/

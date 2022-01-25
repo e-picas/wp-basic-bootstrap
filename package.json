@@ -1,0 +1,62 @@
+{
+  "name": "wp-basic-bootstrap",
+  "version": "2.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/e-picas/wp-basic-bootstrap.git"
+  },
+  "bugs": {
+    "url": "https://github.com/e-picas/wp-basic-bootstrap/issues"
+  },
+  "homepage": "https://github.com/e-picas/wp-basic-bootstrap",
+  "author": "picas",
+  "description": "WP Basic Bootstrap is a full 101 Wordpress theme built with the Bootstrap framework and the Font Awesome images font",
+  "main": "",
+  "keywords": [
+    "wordpress",
+    "bootstrap",
+    "font-awesome",
+    "template",
+    "theme"
+  ],
+  "license": "GPL-3.0+",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets/",
+    "test",
+    "tests"
+  ],
+  "scripts": {
+    "build": "npm run css",
+    "css-compile": "node-sass --include-path node_modules --output-style compressed --source-map true --source-map-contents true --precision 6 assets/sass -o assets/css/",
+    "css-lint": "stylelint assets/sass/",
+    "css-prefix": "postcss --replace assets/css/bootstrap-custom.css --use autoprefixer --map",
+    "css-purge": "purgecss --keyframes --css assets/css/bootstrap-custom.css --content index.html \"node_modules/bootstrap/js/dist/{util,modal}.js\" --output assets/css/",
+    "css": "npm-run-all css-compile css-prefix",
+    "server": "serve --listen 3000",
+    "start": "npm-run-all --parallel watch server",
+    "watch": "nodemon -e html,scss -x \"npm run css\"",
+    "test": "npm run css-lint && npm run css"
+  },
+  "dependencies": {
+    "bootstrap": "^4.6.0",
+    "bootstrap-icons": "^1.4.0",
+    "fontawesome-free": "*",
+    "jquery": "^3.6.0",
+    "popper.js": "^1.16.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.2.5",
+    "node-sass": "^5.0.0",
+    "nodemon": "^2.0.7",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.2.10",
+    "postcss-cli": "^8.3.1",
+    "purgecss": "^4.0.2",
+    "serve": "^11.3.2",
+    "stylelint": "^13.12.0",
+    "stylelint-config-twbs-bootstrap": "^2.1.0"
+  }
+}
