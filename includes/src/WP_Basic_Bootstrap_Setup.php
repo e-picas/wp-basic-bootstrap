@@ -177,6 +177,9 @@ class WP_Basic_Bootstrap_Setup
             }
         }
 
+        // deregister jquery to load our own version
+        wp_deregister_script('jquery');
+
         // load js
         $js_cfg = basicbootstrap_get_config('js');
         foreach ($js_cfg as $name=>$item) {
