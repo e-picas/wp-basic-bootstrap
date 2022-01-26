@@ -5,6 +5,7 @@ dev/
 tmp/
 node_modules
 assets/dist
+assets/webfonts
 
 # locker files
 composer.lock
