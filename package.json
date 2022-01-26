@@ -29,21 +29,22 @@
     "tests"
   ],
   "scripts": {
-    "build": "npm run css",
-    "css-compile": "node-sass --include-path node_modules --output-style compressed --source-map true --source-map-contents true --precision 6 assets/sass -o assets/css/",
+    "build": "npm-run-all css js",
+    "watch": "nodemon -e scss,js -x \"npm run css-compile && npm run js-compile\" -w assets/js/",
+    "build-css": "npm run css-lint && npm run css-compile",
+    "css-compile": "node-sass --include-path node_modules --source-map true --source-map-contents true --precision 6 assets/sass -o assets/dist/",
+    "css-minify": "cleancss -O1 --format breakWith=lf --with-rebase --source-map --source-map-inline-sources --output assets/dist/ --batch --batch-suffix \".min\" \"assets/dist/*.css\" \"!assets/dist/*.min.css\"",
     "css-lint": "stylelint assets/sass/",
-    "css-prefix": "postcss --replace assets/css/bootstrap-custom.css --use autoprefixer --map",
-    "css-purge": "purgecss --keyframes --css assets/css/bootstrap-custom.css --content index.html \"node_modules/bootstrap/js/dist/{util,modal}.js\" --output assets/css/",
-    "css": "npm-run-all css-compile css-prefix",
-    "server": "serve --listen 3000",
-    "start": "npm-run-all --parallel watch server",
-    "watch": "nodemon -e html,scss -x \"npm run css\"",
-    "test": "npm run css-lint && npm run css"
+    "css": "npm-run-all css-compile css-minify webfonts-import",
+    "webfonts-import": "copyfiles -u 3 node_modules/fontawesome-free/webfonts/* assets/webfonts/",
+    "js-compile": "uglifyjs node_modules/jquery/dist/jquery.js node_modules/bootstrap/dist/js/bootstrap.bundle.js --source-map --keep-fnames --output assets/dist/jquery-popper-bootstrap.bundle.js --comments all",
+    "js-minify": "uglifyjs node_modules/jquery/dist/jquery.min.js node_modules/bootstrap/dist/js/bootstrap.bundle.min.js --compress --source-map --keep-fnames --output assets/dist/jquery-popper-bootstrap.bundle.min.js --comments all",
+    "js": "npm-run-all js-compile js-minify"
   },
   "dependencies": {
     "bootstrap": "^4.6.0",
     "bootstrap-icons": "^1.4.0",
-    "fontawesome-free": "*",
+    "fontawesome-free": "^1.0.1",
     "jquery": "^3.6.0",
     "popper.js": "^1.16.1"
   },
@@ -52,11 +53,10 @@
     "node-sass": "^5.0.0",
     "nodemon": "^2.0.7",
     "npm-run-all": "^4.1.5",
-    "postcss": "^8.2.10",
-    "postcss-cli": "^8.3.1",
-    "purgecss": "^4.0.2",
-    "serve": "^11.3.2",
+    "clean-css-cli": "^5.5.0",
     "stylelint": "^13.12.0",
-    "stylelint-config-twbs-bootstrap": "^2.1.0"
+    "stylelint-config-twbs-bootstrap": "^2.1.0",
+    "uglify-js": "3.*",
+    "copyfiles": "2.*"
   }
 }

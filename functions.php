@@ -37,6 +37,12 @@ if (!defined('ABSPATH')) {
 define('BASICBOOTSTRAP_VERSION', '2.0.0@dev');
 
 /**
+ * jQuery version
+ * @see https://jquery.com/
+ */
+define('BASICBOOTSTRAP_JQUERY_VERSION', '3.6.0');
+
+/**
  * Bootstrap version
  * @see https://getbootstrap.com/
  */
@@ -55,13 +61,11 @@ define('BASICBOOTSTRAP_FONTAWESOME_VERSION', '5.15.4');
 define('BASICBOOTSTRAP_POPPER_VERSION', '1.16.1');
 
 /**
- * Use the CDN loading of assets or not
- *
- * To use local assets, define this constant before loading the
- * theme and set it to "false"
+ * Assets loading type in 'cdn' (default), 'node_modules' or 'local'
  */
-if (!defined('BASICBOOTSTRAP_USE_CDN'))
-    define('BASICBOOTSTRAP_USE_CDN', true);
+//define('BASICBOOTSTRAP_ASSETS_LOADER', 'local');
+if (!defined('BASICBOOTSTRAP_ASSETS_LOADER'))
+    define('BASICBOOTSTRAP_ASSETS_LOADER', 'cdn');
 
 /**
  * Current local plugin root path

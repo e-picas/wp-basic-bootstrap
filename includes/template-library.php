@@ -249,7 +249,7 @@ function basicbootstrap_read_more_link($more = null)
 /**
  * Breadcrumbs
  *
- * @see \WP_Basic_Bootstrap_Breadcrumb
+ * @see WP_Basic_Bootstrap_Breadcrumb
  * @link https://www.thewebtaylor.com/articles/wordpress-creating-breadcrumbs-without-a-plugin
  */
 function get_the_breadcrumb()

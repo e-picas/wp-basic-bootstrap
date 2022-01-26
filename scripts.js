@@ -1,7 +1,0 @@
-/**
- * @package WP_Basic_Bootstrap
- * @since WP_Basic_Bootstrap 1.0
- */
-(function($) {
-
-})(jQuery);

@@ -237,72 +237,107 @@ $basicbootstrap_config = array(
         'verdana, geneva, sans-serif'                      => 'Verdana',
     ),
 
-    'css' => array(
-        'bootstrap' => array(
-            'uri'           =>
-                BASICBOOTSTRAP_USE_CDN == true ?
-                    'https://cdn.jsdelivr.net/npm/bootstrap@'.BASICBOOTSTRAP_BOOTSTRAP_VERSION.'/dist/css/bootstrap.min.css'
-                    : get_asset_uri('assets/css/bootstrap-custom.css'),
-//                    : get_asset_uri('assets/css/bootstrap.min.css'),
-            'version'       => BASICBOOTSTRAP_BOOTSTRAP_VERSION
-        ),
-        'fontawesome' => array(
-            'uri'           =>
-                BASICBOOTSTRAP_USE_CDN == true ?
-                    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/'.BASICBOOTSTRAP_FONTAWESOME_VERSION.'/css/all.min.css'
-                    : get_asset_uri('assets/css/fontawesome-all.min.css'),
-            'version'       => BASICBOOTSTRAP_FONTAWESOME_VERSION
-        ),
-        'basicbootstrap-base-styles' => array(
-            'uri'           => get_asset_uri('assets/css/blog.css'),
-            'version'       => BASICBOOTSTRAP_VERSION,
-            'dependencies'  => array('bootstrap', 'fontawesome')
-        ),
-        'basicbootstrap-styles' => array(
-            'uri'           => get_stylesheet_uri(),
-            'version'       => BASICBOOTSTRAP_VERSION,
-            'dependencies'  => array('basicbootstrap-base-styles')
-        ),
-        'basicbootstrap-styles-print' => array(
-            'uri'           => get_asset_uri('style_print.css'),
-            'version'       => BASICBOOTSTRAP_VERSION,
-            'dependencies'  => array('basicbootstrap-base-styles'),
-            'media'         => 'print'
-        ),
-    ),
+    'css' => array(),
 
-    'js' => array(
-        'popper' => array(
-            'uri'           =>
-                BASICBOOTSTRAP_USE_CDN == true ?
-                    'https://cdn.jsdelivr.net/npm/popper.js@'.BASICBOOTSTRAP_POPPER_VERSION.'/dist/umd/popper.min.js'
-                    : get_asset_uri('assets/js/popper.min.js'),
-            'version'       => BASICBOOTSTRAP_POPPER_VERSION,
-        ),
-        'bootstrap' => array(
-            'uri'           =>
-                BASICBOOTSTRAP_USE_CDN == true ?
-                    'https://cdn.jsdelivr.net/npm/bootstrap@'.BASICBOOTSTRAP_BOOTSTRAP_VERSION.'/dist/js/bootstrap.min.js'
-                    : get_asset_uri('assets/js/bootstrap.min.js'),
-            'version'       => BASICBOOTSTRAP_BOOTSTRAP_VERSION,
-            'dependencies'  => array('jquery','popper')
-        ),
-        'respond-js' => array(
-            'uri'           => get_asset_uri('assets/js/respond.min.js'),
-            'version'       => '1.4.2',
-            'in_footer'     => false,
-            'dependencies'  => array('jquery'),
-        ),
-        'basicbootstrap-base-scripts' => array(
-            'uri'           => get_asset_uri('assets/js/blog.js'),
-            'version'       => BASICBOOTSTRAP_VERSION,
-            'dependencies'  => array('jquery', 'bootstrap')
-        ),
-        'basicbootstrap-scripts' => array(
-            'uri'           => get_asset_uri('scripts.js'),
-            'version'       => BASICBOOTSTRAP_VERSION,
-            'dependencies'  => array('jquery', 'bootstrap')
-        ),
-    ),
+    'js' => array(),
 
 );
+
+if (strtolower(BASICBOOTSTRAP_ASSETS_LOADER) == 'local')
+{
+    $basicbootstrap_config['css']['bootstrap'] =
+        array(
+            'uri' => get_asset_uri('assets/dist/bootstrap-fontawesome.bundle.min.css'),
+            'version' => BASICBOOTSTRAP_VERSION
+        );
+
+    $basicbootstrap_config['js']['bootstrap'] =
+        array(
+            'uri' => get_asset_uri('assets/dist/jquery-popper-bootstrap.bundle.min.js'),
+            'version' => BASICBOOTSTRAP_VERSION
+        );
+
+}
+elseif (strtolower(BASICBOOTSTRAP_ASSETS_LOADER) == 'node_modules')
+{
+    $basicbootstrap_config['css']['bootstrap'] =
+        array(
+            'uri' => get_asset_uri('node_modules/bootstrap/dist/css/bootstrap.min.css'),
+            'version' => BASICBOOTSTRAP_BOOTSTRAP_VERSION
+        );
+
+    $basicbootstrap_config['css']['fontawesome'] =
+        array(
+            'uri' => get_asset_uri('node_modules/fontawesome-free/css/all.min.css'),
+            'version' => BASICBOOTSTRAP_FONTAWESOME_VERSION
+        );
+
+    $basicbootstrap_config['js']['jquery'] =
+        array(
+            'uri' => get_asset_uri('node_modules/jquery/dist/jquery.min.js'),
+            'version' => BASICBOOTSTRAP_JQUERY_VERSION
+        );
+
+    $basicbootstrap_config['js']['bootstrap'] =
+        array(
+            'uri' => get_asset_uri('node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'),
+            'version' => BASICBOOTSTRAP_BOOTSTRAP_VERSION,
+            'dependencies'  => array('jquery')
+        );
+
+} else {
+
+    $basicbootstrap_config['css']['bootstrap'] =
+        array(
+            'uri' => 'https://cdn.jsdelivr.net/npm/bootstrap@'.BASICBOOTSTRAP_BOOTSTRAP_VERSION.'/dist/css/bootstrap.min.css',
+            'version' => BASICBOOTSTRAP_BOOTSTRAP_VERSION
+        );
+
+    $basicbootstrap_config['css']['fontawesome'] =
+        array(
+            'uri' => 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/'.BASICBOOTSTRAP_FONTAWESOME_VERSION.'/css/all.min.css',
+            'version' => BASICBOOTSTRAP_FONTAWESOME_VERSION
+        );
+
+    $basicbootstrap_config['js']['jquery'] =
+        array(
+            'uri' => 'https://cdn.jsdelivr.net/npm/jquery@'.BASICBOOTSTRAP_JQUERY_VERSION.'/dist/jquery.min.js',
+            'version' => BASICBOOTSTRAP_JQUERY_VERSION
+        );
+
+    $basicbootstrap_config['js']['bootstrap'] =
+        array(
+            'uri' => 'https://cdn.jsdelivr.net/npm/bootstrap@'.BASICBOOTSTRAP_BOOTSTRAP_VERSION.'/dist/js/bootstrap.bundle.min.js',
+            'version' => BASICBOOTSTRAP_BOOTSTRAP_VERSION,
+            'dependencies'  => array('jquery')
+        );
+
+}
+
+$basicbootstrap_config['css']['wp-basic-bootstrap'] =
+    array(
+        'uri' => get_asset_uri('assets/css/wp-basic-bootstrap.css'),
+        'version' => BASICBOOTSTRAP_VERSION,
+        'dependencies'  => array('bootstrap')
+    );
+
+$basicbootstrap_config['js']['wp-basic-bootstrap'] =
+    array(
+        'uri' => get_asset_uri('assets/js/wp-basic-bootstrap.js'),
+        'version' => BASICBOOTSTRAP_VERSION,
+        'dependencies'  => array('bootstrap')
+    );
+
+$basicbootstrap_config['css']['wp-basic-bootstrap-theme'] =
+    array(
+        'uri' => get_asset_uri('style.css'),
+        'version' => BASICBOOTSTRAP_VERSION,
+        'dependencies'  => array('wp-basic-bootstrap')
+    );
+
+$basicbootstrap_config['css']['wp-basic-bootstrap-theme-print'] =
+    array(
+        'uri' => get_asset_uri('style_print.css'),
+        'version' => BASICBOOTSTRAP_VERSION,
+        'dependencies'  => array('wp-basic-bootstrap-theme')
+    );

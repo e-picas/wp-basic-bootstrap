@@ -72,18 +72,9 @@ $success: #7952b3;
 @import "bootstrap/scss/utilities";
 @import "bootstrap/scss/print";
 
+@import "fontawesome-free/scss/fontawesome.scss"
 
 //
 // Custom styles
 //
 
-@import "icon-list";
-
-body {
-  padding: 3rem 1.5rem;
-}
-
-// Style Bootstrap icons
-.bi {
-  fill: currentColor;
-}
