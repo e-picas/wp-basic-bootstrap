@@ -297,6 +297,44 @@ function get_the_link_pages()
 }
 
 /**
+ * Helper function for wp_link_pages().
+ *
+ * @global WP_Rewrite $wp_rewrite WordPress rewrite component.
+ * @param int $i Page number.
+ * @return string Link.
+ */
+function wp_link_page_pager_item($i)
+{
+    global $wp_rewrite;
+    $post       = get_post();
+    $query_args = array();
+
+    if ( 1 == $i ) {
+        $url = get_permalink();
+    } else {
+        if ( ! get_option( 'permalink_structure' ) || in_array( $post->post_status, array( 'draft', 'pending' ), true ) ) {
+            $url = add_query_arg( 'page', $i, get_permalink() );
+        } elseif ( 'page' === get_option( 'show_on_front' ) && get_option( 'page_on_front' ) == $post->ID ) {
+            $url = trailingslashit( get_permalink() ) . user_trailingslashit( "$wp_rewrite->pagination_base/" . $i, 'single_paged' );
+        } else {
+            $url = trailingslashit( get_permalink() ) . user_trailingslashit( $i, 'single_paged' );
+        }
+    }
+
+    if ( is_preview() ) {
+
+        if ( ( 'draft' !== $post->post_status ) && isset( $_GET['preview_id'], $_GET['preview_nonce'] ) ) {
+            $query_args['preview_id']    = wp_unslash( $_GET['preview_id'] );
+            $query_args['preview_nonce'] = wp_unslash( $_GET['preview_nonce'] );
+        }
+
+        $url = get_preview_post_link( $post, $query_args, $url );
+    }
+
+    return '<a href="' . esc_url( $url ) . '" class="page-link post-page-numbers">';
+}
+
+/**
  * Add the "discussionUrl" item property to the comments link
  *
  * To use this method, write:

@@ -23,7 +23,7 @@ $next_i     = $paged+1;
 
         <?php if ($previous_i > 0) : ?>
         <li class="page-item">
-            <?php echo bbs_wp_link_page_pager_item($previous_i); ?>
+            <?php echo wp_link_page_pager_item($previous_i); ?>
         <?php else: ?>
         <li class="page-item disabled">
             <a href="#" aria-label="Previous" class="page-link">
@@ -36,13 +36,13 @@ $next_i     = $paged+1;
             <?php if ($i == $paged) : ?>
                 <li class="page-item active"><span class="number current page-link"><?php echo $i; ?> <span class="sr-only">(current)</span></span></li>
             <?php else : ?>
-                <li class="page-item"><?php echo bbs_wp_link_page_pager_item($i); ?><?php echo $i; ?></a></li>
+                <li class="page-item"><?php echo wp_link_page_pager_item($i); ?><?php echo $i; ?></a></li>
             <?php endif; ?>
         <?php endfor; ?>
 
         <?php if ($next_i < ($max_page + 1)) : ?>
         <li class="page-item">
-            <?php echo bbs_wp_link_page_pager_item($next_i); ?>
+            <?php echo wp_link_page_pager_item($next_i); ?>
         <?php else: ?>
         <li class="page-item disabled">
             <a href="#" aria-label="Next" class="page-link">

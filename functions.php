@@ -61,44 +61,39 @@ define('BASICBOOTSTRAP_FONTAWESOME_VERSION', '5.15.4');
 define('BASICBOOTSTRAP_POPPER_VERSION', '1.16.1');
 
 /**
- * Assets loading type in 'cdn' (default), 'node_modules' or 'local'
- */
-//define('BASICBOOTSTRAP_ASSETS_LOADER', 'local');
-if (!defined('BASICBOOTSTRAP_ASSETS_LOADER'))
-    define('BASICBOOTSTRAP_ASSETS_LOADER', 'cdn');
-
-/**
  * Current local plugin root path
  */
 define('BASICBOOTSTRAP_BASEPATH', dirname(__FILE__) . DIRECTORY_SEPARATOR);
-
-/**
- * DEBUG FLAG : enable this to log all loaded templates of the theme
- *
- * This will make an `error_log(__FILE__)` at the top of any template of this theme
- * to trace final rendering stack.
- */
-/*/
-define('BASICBOOTSTRAP_TPLDBG', true);
-//*/
-
-/*/
-// HARD DEBUG OF THEME MODS
-header('Content-Type: text/plain');
-var_export(get_theme_mods());
-//remove_theme_mods(); echo '>> THEME MODS DELETED!';
-exit();
-//*/
 
 /**
  * Include the global config (required)
  */
 require_once BASICBOOTSTRAP_BASEPATH . 'includes/basicbootstrap.php';
 
-/*/
-// the functions for debugging ...
-basicbootstrap_load_library('dev-lib');
-//*/
+/**
+ * Assets loading type in 'cdn' (default), 'node_modules' or 'local'
+ *
+ * @api WP_BASICBOOTSTRAP_ASSETS_LOADER env var
+ */
+if (!defined('BASICBOOTSTRAP_ASSETS_LOADER'))
+    define(
+        'BASICBOOTSTRAP_ASSETS_LOADER',
+        basicbootstrap_get_env_config('WP_BASICBOOTSTRAP_ASSETS_LOADER', 'cdn')
+    );
+
+/**
+ * DEBUG FLAG : enable this to log all loaded templates of the theme
+ *
+ * This will make an `error_log(__FILE__)` at the top of any template of this theme
+ * to trace final rendering stack.
+ *
+ * @api WP_BASICBOOTSTRAP_TPLDBG env var
+ */
+if (!defined('BASICBOOTSTRAP_TPLDBG'))
+    define(
+        'BASICBOOTSTRAP_TPLDBG',
+        basicbootstrap_get_env_config('WP_BASICBOOTSTRAP_TPLDBG', false)
+    );
 
 /**
  * Load the setup class (required)
@@ -236,45 +231,3 @@ add_filter('protected_title_format', 'basicbootstrap_get_default_password_post_t
  * Filter the comments popup link attributes for display.
  */
 add_filter('comments_popup_link_attributes', 'basicbootstrap_comments_popup_link_attributes');
-
-
-/**
- * Helper function for wp_link_pages().
- *
- * @since 3.1.0
- * @access private
- *
- * @global WP_Rewrite $wp_rewrite WordPress rewrite component.
- *
- * @param int $i Page number.
- * @return string Link.
- */
-function bbs_wp_link_page_pager_item( $i ) {
-    global $wp_rewrite;
-    $post       = get_post();
-    $query_args = array();
-
-    if ( 1 == $i ) {
-        $url = get_permalink();
-    } else {
-        if ( ! get_option( 'permalink_structure' ) || in_array( $post->post_status, array( 'draft', 'pending' ), true ) ) {
-            $url = add_query_arg( 'page', $i, get_permalink() );
-        } elseif ( 'page' === get_option( 'show_on_front' ) && get_option( 'page_on_front' ) == $post->ID ) {
-            $url = trailingslashit( get_permalink() ) . user_trailingslashit( "$wp_rewrite->pagination_base/" . $i, 'single_paged' );
-        } else {
-            $url = trailingslashit( get_permalink() ) . user_trailingslashit( $i, 'single_paged' );
-        }
-    }
-
-    if ( is_preview() ) {
-
-        if ( ( 'draft' !== $post->post_status ) && isset( $_GET['preview_id'], $_GET['preview_nonce'] ) ) {
-            $query_args['preview_id']    = wp_unslash( $_GET['preview_id'] );
-            $query_args['preview_nonce'] = wp_unslash( $_GET['preview_nonce'] );
-        }
-
-        $url = get_preview_post_link( $post, $query_args, $url );
-    }
-
-    return '<a href="' . esc_url( $url ) . '" class="page-link post-page-numbers">';
-}

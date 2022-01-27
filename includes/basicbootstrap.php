@@ -22,6 +22,22 @@ function basicbootstrap_get_path($parts)
 }
 
 /**
+ * This will return any environment variable defined
+ *
+ * @since WP_Basic_Bootstrap 2.0
+ * @param string $key The name of a variable to retrieve
+ * @param null|mixed $default The default value to return
+ * @return mixed
+ * @throws Exception If the vaiable is not found and no default value is set.
+ */
+function basicbootstrap_get_env_config($key, $default = null)
+{
+    if (isset($_ENV[$key])) return $_ENV[$key];
+    elseif (!is_null($default)) return $default;
+    throw new Exception('Missing environment variable: '.$key);
+}
+
+/**
  * Get a config table (whole or sub-item)
  *
  * @since WP_Basic_Bootstrap 1.0

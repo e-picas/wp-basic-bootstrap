@@ -72,7 +72,10 @@ $success: #7952b3;
 @import "bootstrap/scss/utilities";
 @import "bootstrap/scss/print";
 
-@import "fontawesome-free/scss/fontawesome.scss"
+@import "fontawesome-free/scss/fontawesome";
+@import "fontawesome-free/scss/regular";
+@import "fontawesome-free/scss/solid";
+@import "fontawesome-free/scss/brands";
 
 //
 // Custom styles

@@ -106,13 +106,6 @@ class WP_Basic_Bootstrap_Setup
         // load vendors
         basicbootstrap_load_class('WP_Bootstrap_Navwalker');
 
-        /**
-         * DEBUG FLAG : disabled by default
-         */
-        if (!defined('BASICBOOTSTRAP_TPLDBG')) {
-            define('BASICBOOTSTRAP_TPLDBG', false);
-        }
-
         // the functions for debugging ...
         if (BASICBOOTSTRAP_TPLDBG) {
             basicbootstrap_load_library('dev-lib');
