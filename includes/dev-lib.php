@@ -6,6 +6,15 @@
  * @since WP_Basic_Bootstrap 1.0
  */
 
+function dbg_log_template_info($file, $args = [])
+{
+    $str = '[BASICBOOTSTRAP_TPLDBG] loaded file : '.$file;
+    foreach ($args as $arg_name=>$arg_val) {
+        $str .= " | $arg_name : '$arg_val'";
+    }
+    error_log($str);
+}
+
 /**
  * DEBUG FCT to get the base template currently used
  *

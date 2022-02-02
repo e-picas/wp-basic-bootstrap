@@ -20,9 +20,7 @@ $template = get_template_type();
 $page_type = get_page_type();
 
 if (BASICBOOTSTRAP_TPLDBG) {
-    error_log('loaded file : '.__FILE__);
-    error_log('page type : '.$page_type);
-    error_log('applied template : '.$template);
+    dbg_log_template_info(__FILE__, ['page_type'=>$page_type, 'template_type'=>$template]);
 }
 
 get_header_hierarchical('author'); ?>

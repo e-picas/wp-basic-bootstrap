@@ -5,7 +5,7 @@
  */
 
 if (BASICBOOTSTRAP_TPLDBG) {
-    error_log('loaded file : '.__FILE__);
+    dbg_log_template_info(__FILE__);
 }
 
 /* @var $post \WP_Post */
