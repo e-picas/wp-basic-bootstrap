@@ -35,8 +35,16 @@ class WP_Basic_Bootstrap_Setup
         basicbootstrap_load_library('template-enhancer');
         basicbootstrap_load_library('template-library');
 
-        // required plugins
+        // load plugin internal config
         basicbootstrap_load_config('defaults');
+        /**
+         * Hook to update the theme default config on the fly
+         *
+         * Use global $basicbootstrap_config
+         */
+        do_action('wp_basic_bootstrap_config');
+
+        // required plugins
         basicbootstrap_load_class('TGM_Plugin_Activation');
         add_action('tgmpa_register', array('WP_Basic_Bootstrap_Setup', 'setupRequirements'));
     }
@@ -148,44 +156,81 @@ class WP_Basic_Bootstrap_Setup
     }
 
     /**
+     * Register the scripts and styles for front-end.
+     *
+     * @uses wp_register_style()
+     * @uses wp_register_script()
+     */
+    public static function registerScriptsFrontend()
+    {
+        // load css
+        $css_cfg = basicbootstrap_get_config('css');
+        foreach ($css_cfg as $name=>$item) {
+            if (strtolower(BASICBOOTSTRAP_ASSETS_LOADER) == 'cdn' && isset($item['uri-cdn']))
+                $uri = $item['uri-cdn'];
+            elseif (strtolower(BASICBOOTSTRAP_ASSETS_LOADER) == 'npm' && isset($item['uri-npm']))
+                $uri = $item['uri-npm'];
+            else
+                $uri = $item['uri'];
+
+            if (isset($item['replace_original']) && $item['replace_original'] == true)
+                wp_deregister_script($name);
+
+            wp_register_style(
+                $name,
+                $uri,
+                isset($item['dependencies'])    ? $item['dependencies'] : array(),
+                isset($item['version'])         ? $item['version'] : false,
+                isset($item['media'])           ? $item['media'] : 'all'
+            );
+
+        }
+
+        // load js
+        $js_cfg = basicbootstrap_get_config('js');
+        foreach ($js_cfg as $name=>$item) {
+            if (strtolower(BASICBOOTSTRAP_ASSETS_LOADER) == 'cdn' && isset($item['uri-cdn']))
+                $uri = $item['uri-cdn'];
+            elseif (strtolower(BASICBOOTSTRAP_ASSETS_LOADER) == 'npm' && isset($item['uri-npm']))
+                $uri = $item['uri-npm'];
+            else
+                $uri = $item['uri'];
+
+            if (isset($item['replace_original']) && $item['replace_original'] == true)
+                wp_deregister_script($name);
+
+            wp_register_script(
+                $name,
+                $uri,
+                isset($item['dependencies'])    ? $item['dependencies'] : array(),
+                isset($item['version'])         ? $item['version'] : false,
+                isset($item['in_footer'])       ? $item['in_footer'] : true
+            );
+        }
+    }
+
+    /**
      * Enqueue scripts and styles for front-end.
      *
+     * @uses wp_register_style()
+     * @uses wp_register_script()
      * @uses wp_enqueue_style()
      * @uses wp_enqueue_script()
      */
     public static function enqueueScriptsFrontend()
     {
+        self::registerScriptsFrontend();
+
         // load css
         $css_cfg = basicbootstrap_get_config('css');
         foreach ($css_cfg as $name=>$item) {
-            if (isset($item['uri'])) {
-                wp_register_style(
-                    $name,
-                    $item['uri'],
-                    isset($item['dependencies'])    ? $item['dependencies'] : array(),
-                    isset($item['version'])         ? $item['version'] : false,
-                    isset($item['media'])           ? $item['media'] : 'all'
-                );
-                wp_enqueue_style($name);
-            }
+            wp_enqueue_style($name);
         }
-
-        // deregister jquery to load our own version
-        wp_deregister_script('jquery');
 
         // load js
         $js_cfg = basicbootstrap_get_config('js');
         foreach ($js_cfg as $name=>$item) {
-            if (isset($item['uri'])) {
-                wp_register_script(
-                    $name,
-                    $item['uri'],
-                    isset($item['dependencies'])    ? $item['dependencies'] : array(),
-                    isset($item['version'])         ? $item['version'] : false,
-                    isset($item['in_footer'])       ? $item['in_footer'] : true
-                );
-                wp_enqueue_script($name);
-            }
+            wp_enqueue_script($name);
         }
 
         // WordPress internal script to move the comment box to the right place when replying to a user
