@@ -22,10 +22,7 @@ $page_type = get_page_type();
 $singular_type = get_singular_type();
 
 if (BASICBOOTSTRAP_TPLDBG) {
-    error_log('loaded file : '.__FILE__);
-    error_log('page type : '.$page_type);
-    error_log('singular type : '.$singular_type);
-    error_log('applied template : '.$template);
+    dbg_log_template_info(__FILE__, ['page_type'=>$page_type, 'template_type'=>$template, 'singular_type'=>$singular_type]);
 }
 
 get_header_hierarchical('single'); ?>

@@ -41,6 +41,7 @@ class WP_Basic_Bootstrap_Setup
          * Hook to update the theme default config on the fly
          *
          * Use global $basicbootstrap_config
+         * @since 2.0.0
          */
         do_action('wp_basic_bootstrap_config');
 

@@ -4,6 +4,10 @@
  * @since WP_Basic_Bootstrap 1.0
  */
 
+if (BASICBOOTSTRAP_TPLDBG) {
+    dbg_log_template_info(__FILE__);
+}
+
 if (have_posts() && ! is_singular()) {
 
     $list_layout = get_posts_list_layout();
