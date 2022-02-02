@@ -71,7 +71,7 @@ define('BASICBOOTSTRAP_BASEPATH', dirname(__FILE__) . DIRECTORY_SEPARATOR);
 require_once BASICBOOTSTRAP_BASEPATH . 'includes/basicbootstrap.php';
 
 /**
- * Assets loading type in 'cdn' (default), 'node_modules' or 'local'
+ * Assets loading type in 'cdn' (default), 'npm' or 'local'
  *
  * @api WP_BASICBOOTSTRAP_ASSETS_LOADER env var
  */
