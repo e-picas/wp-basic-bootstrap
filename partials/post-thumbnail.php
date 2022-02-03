@@ -12,7 +12,7 @@
             </a>
         </div>
     <?php else: ?>
-        <div class="featured-media float-left mx-auto">
+        <div class="featured-media float-start mx-auto">
             <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="thumbnail">
                 <?php the_post_thumbnail('thumbnail', array('class'=>'img-fluid')); ?>
             </a>

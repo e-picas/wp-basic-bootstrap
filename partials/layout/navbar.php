@@ -22,11 +22,12 @@ $navbar_type    = get_basicbootstrap_mod('navbar_type');
         <?php if (get_theme_mod('show_navbar_brand', true)) : ?>
         <a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
         <?php endif; ?>
-        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only"><?php _e('Toggle navigation', 'basicbootstrap'); ?></span>
             <span class="navbar-toggler-icon"></span>
         </button>
         <div id="navbar" class="navbar-collapse collapse">
+            <div class="container-fluid">
             <?php
 
             wp_nav_menu(array(
@@ -34,7 +35,7 @@ $navbar_type    = get_basicbootstrap_mod('navbar_type');
                 'theme_location'    => 'main-menu',
                 'depth'             => 0,
                 'container'         => null,
-                'menu_class'        => 'navbar-nav mr-auto',
+                'menu_class'        => 'navbar-nav float-start',
                 'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
                 'walker'            => new WP_Bootstrap_Navwalker()
             ));
@@ -48,13 +49,14 @@ $navbar_type    = get_basicbootstrap_mod('navbar_type');
                     'theme_location'    => 'social-menu',
                     'depth'             => 1,
                     'container'         => null,
-                    'menu_class'        => 'nav navbar-nav navbar-right',
+                    'menu_class'        => 'navbar-nav float-end',
                     'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
                     'walker'            => new WP_Bootstrap_Navwalker()
                 ));
             }
 
             ?>
+            </div>
         </div><!--/.nav-collapse -->
     </div>
 </nav>

@@ -23,7 +23,7 @@ endif; ?>>
             'min-height: ' . HEADER_IMAGE_HEIGHT . 'px;' .
             'position: relative;"';
     endif; ?>>
-        <div class="float-left">
+        <div class="float-start">
             <!-- start logo/sitename -->
             <?php if (get_basicbootstrap_mod('display_header')) : ?>
                 <?php $header_text_color = get_header_textcolor(); ?>
@@ -46,7 +46,7 @@ endif; ?>>
             <!-- end logo/sitename -->
         </div>
         <?php if (get_basicbootstrap_mod('display_header_searchbox')) : ?>
-            <div class="float-right blog-searchbox">
+            <div class="float-end align-middle blog-searchbox">
                 <?php get_search_form_hierarchical(); ?>
             </div>
         <?php endif; ?>

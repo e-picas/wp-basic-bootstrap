@@ -26,7 +26,7 @@ if (
 ?>">
 
     <?php if (function_exists('get_avatar')) : ?>
-        <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" class="author-avatar float-left"><?php
+        <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" class="author-avatar float-start"><?php
             echo get_avatar(get_the_author_meta('email'), $small_tile[0]);
         ?></a>
     <?php endif; ?>

@@ -27,7 +27,7 @@ $copyright_text = get_basicbootstrap_mod('copyright_text');
         <?php endif; ?>
     </div>
     <div class="clearfix d-xs-none">
-        <div class="float-left">
+        <div class="float-start">
             <?php
             wp_nav_menu(array(
                 'theme_location'=> 'footer-menu',
@@ -40,7 +40,7 @@ $copyright_text = get_basicbootstrap_mod('copyright_text');
             ));
             ?>
         </div>
-        <div class="float-right">
+        <div class="float-end">
             <?php if ($copyright_text !== '' && get_basicbootstrap_mod('display_footer_copyright')) : ?>
                 <p class="text-muted copyright"><?php echo $copyright_text; ?></p>
             <?php endif; ?>
