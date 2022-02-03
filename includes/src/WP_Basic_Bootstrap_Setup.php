@@ -105,6 +105,15 @@ class WP_Basic_Bootstrap_Setup
             }
         }
 
+        // custom images CSS class
+        $image_class = basicbootstrap_get_config('image_class');
+        if (!empty($images_class)) {
+            add_filter('get_image_tag_class', function ($class) use ($image_class) {
+                return $class.' '.$image_class;
+            });
+            add_filter('the_content', 'basicbootstrap_add_image_responsive_class');
+        }
+
         // register menus
         $menus = basicbootstrap_get_config('nav_menus');
         foreach ($menus as $i => $name) {

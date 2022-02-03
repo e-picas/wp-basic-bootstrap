@@ -131,6 +131,9 @@ $basicbootstrap_config = array(
         ),
     ),
 
+    // theme image CSS class
+    'image_class'               => 'img-fluid',
+
     // navigation menus of the theme
     'nav_menus'             => array(
         'main-menu'             => __('Main Menu', 'basicbootstrap'),
@@ -184,15 +187,15 @@ $basicbootstrap_config = array(
 
     // icons per post format
     'post_format_icon'      => array(
-        'aside'                 => 'dot-circle-o',
+        'aside'                 => 'dot-circle',
         'audio'                 => 'headphones',
-        'chat'                  => 'commenting',
+        'chat'                  => 'comment-dots',
         'gallery'               => 'th-large',
         'image'                 => 'camera-retro',
         'link'                  => 'link',
         'quote'                 => 'quote-right',
         'status'                => 'map-marker',
-        'video'                 => 'video-camera',
+        'video'                 => 'video',
     ),
 
     // required_plugins for TGM

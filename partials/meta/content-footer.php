@@ -13,7 +13,7 @@ global $post;
     <?php
         $icon = get_post_format_icon(get_post_format());
         if (get_basicbootstrap_mod('show_post_format_meta') && !empty($icon)) : ?>
-        <i class="fa fa-<?php echo $icon; ?> fa-fw"></i>&nbsp;<span class="entry-meta-item format-link"><a href="<?php
+        <i class="fas fa-<?php echo $icon; ?> fa-fw"></i>&nbsp;<span class="entry-meta-item format-link"><a href="<?php
             echo get_post_format_link(get_post_format()); ?>"><?php _e(get_post_format(), 'basicbootstrap');
         ?></a></span>
     <?php endif; ?>

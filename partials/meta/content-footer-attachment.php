@@ -14,7 +14,7 @@ global $post;
         $att_image = wp_get_attachment_image_src($post->ID, 'large'); ?>
 
         <?php if (get_basicbootstrap_mod('show_attachment_mime_type')) : ?>
-        <i class="fa fa-photo fa-fw"></i>&nbsp;<span class="entry-meta-item image-mime-links"><?php
+        <i class="fas fa-image fa-fw"></i>&nbsp;<span class="entry-meta-item image-mime-links"><?php
             echo get_post_mime_type($post->ID);
         ?></span>
         <?php endif; ?>
@@ -32,7 +32,7 @@ global $post;
         <?php endif; ?>
 
         <?php if (get_basicbootstrap_mod('show_attachment_link')) : ?>
-        <i class="fa fa-cloud-download fa-fw"></i>&nbsp;<span class="entry-meta-item image-file-links"><?php
+        <i class="fas fa-cloud-download-alt fa-fw"></i>&nbsp;<span class="entry-meta-item image-file-links"><?php
             echo '<a href="' . $sizes[0] . '">' . __('Original file', 'basicbootstrap') . '</a>';
         ?></span>
         <?php endif; ?>
@@ -41,7 +41,7 @@ global $post;
         $att_file = wp_get_attachment_metadata($post->ID); ?>
 
         <?php if (get_basicbootstrap_mod('show_attachment_mime_type')) : ?>
-        <i class="fa fa-file fa-fw"></i>&nbsp;<span class="entry-meta-item media-mime-links"><?php
+        <i class="fas fa-file fa-fw"></i>&nbsp;<span class="entry-meta-item media-mime-links"><?php
             echo get_post_mime_type($post->ID);
         ?></span>
         <?php endif; ?>
@@ -53,7 +53,7 @@ global $post;
         <?php endif; ?>
 
         <?php if (get_basicbootstrap_mod('show_attachment_link')) : ?>
-        <i class="fa fa-cloud-download fa-fw"></i>&nbsp;<span class="entry-meta-item media-file-links"><?php
+        <i class="fas fa-cloud-download-alt fa-fw"></i>&nbsp;<span class="entry-meta-item media-file-links"><?php
             echo '<a href="' . wp_get_attachment_url($post->ID) . '">' . __('Original file', 'basicbootstrap') . '</a>';
         ?></span>
         <?php endif; ?>
