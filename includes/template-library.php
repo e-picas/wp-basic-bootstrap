@@ -433,3 +433,17 @@ function basicbootstrap_get_default_password_post_title($title, $post = null)
 {
     return '%s';
 }
+
+/**
+ * Add a predefined CSS class to images in post content
+ *
+ * @see https://stackoverflow.com/a/22078964/3592658
+ */
+function basicbootstrap_add_image_responsive_class($content)
+{
+    $image_class    = basicbootstrap_get_config('image_class');
+    $pattern        = "/<img(.*?)class=\"(.*?)\"(.*?)>/i";
+    $replacement    = '<img$1class="$2 '.$image_class.'"$3>';
+    $content        = preg_replace($pattern, $replacement, $content);
+    return $content;
+}

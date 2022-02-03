@@ -10,9 +10,9 @@ global $post;
 <div class="entry-meta blog-post-meta">
 
     <?php if (get_post_status() == 'private') : ?>
-        <i class="fa fa-lock fa-fw"></i>&nbsp;<span class="entry-meta-item post-protected"><?php _e('Private', 'basicbootstrap'); ?></span>
+        <i class="fas fa-lock fa-fw"></i>&nbsp;<span class="entry-meta-item post-protected"><?php _e('Private', 'basicbootstrap'); ?></span>
     <?php elseif (post_password_required()) : ?>
-        <i class="fa fa-lock fa-fw"></i>&nbsp;<span class="entry-meta-item post-protected"><?php _e('Protected', 'basicbootstrap'); ?></span>
+        <i class="fas fa-lock fa-fw"></i>&nbsp;<span class="entry-meta-item post-protected"><?php _e('Protected', 'basicbootstrap'); ?></span>
     <?php endif; ?>
 
     <?php if (get_basicbootstrap_mod('show_author_meta')) : ?>
