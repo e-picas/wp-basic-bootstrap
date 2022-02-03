@@ -19,7 +19,7 @@
         ?>
 
         <?php if (get_basicbootstrap_mod('show_edit_comment_links')) : ?>
-            <?php edit_comment_link(__('Edit', 'basicbootstrap'), '<i class="fa fa-pencil-square fa-fw"></i>&nbsp;'); ?>
+            <?php edit_comment_link(__('Edit', 'basicbootstrap'), '<i class="fas fa-pen-square fa-fw"></i>&nbsp;'); ?>
         <?php endif; ?>
 
     </div>

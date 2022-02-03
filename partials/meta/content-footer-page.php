@@ -14,7 +14,7 @@
 
     <?php if (get_basicbootstrap_mod('show_edit_links')) : ?>
     <span class="d-print-none">
-        <?php edit_post_link(__('Edit', 'basicbootstrap'), '<i class="fa fa-pencil-square fa-fw"></i>&nbsp;'); ?>
+        <?php edit_post_link(__('Edit', 'basicbootstrap'), '<i class="fas fa-pen-square fa-fw"></i>&nbsp;'); ?>
     </span>
     <?php endif; ?>
 

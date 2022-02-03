@@ -40,7 +40,7 @@ get_header_hierarchical('taxonomy'); ?>
             <?php
             edit_term_link(
                 __('Edit', 'basicbootstrap'),
-                '<i class="fa fa-pencil-square fa-fw"></i>&nbsp;',
+                '<i class="fas fa-pen-square fa-fw"></i>&nbsp;',
                 '</span>',
                 get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'))
             );
