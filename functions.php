@@ -126,14 +126,18 @@ add_action('after_setup_theme', function () {
  *
  * @uses WP_Basic_Bootstrap_Setup::enqueueScriptsFrontend()
  */
-add_action('wp_enqueue_scripts', array('WP_Basic_Bootstrap_Setup', 'enqueueScriptsFrontend'));
+if (!is_admin()) {
+    add_action('wp_enqueue_scripts', array('WP_Basic_Bootstrap_Setup', 'enqueueScriptsFrontend'));
+}
 
 /**
  * Enqueue scripts and styles for back-end.
  *
  * @uses WP_Basic_Bootstrap_Setup::enqueueScriptsBackend()
  */
-add_action('admin_enqueue_scripts', array('WP_Basic_Bootstrap_Setup', 'enqueueScriptsBackend'));
+if (is_admin()) {
+    add_action('admin_enqueue_scripts', array('WP_Basic_Bootstrap_Setup', 'enqueueScriptsBackend'));
+}
 
 /**
  * Register widgetized areas, including main sidebar and three widget-ready columns in the footer.
