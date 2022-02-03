@@ -1,5 +1,5 @@
 <!-- start social links -->
-<ul id="menu-socials" class="nav navbar-nav navbar-right">
+<ul id="menu-socials" class="navbar-nav float-end">
     <?php
     $fb_url = get_basicbootstrap_mod('facebook_url');
     if (!empty($fb_url)) {

@@ -30,7 +30,7 @@ get_header_hierarchical('author'); ?>
     <?php get_the_breadcrumb(); ?>
 
     <header class="header">
-        <div class="author-avatar float-left">
+        <div class="author-avatar float-start">
             <?php echo get_avatar(get_the_author_meta('email'), '160', '', esc_attr(get_the_author()), array(
                 'class' => 'thumbnail'
             ));  ?>

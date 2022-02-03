@@ -34,7 +34,7 @@ if (!defined('ABSPATH')) {
 /**
  * Current plugin version
  */
-define('BASICBOOTSTRAP_VERSION', '2.0.0@dev');
+define('BASICBOOTSTRAP_VERSION', '3.0.0@dev');
 
 /**
  * jQuery version
@@ -46,7 +46,7 @@ define('BASICBOOTSTRAP_JQUERY_VERSION', '3.6.0');
  * Bootstrap version
  * @see https://getbootstrap.com/
  */
-define('BASICBOOTSTRAP_BOOTSTRAP_VERSION', '4.6.1');
+define('BASICBOOTSTRAP_BOOTSTRAP_VERSION', '5.1.3');
 
 /**
  * FontAwesome version
@@ -58,7 +58,7 @@ define('BASICBOOTSTRAP_FONTAWESOME_VERSION', '5.15.4');
  * PopperJS version
  * @see https://popper.js.org/
  */
-define('BASICBOOTSTRAP_POPPER_VERSION', '1.16.1');
+define('BASICBOOTSTRAP_POPPER_VERSION', '2.10.2');
 
 /**
  * Current local plugin root path
