@@ -418,7 +418,7 @@ function sanitize_simple_html_field($val)
  * @param string $before
  * @param string $after
  */
-function edit_link_if_so($type, $id = null, $text = 'Edit', $before = '<i class="fa fa-pencil-square fa-fw"></i>&nbsp;', $after = '')
+function edit_link_if_so($type, $id = null, $text = 'Edit', $before = '<i class="fas fa-pen-square fa-fw"></i>&nbsp;', $after = '')
 {
     if (!get_basicbootstrap_mod('show_edit_links')) {
         return;
