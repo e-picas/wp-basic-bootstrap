@@ -9,7 +9,6 @@
  */
 class WP_Basic_Bootstrap_Breadcrumb
 {
-
     protected $entries;
 
     public function render()
@@ -24,26 +23,20 @@ class WP_Basic_Bootstrap_Breadcrumb
             if ($show_on_front == 'page') {
                 $this->addBlogPage();
             }
-
         } elseif (is_tag()) {
             $this->addBlogPage();
             $tag_id = get_query_var('tag_id');
             $this->addTag($tag_id);
-
         } elseif (is_category()) {
             $this->addBlogPage();
             $cat_id = get_cat_id(single_cat_title('', false));
             $this->addCategory($cat_id);
-
         } elseif (is_author()) {
             $this->addAuthor(get_the_author_meta('ID'));
-
         } elseif (is_search()) {
             $this->addSearch(get_search_query());
-
         } elseif (is_page()) {
             $this->addPage($post->ID);
-
         } elseif (is_single()) {
             $this->addBlogPage();
             $categories = get_the_category();
@@ -51,16 +44,12 @@ class WP_Basic_Bootstrap_Breadcrumb
                 $this->addCategory($categories[0]->cat_ID);
             }
             $this->addPost($post->ID);
-
         } elseif (is_401()) {
             $this->addErrorPage(401);
-
         } elseif (is_403()) {
             $this->addErrorPage(403);
-
         } elseif (is_404()) {
             $this->addErrorPage();
-
         } elseif (is_tax()) {
             $this->addBlogPage();
             $term   = get_query_var('term');
@@ -68,7 +57,6 @@ class WP_Basic_Bootstrap_Breadcrumb
             if ($tax == 'post_format') {
                 $this->addPostFormat($term);
             }
-
         } elseif (is_archive()) {
             $this->addBlogPage();
             $this->addDate(

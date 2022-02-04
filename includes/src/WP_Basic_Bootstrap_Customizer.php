@@ -18,7 +18,6 @@ basicbootstrap_load_class('WP_Basic_Bootstrap_Customizer_Abstract');
  */
 class WP_Basic_Bootstrap_Customizer extends WP_Basic_Bootstrap_Customizer_Abstract
 {
-
     /**
      * @var array
      * @since WP_Basic_Bootstrap 1.0
@@ -45,11 +44,11 @@ class WP_Basic_Bootstrap_Customizer extends WP_Basic_Bootstrap_Customizer_Abstra
         global $basicbootstrap_customizer_config;
         $_this->processData($basicbootstrap_customizer_config, true);
 
-/*/
-// HARD DEBUG OF ALL CONTROLS
-        var_dump($_this->customizer->controls());
-        exit('yo');
-//*/
+        /*/
+        // HARD DEBUG OF ALL CONTROLS
+                var_dump($_this->customizer->controls());
+                exit('yo');
+        //*/
     }
 
     /**
@@ -63,8 +62,13 @@ class WP_Basic_Bootstrap_Customizer extends WP_Basic_Bootstrap_Customizer_Abstra
      */
     public static function livePreview()
     {
-        wp_enqueue_script('basicbootstrap-customizer',
-            get_template_directory_uri() . '/assets/js/theme-customizer.js', array('jquery', 'customize-preview'), BASICBOOTSTRAP_VERSION, true);
+        wp_enqueue_script(
+            'basicbootstrap-customizer',
+            get_template_directory_uri() . '/assets/js/theme-customizer.js',
+            array('jquery', 'customize-preview'),
+            BASICBOOTSTRAP_VERSION,
+            true
+        );
     }
 
     /**

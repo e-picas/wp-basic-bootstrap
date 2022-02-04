@@ -5,10 +5,8 @@
  */
 
 
-class WP_Basic_Bootstrap_Widget_Author_Block
-    extends WP_Widget
+class WP_Basic_Bootstrap_Widget_Author_Block extends WP_Widget
 {
-
     /**
      * Sets up a new Author Block widget instance.
      */
@@ -98,13 +96,11 @@ class WP_Basic_Bootstrap_Widget_Author_Block
      */
     public function form($instance)
     {
-        $title      = !empty($instance['title'])      ? $instance['title'] : '';
-        $author_id  = !empty($instance['author_id'])  ? $instance['author_id'] : null;
+        $title      = !empty($instance['title']) ? $instance['title'] : '';
+        $author_id  = !empty($instance['author_id']) ? $instance['author_id'] : null;
         $authors_list = get_users(array(
             'orderby'           => 'ID',
-        ));
-
-        ?>
+        )); ?>
         <p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:'); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></p>
 
@@ -118,7 +114,6 @@ class WP_Basic_Bootstrap_Widget_Author_Block
             <span class="description"><?php _e('Select "current user" to show post author info on post pages.', 'basicbootstrap'); ?></span>
         </p>
         <?php
-
     }
 
     /**
@@ -130,8 +125,8 @@ class WP_Basic_Bootstrap_Widget_Author_Block
     public function update($new_instance, $old_instance)
     {
         $instance = array();
-        $instance['title']      = (!empty($new_instance['title']))      ? strip_tags($new_instance['title']) : '';
-        $instance['author_id']  = (!empty($new_instance['author_id']))    ? $new_instance['author_id'] : null;
+        $instance['title']      = (!empty($new_instance['title'])) ? strip_tags($new_instance['title']) : '';
+        $instance['author_id']  = (!empty($new_instance['author_id'])) ? $new_instance['author_id'] : null;
         return $instance;
     }
 }

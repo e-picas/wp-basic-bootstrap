@@ -16,7 +16,9 @@
 function basicbootstrap_get_path($parts)
 {
     return implode(DIRECTORY_SEPARATOR, array_map(
-        function ($p) { return str_replace(array('/', '\\'), DIRECTORY_SEPARATOR, $p); },
+        function ($p) {
+            return str_replace(array('/', '\\'), DIRECTORY_SEPARATOR, $p);
+        },
         is_array($parts) ? $parts : array($parts)
     ));
 }
@@ -32,8 +34,11 @@ function basicbootstrap_get_path($parts)
  */
 function basicbootstrap_get_env_config($key, $default = null)
 {
-    if (isset($_ENV[$key])) return $_ENV[$key];
-    elseif (!is_null($default)) return $default;
+    if (isset($_ENV[$key])) {
+        return $_ENV[$key];
+    } elseif (!is_null($default)) {
+        return $default;
+    }
     throw new Exception('Missing environment variable: '.$key);
 }
 

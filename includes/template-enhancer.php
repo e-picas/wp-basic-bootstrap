@@ -156,7 +156,7 @@ function get_singular_type()
  *
  * The 'template_include' filter is documented in `wp-includes/template-load.php`.
  */
-add_filter('template_include', function($tpl){
+add_filter('template_include', function ($tpl) {
     global $page_type, $singular_page_type, $blog_page;
     unset($page_type);
     unset($singular_page_type);
@@ -181,7 +181,8 @@ function is_sticky_view()
 {
     global $sticky_view;
     if (!isset($sticky_view)) {
-        $sticky_view = (bool) (is_home() ||
+        $sticky_view = (bool) (
+            is_home() ||
             is_front_page() ||
             is_category()
         );

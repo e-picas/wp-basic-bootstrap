@@ -16,7 +16,6 @@
  */
 abstract class WP_Basic_Bootstrap_Customizer_Abstract
 {
-
     /**
      * @var self Singleton instance
      */
@@ -94,7 +93,9 @@ abstract class WP_Basic_Bootstrap_Customizer_Abstract
                     }
                     // create the section
                     $this->setPanel(
-                        $parent_id, $data, $sections
+                        $parent_id,
+                        $data,
+                        $sections
                     );
                     break;
 
@@ -140,7 +141,9 @@ abstract class WP_Basic_Bootstrap_Customizer_Abstract
                     }
                     // create the section
                     $this->setSection(
-                        $parent_id, $data, $settings
+                        $parent_id,
+                        $data,
+                        $settings
                     );
                     break;
 
@@ -241,7 +244,9 @@ abstract class WP_Basic_Bootstrap_Customizer_Abstract
         } else {
             $this->customizer->add_panel(
                 new WP_Customize_Panel(
-                    $this->customizer, $id, $panel_data
+                    $this->customizer,
+                    $id,
+                    $panel_data
                 )
             );
         }
@@ -308,7 +313,9 @@ abstract class WP_Basic_Bootstrap_Customizer_Abstract
         } else {
             $this->customizer->add_section(
                 new WP_Customize_Section(
-                    $this->customizer, $id, $section_data
+                    $this->customizer,
+                    $id,
+                    $section_data
                 )
             );
         }
@@ -335,8 +342,8 @@ abstract class WP_Basic_Bootstrap_Customizer_Abstract
             'sanitize_callback' => isset($data['sanitize_callback']) ? $data['sanitize_callback'] : '',
             'sanitize_js_callback' => isset($data['sanitize_js_callback']) ? $data['sanitize_js_callback'] : '',
             'default'           => isset($data['default']) ? $data['default'] : (
-                                        isset($data['id']) ? $this->getDefault($data['id']) : ''
-                                    ),
+                isset($data['id']) ? $this->getDefault($data['id']) : ''
+            ),
         );
     }
 
@@ -386,7 +393,9 @@ abstract class WP_Basic_Bootstrap_Customizer_Abstract
             if (empty($control_item)) {
                 $this->customizer->add_setting(
                     new WP_Customize_Setting(
-                        $this->customizer, $id, $setting_data
+                        $this->customizer,
+                        $id,
+                        $setting_data
                     )
                 );
             }
@@ -491,7 +500,9 @@ abstract class WP_Basic_Bootstrap_Customizer_Abstract
 
             $this->customizer->add_control(
                 new $cls(
-                    $this->customizer, $id, $control_data
+                    $this->customizer,
+                    $id,
+                    $control_data
                 )
             );
         }
@@ -515,7 +526,8 @@ abstract class WP_Basic_Bootstrap_Customizer_Abstract
         $return = '';
         $mod = get_basicbootstrap_mod($mod_name);
         if (! empty($mod)) {
-            $return = sprintf('%s { %s:%s; }',
+            $return = sprintf(
+                '%s { %s:%s; }',
                 $selector,
                 $style,
                 $prefix.$mod.$postfix
