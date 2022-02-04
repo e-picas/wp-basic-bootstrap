@@ -40,10 +40,10 @@ add_filter('template_include', 'dbg_var_template_include', 1000);
 /**
  * Catch any `test_template=...` URL and try to load concerned PHP template file
  */
-add_action('wp', function(){
+add_action('wp', function () {
     if (isset($_GET['test_template'])) {
         $tpl = str_replace('.php', '', $_GET['test_template']) . '.php';
-        locate_template( $tpl , true, false );
+        locate_template($tpl, true, false);
         die();
     }
 });

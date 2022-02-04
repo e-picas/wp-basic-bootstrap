@@ -14,7 +14,6 @@ class WP_Basic_Bootstrap_Pagination
         $this->entries = array();
 
         if (is_attachment()) {
-
         } elseif (is_single()) {
             $this->entries = array(
                 'previous'  => get_previous_post(),
@@ -25,7 +24,6 @@ class WP_Basic_Bootstrap_Pagination
         } else {
             $this->type = 'numerical';
             $this->get_pagenav_num();
-
         }
 
         return $this->entries;

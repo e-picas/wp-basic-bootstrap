@@ -309,29 +309,28 @@ function wp_link_page_pager_item($i)
     $post       = get_post();
     $query_args = array();
 
-    if ( 1 == $i ) {
+    if (1 == $i) {
         $url = get_permalink();
     } else {
-        if ( ! get_option( 'permalink_structure' ) || in_array( $post->post_status, array( 'draft', 'pending' ), true ) ) {
-            $url = add_query_arg( 'page', $i, get_permalink() );
-        } elseif ( 'page' === get_option( 'show_on_front' ) && get_option( 'page_on_front' ) == $post->ID ) {
-            $url = trailingslashit( get_permalink() ) . user_trailingslashit( "$wp_rewrite->pagination_base/" . $i, 'single_paged' );
+        if (! get_option('permalink_structure') || in_array($post->post_status, array( 'draft', 'pending' ), true)) {
+            $url = add_query_arg('page', $i, get_permalink());
+        } elseif ('page' === get_option('show_on_front') && get_option('page_on_front') == $post->ID) {
+            $url = trailingslashit(get_permalink()) . user_trailingslashit("$wp_rewrite->pagination_base/" . $i, 'single_paged');
         } else {
-            $url = trailingslashit( get_permalink() ) . user_trailingslashit( $i, 'single_paged' );
+            $url = trailingslashit(get_permalink()) . user_trailingslashit($i, 'single_paged');
         }
     }
 
-    if ( is_preview() ) {
-
-        if ( ( 'draft' !== $post->post_status ) && isset( $_GET['preview_id'], $_GET['preview_nonce'] ) ) {
-            $query_args['preview_id']    = wp_unslash( $_GET['preview_id'] );
-            $query_args['preview_nonce'] = wp_unslash( $_GET['preview_nonce'] );
+    if (is_preview()) {
+        if (('draft' !== $post->post_status) && isset($_GET['preview_id'], $_GET['preview_nonce'])) {
+            $query_args['preview_id']    = wp_unslash($_GET['preview_id']);
+            $query_args['preview_nonce'] = wp_unslash($_GET['preview_nonce']);
         }
 
-        $url = get_preview_post_link( $post, $query_args, $url );
+        $url = get_preview_post_link($post, $query_args, $url);
     }
 
-    return '<a href="' . esc_url( $url ) . '" class="page-link post-page-numbers">';
+    return '<a href="' . esc_url($url) . '" class="page-link post-page-numbers">';
 }
 
 /**
@@ -363,15 +362,15 @@ function basicbootstrap_comment($comment, $args, $depth)
 {
     $GLOBALS['comment'] = $comment;
     switch ($comment->comment_type) :
-        case 'pingback' :
-        case 'trackback' :
+        case 'pingback':
+        case 'trackback':
         get_template_part_hierarchical_fetch('partials/comments/pingback-item-cb', '', array(
                 'comment' => $comment,
                 'args' => $args,
                 'depth' => $depth,
             ));
     break;
-    default :
+    default:
         get_template_part_hierarchical_fetch('partials/comments/comment-item-cb', '', array(
                 'comment' => $comment,
                 'args' => $args,

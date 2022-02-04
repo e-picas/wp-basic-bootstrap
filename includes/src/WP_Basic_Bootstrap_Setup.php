@@ -9,8 +9,7 @@
  */
 class WP_Basic_Bootstrap_Setup
 {
-
-    static $theme_supports = array(
+    public static $theme_supports = array(
         'post-thumbnails',
         'post-formats',
         'custom-header',
@@ -128,7 +127,6 @@ class WP_Basic_Bootstrap_Setup
         if (BASICBOOTSTRAP_TPLDBG) {
             basicbootstrap_load_library('dev-lib');
         }
-
     }
 
     /**
@@ -176,45 +174,48 @@ class WP_Basic_Bootstrap_Setup
         // load css
         $css_cfg = basicbootstrap_get_config('css');
         foreach ($css_cfg as $name=>$item) {
-            if (strtolower(BASICBOOTSTRAP_ASSETS_LOADER) == 'cdn' && isset($item['uri-cdn']))
+            if (strtolower(BASICBOOTSTRAP_ASSETS_LOADER) == 'cdn' && isset($item['uri-cdn'])) {
                 $uri = $item['uri-cdn'];
-            elseif (strtolower(BASICBOOTSTRAP_ASSETS_LOADER) == 'npm' && isset($item['uri-npm']))
+            } elseif (strtolower(BASICBOOTSTRAP_ASSETS_LOADER) == 'npm' && isset($item['uri-npm'])) {
                 $uri = $item['uri-npm'];
-            else
+            } else {
                 $uri = $item['uri'];
+            }
 
-            if (isset($item['replace_original']) && $item['replace_original'] == true)
+            if (isset($item['replace_original']) && $item['replace_original'] == true) {
                 wp_deregister_script($name);
+            }
 
             wp_register_style(
                 $name,
                 $uri,
-                isset($item['dependencies'])    ? $item['dependencies'] : array(),
-                isset($item['version'])         ? $item['version'] : false,
-                isset($item['media'])           ? $item['media'] : 'all'
+                isset($item['dependencies']) ? $item['dependencies'] : array(),
+                isset($item['version']) ? $item['version'] : false,
+                isset($item['media']) ? $item['media'] : 'all'
             );
-
         }
 
         // load js
         $js_cfg = basicbootstrap_get_config('js');
         foreach ($js_cfg as $name=>$item) {
-            if (strtolower(BASICBOOTSTRAP_ASSETS_LOADER) == 'cdn' && isset($item['uri-cdn']))
+            if (strtolower(BASICBOOTSTRAP_ASSETS_LOADER) == 'cdn' && isset($item['uri-cdn'])) {
                 $uri = $item['uri-cdn'];
-            elseif (strtolower(BASICBOOTSTRAP_ASSETS_LOADER) == 'npm' && isset($item['uri-npm']))
+            } elseif (strtolower(BASICBOOTSTRAP_ASSETS_LOADER) == 'npm' && isset($item['uri-npm'])) {
                 $uri = $item['uri-npm'];
-            else
+            } else {
                 $uri = $item['uri'];
+            }
 
-            if (isset($item['replace_original']) && $item['replace_original'] == true)
+            if (isset($item['replace_original']) && $item['replace_original'] == true) {
                 wp_deregister_script($name);
+            }
 
             wp_register_script(
                 $name,
                 $uri,
-                isset($item['dependencies'])    ? $item['dependencies'] : array(),
-                isset($item['version'])         ? $item['version'] : false,
-                isset($item['in_footer'])       ? $item['in_footer'] : true
+                isset($item['dependencies']) ? $item['dependencies'] : array(),
+                isset($item['version']) ? $item['version'] : false,
+                isset($item['in_footer']) ? $item['in_footer'] : true
             );
         }
     }
@@ -256,8 +257,13 @@ class WP_Basic_Bootstrap_Setup
      */
     public static function enqueueScriptsBackend()
     {
-        wp_enqueue_script('basicbootstrap-admin-script',
-            get_template_directory_uri() . '/assets/js/admin-script.js', array('jquery'), BASICBOOTSTRAP_VERSION, true);
+        wp_enqueue_script(
+            'basicbootstrap-admin-script',
+            get_template_directory_uri() . '/assets/js/admin-script.js',
+            array('jquery'),
+            BASICBOOTSTRAP_VERSION,
+            true
+        );
     }
 
     /**

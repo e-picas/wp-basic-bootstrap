@@ -17,7 +17,7 @@
     "fabpot/php-cs-fixer": "@stable"
   },
   "scripts": {
-    "cs-fixer": "php ./vendor/bin/php-cs-fixer fix . --level=psr2 -v"
+    "cs-fixer": "/usr/local/bin/php-cs-fixer --config=./.phpcs.php fix"
   },
   "extra": {
     "branch-alias": {
