@@ -11,16 +11,15 @@
 
 $template = get_template_type();
 $page_type = get_page_type();
+$error_type = basicbootstrap_get_status();
 
-if (BASICBOOTSTRAP_TPLDBG) {
-    dbg_log_template_info(__FILE__, ['page_type'=>$page_type, 'template_type'=>$template]);
+if (BASICBOOTSTRAP_TPLDBG && function_exists('dbg_log_template_info')) {
+    dbg_log_template_info(__FILE__, ['page_type'=>$page_type, 'template_type'=>$template, 'error_type'=>$error_type]);
 }
 
 get_header_hierarchical('403'); ?>
 
 <div id="content" role="main">
-
-    <?php get_the_breadcrumb(); ?>
 
     <article id="post-0" class="post not-found jumbotron">
         <header class="header">

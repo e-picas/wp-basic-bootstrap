@@ -214,6 +214,15 @@ $basicbootstrap_config = array(
         ),
     ),
 
+    // the error templates by status
+    'error_templates' => array(
+        '401'   => '401',
+        '403'   => '403',
+        '404'   => '404',
+        '500'   => '500',
+        '504'   => '500',
+    ),
+
     'available_fonts' => array(
         'arial, helvetica, sans-serif'                     => 'Arial',
         'arial black, gadget, sans-serif'                  => 'Arial Black',
