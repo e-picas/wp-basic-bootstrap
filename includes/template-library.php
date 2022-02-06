@@ -163,7 +163,7 @@ function basicbootstrap_template_redirect()
         global $post;
         $visibility = get_post_meta($post->ID, 'attachment-page-visibility', true);
         if ($visibility == 'disabled') {
-            set_error_403(false, true);
+            send_error(403, false, true);
         }
     }
 }
