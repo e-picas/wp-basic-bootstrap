@@ -3,6 +3,10 @@
  * @package WP_Basic_Bootstrap
  * @since WP_Basic_Bootstrap 1.0
  */
+
+if (BASICBOOTSTRAP_TPLDBG) {
+    dbg_log_template_info(__FILE__);
+}
 ?>
 <div class="entry-meta blog-post-meta">
     <?php

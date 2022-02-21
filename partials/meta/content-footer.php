@@ -4,6 +4,10 @@
  * @since WP_Basic_Bootstrap 1.0
  */
 
+if (BASICBOOTSTRAP_TPLDBG) {
+    dbg_log_template_info(__FILE__);
+}
+
 /* @var $post \WP_Post */
 global $post;
 ?>
