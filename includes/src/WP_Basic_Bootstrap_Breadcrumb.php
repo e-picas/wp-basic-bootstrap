@@ -38,7 +38,12 @@ class WP_Basic_Bootstrap_Breadcrumb
         } elseif (is_page()) {
             $this->addPage($post->ID);
         } elseif (is_single()) {
-            $this->addBlogPage();
+            $post_type   = get_query_var('post_type');
+            if ($post_type !== 'post') {
+                $this->addPostType($post_type);
+            } else {
+                $this->addBlogPage();
+            }
             $categories = get_the_category();
             if (isset($categories[0])) {
                 $this->addCategory($categories[0]->cat_ID);
@@ -57,6 +62,9 @@ class WP_Basic_Bootstrap_Breadcrumb
             if ($tax == 'post_format') {
                 $this->addPostFormat($term);
             }
+        } elseif ( is_post_type_archive() ) {
+            $post_type   = get_query_var('post_type');
+            $this->addPostType($post_type);
         } elseif (is_archive()) {
             $this->addBlogPage();
             $this->addDate(
@@ -239,5 +247,17 @@ class WP_Basic_Bootstrap_Breadcrumb
             'title' => $userdata->display_name,
             'url'   => get_author_posts_url($id),
         );
+    }
+
+    public function addPostType($post_type)
+    {
+        $post_type_object = get_post_type_object($post_type);
+        if (is_object($post_type_object) && $post_type_object instanceof WP_Post_Type) {
+            $this->entries[] = array(
+                'title' => $post_type_object->labels->name,
+                'url'   => get_post_type_archive_link($post_type),
+            );
+
+        }
     }
 }
