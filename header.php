@@ -45,7 +45,11 @@ if (BASICBOOTSTRAP_TPLDBG) {
     <?php get_template_part_hierarchical('partials/layout/navbar'); ?>
 <?php endif; ?>
 
+<?php if ($template == 'full_width_fluid') : ?>
+    <div class="container-fluid">
+<?php else : ?>
     <div class="container">
+<?php endif; ?>
 
         <?php get_template_part_hierarchical('partials/layout/header'); ?>
         <?php if ($navbar_type == 'default') : ?>
