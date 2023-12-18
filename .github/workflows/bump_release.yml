@@ -7,7 +7,7 @@ on:
     branches:
       - master
       - master-bootstrap-4
-      - master-bootstrap-3
+      - master-bootstrap-5
 
 permissions:
   contents: read # for checkout
@@ -25,9 +25,10 @@ jobs:
       id-token: write # to enable use of OIDC for npm provenance
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
         with:
           fetch-depth: 0
+          token: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
