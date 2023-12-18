@@ -6,6 +6,8 @@ on:
   push:
     branches:
       - master
+      - master-bootstrap-4
+      - master-bootstrap-3
 
 permissions:
   contents: read # for checkout
