@@ -19,7 +19,7 @@ branches:
     channel: "bootstrap-5"
     prerelease: "btst5"
   - name: "develop-bootstrap-5"
-    prerelease: "btst5"
+    channel: "bootstrap-5"
 
   - name: "release-*"
     prerelease: "alpha"
