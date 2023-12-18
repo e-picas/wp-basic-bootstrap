@@ -41,21 +41,20 @@ jobs:
           git config user.name "github-ci-bot"
 
       - name: Merging release
+        env:
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
         run: |
           git fetch
           git rev-parse --verify ${{ inputs.targetBranch }} && git branch -D ${{ inputs.targetBranch }}
           git checkout --force --track origin/${{ inputs.targetBranch }}
           git reset --hard origin/${{ inputs.targetBranch }}
           git merge --no-ff --no-edit --no-commit origin/${{ github.ref_name }}
-          NEED_COMMIT=$(git diff --name-status --cached --exit-code 1>/dev/null; echo $?;)
-          if [[ $NEED_COMMIT == 1 ]]
-          then
-            git commit -m "ci(${{ github.ref_name }}): merging prepared release"
-            git push origin ${{ inputs.targetBranch }}
-          else
-            echo "> no changes to be commited on ${{ inputs.targetBranch }}"
-            echo "> no new release to bump"
-          fi
-          # delete release branch
-          git branch -D ${{ github.ref_name }}
+          git commit -m "ci(${{ github.ref_name }}): merging prepared release" \
+            || echo "> no changes to be commited on ${{ inputs.targetBranch }} - no new release to bump"
           git push --delete origin ${{ github.ref_name }}
+
+      - name: Git push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
+          branch: ${{ inputs.targetBranch }}
