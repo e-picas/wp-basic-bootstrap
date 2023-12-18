@@ -9,12 +9,14 @@ branches:
     prerelease: "btst4"
   - name: "develop-bootstrap-4"
     channel: "bootstrap-4"
+    prerelease: "btst4.rc"
 
   - name: "master-bootstrap-5"
     channel: "bootstrap-5"
     prerelease: "btst5"
   - name: "develop-bootstrap-5"
     channel: "bootstrap-5"
+    prerelease: "btst5.rc"
 
   - name: "release-*"
     prerelease: "alpha"
