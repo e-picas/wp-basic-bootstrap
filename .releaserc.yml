@@ -1,13 +1,8 @@
 
 branches:
   - "+([0-9])?(.{+([0-9]),x}).x"
-
-  - name: "master"
-    range: "3.x"
-    channel: "3.x"
-  - name: "develop"
-    range: "3.x"
-    channel: "3.x"
+  - "master"
+  - "develop"
 
   - name: "master-bootstrap-3"
     range: "1.x"
