@@ -7,15 +7,6 @@ on:
     branches:
       - develop
   workflow_dispatch:
-    inputs:
-      semanticReleaseOpts:
-        description: 'Semantic release options'
-        required: true
-        default: ''
-        type: choice
-        options:
-          - ''
-          - '--loglevel=verbose'
 
 permissions:
   contents: read # for checkout
@@ -52,9 +43,11 @@ jobs:
       #   run: npm audit signatures
 
       - name: Create the release branch
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
         run: |
           git pull
-          semantic-release --dry-run --no-ci ${{ inputs.semanticReleaseOpts }}
+          semantic-release --dry-run --no-ci
           NEXT_VERSION=$(grep -Po 'Version:([ ]*)?(.*)' "style.css" | tr -s ' ' | cut -d' ' -f2)
           git checkout -b "release-${NEXT_VERSION}"
           sed -i "s/Version: .*/Version: release-${NEXT_VERSION}/" style.css
