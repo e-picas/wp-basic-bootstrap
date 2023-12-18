@@ -3,9 +3,6 @@ name: "Begin new release"
 run-name: "Create a new release branch forking develop"
 
 on:
-  push:
-    branches:
-      - develop
   workflow_dispatch:
 
 permissions:

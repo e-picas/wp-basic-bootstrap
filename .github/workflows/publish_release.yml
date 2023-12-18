@@ -3,9 +3,6 @@ name: "Publish release"
 run-name: "Publish a release by merging it to master and deleting the release branch"
 
 on:
-  push:
-    branches:
-      - release-*
   workflow_dispatch:
 
 permissions:
@@ -14,7 +11,8 @@ permissions:
 jobs:
 
   bump_release:
-    name: "Bump version"
+    name: "Publish release"
+    if: ${{ contains(github.ref_name, 'release-') && github.event_name == 'workflow_dispatch' }}
     runs-on: ubuntu-latest
     permissions:
       contents: write # to be able to publish a GitHub release
@@ -34,6 +32,7 @@ jobs:
 
       - name: Merging release
         run: |
+          git fetch
           git rev-parse --verify master && git branch -D master
           git checkout --force --track origin/master
           git reset --hard origin/master
