@@ -47,13 +47,13 @@ jobs:
         run: |
           git pull
           semantic-release --dry-run --no-ci
-          export NEXT_VERSION=$(grep -Po 'Version:([ ]*)?(.*)' "style.css" | tr -s ' ' | cut -d' ' -f2)
+          NEXT_VERSION=$(grep -Po 'Version:([ ]*)?(.*)' "style.css" | tr -s ' ' | cut -d' ' -f2)
           git checkout -b "release-${NEXT_VERSION}"
           git add style.css
-          git commit -m "ci(develop): preparing release branch release-${NEXT_VERSION}" || true
+          NEED_COMMIT=$(git diff --name-status --cached --exit-code 1>/dev/null; echo $?;)
+          if [[ $NEED_COMMIT == 1 ]]
+          then
+            git commit -m "ci(develop): preparing release branch release-${NEXT_VERSION}"
+          fi
+          git push origin release-${NEXT_VERSION}
 
-      - name: Git push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
-          branch: release-${NEXT_VERSION}
