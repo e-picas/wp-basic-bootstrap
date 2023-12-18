@@ -4,6 +4,16 @@ run-name: "Publish a release by merging it to master and deleting the release br
 
 on:
   workflow_dispatch:
+    inputs:
+      targetBranch:
+        description: 'Target branch'
+        required: true
+        default: 'master'
+        type: choice
+        options:
+        - master
+        - master-bootstrap-4
+        - master-bootstrap-5
 
 permissions:
   contents: read # for checkout
@@ -31,21 +41,22 @@ jobs:
           git config user.name "github-ci-bot"
 
       - name: Merging release
+        env:
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
         run: |
           git fetch
-          git rev-parse --verify master && git branch -D master
-          git checkout --force --track origin/master
-          git reset --hard origin/master
+          git rev-parse --verify ${{ inputs.targetBranch }} && git branch -D ${{ inputs.targetBranch }}
+          git checkout --force --track origin/${{ inputs.targetBranch }}
+          git reset --hard origin/${{ inputs.targetBranch }}
           git merge --no-ff --no-edit --no-commit origin/${{ github.ref_name }}
           NEED_COMMIT=$(git diff --name-status --cached --exit-code 1>/dev/null; echo $?;)
           if [[ $NEED_COMMIT == 1 ]]
           then
             git commit -m "ci(${{ github.ref_name }}): merging prepared release"
-            git push origin master
+            git push origin ${{ inputs.targetBranch }}
           else
-            echo "> no changes to be commited on master"
+            echo "> no changes to be commited on ${{ inputs.targetBranch }}"
             echo "> no new release to bump"
           fi
           # delete release branch
-          git branch -D ${{ github.ref_name }}
           git push --delete origin ${{ github.ref_name }}
