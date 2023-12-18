@@ -9,13 +9,17 @@ branches:
     range: "3.x"
     channel: "3.x"
 
-  - name: "master-bootstrap-3"
-    range: "1.x"
-    channel: "1.x"
-
   - name: "master-bootstrap-4"
-    range: "2.x"
-    channel: "2.x"
+    channel: "bootstrap-4"
+    prerelease: "btst4"
+  - name: "develop-bootstrap-4"
+    channel: "bootstrap-4"
+
+  - name: "master-bootstrap-5"
+    channel: "bootstrap-5"
+    prerelease: "btst5"
+  - name: "develop-bootstrap-5"
+    prerelease: "btst5"
 
   - name: "release-*"
     prerelease: "alpha"
@@ -23,7 +27,7 @@ branches:
 plugins:
   - path: "@semantic-release/commit-analyzer"
   - path: "@semantic-release/release-notes-generator"
-    commit: "-/commit"
+    commit: "/commit"
   - path: "@semantic-release/github"
   - path: "@semantic-release/changelog"
     changelogFile: "CHANGELOG.md"
@@ -42,3 +46,7 @@ plugins:
     backmergeBranches:
       - from: "master"
         to: "develop"
+      - from: "master-bootstrap-4"
+        to: "develop-bootstrap-4"
+      - from: "master-bootstrap-5"
+        to: "develop-bootstrap-5"
