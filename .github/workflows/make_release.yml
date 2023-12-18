@@ -42,6 +42,11 @@ jobs:
       # - name: Verify the integrity of provenance attestations and registry signatures for installed dependencies
       #   run: npm audit signatures
 
+      - name: Setup git
+        run: |
+          git config user.email "${{ env.GITHUB_TRIGGERING_ACTOR }}"
+          git config user.name "github-ci-bot"
+
       - name: Create the release branch
         env:
           GITHUB_TOKEN: ${{ github.token }}
