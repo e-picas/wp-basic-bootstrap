@@ -1,16 +1,13 @@
 # dev dependencies
 vendor/
-!includes/vendor/*
-node_modules/
+!includes/vendor
 dev/
 tmp/
-composer.lock
+node_modules
+assets/dist
+assets/webfonts
 .env
 
-# bower dependencies
-assets/bootstrap/
-assets/font-awesome/
-assets/html5shiv/
-assets/ie10-viewport-bug-workaround/
-assets/jquery/
-assets/respond/
+# locker files
+composer.lock
+package-lock.json
