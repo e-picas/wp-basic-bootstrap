@@ -1,5 +1,12 @@
 # WP Basic Bootstrap changelog
 
+## [1.0.1](https://github.com/e-picas/wp-basic-bootstrap/compare/v1.0.0...v1.0.1) (2023-12-18)
+
+
+### Bug Fixes
+
+* **gitlab-actions:** change the default token to be able to trig ci from ci ([49d8ab7](https://github.com/e-picas/wp-basic-bootstrap/-/commit/49d8ab78afd03268a619ff6dfeedda605340f5c2))
+
 # 1.0.0 (2023-12-18)
 
 
