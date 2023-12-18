@@ -1,0 +1,51 @@
+
+name: "Publish release"
+run-name: "Publish a release by merging it to master and deleting the release branch"
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read # for checkout
+
+jobs:
+
+  bump_release:
+    name: "Publish release"
+    if: ${{ contains(github.ref_name, 'release-') && github.event_name == 'workflow_dispatch' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # to be able to publish a GitHub release
+      issues: write # to be able to comment on released issues
+      pull-requests: write # to be able to comment on released pull requests
+      id-token: write # to enable use of OIDC for npm provenance
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup git
+        run: |
+          git config user.email "${{ env.GITHUB_TRIGGERING_ACTOR }}"
+          git config user.name "github-ci-bot"
+
+      - name: Merging release
+        run: |
+          git fetch
+          git rev-parse --verify master && git branch -D master
+          git checkout --force --track origin/master
+          git reset --hard origin/master
+          git merge --no-ff --no-edit --no-commit origin/${{ github.ref_name }}
+          NEED_COMMIT=$(git diff --name-status --cached --exit-code 1>/dev/null; echo $?;)
+          if [[ $NEED_COMMIT == 1 ]]
+          then
+            git commit -m "ci(${{ github.ref_name }}): merging prepared release"
+            git push origin master
+          else
+            echo "> no changes to be commited on master"
+            echo "> no new release to bump"
+          fi
+          # delete release branch
+          git branch -D ${{ github.ref_name }}
+          git push --delete origin ${{ github.ref_name }}

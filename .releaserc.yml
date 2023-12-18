@@ -1,0 +1,44 @@
+
+branches:
+  - "+([0-9])?(.{+([0-9]),x}).x"
+
+  - name: "master"
+    range: "3.x"
+    channel: "3.x"
+  - name: "develop"
+    range: "3.x"
+    channel: "3.x"
+
+  - name: "master-bootstrap-3"
+    range: "1.x"
+    channel: "1.x"
+
+  - name: "master-bootstrap-4"
+    range: "2.x"
+    channel: "2.x"
+
+  - name: "release-*"
+    prerelease: "alpha"
+
+plugins:
+  - path: "@semantic-release/commit-analyzer"
+  - path: "@semantic-release/release-notes-generator"
+    commit: "-/commit"
+  - path: "@semantic-release/github"
+  - path: "@semantic-release/changelog"
+    changelogFile: "CHANGELOG.md"
+    changelogTitle: "# WP Basic Bootstrap changelog"
+  - path: "@semantic-release/git"
+    assets:
+      - "CHANGELOG.md"
+      - "style.css"
+    message: |
+      chore(release): ${nextRelease.version}
+
+      ${nextRelease.notes}
+  - path: "@semantic-release/exec"
+    verifyReleaseCmd: "sed -i \"s/Version: .*/Version: ${nextRelease.version}/\" style.css"
+  - path: "@saithodev/semantic-release-backmerge"
+    backmergeBranches:
+      - from: "master"
+        to: "develop"
