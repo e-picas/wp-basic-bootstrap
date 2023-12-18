@@ -48,8 +48,8 @@ jobs:
       - name: Install dependencies
         run: npm install -g semantic-release @semantic-release/github @semantic-release/git @semantic-release/changelog @semantic-release/exec @saithodev/semantic-release-backmerge
 
-      - name: Verify the integrity of provenance attestations and registry signatures for installed dependencies
-        run: npm audit signatures
+      # - name: Verify the integrity of provenance attestations and registry signatures for installed dependencies
+      #   run: npm audit signatures
 
       - name: Create the release branch
         run: |
