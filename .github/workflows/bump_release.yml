@@ -7,7 +7,7 @@ on:
     branches:
       - master
       - master-bootstrap-4
-      - master-bootstrap-3
+      - master-bootstrap-5
 
 permissions:
   contents: read # for checkout
