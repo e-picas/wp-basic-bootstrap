@@ -1,0 +1,68 @@
+{
+  "name": "wp-basic-bootstrap",
+  "version": "2.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/e-picas/wp-basic-bootstrap.git"
+  },
+  "bugs": {
+    "url": "https://github.com/e-picas/wp-basic-bootstrap/issues"
+  },
+  "homepage": "https://github.com/e-picas/wp-basic-bootstrap",
+  "author": "picas",
+  "description": "WP Basic Bootstrap is a full 101 Wordpress theme built with the Bootstrap framework and the Font Awesome images font",
+  "main": "",
+  "keywords": [
+    "wordpress",
+    "bootstrap",
+    "font-awesome",
+    "template",
+    "theme"
+  ],
+  "license": "GPL-3.0+",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets/",
+    "test",
+    "tests"
+  ],
+  "scripts": {
+    "build": "npm-run-all css js",
+    "watch": "nodemon -e scss,js -x \"npm run css-compile && npm run js-compile\" -w assets/js/",
+    "build-css": "npm run css-lint && npm run css-compile",
+    "css-compile": "node-sass --include-path node_modules --source-map true --source-map-contents true --precision 6 assets/sass -o assets/dist/",
+    "css-minify": "cleancss -O1 --format breakWith=lf --with-rebase --source-map --source-map-inline-sources --output assets/dist/ --batch --batch-suffix \".min\" \"assets/dist/*.css\" \"!assets/dist/*.min.css\"",
+    "css-lint": "stylelint assets/sass/",
+    "css": "npm-run-all css-compile css-minify webfonts-import",
+    "webfonts-import": "copyfiles -u 3 node_modules/fontawesome-free/webfonts/* assets/webfonts/",
+    "js-compile": "uglifyjs node_modules/jquery/dist/jquery.js node_modules/bootstrap/dist/js/bootstrap.bundle.js --source-map --keep-fnames --output assets/dist/jquery-popper-bootstrap.bundle.js --comments all",
+    "js-minify": "uglifyjs node_modules/jquery/dist/jquery.min.js node_modules/bootstrap/dist/js/bootstrap.bundle.min.js --compress --source-map --keep-fnames --output assets/dist/jquery-popper-bootstrap.bundle.min.js --comments all",
+    "js": "npm-run-all js-compile js-minify"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.9.3",
+    "bootstrap": "^5.1.0",
+    "bootstrap-icons": "^1.5.0",
+    "fontawesome-free": "^1.0.1",
+    "jquery": "^3.6.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.2.5",
+    "node-sass": "^9.0.0",
+    "nodemon": "^2.0.7",
+    "npm-run-all": "^4.1.5",
+    "clean-css-cli": "^5.5.0",
+    "stylelint": "^13.12.0",
+    "stylelint-config-twbs-bootstrap": "^2.1.0",
+    "uglify-js": "3.*",
+    "copyfiles": "2.*",
+    "@saithodev/semantic-release-backmerge": "^4.0.1",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/exec": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/gitlab": "^12.1.1",
+    "semantic-release": "^22.0.12"
+  }
+}

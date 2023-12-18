@@ -1,6 +1,7 @@
 # dev dependencies
 vendor/
 !includes/vendor/*
+node_modules/
 dev/
 tmp/
 composer.lock
