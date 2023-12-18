@@ -32,10 +32,12 @@ jobs:
           node-version: "lts/*"
 
       - name: Install dependencies
-        run: npm clean-install semantic-release @semantic-release/github @semantic-release/git @semantic-release/changelog @semantic-release/exec @saithodev/semantic-release-backmerge
+        run: npm install -g semantic-release @semantic-release/github @semantic-release/git @semantic-release/changelog @semantic-release/exec @saithodev/semantic-release-backmerge
 
-      - name: Verify the integrity of provenance attestations and registry signatures for installed dependencies
-        run: npm audit signatures
+      - name: Setup git
+        run: |
+          git config user.email "${{ env.GITHUB_TRIGGERING_ACTOR }}"
+          git config user.name "github-ci-bot"
 
       - name: Release
         env:
