@@ -55,7 +55,6 @@ if (BASICBOOTSTRAP_TPLDBG) {
         <?php if ($navbar_type == 'default') : ?>
             <?php get_template_part_hierarchical('partials/layout/navbar'); ?>
         <?php endif; ?>
-        <div class="row">
 
             <?php if ($template == 'left_sidebar') : ?>
                 <?php if (is_rtl()) : ?>
