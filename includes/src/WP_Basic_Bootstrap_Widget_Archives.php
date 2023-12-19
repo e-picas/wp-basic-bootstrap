@@ -19,12 +19,12 @@ class WP_Basic_Bootstrap_Widget_Archives extends WP_Widget_Archives
      */
     public function widget($args, $instance)
     {
-        if (! isset($args['widget_id'])) {
+        if (!isset($args['widget_id'])) {
             $args['widget_id'] = $this->id;
         }
 
-        $show_count  = ! empty($instance['count']) ? '1' : '0';
-        $is_dropdown = ! empty($instance['dropdown']) ? '1' : '0';
+        $show_count  = !empty($instance['count']) ? '1' : '0';
+        $is_dropdown = !empty($instance['dropdown']) ? '1' : '0';
 
         /** This filter is documented in wp-includes/widgets/class-wp-widget-pages.php */
         $title = apply_filters('widget_title', empty($instance['title']) ? __('Archives') : $instance['title'], $instance, $this->id_base);
