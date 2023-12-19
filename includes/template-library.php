@@ -271,13 +271,13 @@ function get_the_breadcrumb()
 /**
  * Build pages pagination
  */
-function get_the_pagination()
+function get_the_pagination($post_type = '')
 {
     basicbootstrap_load_class('WP_Basic_Bootstrap_Pagination');
     $paginator = new WP_Basic_Bootstrap_Pagination();
     $entries = $paginator->render();
     if (count($entries)) {
-        get_template_part_hierarchical_fetch('partials/pagination/'.$paginator->type, '', $entries);
+        get_template_part_hierarchical_fetch('partials/pagination/'.$paginator->type, $post_type, $entries);
     }
 }
 

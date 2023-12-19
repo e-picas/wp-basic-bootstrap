@@ -202,8 +202,10 @@ class WP_Basic_Bootstrap_Setup
                 $uri = $item['uri-cdn'];
             } elseif (strtolower(BASICBOOTSTRAP_ASSETS_LOADER) == 'npm' && isset($item['uri-npm'])) {
                 $uri = $item['uri-npm'];
-            } else {
+            } elseif (isset($item['uri'])) {
                 $uri = $item['uri'];
+            } else {
+                $uri = '';
             }
 
             if (isset($item['replace_original']) && $item['replace_original'] == true) {
