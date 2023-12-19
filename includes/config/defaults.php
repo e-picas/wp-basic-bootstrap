@@ -216,11 +216,11 @@ $basicbootstrap_config = array(
 
     // the error templates by status
     'error_templates' => array(
-        '401'   => '401',
-        '403'   => '403',
+        '401'   => 'error',
+        '403'   => 'error',
         '404'   => '404',
-        '500'   => '500',
-        '504'   => '500',
+        '500'   => 'error',
+        '504'   => 'error',
     ),
 
     'available_fonts' => array(
