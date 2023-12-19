@@ -17,7 +17,7 @@ class BasicBootstrap_Fatal_Error_Handler extends WP_Fatal_Error_Handler
             send_error(500, false, true);
         } catch (\Throwable $e) {
             // Otherwise, display the default error template.
-            parent::display_error_template( $error, $handled );
+            parent::display_error_template($error, $handled);
         }
     }
 }

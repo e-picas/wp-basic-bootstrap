@@ -62,7 +62,7 @@ class WP_Basic_Bootstrap_Breadcrumb
             if ($tax == 'post_format') {
                 $this->addPostFormat($term);
             }
-        } elseif ( is_post_type_archive() ) {
+        } elseif (is_post_type_archive()) {
             $post_type   = get_query_var('post_type');
             $this->addPostType($post_type);
         } elseif (is_archive()) {

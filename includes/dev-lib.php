@@ -9,7 +9,7 @@
 function dbg_log_template_info($file, $args = [])
 {
     $str = '[BASICBOOTSTRAP_TPLDBG] loaded file : '.$file;
-    foreach ($args as $arg_name=>$arg_val) {
+    foreach ($args as $arg_name => $arg_val) {
         $str .= " | $arg_name : '$arg_val'";
     }
     error_log($str);
@@ -65,7 +65,7 @@ function dbg_theme_mods_menu()
 
 function dbg_theme_mods_page()
 {
-    $params = array_merge($_GET, array('flush_mods'=>true));
+    $params = array_merge($_GET, array('flush_mods' => true));
     $features = array(
         'post-thumbnails',
         'post-formats',
@@ -94,7 +94,7 @@ function dbg_theme_mods_page()
         if (!is_bool($supports)) {
             $supports = '<pre>'.var_export($supports, true).'</pre>';
         } else {
-            $supports = $supports===true ? 'true' : 'false';
+            $supports = $supports === true ? 'true' : 'false';
         }
         echo '<tr><td><strong>'
             .$feature . '</strong></td><td>'
@@ -106,7 +106,7 @@ function dbg_theme_mods_page()
     echo '<h2>Registered sidebars</h2>';
     global $wp_registered_sidebars;
     echo '<table class="wp-list-table widefat fixed striped">';
-    foreach ($wp_registered_sidebars as $name=>$sidebar) {
+    foreach ($wp_registered_sidebars as $name => $sidebar) {
         echo '<tr><td><strong>'
             .$name . '</strong></td><td><pre>'
             .var_export($sidebar, true)
@@ -117,7 +117,7 @@ function dbg_theme_mods_page()
     echo '<h2>Registered menus</h2>';
     $nav_menus = get_registered_nav_menus();
     echo '<table class="wp-list-table widefat fixed striped">';
-    foreach ($nav_menus as $name=>$menu) {
+    foreach ($nav_menus as $name => $menu) {
         echo '<tr><td><strong>'
             .$name . '</strong></td><td><pre>'
             .var_export($menu, true)
@@ -128,7 +128,7 @@ function dbg_theme_mods_page()
     echo '<h2>Actual "theme_mods"</h2>';
     $theme_mods = get_theme_mods();
     echo '<table class="wp-list-table widefat fixed striped">';
-    foreach ($theme_mods as $name=>$item) {
+    foreach ($theme_mods as $name => $item) {
         echo '<tr><td><strong>'
             .$name . '</strong></td><td><pre>'
             .var_export($item, true)
