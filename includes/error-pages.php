@@ -6,13 +6,12 @@
  *
  * -    `401.php` to handle unauthorized errors
  * -    `403.php` to handle forbidden access errors
- * -    `500.php` to handle PHP errors
  *
  * It also embeds some shortcuts functions to redirect a request to an error page or
  * test if we already are on an error page easily:
  *
- * -    `send_error(status)` to display an error page (with correct headers)
- * -    `is_504()`, `is_500()`, `is_404()`, `is_403()` and `is_401()` to test if we currently are on an error page
+ * -    `set_error_404()`, `set_error_403()` and `set_error_401()` to display an error page (with correct headers)
+ * -    `is_404()`, `is_403()` and `is_401()` to test if we currently are on an error page
  *
  * @package WP_Basic_Bootstrap
  * @since WP_Basic_Bootstrap 1.0
@@ -233,7 +232,9 @@ function basicbootstrap_get_status()
     if (isset($_REQUEST['error'])) {
         $status = $_REQUEST['error'];
     }
-    if (is_403()) {
+    if (is_404()) {
+        $status = 404;
+    } elseif (is_403()) {
         $status = 403;
     } elseif (is_401()) {
         $status = 401;
@@ -322,26 +323,4 @@ function basicbootstrap_error_class($classes)
         $classes[] = "error504";
     }
     return $classes;
-}
-
-/**
- * Set a 'noindex, nofollow' header for robots for all error pages
- *
- * To use this feature, write:
- *
- *      add_filter('wp_robots', 'basicbootstrap_error_pages_robots');
- *
- * @param array $robots
- * @return array
- * @since WP_Basic_Bootstrap 2.0
- */
-function basicbootstrap_error_pages_robots($robots = [])
-{
-    if (is_404() || is_403() || is_401() || is_500() || is_504()) {
-        $robots = [
-            'noindex'   => 1,
-            'nofollow'  => 1,
-        ];
-    }
-    return $robots;
 }

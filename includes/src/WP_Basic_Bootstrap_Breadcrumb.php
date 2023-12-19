@@ -74,6 +74,11 @@ class WP_Basic_Bootstrap_Breadcrumb
             );
         }
 
+        /**
+         * FILTER - Filter the array of breadcrumb entries
+         */
+        $this->entries = apply_filters('WPBB_breadcrumb_entries_filter', $this->entries);
+
         return $this->entries;
     }
 

@@ -323,10 +323,10 @@ if (!function_exists('get_header_hierarchical')) :
      * @uses get_header()
      * @param $name
      */
-    function get_header_hierarchical($name = null)
+    function get_header_hierarchical($name = null, $args = [])
     {
         $template = template_part_hierarchical('header', $name, true);
-        get_header($template);
+        get_header($template, $args);
     }
 endif;
 

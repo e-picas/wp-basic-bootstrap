@@ -23,7 +23,6 @@ if (BASICBOOTSTRAP_TPLDBG) {
                 </div><!-- /.blog-main -->
 <?php endif; ?>
 
-            </div><!-- /.row -->
     </div><!-- /.container -->
 
     <footer id="footer" class="blog-footer d-print-none">

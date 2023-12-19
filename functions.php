@@ -172,7 +172,6 @@ basicbootstrap_load_library('error-pages');
 add_action('wp', 'basicbootstrap_error_pages');
 add_filter('wp_title', 'basicbootstrap_error_title', 100, 2);
 add_filter('body_class', 'basicbootstrap_error_class');
-add_filter('wp_robots', 'basicbootstrap_error_pages_robots');
 
 /**
  * Manage global redirections

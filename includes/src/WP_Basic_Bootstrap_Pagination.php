@@ -9,21 +9,27 @@ class WP_Basic_Bootstrap_Pagination
     public $type = 'simple';
     protected $entries;
 
-    public function render()
+    public function render($in_category = false)
     {
+        $add_args = [];
         $this->entries = array();
+
+        $cats = get_the_category();
+        if (count($cats)>0) {
+            $add_args['category__and'] = $cats[0]->term_id;
+        }
 
         if (is_attachment()) {
         } elseif (is_single()) {
             $this->entries = array(
-                'previous'  => get_previous_post(),
-                'next'      => get_next_post(),
+                'previous'  => get_previous_post($add_args),
+                'next'      => get_next_post($add_args),
             );
 
 //        } elseif (is_archive() || is_search()) {
         } else {
             $this->type = 'numerical';
-            $this->get_pagenav_num();
+            $this->get_pagenav_num($add_args);
         }
 
         return $this->entries;
