@@ -224,6 +224,7 @@ $basicbootstrap_config = array(
     ),
 
     'available_fonts' => array(
+        'default'                                          => 'default',
         'arial, helvetica, sans-serif'                     => 'Arial',
         'arial black, gadget, sans-serif'                  => 'Arial Black',
         'comic sans ms, cursive, sans-serif'               => 'Comic Sans MS',
@@ -237,6 +238,7 @@ $basicbootstrap_config = array(
         'times new roman, times, serif'                    => 'Times New Roman',
         'trebuchet ms, helvetica, sans-serif'              => 'Trebuchet MS',
         'verdana, geneva, sans-serif'                      => 'Verdana',
+        '"Inconsolata", monospace'                         => 'Inconsolata'
     ),
 
     'css' => array(
