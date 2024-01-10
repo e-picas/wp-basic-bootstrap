@@ -321,7 +321,8 @@ if (!function_exists('get_header_hierarchical')) :
      *
      * @uses template_part_hierarchical()
      * @uses get_header()
-     * @param $name
+     * @param string $name The template name.
+     * @param array $args Parameters to pass to the template.
      */
     function get_header_hierarchical($name = null, $args = [])
     {
@@ -336,12 +337,13 @@ if (!function_exists('get_footer_hierarchical')) :
      *
      * @uses template_part_hierarchical()
      * @uses get_footer()
-     * @param $name
+     * @param string $name The template name.
+     * @param array $args Parameters to pass to the template.
      */
-    function get_footer_hierarchical($name = null)
+    function get_footer_hierarchical($name = null, $args = [])
     {
         $template = template_part_hierarchical('footer', $name, true);
-        get_footer($template);
+        get_footer($template, $args);
     }
 endif;
 
@@ -351,12 +353,13 @@ if (!function_exists('get_sidebar_hierarchical')) :
      *
      * @uses template_part_hierarchical()
      * @uses get_sidebar()
-     * @param $name
+     * @param string $name The template name.
+     * @param array $args Parameters to pass to the template.
      */
-    function get_sidebar_hierarchical($name = null)
+    function get_sidebar_hierarchical($name = null, $args = [])
     {
         $template = template_part_hierarchical('sidebar', $name, true);
-        get_sidebar($template);
+        get_sidebar($template, $args);
     }
 endif;
 
@@ -381,9 +384,10 @@ if (!function_exists('get_search_form_hierarchical')) :
      * @since WP 2.7.0
      *
      * @param bool $echo Default to echo and not return the form.
+     * @param array $args Parameters to pass to the searchform.
      * @return string|void String when $echo is false.
      */
-    function get_search_form_hierarchical($echo = true)
+    function get_search_form_hierarchical($echo = true, $args = [])
     {
         /**
          * Fires before the search form is retrieved, at the start of get_search_form_hierarchical().
@@ -408,6 +412,9 @@ if (!function_exists('get_search_form_hierarchical')) :
         $format = apply_filters('search_form_format', $format);
 
         $search_form_template = template_part_hierarchical('searchform');
+        if (!empty($args)) {
+            extract($args);
+        }
         if ('' != $search_form_template) {
             ob_start();
             require($search_form_template);
