@@ -1,5 +1,12 @@
 # WP Basic Bootstrap changelog
 
+# [1.0.0-btst5.2](https://github.com/e-picas/wp-basic-bootstrap/compare/v1.0.0-btst5.1...v1.0.0-btst5.2) (2024-01-10)
+
+
+### Bug Fixes
+
+* **wp-the:** add missing args array parameters in some Template Hierarchy Everywhere functions ([79bd0fe](https://github.com/e-picas/wp-basic-bootstrap//commit/79bd0fe5565bb84b89fbab3b6b661883cf84bb6e))
+
 # 1.0.0-btst5.1 (2023-12-19)
 
 
