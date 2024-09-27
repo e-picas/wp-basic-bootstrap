@@ -15,7 +15,7 @@ class WP_Basic_Bootstrap_Pagination
         $this->entries = array();
 
         $cats = get_the_category();
-        if (count($cats)>0) {
+        if (count($cats) > 0) {
             $add_args['category__and'] = $cats[0]->term_id;
         }
 
@@ -26,7 +26,7 @@ class WP_Basic_Bootstrap_Pagination
                 'next'      => get_next_post($add_args),
             );
 
-//        } elseif (is_archive() || is_search()) {
+        //        } elseif (is_archive() || is_search()) {
         } else {
             $this->type = 'numerical';
             $this->get_pagenav_num($add_args);

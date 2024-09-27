@@ -86,7 +86,7 @@ class WP_Basic_Bootstrap_Setup
         foreach (self::$theme_supports as $theme_mod) {
             $opt = basicbootstrap_get_config($theme_mod);
             if (!empty($opt)) {
-                if ($opt===true) {
+                if ($opt === true) {
                     add_theme_support($theme_mod);
                 } else {
                     add_theme_support($theme_mod, $opt);
@@ -173,7 +173,7 @@ class WP_Basic_Bootstrap_Setup
     {
         // load css
         $css_cfg = basicbootstrap_get_config('css');
-        foreach ($css_cfg as $name=>$item) {
+        foreach ($css_cfg as $name => $item) {
             if (strtolower(BASICBOOTSTRAP_ASSETS_LOADER) == 'cdn' && isset($item['uri-cdn'])) {
                 $uri = $item['uri-cdn'];
             } elseif (strtolower(BASICBOOTSTRAP_ASSETS_LOADER) == 'npm' && isset($item['uri-npm'])) {
@@ -197,7 +197,7 @@ class WP_Basic_Bootstrap_Setup
 
         // load js
         $js_cfg = basicbootstrap_get_config('js');
-        foreach ($js_cfg as $name=>$item) {
+        foreach ($js_cfg as $name => $item) {
             if (strtolower(BASICBOOTSTRAP_ASSETS_LOADER) == 'cdn' && isset($item['uri-cdn'])) {
                 $uri = $item['uri-cdn'];
             } elseif (strtolower(BASICBOOTSTRAP_ASSETS_LOADER) == 'npm' && isset($item['uri-npm'])) {
@@ -236,13 +236,13 @@ class WP_Basic_Bootstrap_Setup
 
         // load css
         $css_cfg = basicbootstrap_get_config('css');
-        foreach ($css_cfg as $name=>$item) {
+        foreach ($css_cfg as $name => $item) {
             wp_enqueue_style($name);
         }
 
         // load js
         $js_cfg = basicbootstrap_get_config('js');
-        foreach ($js_cfg as $name=>$item) {
+        foreach ($js_cfg as $name => $item) {
             wp_enqueue_script($name);
         }
 

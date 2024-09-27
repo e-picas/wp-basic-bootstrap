@@ -85,12 +85,12 @@ function get_template_type()
                     get_basicbootstrap_mod('not_blog_pages_layout') :
                     str_replace(array('page-templates/', '.php'), '', $current)
             );
-        } elseif (! is_blog_page()) {
+        } elseif (!is_blog_page()) {
             $template_type = get_basicbootstrap_mod('not_blog_pages_layout');
         } else {
             $template_type = get_basicbootstrap_mod('blog_pages_layout');
         }
-        if (strpos($template_type, 'sidebar') !== false && ! is_active_sidebar('primary-widget-area')) {
+        if (strpos($template_type, 'sidebar') !== false && !is_active_sidebar('primary-widget-area')) {
             $template_type = 'full_width';
         }
     }
@@ -128,10 +128,10 @@ function get_basicbootsrap_image_sizes($type = 'post_thumbnails')
 {
     $config = basicbootstrap_get_config('image_sizes');
     $data = array(
-        0=> null,
-        1=> null,
-        'width'=> null,
-        'height'=> null,
+        0 => null,
+        1 => null,
+        'width' => null,
+        'height' => null,
     );
     if (is_array($config) && isset($config[$type]) && is_array($config[$type])) {
         if (isset($config[$type]['width'])) {
@@ -205,7 +205,7 @@ function basicbootstrap_excerpt($output)
         /* @var $post \WP_Post */
         global $post;
         $more = basicbootstrap_read_more_link();
-        if (empty($post->post_excerpt) && strpos($output, $more)===false) {
+        if (empty($post->post_excerpt) && strpos($output, $more) === false) {
             $output .= $more;
         }
     }
@@ -312,7 +312,7 @@ function wp_link_page_pager_item($i)
     if (1 == $i) {
         $url = get_permalink();
     } else {
-        if (! get_option('permalink_structure') || in_array($post->post_status, array( 'draft', 'pending' ), true)) {
+        if (!get_option('permalink_structure') || in_array($post->post_status, array( 'draft', 'pending' ), true)) {
             $url = add_query_arg('page', $i, get_permalink());
         } elseif ('page' === get_option('show_on_front') && get_option('page_on_front') == $post->ID) {
             $url = trailingslashit(get_permalink()) . user_trailingslashit("$wp_rewrite->pagination_base/" . $i, 'single_paged');
@@ -364,19 +364,19 @@ function basicbootstrap_comment($comment, $args, $depth)
     switch ($comment->comment_type) :
         case 'pingback':
         case 'trackback':
-        get_template_part_hierarchical_fetch('partials/comments/pingback-item-cb', '', array(
-                'comment' => $comment,
-                'args' => $args,
-                'depth' => $depth,
-            ));
-    break;
-    default:
-        get_template_part_hierarchical_fetch('partials/comments/comment-item-cb', '', array(
-                'comment' => $comment,
-                'args' => $args,
-                'depth' => $depth,
-            ));
-    break;
+            get_template_part_hierarchical_fetch('partials/comments/pingback-item-cb', '', array(
+                    'comment' => $comment,
+                    'args' => $args,
+                    'depth' => $depth,
+                ));
+            break;
+        default:
+            get_template_part_hierarchical_fetch('partials/comments/comment-item-cb', '', array(
+                    'comment' => $comment,
+                    'args' => $args,
+                    'depth' => $depth,
+                ));
+            break;
     endswitch; // end comment_type check
 }
 

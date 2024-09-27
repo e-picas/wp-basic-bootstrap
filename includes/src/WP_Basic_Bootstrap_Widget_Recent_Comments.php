@@ -19,17 +19,17 @@ class WP_Basic_Bootstrap_Widget_Recent_Comments extends WP_Widget_Recent_Comment
      */
     public function widget($args, $instance)
     {
-        if (! isset($args['widget_id'])) {
+        if (!isset($args['widget_id'])) {
             $args['widget_id'] = $this->id;
         }
 
-        $title = (! empty($instance['title'])) ? $instance['title'] : __('Recent Comments');
+        $title = (!empty($instance['title'])) ? $instance['title'] : __('Recent Comments');
 
         /** This filter is documented in wp-includes/widgets/class-wp-widget-pages.php */
         $title = apply_filters('widget_title', $title, $instance, $this->id_base);
 
-        $number = (! empty($instance['number'])) ? absint($instance['number']) : 5;
-        if (! $number) {
+        $number = (!empty($instance['number'])) ? absint($instance['number']) : 5;
+        if (!$number) {
             $number = 5;
         }
         $show_date = isset($instance['show_date']) ? $instance['show_date'] : false;

@@ -111,7 +111,7 @@ function is_blog_page()
 //        (is_home() && ! is_front_page()) ||
             is_tag() ||
             is_category() ||
-            (is_single() && ! is_page()) ||
+            (is_single() && !is_page()) ||
             is_tax() ||
             is_archive()
         ;
@@ -486,7 +486,7 @@ function get_edit_category_link($id, $object_type = '')
  */
 function get_the_author_excerpt($id = 0)
 {
-    if ($id==0) {
+    if ($id == 0) {
         $id = get_the_author_meta('ID');
     }
     if (!empty($id)) {

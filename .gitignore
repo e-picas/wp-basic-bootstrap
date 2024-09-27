@@ -3,11 +3,8 @@ vendor/
 !includes/vendor
 dev/
 tmp/
-node_modules
+node_modules/
 assets/dist
 assets/webfonts
 .env
 
-# locker files
-composer.lock
-package-lock.json

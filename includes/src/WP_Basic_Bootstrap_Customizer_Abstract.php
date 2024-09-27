@@ -70,7 +70,7 @@ abstract class WP_Basic_Bootstrap_Customizer_Abstract
     public function processData(array $data, $parent = false, $parent_id = null)
     {
         if ($parent) {
-            foreach ($data as $name=>$items) {
+            foreach ($data as $name => $items) {
                 $this->processData($items, false, $name);
             }
             return;
@@ -86,7 +86,7 @@ abstract class WP_Basic_Bootstrap_Customizer_Abstract
                         $sections = $data['sections'];
                         unset($data['sections']);
                     }
-                    foreach ($sections as $i=>$section) {
+                    foreach ($sections as $i => $section) {
                         if (!isset($sections[$i]['priority'])) {
                             $sections[$i]['priority'] = $i;
                         }
@@ -104,7 +104,7 @@ abstract class WP_Basic_Bootstrap_Customizer_Abstract
                         $parent_id = $data['panel'];
                     }
                     $count = 0;
-                    foreach ($data as $i=>$item) {
+                    foreach ($data as $i => $item) {
                         if (!is_array($item)) {
                             continue;
                         }
@@ -134,7 +134,7 @@ abstract class WP_Basic_Bootstrap_Customizer_Abstract
                         $settings = $data['settings'];
                         unset($data['settings']);
                     }
-                    foreach ($settings as $i=>$setting) {
+                    foreach ($settings as $i => $setting) {
                         if (!isset($settings[$i]['priority'])) {
                             $settings[$i]['priority'] = $i;
                         }
@@ -152,7 +152,7 @@ abstract class WP_Basic_Bootstrap_Customizer_Abstract
                         $parent_id = $data['section'];
                     }
                     $count = 0;
-                    foreach ($data as $i=>$item) {
+                    foreach ($data as $i => $item) {
                         if (!is_array($item)) {
                             continue;
                         }
@@ -232,13 +232,13 @@ abstract class WP_Basic_Bootstrap_Customizer_Abstract
 
         $item = $this->customizer->get_panel($id);
         if ($item) {
-            foreach ($data as $var=>$val) {
+            foreach ($data as $var => $val) {
                 if (array_key_exists($var, $panel_data)) {
                     $item->{$var} = $val;
                 }
             }
 
-            if (isset($data['delete']) && $data['delete']===true) {
+            if (isset($data['delete']) && $data['delete'] === true) {
                 $this->customizer->remove_panel($id);
             }
         } else {
@@ -298,7 +298,7 @@ abstract class WP_Basic_Bootstrap_Customizer_Abstract
 
         $item = $this->customizer->get_section($id);
         if ($item) {
-            foreach ($data as $var=>$val) {
+            foreach ($data as $var => $val) {
                 if (array_key_exists($var, $section_data)) {
                     $item->{$var} = $val;
                 }
@@ -307,7 +307,7 @@ abstract class WP_Basic_Bootstrap_Customizer_Abstract
                 }
             }
 
-            if (isset($data['delete']) && $data['delete']===true) {
+            if (isset($data['delete']) && $data['delete'] === true) {
                 $this->customizer->remove_section($id);
             }
         } else {
@@ -363,7 +363,7 @@ abstract class WP_Basic_Bootstrap_Customizer_Abstract
 
         if (
             isset($data['control_type']) &&
-            $data['control_type']=='select' &&
+            $data['control_type'] == 'select' &&
             (empty($data['sanitize_callback']) || $data['sanitize_callback'] == '')
         ) {
             $data['sanitize_callback'] = sanitize_select_generator(
@@ -374,7 +374,7 @@ abstract class WP_Basic_Bootstrap_Customizer_Abstract
 
         $item = $this->customizer->get_setting($id);
         if ($item) {
-            foreach ($data as $var=>$val) {
+            foreach ($data as $var => $val) {
                 if (array_key_exists($var, $setting_data)) {
                     $item->{$var} = $val;
                 } elseif ($var == 'setting_type') {
@@ -385,7 +385,7 @@ abstract class WP_Basic_Bootstrap_Customizer_Abstract
                 }
             }
 
-            if (isset($data['delete']) && $data['delete']===true) {
+            if (isset($data['delete']) && $data['delete'] === true) {
                 $this->customizer->remove_setting($id);
             }
         } else {
@@ -446,7 +446,7 @@ abstract class WP_Basic_Bootstrap_Customizer_Abstract
 
         $item = $this->customizer->get_control($id);
         if ($item) {
-            foreach ($data as $var=>$val) {
+            foreach ($data as $var => $val) {
                 if (array_key_exists($var, $control_data)) {
                     $item->{$var} = $val;
                 } elseif ($var == 'control_type') {
@@ -457,7 +457,7 @@ abstract class WP_Basic_Bootstrap_Customizer_Abstract
                 $item->section = $section_id;
             }
 
-            if (isset($data['delete']) && $data['delete']===true) {
+            if (isset($data['delete']) && $data['delete'] === true) {
                 $this->customizer->remove_control($id);
             }
         } else {
@@ -470,7 +470,7 @@ abstract class WP_Basic_Bootstrap_Customizer_Abstract
                 switch ($data['control_type']) {
                     case 'select':
                         $cls = 'WP_Customize_Control';
-                        foreach ($data['choices'] as $var=>$val) {
+                        foreach ($data['choices'] as $var => $val) {
                             $data['choices'][$var] = __($val, 'basicbootstrap');
                         }
                         break;
@@ -525,7 +525,7 @@ abstract class WP_Basic_Bootstrap_Customizer_Abstract
     {
         $return = '';
         $mod = get_basicbootstrap_mod($mod_name);
-        if (! empty($mod)) {
+        if (!empty($mod)) {
             $return = sprintf(
                 '%s { %s:%s; }',
                 $selector,
