@@ -29,17 +29,17 @@
     "tests"
   ],
   "scripts": {
-    "build": "npm-run-all css js",
+    "build": "npm run css && npm run js",
     "watch": "nodemon -e scss,js -x \"npm run css-compile && npm run js-compile\" -w assets/js/",
     "build-css": "npm run css-lint && npm run css-compile",
-    "css-compile": "node-sass --include-path node_modules --source-map true --source-map-contents true --precision 6 assets/sass -o assets/dist/",
+    "css-compile": "sass --load-path node_modules --source-map --embed-sources --style expanded assets/sass:assets/dist/",
     "css-minify": "cleancss -O1 --format breakWith=lf --with-rebase --source-map --source-map-inline-sources --output assets/dist/ --batch --batch-suffix \".min\" \"assets/dist/*.css\" \"!assets/dist/*.min.css\"",
     "css-lint": "stylelint assets/sass/",
-    "css": "npm-run-all css-compile css-minify webfonts-import",
+    "css": "npm run css-compile && npm run css-minify && npm run webfonts-import",
     "webfonts-import": "copyfiles -u 3 node_modules/fontawesome-free/webfonts/* assets/webfonts/",
     "js-compile": "uglifyjs node_modules/jquery/dist/jquery.js node_modules/bootstrap/dist/js/bootstrap.bundle.js --source-map --keep-fnames --output assets/dist/jquery-popper-bootstrap.bundle.js --comments all",
     "js-minify": "uglifyjs node_modules/jquery/dist/jquery.min.js node_modules/bootstrap/dist/js/bootstrap.bundle.min.js --compress --source-map --keep-fnames --output assets/dist/jquery-popper-bootstrap.bundle.min.js --comments all",
-    "js": "npm-run-all js-compile js-minify"
+    "js": "npm run js-compile && npm run js-minify"
   },
   "dependencies": {
     "@popperjs/core": "^2.9.3",
@@ -50,7 +50,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.2.5",
-    "node-sass": "^5.0.0",
+    "sass": "^1.77.0",
     "nodemon": "^2.0.7",
     "npm-run-all": "^4.1.5",
     "clean-css-cli": "^5.5.0",
