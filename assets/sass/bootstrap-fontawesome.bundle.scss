@@ -35,13 +35,15 @@ $success: #7952b3;
 
 @import "bootstrap/scss/functions"; // Required
 @import "bootstrap/scss/variables"; // Required
+@import "bootstrap/scss/variables-dark"; // Required since Bootstrap 5.3
+@import "bootstrap/scss/maps"; // Required since Bootstrap 5.2
 @import "bootstrap/scss/mixins"; // Required
 
 @import "bootstrap/scss/root"; // Required
 @import "bootstrap/scss/reboot"; // Required
 @import "bootstrap/scss/type";
 @import "bootstrap/scss/images";
-@import "bootstrap/scss/code";
+@import "bootstrap/scss/containers";
 @import "bootstrap/scss/grid";
 @import "bootstrap/scss/tables";
 @import "bootstrap/scss/forms";
@@ -49,18 +51,15 @@ $success: #7952b3;
 @import "bootstrap/scss/transitions";
 @import "bootstrap/scss/dropdown";
 @import "bootstrap/scss/button-group";
-@import "bootstrap/scss/input-group"; // Requires forms
-@import "bootstrap/scss/custom-forms";
 @import "bootstrap/scss/nav";
 @import "bootstrap/scss/navbar"; // Requires nav
 @import "bootstrap/scss/card";
+@import "bootstrap/scss/accordion";
 @import "bootstrap/scss/breadcrumb";
 @import "bootstrap/scss/pagination";
 @import "bootstrap/scss/badge";
-@import "bootstrap/scss/jumbotron";
 @import "bootstrap/scss/alert";
 @import "bootstrap/scss/progress";
-@import "bootstrap/scss/media";
 @import "bootstrap/scss/list-group";
 @import "bootstrap/scss/close";
 @import "bootstrap/scss/toasts";
@@ -69,8 +68,10 @@ $success: #7952b3;
 @import "bootstrap/scss/popover";
 @import "bootstrap/scss/carousel";
 @import "bootstrap/scss/spinners";
+@import "bootstrap/scss/offcanvas";
+@import "bootstrap/scss/placeholders";
+@import "bootstrap/scss/helpers";
 @import "bootstrap/scss/utilities";
-@import "bootstrap/scss/print";
 
 @import "fontawesome-free/scss/fontawesome";
 @import "fontawesome-free/scss/regular";
@@ -80,4 +81,3 @@ $success: #7952b3;
 //
 // Custom styles
 //
-

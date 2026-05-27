@@ -34,15 +34,18 @@ class WP_Basic_Bootstrap_Setup
         basicbootstrap_load_library('template-enhancer');
         basicbootstrap_load_library('template-library');
 
-        // load plugin internal config
-        basicbootstrap_load_config('defaults');
-        /**
-         * Hook to update the theme default config on the fly
-         *
-         * Use global $basicbootstrap_config
-         * @since 2.0.0
-         */
-        do_action('wp_basic_bootstrap_config');
+        // load plugin internal config after translations are available (WP 6.7+)
+        // @see https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/
+        add_action('after_setup_theme', function () {
+            basicbootstrap_load_config('defaults');
+            /**
+             * Hook to update the theme default config on the fly
+             *
+             * Use global $basicbootstrap_config
+             * @since 2.0.0
+             */
+            do_action('wp_basic_bootstrap_config');
+        }, 1); // priority 1: before setupCommon (default priority 10)
 
         // required plugins
         basicbootstrap_load_class('TGM_Plugin_Activation');

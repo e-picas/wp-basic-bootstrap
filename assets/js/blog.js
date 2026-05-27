@@ -9,7 +9,7 @@
         var title = $(el).attr('title');
         if (title !== undefined) {
             $(el).append($('<span />', {
-                'class': 'd-sm-none',
+                'class': 'visible-xs-inline-block',
                 'html': '&nbsp;' + title
             }));
         }
