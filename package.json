@@ -32,13 +32,13 @@
     "build": "npm run css && npm run js",
     "watch": "nodemon -e scss,js -x \"npm run css-compile && npm run js-compile\" -w assets/js/",
     "build-css": "npm run css-lint && npm run css-compile",
-    "css-compile": "sass --load-path node_modules --source-map --embed-sources --style expanded assets/sass:assets/dist/",
-    "css-minify": "cleancss -O1 --format breakWith=lf --with-rebase --source-map --source-map-inline-sources --output assets/dist/ --batch --batch-suffix \".min\" \"assets/dist/*.css\" \"!assets/dist/*.min.css\"",
+    "css-compile": "node_modules/.bin/sass --load-path node_modules --source-map --embed-sources --style expanded assets/sass:assets/dist/",
+    "css-minify": "node_modules/.bin/cleancss -O1 --format breakWith=lf --with-rebase --source-map --source-map-inline-sources --output assets/dist/ --batch --batch-suffix \".min\" \"assets/dist/*.css\" \"!assets/dist/*.min.css\"",
     "css-lint": "stylelint assets/sass/",
     "css": "npm run css-compile && npm run css-minify && npm run webfonts-import",
-    "webfonts-import": "copyfiles -u 3 node_modules/fontawesome-free/webfonts/* assets/webfonts/",
-    "js-compile": "uglifyjs node_modules/jquery/dist/jquery.js node_modules/bootstrap/dist/js/bootstrap.bundle.js --source-map --keep-fnames --output assets/dist/jquery-popper-bootstrap.bundle.js --comments all",
-    "js-minify": "uglifyjs node_modules/jquery/dist/jquery.min.js node_modules/bootstrap/dist/js/bootstrap.bundle.min.js --compress --source-map --keep-fnames --output assets/dist/jquery-popper-bootstrap.bundle.min.js --comments all",
+    "webfonts-import": "node_modules/.bin/copyfiles -u 3 node_modules/fontawesome-free/webfonts/* assets/webfonts/",
+    "js-compile": "node_modules/.bin/uglifyjs node_modules/jquery/dist/jquery.js node_modules/bootstrap/dist/js/bootstrap.bundle.js --source-map --keep-fnames --output assets/dist/jquery-popper-bootstrap.bundle.js --comments all",
+    "js-minify": "node_modules/.bin/uglifyjs node_modules/jquery/dist/jquery.min.js node_modules/bootstrap/dist/js/bootstrap.bundle.min.js --compress --source-map --keep-fnames --output assets/dist/jquery-popper-bootstrap.bundle.min.js --comments all",
     "js": "npm run js-compile && npm run js-minify"
   },
   "dependencies": {
